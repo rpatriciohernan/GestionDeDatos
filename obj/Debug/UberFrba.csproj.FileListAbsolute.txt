@@ -1,1 +1,10 @@
 E:\src\UberFrba\UberFrba\bin\Debug\UberFrba.exe.config
+C:\Users\Mago\Documents\repo gdd\UberFrba\bin\Debug\UberFrba.exe.config
+C:\Users\Mago\Documents\repo gdd\UberFrba\bin\Debug\UberFrba.exe
+C:\Users\Mago\Documents\repo gdd\UberFrba\bin\Debug\UberFrba.pdb
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.csprojResolveAssemblyReference.cache
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Properties.Resources.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.csproj.GenerateResource.Cache
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.exe
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.pdb
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Cliente.frmCliente.resources
