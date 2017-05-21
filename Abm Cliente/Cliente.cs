@@ -17,6 +17,7 @@ namespace UberFrba.Abm_Cliente
         private String direccion;
         private String codigoPostal;
         private DateTime fechaNacimiento;
+        private List<CampoYValor> camposObligatorios;
         private static RepositorioCliente repositorioCliente = RepositorioCliente.Instance;
         #endregion
 
@@ -59,14 +60,32 @@ namespace UberFrba.Abm_Cliente
         public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
             String direccion, String codigoPostal, DateTime fechaNacimiento)
         {
+            //--cargar en esta lista, los campos obligatorios del cliente--
+            this.camposObligatorios = new List<CampoYValor>();
+            
             this.nombre = nombre;
+            this.camposObligatorios.Add(new CampoYValor("Nombre", this.nombre));
+
             this.apellido = apellido;
+            this.camposObligatorios.Add(new CampoYValor("Apellido", this.apellido));
+            
             this.dni = dni;
+            this.camposObligatorios.Add(new CampoYValor("Dni", this.dni.ToString()));
+           
             this.mail = mail;
+            this.camposObligatorios.Add(new CampoYValor("Mail", this.mail));
+           
             this.telefono = telefono;
+            this.camposObligatorios.Add(new CampoYValor("Telefono", this.telefono));
+            
             this.direccion = direccion;
+            this.camposObligatorios.Add(new CampoYValor("Direccion", this.direccion));
+           
             this.codigoPostal = codigoPostal;
+            this.camposObligatorios.Add(new CampoYValor("CodigoPostal", this.codigoPostal));
+            
             this.fechaNacimiento = fechaNacimiento;
+            this.camposObligatorios.Add(new CampoYValor("FechaNacimiento", Convert.ToString(this.fechaNacimiento)));
         }
         #endregion
         
@@ -81,14 +100,11 @@ namespace UberFrba.Abm_Cliente
             repositorioCliente.Guardar(this);
         }
 
-        public List<ErrorDeCampo> validarCampos() { 
-            
-            List<ErrorDeCampo> errores = new List<ErrorDeCampo>();
-
-            if (dni == null) {
-                errores.Add(new ErrorDeCampo("dni", "falta completar"));
-            }
-
+        public List<ErrorDeCampo> validarCampos() { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
+            //filter
+            List<CampoYValor> camposObligatoriosVacios = camposObligatorios.Where(elem => (elem.Valor == null || elem.Valor == "")).ToList();
+            //map
+            List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(x => new ErrorDeCampo(x.Campo,"falta completar")).ToList();
             return errores;
         }
 

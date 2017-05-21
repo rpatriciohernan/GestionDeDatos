@@ -9,11 +9,11 @@ namespace UberFrba
     class ErrorDeCampo
     {
         private String nombreCampo;
-        private String motivo;
+        private String sugerencia;
 
         public ErrorDeCampo(String nombre, String motivo) {
             this.nombreCampo = nombre;
-            this.motivo = motivo;
+            this.sugerencia = motivo;
         }
 
         public String NombreCampo
@@ -21,9 +21,27 @@ namespace UberFrba
             get { return nombreCampo; }
         }
 
-        public String Motivo
+        public String Sugerencia
         {
-            get { return motivo; }
+            get { return sugerencia; }
         }
+
+
+       /* public static enum Sugerencia
+        {
+            Vacio,
+            Incorrecto
+        };*/
+
+       /* public static enum Nombre
+        {
+            Nombre,
+            Apellido,
+            Dni,
+            Mail,
+            Telefono,
+            Direccion,
+            CodigoPostal,
+        };*/
     }
 }

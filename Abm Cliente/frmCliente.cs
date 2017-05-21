@@ -12,20 +12,21 @@ namespace UberFrba.Abm_Cliente
 {
     public partial class frmCliente : Form
     {
+        private List<Label> labelsConErrores = new List<Label>();
         public frmCliente()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+       // private void button1_Click(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
         private void label2_Click(object sender, EventArgs e)
         {
 
-        }
+        } 
 
         private Cliente CrearCliente() {
             return new Cliente(txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtDNI.Text), txtMail.Text, txtTelefono.Text,
@@ -35,8 +36,7 @@ namespace UberFrba.Abm_Cliente
         private void button1_Click_1(object sender, EventArgs e)
         {
             //generamos el gliente
-            var cliente = new Cliente(txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtDNI.Text), txtMail.Text, txtTelefono.Text,
-            txtDireccion.Text, txtCodigoPostal.Text, Convert.ToDateTime(txtFechaNacimiento.Text));
+            var cliente = CrearCliente();
 
             Boolean tieneNombre = cliente.validarNombre();
 
@@ -62,20 +62,42 @@ namespace UberFrba.Abm_Cliente
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-           // var cliente = new Cliente();
-           /* Int64 asd = 38425536;
-
-            String apellido = Cliente.buscar(asd).Apellido;
-
-            MessageBox.Show("apellido: " + apellido);*/
+            LimpiarErrores();
 
             Cliente cliente = CrearCliente();
-            cliente.guardate();
+            List<ErrorDeCampo> errores = cliente.validarCampos();
 
-
+            if (errores.Count != 0) {
+                mostrarErrores(errores);
+            } else {
+                cliente.guardate();
+            }
         }
+
+
+
+        //-----esta logica tiene que ir en el form generico-------
+        private void LimpiarErrores() {
+            labelsConErrores.ForEach(lbl => lbl.Text = "");
+        }
+
+        private void mostrarErrores(List<ErrorDeCampo> errores)
+        {
+            foreach (ErrorDeCampo error in errores)
+            {
+                Label lbl = this.Controls.Find("lbl" + error.NombreCampo + "Error", true).FirstOrDefault() as Label;
+                if (lbl != null)
+                {
+                    lbl.Text = error.Sugerencia;
+                    labelsConErrores.Add(lbl);
+                }
+            }
+        }
+        //---------------------------------------------------------
+
+
 
         private void txtNombre_TextChanged(object sender, EventArgs e)
         {

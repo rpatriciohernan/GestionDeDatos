@@ -48,6 +48,7 @@ namespace UberFrba.Abm_Cliente
 
         public void Guardar(Cliente cliente) {
             SqlDataReader dr = queryManager("Insert into Clientes "+  "values(" + cliente.GetValues() + ")");
+            dr.Close();
         }
 
 

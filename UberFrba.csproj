@@ -58,7 +58,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Cliente\Persona.cs" />
+    <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="ErrorDeCampo.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Abm Cliente\RepositorioCliente.cs" />
     <Compile Include="Abm Cliente\Cliente.cs" />

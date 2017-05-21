@@ -44,8 +44,8 @@
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblFechaNacimiento = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblNombreError = new System.Windows.Forms.Label();
             this.lblApellidoError = new System.Windows.Forms.Label();
@@ -188,25 +188,25 @@
             this.lblFechaNacimiento.TabIndex = 15;
             this.lblFechaNacimiento.Text = "Fecha de nacimiento";
             // 
-            // button1
+            // btnBuscar
             // 
-            this.button1.Location = new System.Drawing.Point(383, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnBuscar.Location = new System.Drawing.Point(383, 158);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.Location = new System.Drawing.Point(302, 158);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnGuardar.Location = new System.Drawing.Point(302, 158);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardar.TabIndex = 9;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // dataGridView1
             // 
@@ -308,8 +308,8 @@
             this.Controls.Add(this.lblApellidoError);
             this.Controls.Add(this.lblNombreError);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblFechaNacimiento);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.lblTelefono);
@@ -353,8 +353,8 @@
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblFechaNacimiento;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblNombreError;
         private System.Windows.Forms.Label lblApellidoError;
