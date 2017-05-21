@@ -104,19 +104,19 @@ namespace UberFrba.Abm_Cliente
             //filter
             List<CampoYValor> camposObligatoriosVacios = camposObligatorios.Where(elem => (elem.Valor == null || elem.Valor == "")).ToList();
             //map
-            List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(x => new ErrorDeCampo(x.Campo,"falta completar")).ToList();
+            List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(error => new ErrorDeCampo(error.Campo,"falta completar")).ToList();
             return errores;
         }
 
-        public Boolean validarNombre() {
+        public Boolean validarNombre() { //era de prueba, borrarlo
             return nombre != null;
         }
 
-        public String toString() {
+        public String toString() { //era de prueba, borrarlo
             return this.apellido;        
         }
 
-        public String GetValues() {
+        public String GetValues() { //ojo al agregar nuevos atributo, volcarlos aca!!!
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' +
                 "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.direccion + "'" + ',' + "'" + this.codigoPostal + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'";
         }

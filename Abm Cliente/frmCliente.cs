@@ -35,7 +35,6 @@ namespace UberFrba.Abm_Cliente
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //generamos el gliente
             var cliente = CrearCliente();
 
             Boolean tieneNombre = cliente.validarNombre();
@@ -78,7 +77,7 @@ namespace UberFrba.Abm_Cliente
 
 
 
-        //-----esta logica tiene que ir en el form generico-------
+        //-----logica de visualizacion de errores, hubiese estado copado generalizarla pero es un bardo :(-------
         private void LimpiarErrores() {
             labelsConErrores.ForEach(lbl => lbl.Text = "");
         }
@@ -115,9 +114,3 @@ namespace UberFrba.Abm_Cliente
         }
     }
 }
-
-/*
-public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
-            String direccion, String codigoPostal, DateTime fechaNacimiento)
- 
- */
