@@ -1,18 +1,4 @@
-﻿/*using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UberFrba.Abm_Cliente
-{
-    class Conexion
-    {
-    }
-} */
-
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -57,6 +43,11 @@ namespace UberFrba.Abm_Cliente
                 cn = new SqlConnection("Data Source=DESKTOP-BFA24AK" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
                 cn.Open();
                 MessageBox.Show("Conectado");
+
+                String asd = "asdads";
+
+                Console.Out.WriteLine( "'" + asd + "'");
+                Console.Out.WriteLine(asd);
 
             }
             catch (Exception ex)

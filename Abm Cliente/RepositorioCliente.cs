@@ -46,5 +46,10 @@ namespace UberFrba.Abm_Cliente
             return cliente;
         }
 
+        public void Guardar(Cliente cliente) {
+            SqlDataReader dr = queryManager("Insert into Clientes "+  "values(" + cliente.GetValues() + ")");
+        }
+
+
     }
 }
