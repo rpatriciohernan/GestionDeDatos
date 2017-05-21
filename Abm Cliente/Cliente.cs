@@ -69,6 +69,7 @@ namespace UberFrba.Abm_Cliente
             this.fechaNacimiento = fechaNacimiento;
         }
         #endregion
+        
         //metodos de clase (no se necesita tener una instancia para usarlos)
         public static Cliente buscar(Int64 dni)
         {
@@ -78,6 +79,17 @@ namespace UberFrba.Abm_Cliente
         //metodos de instancia
         public void guardate() {
             repositorioCliente.Guardar(this);
+        }
+
+        public List<ErrorDeCampo> validarCampos() { 
+            
+            List<ErrorDeCampo> errores = new List<ErrorDeCampo>();
+
+            if (dni == null) {
+                errores.Add(new ErrorDeCampo("dni", "falta completar"));
+            }
+
+            return errores;
         }
 
         public Boolean validarNombre() {

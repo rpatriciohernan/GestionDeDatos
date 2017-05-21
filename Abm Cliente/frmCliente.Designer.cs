@@ -47,6 +47,14 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblNombreError = new System.Windows.Forms.Label();
+            this.lblApellidoError = new System.Windows.Forms.Label();
+            this.lblDniError = new System.Windows.Forms.Label();
+            this.lblMailError = new System.Windows.Forms.Label();
+            this.lblTelefonoError = new System.Windows.Forms.Label();
+            this.lblDireccionError = new System.Windows.Forms.Label();
+            this.lblCodigoPostalError = new System.Windows.Forms.Label();
+            this.lblFechaNacimientoError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,28 +68,28 @@
             // 
             // txtFechaNacimiento
             // 
-            this.txtFechaNacimiento.Location = new System.Drawing.Point(358, 80);
+            this.txtFechaNacimiento.Location = new System.Drawing.Point(358, 97);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.Size = new System.Drawing.Size(100, 20);
             this.txtFechaNacimiento.TabIndex = 7;
             // 
             // txtCodigoPostal
             // 
-            this.txtCodigoPostal.Location = new System.Drawing.Point(243, 80);
+            this.txtCodigoPostal.Location = new System.Drawing.Point(243, 97);
             this.txtCodigoPostal.Name = "txtCodigoPostal";
             this.txtCodigoPostal.Size = new System.Drawing.Size(100, 20);
             this.txtCodigoPostal.TabIndex = 6;
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(123, 80);
+            this.txtDireccion.Location = new System.Drawing.Point(123, 97);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
             this.txtDireccion.TabIndex = 5;
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(3, 80);
+            this.txtTelefono.Location = new System.Drawing.Point(3, 97);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
             this.txtTelefono.TabIndex = 4;
@@ -110,7 +118,7 @@
             // lblCodigoPostal
             // 
             this.lblCodigoPostal.AutoSize = true;
-            this.lblCodigoPostal.Location = new System.Drawing.Point(240, 64);
+            this.lblCodigoPostal.Location = new System.Drawing.Point(240, 81);
             this.lblCodigoPostal.Name = "lblCodigoPostal";
             this.lblCodigoPostal.Size = new System.Drawing.Size(72, 13);
             this.lblCodigoPostal.TabIndex = 8;
@@ -156,7 +164,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(0, 64);
+            this.lblTelefono.Location = new System.Drawing.Point(0, 81);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
             this.lblTelefono.TabIndex = 13;
@@ -165,7 +173,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(120, 64);
+            this.lblDireccion.Location = new System.Drawing.Point(120, 81);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(52, 13);
             this.lblDireccion.TabIndex = 14;
@@ -174,7 +182,7 @@
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(355, 64);
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(355, 81);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(106, 13);
             this.lblFechaNacimiento.TabIndex = 15;
@@ -182,7 +190,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(383, 122);
+            this.button1.Location = new System.Drawing.Point(383, 158);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 8;
@@ -192,7 +200,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(302, 122);
+            this.button2.Location = new System.Drawing.Point(302, 158);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 9;
@@ -206,18 +214,99 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 160);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 196);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(455, 150);
             this.dataGridView1.TabIndex = 16;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // lblNombreError
+            // 
+            this.lblNombreError.AutoSize = true;
+            this.lblNombreError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblNombreError.Location = new System.Drawing.Point(0, 46);
+            this.lblNombreError.Name = "lblNombreError";
+            this.lblNombreError.Size = new System.Drawing.Size(0, 13);
+            this.lblNombreError.TabIndex = 17;
+            this.lblNombreError.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblApellidoError
+            // 
+            this.lblApellidoError.AutoSize = true;
+            this.lblApellidoError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblApellidoError.Location = new System.Drawing.Point(120, 46);
+            this.lblApellidoError.Name = "lblApellidoError";
+            this.lblApellidoError.Size = new System.Drawing.Size(0, 13);
+            this.lblApellidoError.TabIndex = 18;
+            // 
+            // lblDniError
+            // 
+            this.lblDniError.AutoSize = true;
+            this.lblDniError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblDniError.Location = new System.Drawing.Point(240, 46);
+            this.lblDniError.Name = "lblDniError";
+            this.lblDniError.Size = new System.Drawing.Size(0, 13);
+            this.lblDniError.TabIndex = 19;
+            // 
+            // lblMailError
+            // 
+            this.lblMailError.AutoSize = true;
+            this.lblMailError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblMailError.Location = new System.Drawing.Point(355, 46);
+            this.lblMailError.Name = "lblMailError";
+            this.lblMailError.Size = new System.Drawing.Size(0, 13);
+            this.lblMailError.TabIndex = 20;
+            // 
+            // lblTelefonoError
+            // 
+            this.lblTelefonoError.AutoSize = true;
+            this.lblTelefonoError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblTelefonoError.Location = new System.Drawing.Point(0, 120);
+            this.lblTelefonoError.Name = "lblTelefonoError";
+            this.lblTelefonoError.Size = new System.Drawing.Size(0, 13);
+            this.lblTelefonoError.TabIndex = 21;
+            // 
+            // lblDireccionError
+            // 
+            this.lblDireccionError.AutoSize = true;
+            this.lblDireccionError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblDireccionError.Location = new System.Drawing.Point(120, 120);
+            this.lblDireccionError.Name = "lblDireccionError";
+            this.lblDireccionError.Size = new System.Drawing.Size(0, 13);
+            this.lblDireccionError.TabIndex = 22;
+            // 
+            // lblCodigoPostalError
+            // 
+            this.lblCodigoPostalError.AutoSize = true;
+            this.lblCodigoPostalError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblCodigoPostalError.Location = new System.Drawing.Point(240, 120);
+            this.lblCodigoPostalError.Name = "lblCodigoPostalError";
+            this.lblCodigoPostalError.Size = new System.Drawing.Size(0, 13);
+            this.lblCodigoPostalError.TabIndex = 23;
+            // 
+            // lblFechaNacimientoError
+            // 
+            this.lblFechaNacimientoError.AutoSize = true;
+            this.lblFechaNacimientoError.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblFechaNacimientoError.Location = new System.Drawing.Point(355, 120);
+            this.lblFechaNacimientoError.Name = "lblFechaNacimientoError";
+            this.lblFechaNacimientoError.Size = new System.Drawing.Size(0, 13);
+            this.lblFechaNacimientoError.TabIndex = 24;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 327);
+            this.ClientSize = new System.Drawing.Size(495, 413);
+            this.Controls.Add(this.lblFechaNacimientoError);
+            this.Controls.Add(this.lblCodigoPostalError);
+            this.Controls.Add(this.lblDireccionError);
+            this.Controls.Add(this.lblTelefonoError);
+            this.Controls.Add(this.lblMailError);
+            this.Controls.Add(this.lblDniError);
+            this.Controls.Add(this.lblApellidoError);
+            this.Controls.Add(this.lblNombreError);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -267,6 +356,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblNombreError;
+        private System.Windows.Forms.Label lblApellidoError;
+        private System.Windows.Forms.Label lblDniError;
+        private System.Windows.Forms.Label lblMailError;
+        private System.Windows.Forms.Label lblTelefonoError;
+        private System.Windows.Forms.Label lblDireccionError;
+        private System.Windows.Forms.Label lblCodigoPostalError;
+        private System.Windows.Forms.Label lblFechaNacimientoError;
 
     }
 }
