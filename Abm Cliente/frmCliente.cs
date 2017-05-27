@@ -33,20 +33,32 @@ namespace UberFrba.Abm_Cliente
             txtDireccion.Text, txtCodigoPostal.Text, Convert.ToDateTime(txtFechaNacimiento.Text));
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            var cliente = CrearCliente();
+            /*var cliente = CrearCliente();
 
             Boolean tieneNombre = cliente.validarNombre();
 
-            Console.WriteLine(tieneNombre);
+            Console.WriteLine(tieneNombre);*/
+           
+           /* Int64 dni = Convert.ToInt64(txtDNI.Text);
+            Cliente cliente = Cliente.buscar(dni);*/
+
+            List<Cliente> clientes = Cliente.buscarTodos();
+
+            //Console.WriteLine("el cliente buscado es: " + cliente.Nombre);
+
+            BindingSource bs = new BindingSource(clientes, "");
+            dataGridView1.DataSource = bs; //bs.ResetBindings(false);
+
+
         }
 
         private void frmCliente_Load(object sender, EventArgs e)
         {
             Conexion.startConexion();
 
-            List<Persona> personas = new List<Persona>();
+         /*   List<Persona> personas = new List<Persona>();
             personas.Add(new Persona("nombre1","apellido1"));
             personas.Add(new Persona("nombre2","apellido2"));
             personas.Add(new Persona("nombre3","apellido3"));
@@ -57,8 +69,8 @@ namespace UberFrba.Abm_Cliente
            
 
             personas.Add(new Persona("nombre4", "apellido4"));
-            bs.ResetBindings(false);
-            
+            bs.ResetBindings(false); cada vez que cambia la lista que infla la grilla, hay que hacer esto para que la grilla muestre los cambios
+            */
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -68,7 +80,7 @@ namespace UberFrba.Abm_Cliente
             Cliente cliente = CrearCliente();
             List<ErrorDeCampo> errores = cliente.validarCampos();
 
-            if (errores.Count != 0) {
+            if (errores.Count > 0) {
                 mostrarErrores(errores);
             } else {
                 cliente.guardate();

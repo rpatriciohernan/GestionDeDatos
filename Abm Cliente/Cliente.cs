@@ -95,6 +95,11 @@ namespace UberFrba.Abm_Cliente
             return repositorioCliente.buscar(dni);
         }
 
+        public static List<Cliente> buscarTodos()
+        {
+            return repositorioCliente.buscarTodos();
+        }
+
         //metodos de instancia
         public void guardate() {
             repositorioCliente.Guardar(this);
