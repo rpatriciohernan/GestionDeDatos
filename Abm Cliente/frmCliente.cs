@@ -35,21 +35,27 @@ namespace UberFrba.Abm_Cliente
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            /*var cliente = CrearCliente();
 
-            Boolean tieneNombre = cliente.validarNombre();
 
-            Console.WriteLine(tieneNombre);*/
-           
-           /* Int64 dni = Convert.ToInt64(txtDNI.Text);
-            Cliente cliente = Cliente.buscar(dni);*/
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            if (txtNombre.Text != "") {
+                parametrosDeBusqueda.Add("nombre", txtNombre.Text);
+            }
+            if (txtApellido.Text != "")
+            {
+                parametrosDeBusqueda.Add("apellido", txtApellido.Text);
+            }
+            if (txtDNI.Text != "")
+            {
+                parametrosDeBusqueda.Add("dni", txtDNI.Text);
+            }
 
-            List<Cliente> clientes = Cliente.buscarTodos();
+            List<Cliente> clientes = Cliente.buscar(parametrosDeBusqueda);
 
-            //Console.WriteLine("el cliente buscado es: " + cliente.Nombre);
+            
 
             BindingSource bs = new BindingSource(clientes, "");
-            dataGridView1.DataSource = bs; //bs.ResetBindings(false);
+            dataGridView1.DataSource = bs; //bs.ResetBindings(false); hay que hacerlo cada vez que se actualiza la lista
 
 
         }
@@ -58,19 +64,6 @@ namespace UberFrba.Abm_Cliente
         {
             Conexion.startConexion();
 
-         /*   List<Persona> personas = new List<Persona>();
-            personas.Add(new Persona("nombre1","apellido1"));
-            personas.Add(new Persona("nombre2","apellido2"));
-            personas.Add(new Persona("nombre3","apellido3"));
-
-            BindingSource bs = new BindingSource(personas, "");
-
-            dataGridView1.DataSource = bs;
-           
-
-            personas.Add(new Persona("nombre4", "apellido4"));
-            bs.ResetBindings(false); cada vez que cambia la lista que infla la grilla, hay que hacer esto para que la grilla muestre los cambios
-            */
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

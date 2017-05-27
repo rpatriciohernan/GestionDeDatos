@@ -90,15 +90,15 @@ namespace UberFrba.Abm_Cliente
         #endregion
         
         //metodos de clase (no se necesita tener una instancia para usarlos)
-        public static Cliente buscar(Int64 dni)
+        public static List<Cliente> buscar(Dictionary<String, String> parametrosDeBusqueda)
         {
-            return repositorioCliente.buscar(dni);
+            return repositorioCliente.buscar(parametrosDeBusqueda);
         }
 
-        public static List<Cliente> buscarTodos()
+       /* public static List<Cliente> buscarTodos()
         {
             return repositorioCliente.buscarTodos();
-        }
+        }*/
 
         //metodos de instancia
         public void guardate() {
