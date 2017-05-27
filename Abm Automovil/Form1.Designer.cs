@@ -1,6 +1,7 @@
 ﻿namespace UberFrba.Abm_Automovil
 {
     partial class Form1
+
     {
         /// <summary>
         /// Required designer variable.
@@ -19,6 +20,8 @@
             }
             base.Dispose(disposing);
         }
+
+
 
         #region Windows Form Designer generated code
 
