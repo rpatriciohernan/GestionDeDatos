@@ -1,6 +1,6 @@
-﻿namespace UberFrba.Abm_Chofer
+﻿namespace UberFrba.Abm_Chofer_Administrador
 {
-    partial class FRMChofer
+    partial class FRMChoferAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -60,12 +60,16 @@
             this.TXTmail = new System.Windows.Forms.TextBox();
             this.TXTtelefono = new System.Windows.Forms.TextBox();
             this.BTNguardar = new System.Windows.Forms.Button();
+            this.BTNbuscar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.BTNeliminar = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTEfechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -266,8 +270,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
-            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.DTEfechaNacimiento);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
@@ -280,7 +283,7 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Location = new System.Drawing.Point(14, 59);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 121);
+            this.groupBox1.Size = new System.Drawing.Size(543, 119);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -338,7 +341,7 @@
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(14, 186);
+            this.groupBox2.Location = new System.Drawing.Point(14, 184);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(542, 80);
             this.groupBox2.TabIndex = 20;
@@ -388,7 +391,7 @@
             this.groupBox3.Controls.Add(this.TXTtelefono);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Location = new System.Drawing.Point(14, 272);
+            this.groupBox3.Location = new System.Drawing.Point(14, 270);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(542, 73);
             this.groupBox3.TabIndex = 21;
@@ -423,50 +426,80 @@
             // 
             // BTNguardar
             // 
-            this.BTNguardar.Location = new System.Drawing.Point(14, 356);
+            this.BTNguardar.Location = new System.Drawing.Point(14, 361);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(174, 23);
             this.BTNguardar.TabIndex = 22;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
             // 
+            // BTNbuscar
+            // 
+            this.BTNbuscar.Location = new System.Drawing.Point(194, 361);
+            this.BTNbuscar.Name = "BTNbuscar";
+            this.BTNbuscar.Size = new System.Drawing.Size(189, 23);
+            this.BTNbuscar.TabIndex = 23;
+            this.BTNbuscar.Text = "BUSCAR";
+            this.BTNbuscar.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 417);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(542, 196);
+            this.dataGridView1.TabIndex = 24;
+            // 
+            // BTNeliminar
+            // 
+            this.BTNeliminar.Location = new System.Drawing.Point(386, 361);
+            this.BTNeliminar.Name = "BTNeliminar";
+            this.BTNeliminar.Size = new System.Drawing.Size(170, 23);
+            this.BTNeliminar.TabIndex = 25;
+            this.BTNeliminar.Text = "ELIMINAR";
+            this.BTNeliminar.UseVisualStyleBackColor = true;
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.Color.Transparent;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Red;
-            this.label19.Location = new System.Drawing.Point(145, 73);
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label19.Location = new System.Drawing.Point(11, 398);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(14, 18);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "*";
+            this.label19.Size = new System.Drawing.Size(160, 16);
+            this.label19.TabIndex = 26;
+            this.label19.Text = "Resultados de busqueda";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label20.Location = new System.Drawing.Point(13, 75);
+            this.label20.Location = new System.Drawing.Point(10, 76);
             this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(136, 16);
-            this.label20.TabIndex = 27;
-            this.label20.Text = "Fecha de Nacimiento";
+            this.label20.Size = new System.Drawing.Size(117, 16);
+            this.label20.TabIndex = 28;
+            this.label20.Text = "Fecha Nacimiento";
             // 
-            // dateTimePicker1
+            // DTEfechaNacimiento
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 95);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(172, 22);
-            this.dateTimePicker1.TabIndex = 29;
+            this.DTEfechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTEfechaNacimiento.Location = new System.Drawing.Point(13, 93);
+            this.DTEfechaNacimiento.Name = "DTEfechaNacimiento";
+            this.DTEfechaNacimiento.Size = new System.Drawing.Size(171, 22);
+            this.DTEfechaNacimiento.TabIndex = 29;
             // 
-            // FRMChofer
+            // FRMChoferAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 389);
+            this.ClientSize = new System.Drawing.Size(573, 625);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.BTNeliminar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.BTNbuscar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -475,7 +508,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "FRMChofer";
+            this.Name = "FRMChoferAdministrador";
             this.Text = "Chofer";
             this.Load += new System.EventHandler(this.FRMChofer_Load);
             this.groupBox1.ResumeLayout(false);
@@ -484,6 +517,7 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,15 +550,18 @@
         private System.Windows.Forms.TextBox TXTmail;
         private System.Windows.Forms.TextBox TXTtelefono;
         private System.Windows.Forms.Button BTNguardar;
+        private System.Windows.Forms.Button BTNbuscar;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.DateTimePicker DTEfechaNacimiento;
         private System.Windows.Forms.Label label20;
     }
 }

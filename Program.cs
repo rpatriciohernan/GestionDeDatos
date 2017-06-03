@@ -18,7 +18,7 @@ namespace UberFrba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FRMBienvenida());
+            Application.Run(new FRMlogin());
         }
     }
 }

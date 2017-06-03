@@ -106,6 +106,12 @@
     <Compile Include="Bienvenida\FRMBienvenida.designer.cs">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bienvenida\FRMlogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMlogin.Designer.cs">
+      <DependentUpon>FRMlogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bienvenida\FRMnuevoUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="Bienvenida\FRMBienvenida.resx">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMlogin.resx">
+      <DependentUpon>FRMlogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\FRMnuevoUsuario.resx">
       <DependentUpon>FRMnuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +219,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Registro Viajes\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rendicion Viajes\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

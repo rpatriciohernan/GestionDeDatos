@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UberFrba.Registro_Viajes
+namespace UberFrba.Abm_Cliente
 {
-    public partial class FRMregistroViaje : Form
+    public partial class FRMClienteAdministrador : Form
     {
-        public FRMregistroViaje()
+        public FRMClienteAdministrador()
         {
             InitializeComponent();
+        }
+
+        private void FRMCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

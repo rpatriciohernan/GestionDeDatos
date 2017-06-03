@@ -56,6 +56,7 @@
             this.CMBestado.Name = "CMBestado";
             this.CMBestado.Size = new System.Drawing.Size(131, 21);
             this.CMBestado.TabIndex = 60;
+            this.CMBestado.SelectedIndexChanged += new System.EventHandler(this.CMBestado_SelectedIndexChanged);
             // 
             // label3
             // 

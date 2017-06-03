@@ -35,7 +35,6 @@
             this.BTNnuevaMarca = new System.Windows.Forms.Button();
             this.CMBturno = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.CMBchofer = new System.Windows.Forms.ComboBox();
             this.CMBmarca = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -52,18 +51,20 @@
             this.BTNguardar = new System.Windows.Forms.Button();
             this.CMBestado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.BTNChofer = new System.Windows.Forms.ComboBox();
+            this.TXTmodelo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TXTmodelo);
             this.groupBox1.Controls.Add(this.BTNnuevaMarca);
             this.groupBox1.Controls.Add(this.CMBturno);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.CMBchofer);
             this.groupBox1.Controls.Add(this.CMBmarca);
-            this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.BTNpatente);
@@ -107,14 +108,6 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Turno";
             // 
-            // CMBchofer
-            // 
-            this.CMBchofer.FormattingEnabled = true;
-            this.CMBchofer.Location = new System.Drawing.Point(305, 48);
-            this.CMBchofer.Name = "CMBchofer";
-            this.CMBchofer.Size = new System.Drawing.Size(174, 21);
-            this.CMBchofer.TabIndex = 28;
-            // 
             // CMBmarca
             // 
             this.CMBmarca.FormattingEnabled = true;
@@ -129,7 +122,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(348, 26);
+            this.label14.Location = new System.Drawing.Point(303, 162);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(14, 18);
             this.label14.TabIndex = 26;
@@ -196,12 +189,12 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(302, 29);
+            this.label4.Location = new System.Drawing.Point(304, 29);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
+            this.label4.Size = new System.Drawing.Size(54, 16);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Chofer";
+            this.label4.Text = "Modelo";
             // 
             // label1
             // 
@@ -268,7 +261,7 @@
             this.CMBestado.FormattingEnabled = true;
             this.CMBestado.Location = new System.Drawing.Point(14, 181);
             this.CMBestado.Name = "CMBestado";
-            this.CMBestado.Size = new System.Drawing.Size(555, 21);
+            this.CMBestado.Size = new System.Drawing.Size(174, 21);
             this.CMBestado.TabIndex = 32;
             // 
             // label5
@@ -283,14 +276,44 @@
             this.label5.TabIndex = 29;
             this.label5.Text = "Estado";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label7.Location = new System.Drawing.Point(198, 162);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 16);
+            this.label7.TabIndex = 33;
+            this.label7.Text = "Chofer Asignado";
+            // 
+            // BTNChofer
+            // 
+            this.BTNChofer.FormattingEnabled = true;
+            this.BTNChofer.Location = new System.Drawing.Point(199, 181);
+            this.BTNChofer.Name = "BTNChofer";
+            this.BTNChofer.Size = new System.Drawing.Size(364, 21);
+            this.BTNChofer.TabIndex = 34;
+            // 
+            // TXTmodelo
+            // 
+            this.TXTmodelo.Location = new System.Drawing.Point(309, 49);
+            this.TXTmodelo.Name = "TXTmodelo";
+            this.TXTmodelo.Size = new System.Drawing.Size(170, 20);
+            this.TXTmodelo.TabIndex = 34;
+            // 
             // FRMAutomovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 529);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.BTNChofer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CMBestado);
             this.Controls.Add(this.label19);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNbuscar);
@@ -321,7 +344,6 @@
         private System.Windows.Forms.Button BTNnuevaMarca;
         private System.Windows.Forms.ComboBox CMBturno;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox CMBchofer;
         private System.Windows.Forms.ComboBox CMBmarca;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button BTNeliminar;
@@ -330,5 +352,8 @@
         private System.Windows.Forms.Button BTNguardar;
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox BTNChofer;
+        private System.Windows.Forms.TextBox TXTmodelo;
     }
 }

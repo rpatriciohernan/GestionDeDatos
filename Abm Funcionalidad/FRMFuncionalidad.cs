@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UberFrba.Registro_Viajes
+namespace UberFrba.Abm_Funcionalidad
 {
-    public partial class FRMregistroViaje : Form
+    public partial class FRMFuncionalidad : Form
     {
-        public FRMregistroViaje()
+        public FRMFuncionalidad()
         {
             InitializeComponent();
         }

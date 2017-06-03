@@ -13,6 +13,8 @@ using UberFrba.Abm_Chofer_Administrador;
 using UberFrba.Abm_Cliente;
 using UberFrba.Abm_Rol;
 using UberFrba.Abm_Turno;
+using UberFrba.Registro_Viajes;
+using UberFrba.Rendicion_Viajes;
 
 namespace UberFrba.Bienvenida
 {
@@ -85,6 +87,24 @@ namespace UberFrba.Bienvenida
         private void FRMBienvenida_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMregistroViaje formularioRegistroViaje = new FRMregistroViaje();
+
+            // Show form
+            formularioRegistroViaje.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMrendicion formularioRendicion = new FRMrendicion();
+
+            // Show form
+            formularioRendicion.Show();
         }
     }
 }

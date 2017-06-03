@@ -15,6 +15,13 @@ namespace UberFrba.Abm_Turno
         public FRMTurno()
         {
             InitializeComponent();
+            CMBestado.Items.Add("Habilitado");
+            CMBestado.Items.Add("Inhabilitado");
+        }
+
+        private void CMBestado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

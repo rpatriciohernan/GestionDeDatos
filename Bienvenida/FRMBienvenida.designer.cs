@@ -38,12 +38,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
-            this.BTNnuevoUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 99);
+            this.button1.Location = new System.Drawing.Point(12, 73);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(124, 61);
             this.button1.TabIndex = 0;
@@ -53,7 +52,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(142, 99);
+            this.button2.Location = new System.Drawing.Point(142, 73);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(115, 61);
             this.button2.TabIndex = 1;
@@ -63,7 +62,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(264, 99);
+            this.button3.Location = new System.Drawing.Point(264, 73);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(116, 61);
             this.button3.TabIndex = 2;
@@ -73,25 +72,27 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 204);
+            this.button4.Location = new System.Drawing.Point(12, 182);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 63);
             this.button4.TabIndex = 3;
-            this.button4.Text = "REGISTRO DE VIAJES";
+            this.button4.Text = "REGISTRAR VIAJE";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(142, 204);
+            this.button5.Location = new System.Drawing.Point(142, 182);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 63);
             this.button5.TabIndex = 4;
-            this.button5.Text = "RENDICION DE CUENTA";
+            this.button5.Text = "RENDIR VIAJES A CHOFER";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(264, 204);
+            this.button6.Location = new System.Drawing.Point(386, 182);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(116, 63);
             this.button6.TabIndex = 5;
@@ -112,7 +113,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(107, 9);
+            this.label1.Location = new System.Drawing.Point(13, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(178, 45);
@@ -122,9 +123,9 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(12, 335);
+            this.button8.Location = new System.Drawing.Point(386, 73);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(368, 42);
+            this.button8.Size = new System.Drawing.Size(116, 61);
             this.button8.TabIndex = 8;
             this.button8.Text = "GESTION DE ROLES";
             this.button8.UseVisualStyleBackColor = true;
@@ -132,31 +133,20 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(12, 383);
+            this.button9.Location = new System.Drawing.Point(508, 73);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(368, 42);
+            this.button9.Size = new System.Drawing.Size(124, 61);
             this.button9.TabIndex = 9;
             this.button9.Text = "GESTION DE TURNOS";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // BTNnuevoUsuario
-            // 
-            this.BTNnuevoUsuario.Location = new System.Drawing.Point(12, 66);
-            this.BTNnuevoUsuario.Name = "BTNnuevoUsuario";
-            this.BTNnuevoUsuario.Size = new System.Drawing.Size(368, 27);
-            this.BTNnuevoUsuario.TabIndex = 10;
-            this.BTNnuevoUsuario.Text = "NUEVO USUARIO";
-            this.BTNnuevoUsuario.UseVisualStyleBackColor = true;
-            this.BTNnuevoUsuario.Click += new System.EventHandler(this.BTNnuevoUsuario_Click);
             // 
             // FRMBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(392, 431);
-            this.Controls.Add(this.BTNnuevoUsuario);
+            this.ClientSize = new System.Drawing.Size(640, 431);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label1);
@@ -187,6 +177,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button BTNnuevoUsuario;
     }
 }
