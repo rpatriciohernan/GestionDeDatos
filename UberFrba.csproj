@@ -57,13 +57,43 @@
     <Compile Include="Abm Automovil\FRMMarcaVehiculo.designer.cs">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Chofer\FRMChoferAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Chofer\FRMChoferAdministrador.designer.cs">
+      <DependentUpon>FRMChoferAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Chofer\FRMChofer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm Chofer\FRMChofer.designer.cs">
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Cliente\FRMClienteAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Cliente\FRMClienteAdministrador.Designer.cs">
+      <DependentUpon>FRMClienteAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm Cliente\FRMCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Cliente\FRMCliente.Designer.cs">
+      <DependentUpon>FRMCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Cliente\Persona.cs" />
+    <Compile Include="Abm Funcionalidad\FRMFuncionalidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Funcionalidad\FRMFuncionalidad.Designer.cs">
+      <DependentUpon>FRMFuncionalidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.Designer.cs">
+      <DependentUpon>FRMFuncionalidadesAsignadas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Turno\FRMTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,17 +106,23 @@
     <Compile Include="Bienvenida\FRMBienvenida.designer.cs">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bienvenida\FRMnuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMnuevoUsuario.Designer.cs">
+      <DependentUpon>FRMnuevoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Abm Cliente\RepositorioCliente.cs" />
     <Compile Include="Abm Cliente\Cliente.cs" />
-    <Compile Include="Abm Cliente\FRMCliente.cs">
+    <Compile Include="Abm Cliente\FRMCliente1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Cliente\FRMCliente.Designer.cs">
-      <DependentUpon>FRMCliente.cs</DependentUpon>
+    <Compile Include="Abm Cliente\FRMCliente1.Designer.cs">
+      <DependentUpon>FRMCliente1.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Rol\FRMRol.cs">
       <SubType>Form</SubType>
@@ -132,11 +168,26 @@
     <EmbeddedResource Include="Abm Automovil\FRMMarcaVehiculo.resx">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm Chofer\FRMChoferAdministrador.resx">
+      <DependentUpon>FRMChoferAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm Chofer\FRMChofer.resx">
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm Cliente\FRMClienteAdministrador.resx">
+      <DependentUpon>FRMClienteAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm Cliente\FRMCliente.resx">
       <DependentUpon>FRMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Cliente\FRMCliente1.resx">
+      <DependentUpon>FRMCliente1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Funcionalidad\FRMFuncionalidad.resx">
+      <DependentUpon>FRMFuncionalidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Rol\FRMFuncionalidadesAsignadas.resx">
+      <DependentUpon>FRMFuncionalidadesAsignadas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Rol\FRMRol.resx">
       <DependentUpon>FRMRol.cs</DependentUpon>
@@ -146,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\FRMBienvenida.resx">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMnuevoUsuario.resx">
+      <DependentUpon>FRMnuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -21,5 +21,14 @@ namespace UberFrba.Abm_Rol
         {
 
         }
+
+        private void BTNFuncionalidades_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMFuncionalidadesAsignadas formularioFuncionalidades = new FRMFuncionalidadesAsignadas(TXTnombre.Text);
+
+            // Show form
+            formularioFuncionalidades.Show();
+        }
     }
 }

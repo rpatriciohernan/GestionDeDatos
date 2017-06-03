@@ -12,9 +12,10 @@ namespace UberFrba.Abm_Chofer
 {
     public partial class FRMChofer : Form
     {
-        public FRMChofer()
+        public FRMChofer(String dni)
         {
             InitializeComponent();
+            TXTdni.Text = dni;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,6 +29,11 @@ namespace UberFrba.Abm_Chofer
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRMChofer_Load(object sender, EventArgs e)
         {
 
         }

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UberFrba.Abm_Automovil;
 using UberFrba.Abm_Chofer;
+using UberFrba.Abm_Chofer_Administrador;
 using UberFrba.Abm_Cliente;
 using UberFrba.Abm_Rol;
 using UberFrba.Abm_Turno;
@@ -25,7 +26,7 @@ namespace UberFrba.Bienvenida
         private void button1_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMCliente formularioCliente = new FRMCliente();
+            FRMClienteAdministrador formularioCliente = new FRMClienteAdministrador();
 
             // Show form
             formularioCliente.Show();
@@ -34,7 +35,7 @@ namespace UberFrba.Bienvenida
         private void button2_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMChofer formularioChofer = new FRMChofer();
+            FRMChoferAdministrador formularioChofer = new FRMChoferAdministrador();
 
             // Show form
             formularioChofer.Show();
@@ -70,6 +71,20 @@ namespace UberFrba.Bienvenida
 
             // Show form
             formularioTurno.Show();
+        }
+
+        private void BTNnuevoUsuario_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMnuevoUsuario formularioNuevoUsuario = new FRMnuevoUsuario();
+
+            // Show form
+            formularioNuevoUsuario.Show();
+        }
+
+        private void FRMBienvenida_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

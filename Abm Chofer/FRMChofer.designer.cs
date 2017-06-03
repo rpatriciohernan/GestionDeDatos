@@ -60,14 +60,9 @@
             this.TXTmail = new System.Windows.Forms.TextBox();
             this.TXTtelefono = new System.Windows.Forms.TextBox();
             this.BTNguardar = new System.Windows.Forms.Button();
-            this.BTNbuscar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BTNeliminar = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -81,7 +76,6 @@
             this.label1.Size = new System.Drawing.Size(309, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "Gestion de Choferes";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TXTnombre
             // 
@@ -430,53 +424,11 @@
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
             // 
-            // BTNbuscar
-            // 
-            this.BTNbuscar.Location = new System.Drawing.Point(194, 323);
-            this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(189, 23);
-            this.BTNbuscar.TabIndex = 23;
-            this.BTNbuscar.Text = "BUSCAR";
-            this.BTNbuscar.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 378);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 235);
-            this.dataGridView1.TabIndex = 24;
-            // 
-            // BTNeliminar
-            // 
-            this.BTNeliminar.Location = new System.Drawing.Point(386, 323);
-            this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(170, 23);
-            this.BTNeliminar.TabIndex = 25;
-            this.BTNeliminar.Text = "ELIMINAR";
-            this.BTNeliminar.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label19.Location = new System.Drawing.Point(9, 357);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(160, 16);
-            this.label19.TabIndex = 26;
-            this.label19.Text = "Resultados de busqueda";
-            // 
             // FRMChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 625);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.BTNeliminar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BTNbuscar);
+            this.ClientSize = new System.Drawing.Size(573, 355);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -487,13 +439,13 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FRMChofer";
             this.Text = "Chofer";
+            this.Load += new System.EventHandler(this.FRMChofer_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -526,16 +478,12 @@
         private System.Windows.Forms.TextBox TXTmail;
         private System.Windows.Forms.TextBox TXTtelefono;
         private System.Windows.Forms.Button BTNguardar;
-        private System.Windows.Forms.Button BTNbuscar;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Button BTNeliminar;
-        private System.Windows.Forms.Label label19;
     }
 }

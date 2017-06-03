@@ -38,6 +38,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.CMBestado = new System.Windows.Forms.ComboBox();
+            this.BTNFuncionalidades = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label19.Location = new System.Drawing.Point(9, 154);
+            this.label19.Location = new System.Drawing.Point(9, 179);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(160, 16);
@@ -55,7 +56,7 @@
             // 
             // BTNeliminar
             // 
-            this.BTNeliminar.Location = new System.Drawing.Point(185, 128);
+            this.BTNeliminar.Location = new System.Drawing.Point(185, 153);
             this.BTNeliminar.Name = "BTNeliminar";
             this.BTNeliminar.Size = new System.Drawing.Size(79, 23);
             this.BTNeliminar.TabIndex = 47;
@@ -65,14 +66,14 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 173);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 198);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(252, 118);
             this.dataGridView1.TabIndex = 46;
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(98, 128);
+            this.BTNbuscar.Location = new System.Drawing.Point(98, 153);
             this.BTNbuscar.Name = "BTNbuscar";
             this.BTNbuscar.Size = new System.Drawing.Size(81, 23);
             this.BTNbuscar.TabIndex = 45;
@@ -81,7 +82,7 @@
             // 
             // BTNguardar
             // 
-            this.BTNguardar.Location = new System.Drawing.Point(12, 128);
+            this.BTNguardar.Location = new System.Drawing.Point(12, 153);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(80, 23);
             this.BTNguardar.TabIndex = 44;
@@ -140,11 +141,23 @@
             this.CMBestado.Size = new System.Drawing.Size(251, 21);
             this.CMBestado.TabIndex = 50;
             // 
+            // BTNFuncionalidades
+            // 
+            this.BTNFuncionalidades.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BTNFuncionalidades.Location = new System.Drawing.Point(13, 128);
+            this.BTNFuncionalidades.Name = "BTNFuncionalidades";
+            this.BTNFuncionalidades.Size = new System.Drawing.Size(251, 23);
+            this.BTNFuncionalidades.TabIndex = 51;
+            this.BTNFuncionalidades.Text = "FUNCIONALIDADES";
+            this.BTNFuncionalidades.UseVisualStyleBackColor = true;
+            this.BTNFuncionalidades.Click += new System.EventHandler(this.BTNFuncionalidades_Click);
+            // 
             // FRMRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(276, 299);
+            this.ClientSize = new System.Drawing.Size(276, 328);
+            this.Controls.Add(this.BTNFuncionalidades);
             this.Controls.Add(this.CMBestado);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label19);
@@ -175,6 +188,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CMBestado;
+        private System.Windows.Forms.Button BTNFuncionalidades;
 
     }
 }

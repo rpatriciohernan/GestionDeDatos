@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.BTNnuevoUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -139,12 +140,23 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // BTNnuevoUsuario
+            // 
+            this.BTNnuevoUsuario.Location = new System.Drawing.Point(12, 66);
+            this.BTNnuevoUsuario.Name = "BTNnuevoUsuario";
+            this.BTNnuevoUsuario.Size = new System.Drawing.Size(368, 27);
+            this.BTNnuevoUsuario.TabIndex = 10;
+            this.BTNnuevoUsuario.Text = "NUEVO USUARIO";
+            this.BTNnuevoUsuario.UseVisualStyleBackColor = true;
+            this.BTNnuevoUsuario.Click += new System.EventHandler(this.BTNnuevoUsuario_Click);
+            // 
             // FRMBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(392, 431);
+            this.Controls.Add(this.BTNnuevoUsuario);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label1);
@@ -157,6 +169,7 @@
             this.Controls.Add(this.button1);
             this.Name = "FRMBienvenida";
             this.Text = "Uber FRBA";
+            this.Load += new System.EventHandler(this.FRMBienvenida_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,5 +187,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button BTNnuevoUsuario;
     }
 }
