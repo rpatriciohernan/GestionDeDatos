@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace UberFrba.Abm_Cliente
 {
-    public partial class frmCliente : Form
+    public partial class FRMCliente : Form
     {
         private List<Label> labelsConErrores = new List<Label>();
-        public frmCliente()
+        public FRMCliente()
         {
             InitializeComponent();
         }

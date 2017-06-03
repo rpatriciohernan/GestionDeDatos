@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace UberFrba.Abm_Automovil
 {
-    public partial class Form1 : Form
+    public partial class FRMMarcaVehiculo : Form
     {
-        public Form1()
+        public FRMMarcaVehiculo()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FRMMarcaVehiculo_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -45,36 +45,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abm Automovil\Form1.cs">
+    <Compile Include="Abm Automovil\FRMAutomovil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Automovil\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Abm Automovil\FRMAutomovil.designer.cs">
+      <DependentUpon>FRMAutomovil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm Chofer\Form1.cs">
+    <Compile Include="Abm Automovil\FRMMarcaVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Chofer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Abm Automovil\FRMMarcaVehiculo.designer.cs">
+      <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm Chofer\FRMChofer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Chofer\FRMChofer.designer.cs">
+      <DependentUpon>FRMChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Cliente\Persona.cs" />
+    <Compile Include="Abm Turno\FRMTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Turno\FRMTurno.Designer.cs">
+      <DependentUpon>FRMTurno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida\FRMBienvenida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMBienvenida.designer.cs">
+      <DependentUpon>FRMBienvenida.cs</DependentUpon>
+    </Compile>
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Abm Cliente\RepositorioCliente.cs" />
     <Compile Include="Abm Cliente\Cliente.cs" />
-    <Compile Include="Abm Cliente\frmCliente.cs">
+    <Compile Include="Abm Cliente\FRMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Cliente\frmCliente.Designer.cs">
-      <DependentUpon>frmCliente.cs</DependentUpon>
+    <Compile Include="Abm Cliente\FRMCliente.Designer.cs">
+      <DependentUpon>FRMCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm Rol\Form1.cs">
+    <Compile Include="Abm Rol\FRMRol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Rol\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Abm Rol\FRMRol.Designer.cs">
+      <DependentUpon>FRMRol.cs</DependentUpon>
     </Compile>
     <Compile Include="Facturacion\Form1.cs">
       <SubType>Form</SubType>
@@ -108,8 +126,26 @@
     <Compile Include="Rendicion Viajes\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Abm Cliente\frmCliente.resx">
-      <DependentUpon>frmCliente.cs</DependentUpon>
+    <EmbeddedResource Include="Abm Automovil\FRMAutomovil.resx">
+      <DependentUpon>FRMAutomovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Automovil\FRMMarcaVehiculo.resx">
+      <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Chofer\FRMChofer.resx">
+      <DependentUpon>FRMChofer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Cliente\FRMCliente.resx">
+      <DependentUpon>FRMCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Rol\FRMRol.resx">
+      <DependentUpon>FRMRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Turno\FRMTurno.resx">
+      <DependentUpon>FRMTurno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMBienvenida.resx">
+      <DependentUpon>FRMBienvenida.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -8,3 +8,18 @@ C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.csproj.GenerateReso
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.exe
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.pdb
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Cliente.frmCliente.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\bin\Debug\UberFrba.exe.config
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\bin\Debug\UberFrba.exe
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\bin\Debug\UberFrba.pdb
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Cliente.frmCliente.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Properties.Resources.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.csproj.GenerateResource.Cache
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.exe
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.pdb
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMBienvenida.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Chofer.FRMChofer.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Automovil.FRMAutomovil.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Automovil.FRMMarcaVehiculo.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.csprojResolveAssemblyReference.cache
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Rol.FRMRol.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Turno.FRMTurno.resources

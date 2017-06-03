@@ -1,6 +1,6 @@
 ﻿namespace UberFrba.Abm_Cliente
 {
-    partial class frmCliente
+    partial class FRMCliente
     {
         /// <summary>
         /// Required designer variable.
