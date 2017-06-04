@@ -72,7 +72,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(12, 182);
+            this.button4.Location = new System.Drawing.Point(134, 182);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(124, 63);
             this.button4.TabIndex = 3;
@@ -82,7 +82,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(142, 182);
+            this.button5.Location = new System.Drawing.Point(264, 182);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(115, 63);
             this.button5.TabIndex = 4;
@@ -96,17 +96,19 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(116, 63);
             this.button6.TabIndex = 5;
-            this.button6.Text = "FACTURACION";
+            this.button6.Text = "FACTURAR CLIENTE";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(12, 287);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(368, 42);
+            this.button7.Size = new System.Drawing.Size(616, 42);
             this.button7.TabIndex = 6;
             this.button7.Text = "ESTADISTICA";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // label1
             // 
@@ -146,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(640, 431);
+            this.ClientSize = new System.Drawing.Size(640, 349);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label1);

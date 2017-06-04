@@ -13,6 +13,8 @@ using UberFrba.Abm_Chofer_Administrador;
 using UberFrba.Abm_Cliente;
 using UberFrba.Abm_Rol;
 using UberFrba.Abm_Turno;
+using UberFrba.Facturacion;
+using UberFrba.Listado_Estadistico;
 using UberFrba.Registro_Viajes;
 using UberFrba.Rendicion_Viajes;
 
@@ -105,6 +107,24 @@ namespace UberFrba.Bienvenida
 
             // Show form
             formularioRendicion.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMfacturacion formularioFacturacion = new FRMfacturacion();
+
+            // Show form
+            formularioFacturacion.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMestadistica formularioEstadistica = new FRMestadistica();
+
+            // Show form
+            formularioEstadistica.Show();
         }
     }
 }

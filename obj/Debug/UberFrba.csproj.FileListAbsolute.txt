@@ -32,3 +32,5 @@ C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Cliente.F
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMlogin.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Registro_Viajes.FRMregistroViaje.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Rendicion_Viajes.FRMrendicion.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Facturacion.FRMfacturacion.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Listado_Estadistico.FRMestadistica.resources
