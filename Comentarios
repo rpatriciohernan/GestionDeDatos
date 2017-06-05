@@ -1,0 +1,19 @@
+COMENTARIOS:
+
+
+++++++++++++ 3-6: PATRICIO +++++++++++++
+
+SQL:
+    Tabla Choferes: incorporar fecha_nacimiento
+    Tabla Turnos: remover fecha_nacimiento
+    Tabla Automoviles: incorporar modelo
+    Tabla Clientes: incorporar localidad
+    
+VISTAS:
+    Que funcionalidades le damos al rol cliente y/o chofer? 
+    Propuesta: Mis viajes realizados, Mis facturas, Mis rendiciones, Mis automoviles, Cambiar de automovil, Editar mi perfil (cliente/chofer)
+    (caso contrario no tendran funcionalidades disponibles y pierde sentido)
+    No deberian sumar mayor complejidad
+
+LOGICA:
+  Queda TODO pendiente. Hay mucho por hacer, incluso de validaciones y calculos!!!
