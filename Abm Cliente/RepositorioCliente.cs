@@ -34,7 +34,7 @@ namespace UberFrba.Abm_Cliente
         #region builder del objeto cliente
         public override Cliente BuilderEntityFromDataRow(DataRow dr)
         {
-            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), Convert.ToInt16(dr[7]), dr[8].ToString(), Convert.ToInt16(dr[9]), dr[10].ToString(), Convert.ToDateTime(dr[11]), dr[12].ToString());
+            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), dr[7].ToString(), Convert.ToDateTime(dr[8]), dr[9].ToString());
             return cliente;
         }
         #endregion
