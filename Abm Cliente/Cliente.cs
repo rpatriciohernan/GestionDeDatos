@@ -15,9 +15,6 @@ namespace UberFrba.Abm_Cliente
         private String mail;
         private String telefono;
         private String domicilio;
-        //private Int16 numero;
-        //private Int16 piso;
-        //private String departamento;
         private Int16 codigoPostal;
         private String localidad;
         private DateTime fechaNacimiento;

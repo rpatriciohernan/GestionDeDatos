@@ -31,10 +31,10 @@ namespace UberFrba.Abm_Chofer
         }
         #endregion
 
-        #region builder del objeto cliente
+        #region builder del objeto chofer
         public override Chofer BuilderEntityFromDataRow(DataRow dr)
         {
-            Chofer chofer = new Chofer(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), Convert.ToInt16(dr[4]), Convert.ToInt16(dr[5]), dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), Convert.ToDateTime(dr[10]), dr[11].ToString());
+            Chofer chofer = new Chofer(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDateTime(dr[5]), dr[8].ToString());
             return chofer;
         }
         #endregion
