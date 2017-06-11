@@ -13,9 +13,6 @@ namespace UberFrba.Abm_Chofer
          private String apellido;
          private Int64 dni;
          private String domicilio;
-         //private Int16 numero;
-         //private Int16 piso;
-         //private String departamento;
          private String localidad;
          private String telefono;
          private String mail;
@@ -65,8 +62,13 @@ namespace UberFrba.Abm_Chofer
          }
        #endregion
 
-        #region constructor
-        public Chofer(String nombre, String apellido, Int64 dni, String domicilio, String localidad, String telefono, String mail, DateTime fechaNacimiento, String estado)
+         /*
+           new Chofer(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
+                TXTtelefono.Text, TXTdomicilio.Text, Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), "Activo");
+          */
+
+         #region constructor
+         public Chofer(String nombre, String apellido, Int64 dni, String domicilio, String localidad, String telefono, String mail, DateTime fechaNacimiento, String estado)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
@@ -79,6 +81,9 @@ namespace UberFrba.Abm_Chofer
             
             this.dni = dni;
             this.camposObligatorios.Add(new CampoYValor("Dni", this.dni.ToString()));
+
+            this.domicilio = domicilio;
+            this.camposObligatorios.Add(new CampoYValor("Domicilio", this.domicilio.ToString()));
 
             this.localidad = localidad;
             this.camposObligatorios.Add(new CampoYValor("Localidad", this.localidad));
