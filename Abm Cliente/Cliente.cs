@@ -14,7 +14,14 @@ namespace UberFrba.Abm_Cliente
         private Int64 dni;
         private String mail;
         private String telefono;
-        private String direccion;
+     
+        private String calle;
+        private Int16 numero;
+        private String piso;
+        private String depto;
+
+        private String localidad;
+
         private String codigoPostal;
         private DateTime fechaNacimiento;
         private List<CampoYValor> camposObligatorios;
@@ -42,9 +49,25 @@ namespace UberFrba.Abm_Cliente
         {
             get { return telefono; }
         }
-        public string Direccion
+        public string Calle
         {
-            get { return direccion; }
+            get { return calle; }
+        }
+        public Int16 Numero
+        {
+            get { return numero; }
+        }
+        public string Piso
+        {
+            get { return piso; }
+        }
+        public string Depto
+        {
+            get { return depto; }
+        }
+        public string Localidad
+        {
+            get { return localidad; }
         }
         public string CodigoPostal
         {
@@ -56,9 +79,10 @@ namespace UberFrba.Abm_Cliente
         }
         #endregion
 
+
         #region constructor
         public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
-            String direccion, String codigoPostal, DateTime fechaNacimiento)
+            String calle, Int16 numero, String piso, String depto, String localidad, String codigoPostal, DateTime fechaNacimiento)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
@@ -77,9 +101,21 @@ namespace UberFrba.Abm_Cliente
            
             this.telefono = telefono;
             this.camposObligatorios.Add(new CampoYValor("Telefono", this.telefono));
-            
-            this.direccion = direccion;
-            this.camposObligatorios.Add(new CampoYValor("Direccion", this.direccion));
+
+            this.calle = calle;
+            this.camposObligatorios.Add(new CampoYValor("Calle", this.calle));
+
+            this.numero = numero;
+            this.camposObligatorios.Add(new CampoYValor("Numero", this.numero.ToString()));
+
+            this.piso = piso;
+            this.camposObligatorios.Add(new CampoYValor("Piso", this.piso));
+
+            this.depto = depto;
+            this.camposObligatorios.Add(new CampoYValor("Depto", this.depto));
+
+            this.localidad = localidad;
+            this.camposObligatorios.Add(new CampoYValor("Localidad", this.localidad));
            
             this.codigoPostal = codigoPostal;
             this.camposObligatorios.Add(new CampoYValor("CodigoPostal", this.codigoPostal));
@@ -95,11 +131,6 @@ namespace UberFrba.Abm_Cliente
             return repositorioCliente.buscar(parametrosDeBusqueda);
         }
 
-       /* public static List<Cliente> buscarTodos()
-        {
-            return repositorioCliente.buscarTodos();
-        }*/
-
         //metodos de instancia
         public void guardate() {
             repositorioCliente.Guardar(this);
@@ -113,17 +144,11 @@ namespace UberFrba.Abm_Cliente
             return errores;
         }
 
-        public Boolean validarNombre() { //era de prueba, borrarlo
-            return nombre != null;
-        }
-
-        public String toString() { //era de prueba, borrarlo
-            return this.apellido;        
-        }
-
         public String GetValues() { //ojo al agregar nuevos atributo, volcarlos aca!!!
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' +
-                "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.direccion + "'" + ',' + "'" + this.codigoPostal + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'";
+                "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.calle + "'" + ',' + 
+                "'" + this.numero.ToString() + "'" + ',' + "'" + this.piso + "'" + ',' + "'" + this.depto + "'" + ',' + 
+                "'" + this.localidad + "'" + ',' + "'" + this.codigoPostal + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'";
         }
 
     }

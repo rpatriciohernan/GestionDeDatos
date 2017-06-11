@@ -27,40 +27,29 @@ namespace UberFrba.Abm_Cliente
             }
         }
         #endregion
-
-        
+              
         
        
         #region builder del objeto cliente
         public override Cliente BuilderEntityFromDataRow(DataRow dr)
         {
-            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDateTime(dr[7]));
+            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), Convert.ToDateTime(dr[11]));
             return cliente;
         }
         #endregion
 
 
-       /* public Cliente buscarASDFSF(Int64 dni) //esto en realidad va a ser un mapa o un obj con varias propiedades del cliente
-        {
-            SqlDataReader dr = queryManager("Select * from Clientes where dni=" + Convert.ToString(dni));
-            //--Hacemos lectura y cerramos dataRead, ver como generalizar esto---
-            dr.Read();
-            Cliente cliente = BuilderClientFromDataReader(dr);
-            dr.Close();
-            //--------------------------------------------------------------------
-            return cliente;
-        }*/
 
         public List<Cliente> buscar(Dictionary<String, String> parametrosDeBusqueda)
         {
             String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Cliente> clientesEncontrados = SearchManager(query, "Clientes", 0, 6);
+            List<Cliente> clientesEncontrados = SearchManager(query, "overhead.clientes", 0, 6);
             return clientesEncontrados;
         }
 
         public void Guardar(Cliente cliente)
         {
-            SqlDataReader dr = queryManager("Insert into Clientes " + "values(" + cliente.GetValues() + ")");
+            SqlDataReader dr = queryManager("Insert into overhead.clientes " + "values(" + cliente.GetValues() + ")");
             dr.Close();
         }
 

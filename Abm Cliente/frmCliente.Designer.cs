@@ -32,6 +32,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.TXTcodigoPostal = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -63,8 +65,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.DTEfechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -105,7 +105,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label19);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.TXTcodigoPostal);
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
@@ -125,6 +125,26 @@
             this.groupBox2.TabIndex = 29;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domicilio";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label19.Location = new System.Drawing.Point(476, 25);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 16);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "CP";
+            // 
+            // TXTcodigoPostal
+            // 
+            this.TXTcodigoPostal.Location = new System.Drawing.Point(477, 46);
+            this.TXTcodigoPostal.Margin = new System.Windows.Forms.Padding(4);
+            this.TXTcodigoPostal.Name = "TXTcodigoPostal";
+            this.TXTcodigoPostal.Size = new System.Drawing.Size(60, 20);
+            this.TXTcodigoPostal.TabIndex = 28;
             // 
             // label17
             // 
@@ -326,6 +346,7 @@
             this.BTNguardar.TabIndex = 31;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label14
             // 
@@ -446,9 +467,11 @@
             // 
             // DTEfechaNacimiento
             // 
+            this.DTEfechaNacimiento.Checked = false;
             this.DTEfechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTEfechaNacimiento.Location = new System.Drawing.Point(10, 79);
             this.DTEfechaNacimiento.Name = "DTEfechaNacimiento";
+            this.DTEfechaNacimiento.ShowUpDown = true;
             this.DTEfechaNacimiento.Size = new System.Drawing.Size(174, 20);
             this.DTEfechaNacimiento.TabIndex = 27;
             // 
@@ -463,26 +486,6 @@
             this.label1.Size = new System.Drawing.Size(296, 45);
             this.label1.TabIndex = 27;
             this.label1.Text = "Gestion de Clientes";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(477, 46);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(60, 20);
-            this.textBox1.TabIndex = 28;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label19.Location = new System.Drawing.Point(476, 25);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(26, 16);
-            this.label19.TabIndex = 29;
-            this.label19.Text = "CP";
             // 
             // FRMCliente
             // 
@@ -546,6 +549,6 @@
         private System.Windows.Forms.DateTimePicker DTEfechaNacimiento;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTcodigoPostal;
     }
 }

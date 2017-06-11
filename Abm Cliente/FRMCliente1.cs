@@ -26,8 +26,8 @@ namespace UberFrba.Abm_Cliente
         } 
 
         private Cliente CrearCliente() {
-            return new Cliente(txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtDNI.Text), txtMail.Text, txtTelefono.Text,
-            txtDireccion.Text, txtCodigoPostal.Text, Convert.ToDateTime(txtFechaNacimiento.Text));
+            return null; /* new Cliente(txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtDNI.Text), txtMail.Text, txtTelefono.Text,
+            txtDireccion.Text, txtCodigoPostal.Text, Convert.ToDateTime(txtFechaNacimiento.Text));*/
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
