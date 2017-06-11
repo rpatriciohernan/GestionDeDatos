@@ -55,3 +55,5 @@ C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Registro_Viaj
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Rendicion_Viajes.FRMviajesRendidos.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Chofer_Administrador.FRMBuscarChofer.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Cliente.FRMBuscarCliente.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMrolesAsignados.resources
+C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMusuario.resources

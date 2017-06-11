@@ -147,6 +147,18 @@
     <Compile Include="Bienvenida\FRMnuevoUsuario.Designer.cs">
       <DependentUpon>FRMnuevoUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bienvenida\FRMrolesAsignados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMrolesAsignados.Designer.cs">
+      <DependentUpon>FRMrolesAsignados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida\FRMusuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMusuario.Designer.cs">
+      <DependentUpon>FRMusuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />
@@ -188,12 +200,6 @@
     </Compile>
     <Compile Include="Facturacion\FRMfacturacion.Designer.cs">
       <DependentUpon>FRMfacturacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Listado Estadistico\FRMestadistica.cs">
       <SubType>Form</SubType>
@@ -262,6 +268,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\FRMnuevoUsuario.resx">
       <DependentUpon>FRMnuevoUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMrolesAsignados.resx">
+      <DependentUpon>FRMrolesAsignados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMusuario.resx">
+      <DependentUpon>FRMusuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Facturacion\FRMfacturacion.resx">
       <DependentUpon>FRMfacturacion.cs</DependentUpon>
