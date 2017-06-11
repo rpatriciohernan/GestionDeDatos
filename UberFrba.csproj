@@ -45,11 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abm Automovil\Automovil.cs" />
     <Compile Include="Abm Automovil\FRMAutomovil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm Automovil\FRMAutomovil.designer.cs">
       <DependentUpon>FRMAutomovil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm Automovil\FRMbuscarVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Automovil\FRMbuscarVehiculo.Designer.cs">
+      <DependentUpon>FRMbuscarVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Automovil\FRMMarcaVehiculo.cs">
       <SubType>Form</SubType>
@@ -58,13 +65,14 @@
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Automovil\Marca.cs" />
+    <Compile Include="Abm Automovil\RepositorioAutomovil.cs" />
     <Compile Include="Abm Automovil\RepositorioMarca.cs" />
     <Compile Include="Abm Chofer\Chofer.cs" />
-    <Compile Include="Abm Chofer\FRMChoferAdministrador.cs">
+    <Compile Include="Abm Chofer\FRMBuscarChofer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Chofer\FRMChoferAdministrador.designer.cs">
-      <DependentUpon>FRMChoferAdministrador.cs</DependentUpon>
+    <Compile Include="Abm Chofer\FRMBuscarChofer.designer.cs">
+      <DependentUpon>FRMBuscarChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Chofer\FRMChofer.cs">
       <SubType>Form</SubType>
@@ -73,11 +81,11 @@
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Chofer\RepositorioChofer.cs" />
-    <Compile Include="Abm Cliente\FRMClienteAdministrador.cs">
+    <Compile Include="Abm Cliente\FRMBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Abm Cliente\FRMClienteAdministrador.Designer.cs">
-      <DependentUpon>FRMClienteAdministrador.cs</DependentUpon>
+    <Compile Include="Abm Cliente\FRMBuscarCliente.Designer.cs">
+      <DependentUpon>FRMBuscarCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Cliente\FRMCliente.cs">
       <SubType>Form</SubType>
@@ -85,7 +93,6 @@
     <Compile Include="Abm Cliente\FRMCliente.Designer.cs">
       <DependentUpon>FRMCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Abm Cliente\Persona.cs" />
     <Compile Include="Abm Funcionalidad\FRMFuncionalidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +107,8 @@
     <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.Designer.cs">
       <DependentUpon>FRMFuncionalidadesAsignadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Rol\RepositorioRol.cs" />
+    <Compile Include="Abm Rol\Rol.cs" />
     <Compile Include="Abm Turno\FRMbuscarTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +150,28 @@
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />
+    <Compile Include="Facturacion\Facturacion.cs" />
+    <Compile Include="Facturacion\FRMmisFacturaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion\FRMmisFacturaciones.Designer.cs">
+      <DependentUpon>FRMmisFacturaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion\RepositorioFacturacion.cs" />
+    <Compile Include="Registro Viajes\FRMviajesRegistrados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro Viajes\FRMviajesRegistrados.Designer.cs">
+      <DependentUpon>FRMviajesRegistrados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registro Viajes\RepositorioViaje.cs" />
+    <Compile Include="Registro Viajes\Viaje.cs" />
+    <Compile Include="Rendicion Viajes\FRMviajesRendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rendicion Viajes\FRMviajesRendidos.Designer.cs">
+      <DependentUpon>FRMviajesRendidos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Rendicion Viajes\Rendicion.cs" />
     <Compile Include="Rendicion Viajes\RepositorioRendicion.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
@@ -187,17 +218,20 @@
     <EmbeddedResource Include="Abm Automovil\FRMAutomovil.resx">
       <DependentUpon>FRMAutomovil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm Automovil\FRMbuscarVehiculo.resx">
+      <DependentUpon>FRMbuscarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm Automovil\FRMMarcaVehiculo.resx">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm Chofer\FRMChoferAdministrador.resx">
-      <DependentUpon>FRMChoferAdministrador.cs</DependentUpon>
+    <EmbeddedResource Include="Abm Chofer\FRMBuscarChofer.resx">
+      <DependentUpon>FRMBuscarChofer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Chofer\FRMChofer.resx">
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm Cliente\FRMClienteAdministrador.resx">
-      <DependentUpon>FRMClienteAdministrador.cs</DependentUpon>
+    <EmbeddedResource Include="Abm Cliente\FRMBuscarCliente.resx">
+      <DependentUpon>FRMBuscarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Cliente\FRMCliente.resx">
       <DependentUpon>FRMCliente.cs</DependentUpon>
@@ -232,6 +266,9 @@
     <EmbeddedResource Include="Facturacion\FRMfacturacion.resx">
       <DependentUpon>FRMfacturacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion\FRMmisFacturaciones.resx">
+      <DependentUpon>FRMmisFacturaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listado Estadistico\FRMestadistica.resx">
       <DependentUpon>FRMestadistica.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,8 +284,14 @@
     <EmbeddedResource Include="Registro Viajes\FRMRegistroViaje.resx">
       <DependentUpon>FRMRegistroViaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registro Viajes\FRMviajesRegistrados.resx">
+      <DependentUpon>FRMviajesRegistrados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Rendicion Viajes\FRMrendicion.resx">
       <DependentUpon>FRMrendicion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rendicion Viajes\FRMviajesRendidos.resx">
+      <DependentUpon>FRMviajesRendidos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

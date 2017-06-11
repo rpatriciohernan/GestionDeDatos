@@ -32,30 +32,26 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TXTmodelo = new System.Windows.Forms.TextBox();
             this.BTNnuevaMarca = new System.Windows.Forms.Button();
             this.CMBturno = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.CMBmarca = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.BTNpatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.BTNeliminar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.BTNbuscar = new System.Windows.Forms.Button();
             this.BTNguardar = new System.Windows.Forms.Button();
             this.CMBestado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.BTNChofer = new System.Windows.Forms.ComboBox();
-            this.TXTmodelo = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -77,6 +73,13 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del vehiculo";
+            // 
+            // TXTmodelo
+            // 
+            this.TXTmodelo.Location = new System.Drawing.Point(309, 49);
+            this.TXTmodelo.Name = "TXTmodelo";
+            this.TXTmodelo.Size = new System.Drawing.Size(170, 20);
+            this.TXTmodelo.TabIndex = 34;
             // 
             // BTNnuevaMarca
             // 
@@ -115,18 +118,6 @@
             this.CMBmarca.Name = "CMBmarca";
             this.CMBmarca.Size = new System.Drawing.Size(152, 21);
             this.CMBmarca.TabIndex = 27;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(303, 162);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(14, 18);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "*";
             // 
             // label13
             // 
@@ -196,6 +187,18 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Modelo";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(303, 162);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(14, 18);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "*";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -209,49 +212,22 @@
             this.label1.Text = "Gestion de Vehiculos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label19.Location = new System.Drawing.Point(9, 257);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(160, 16);
-            this.label19.TabIndex = 31;
-            this.label19.Text = "Resultados de busqueda";
-            // 
             // BTNeliminar
             // 
-            this.BTNeliminar.Location = new System.Drawing.Point(396, 223);
+            this.BTNeliminar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.BTNeliminar.Location = new System.Drawing.Point(297, 223);
             this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(170, 23);
+            this.BTNeliminar.Size = new System.Drawing.Size(269, 23);
             this.BTNeliminar.TabIndex = 30;
             this.BTNeliminar.Text = "ELIMINAR";
             this.BTNeliminar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 278);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(557, 239);
-            this.dataGridView1.TabIndex = 29;
-            // 
-            // BTNbuscar
-            // 
-            this.BTNbuscar.Location = new System.Drawing.Point(199, 223);
-            this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(189, 23);
-            this.BTNbuscar.TabIndex = 28;
-            this.BTNbuscar.Text = "BUSCAR";
-            this.BTNbuscar.UseVisualStyleBackColor = true;
-            // 
             // BTNguardar
             // 
+            this.BTNguardar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.BTNguardar.Location = new System.Drawing.Point(14, 223);
             this.BTNguardar.Name = "BTNguardar";
-            this.BTNguardar.Size = new System.Drawing.Size(174, 23);
+            this.BTNguardar.Size = new System.Drawing.Size(270, 23);
             this.BTNguardar.TabIndex = 27;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
@@ -296,27 +272,17 @@
             this.BTNChofer.Size = new System.Drawing.Size(364, 21);
             this.BTNChofer.TabIndex = 34;
             // 
-            // TXTmodelo
-            // 
-            this.TXTmodelo.Location = new System.Drawing.Point(309, 49);
-            this.TXTmodelo.Name = "TXTmodelo";
-            this.TXTmodelo.Size = new System.Drawing.Size(170, 20);
-            this.TXTmodelo.TabIndex = 34;
-            // 
             // FRMAutomovil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 529);
+            this.ClientSize = new System.Drawing.Size(581, 261);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.BTNChofer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CMBestado);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.BTNeliminar);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BTNbuscar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -324,7 +290,6 @@
             this.Text = "Vehiculo";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -345,10 +310,7 @@
         private System.Windows.Forms.ComboBox CMBturno;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox CMBmarca;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button BTNeliminar;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button BTNbuscar;
         private System.Windows.Forms.Button BTNguardar;
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Label label5;

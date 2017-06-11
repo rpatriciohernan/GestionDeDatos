@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UberFrba.Abm_Chofer_Administrador
 {
-    public partial class FRMChoferAdministrador : Form
+    public partial class FRMBuscarChofer : Form
     {
-        public FRMChoferAdministrador()
+        public FRMBuscarChofer()
         {
             InitializeComponent();
         }

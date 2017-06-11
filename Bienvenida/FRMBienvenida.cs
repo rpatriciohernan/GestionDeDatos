@@ -30,7 +30,7 @@ namespace UberFrba.Bienvenida
         private void button1_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMClienteAdministrador formularioCliente = new FRMClienteAdministrador();
+            FRMBuscarCliente formularioCliente = new FRMBuscarCliente();
 
             // Show form
             formularioCliente.Show();
@@ -39,7 +39,7 @@ namespace UberFrba.Bienvenida
         private void button2_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMChoferAdministrador formularioChofer = new FRMChoferAdministrador();
+            FRMBuscarChofer formularioChofer = new FRMBuscarChofer();
 
             // Show form
             formularioChofer.Show();
@@ -71,7 +71,7 @@ namespace UberFrba.Bienvenida
         private void button9_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMTurno formularioTurno = new FRMTurno();
+            FRMbuscarTurno formularioTurno = new FRMbuscarTurno();
 
             // Show form
             formularioTurno.Show();
@@ -143,6 +143,47 @@ namespace UberFrba.Bienvenida
 
             // Show form
             formularioBuscarUsuario.Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMviajesRegistrados formularioViajesRegistrados = new FRMviajesRegistrados();
+
+            // Show form
+            formularioViajesRegistrados.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMmisFacturaciones formularioFacturaciones = new FRMmisFacturaciones();
+
+            // Show form
+            formularioFacturaciones.Show();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMviajesRendidos formularioViajesRendidos = new FRMviajesRendidos();
+
+            // Show form
+            formularioViajesRendidos.Show();
+        }
+
+        private void BTNbuscarVehiculos_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMbuscarVehiculo formularioBuscarVehiculo = new FRMbuscarVehiculo();
+
+            // Show form
+            formularioBuscarVehiculo.Show();
         }
     }
 }

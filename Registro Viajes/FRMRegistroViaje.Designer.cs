@@ -128,7 +128,7 @@
             this.TXTdni.Location = new System.Drawing.Point(218, 176);
             this.TXTdni.Margin = new System.Windows.Forms.Padding(4);
             this.TXTdni.Name = "TXTdni";
-            this.TXTdni.Size = new System.Drawing.Size(155, 20);
+            this.TXTdni.Size = new System.Drawing.Size(187, 20);
             this.TXTdni.TabIndex = 3;
             // 
             // label2
@@ -197,6 +197,7 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(216, 125);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(191, 20);
