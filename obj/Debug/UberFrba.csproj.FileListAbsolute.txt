@@ -39,7 +39,6 @@ C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Automovil.FRMMa
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Chofer_Administrador.FRMChoferAdministrador.resources
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Chofer.FRMChofer.resources
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Cliente.FRMClienteAdministrador.resources
-C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Cliente.FRMCliente1.resources
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Funcionalidad.FRMFuncionalidad.resources
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Rol.FRMFuncionalidadesAsignadas.resources
 C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Rol.FRMRol.resources

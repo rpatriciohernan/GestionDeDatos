@@ -34,9 +34,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.BTNingresar = new System.Windows.Forms.Button();
-            this.BTNnuevoUsuario = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.LBLrol = new System.Windows.Forms.Label();
             this.CMBrolDeAcceso = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // textBox1
@@ -89,51 +89,54 @@
             // 
             // BTNingresar
             // 
-            this.BTNingresar.Location = new System.Drawing.Point(12, 239);
+            this.BTNingresar.Location = new System.Drawing.Point(12, 270);
             this.BTNingresar.Name = "BTNingresar";
             this.BTNingresar.Size = new System.Drawing.Size(254, 28);
             this.BTNingresar.TabIndex = 5;
             this.BTNingresar.Text = "INGRESAR";
             this.BTNingresar.UseVisualStyleBackColor = true;
+            this.BTNingresar.Visible = false;
             this.BTNingresar.Click += new System.EventHandler(this.BTNingresar_Click);
             // 
-            // BTNnuevoUsuario
+            // LBLrol
             // 
-            this.BTNnuevoUsuario.Location = new System.Drawing.Point(12, 273);
-            this.BTNnuevoUsuario.Name = "BTNnuevoUsuario";
-            this.BTNnuevoUsuario.Size = new System.Drawing.Size(254, 28);
-            this.BTNnuevoUsuario.TabIndex = 6;
-            this.BTNnuevoUsuario.Text = "NUEVO USUARIO";
-            this.BTNnuevoUsuario.UseVisualStyleBackColor = true;
-            this.BTNnuevoUsuario.Click += new System.EventHandler(this.BTNnuevoUsuario_Click_1);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(63, 180);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(153, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ROL DE ACCESO";
+            this.LBLrol.AutoSize = true;
+            this.LBLrol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LBLrol.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.LBLrol.Location = new System.Drawing.Point(63, 211);
+            this.LBLrol.Name = "LBLrol";
+            this.LBLrol.Size = new System.Drawing.Size(153, 20);
+            this.LBLrol.TabIndex = 7;
+            this.LBLrol.Text = "ROL DE ACCESO";
+            this.LBLrol.Visible = false;
             // 
             // CMBrolDeAcceso
             // 
             this.CMBrolDeAcceso.FormattingEnabled = true;
-            this.CMBrolDeAcceso.Location = new System.Drawing.Point(13, 208);
+            this.CMBrolDeAcceso.Location = new System.Drawing.Point(13, 239);
             this.CMBrolDeAcceso.Name = "CMBrolDeAcceso";
             this.CMBrolDeAcceso.Size = new System.Drawing.Size(253, 21);
             this.CMBrolDeAcceso.TabIndex = 8;
+            this.CMBrolDeAcceso.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(12, 172);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(254, 28);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "CONECTAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FRMlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 313);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.CMBrolDeAcceso);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.BTNnuevoUsuario);
+            this.Controls.Add(this.LBLrol);
             this.Controls.Add(this.BTNingresar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -155,8 +158,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button BTNingresar;
-        private System.Windows.Forms.Button BTNnuevoUsuario;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label LBLrol;
         private System.Windows.Forms.ComboBox CMBrolDeAcceso;
+        private System.Windows.Forms.Button button1;
     }
 }

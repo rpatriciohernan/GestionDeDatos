@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,14 @@ namespace UberFrba.Facturacion
             SqlDataReader dr = queryManager("Insert into overhead.facturaciones " + "values(" + facturacion.GetValues() + ")");
             dr.Close();
         }
+
+        #region builder del objeto Facturacion
+        public override Facturacion BuilderEntityFromDataRow(DataRow dr)
+        {
+            Facturacion facturacion = new Facturacion(Convert.ToInt16(dr[0]), Convert.ToDateTime(dr[1]), Convert.ToDateTime(dr[2]), Convert.ToInt16(dr[4]));
+            return facturacion;
+        }
+        #endregion
 
         private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) //Tip: le agregamos el and al final siempre y a lo ultimo de todo se lo sacamos
         {

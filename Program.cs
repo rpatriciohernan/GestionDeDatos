@@ -18,8 +18,7 @@ namespace UberFrba
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           // Application.Run(new FRMlogin());
-            Application.Run(new FRMCliente1("3455657547"));
+            Application.Run(new FRMlogin());
         }
     }
 }
