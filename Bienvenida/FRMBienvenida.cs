@@ -126,5 +126,23 @@ namespace UberFrba.Bienvenida
             // Show form
             formularioEstadistica.Show();
         }
+
+        private void BTNaltaUsuario_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMnuevoUsuario formularioNuevoUsuario = new FRMnuevoUsuario();
+
+            // Show form
+            formularioNuevoUsuario.Show();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMbusquedaUsuarios formularioBuscarUsuario = new FRMbusquedaUsuarios();
+
+            // Show form
+            formularioBuscarUsuario.Show();
+        }
     }
 }

@@ -117,7 +117,7 @@
             this.BTNSoyChofer.Name = "BTNSoyChofer";
             this.BTNSoyChofer.Size = new System.Drawing.Size(125, 42);
             this.BTNSoyChofer.TabIndex = 51;
-            this.BTNSoyChofer.Text = "SOY CHOFER";
+            this.BTNSoyChofer.Text = "ALTA CHOFER";
             this.BTNSoyChofer.UseVisualStyleBackColor = true;
             this.BTNSoyChofer.Click += new System.EventHandler(this.BTNSoyChofer_Click);
             // 
@@ -127,7 +127,7 @@
             this.BTNSoyCliente.Name = "BTNSoyCliente";
             this.BTNSoyCliente.Size = new System.Drawing.Size(121, 42);
             this.BTNSoyCliente.TabIndex = 52;
-            this.BTNSoyCliente.Text = "SOY CLIENTE";
+            this.BTNSoyCliente.Text = "ALTA CLIENTE";
             this.BTNSoyCliente.UseVisualStyleBackColor = true;
             this.BTNSoyCliente.Click += new System.EventHandler(this.BTNSoyCliente_Click);
             // 
@@ -139,9 +139,9 @@
             this.label5.Location = new System.Drawing.Point(11, 174);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(243, 16);
+            this.label5.Size = new System.Drawing.Size(244, 16);
             this.label5.TabIndex = 53;
-            this.label5.Text = "Completa tus datos segun corresponda";
+            this.label5.Text = "Completa los datos segun corresponda";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // BTNactivar

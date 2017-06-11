@@ -26,7 +26,6 @@ C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Turno.FRM
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Funcionalidad.FRMFuncionalidad.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Rol.FRMFuncionalidadesAsignadas.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMnuevoUsuario.resources
-C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Cliente.FRMCliente1.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Chofer_Administrador.FRMChoferAdministrador.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Abm_Cliente.FRMClienteAdministrador.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Bienvenida.FRMlogin.resources

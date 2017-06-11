@@ -100,6 +100,12 @@
     <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.Designer.cs">
       <DependentUpon>FRMFuncionalidadesAsignadas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Turno\FRMbuscarTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Turno\FRMbuscarTurno.Designer.cs">
+      <DependentUpon>FRMbuscarTurno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Turno\FRMTurno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,12 @@
     </Compile>
     <Compile Include="Bienvenida\FRMBienvenida.designer.cs">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bienvenida\FRMbusquedaUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bienvenida\FRMbusquedaUsuarios.Designer.cs">
+      <DependentUpon>FRMbusquedaUsuarios.cs</DependentUpon>
     </Compile>
     <Compile Include="Bienvenida\FRMlogin.cs">
       <SubType>Form</SubType>
@@ -134,12 +146,6 @@
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Abm Cliente\RepositorioCliente.cs" />
     <Compile Include="Abm Cliente\Cliente.cs" />
-    <Compile Include="Abm Cliente\FRMCliente1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Abm Cliente\FRMCliente1.Designer.cs">
-      <DependentUpon>FRMCliente1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Abm Rol\FRMRol.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -196,9 +202,6 @@
     <EmbeddedResource Include="Abm Cliente\FRMCliente.resx">
       <DependentUpon>FRMCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Abm Cliente\FRMCliente1.resx">
-      <DependentUpon>FRMCliente1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Abm Funcionalidad\FRMFuncionalidad.resx">
       <DependentUpon>FRMFuncionalidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,11 +211,17 @@
     <EmbeddedResource Include="Abm Rol\FRMRol.resx">
       <DependentUpon>FRMRol.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Abm Turno\FRMbuscarTurno.resx">
+      <DependentUpon>FRMbuscarTurno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Abm Turno\FRMTurno.resx">
       <DependentUpon>FRMTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\FRMBienvenida.resx">
       <DependentUpon>FRMBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bienvenida\FRMbusquedaUsuarios.resx">
+      <DependentUpon>FRMbusquedaUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Bienvenida\FRMlogin.resx">
       <DependentUpon>FRMlogin.cs</DependentUpon>

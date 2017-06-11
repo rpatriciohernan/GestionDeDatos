@@ -38,6 +38,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
+            this.BTNaltaUsuario = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -143,12 +145,34 @@
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
+            // BTNaltaUsuario
+            // 
+            this.BTNaltaUsuario.Location = new System.Drawing.Point(4, 182);
+            this.BTNaltaUsuario.Name = "BTNaltaUsuario";
+            this.BTNaltaUsuario.Size = new System.Drawing.Size(124, 63);
+            this.BTNaltaUsuario.TabIndex = 10;
+            this.BTNaltaUsuario.Text = "ALTA DE USUARIO";
+            this.BTNaltaUsuario.UseVisualStyleBackColor = true;
+            this.BTNaltaUsuario.Click += new System.EventHandler(this.BTNaltaUsuario_Click);
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(504, 182);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(124, 63);
+            this.button10.TabIndex = 11;
+            this.button10.Text = "BUSCAR USUARIOS";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
             // FRMBienvenida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(640, 349);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.BTNaltaUsuario);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label1);
@@ -179,5 +203,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button BTNaltaUsuario;
+        private System.Windows.Forms.Button button10;
     }
 }
