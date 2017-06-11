@@ -33,12 +33,10 @@ namespace UberFrba.Abm_Cliente
         #region builder del objeto cliente
         public override Cliente BuilderEntityFromDataRow(DataRow dr)
         {
-            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), Convert.ToDateTime(dr[11]));
+            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), Convert.ToInt16(dr[7]), dr[8].ToString(), Convert.ToInt16(dr[9]), dr[10].ToString(), Convert.ToDateTime(dr[11]), dr[12].ToString());
             return cliente;
         }
         #endregion
-
-
 
         public List<Cliente> buscar(Dictionary<String, String> parametrosDeBusqueda)
         {
@@ -55,7 +53,7 @@ namespace UberFrba.Abm_Cliente
 
         private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) {
             String queryCondition = "";
-            String queryResult = "Select * from Clientes";
+            String queryResult = "Select * from overhead.clientes";
             if (parametrosDeBusqueda.ContainsKey("nombre")) {
                 String nombre = parametrosDeBusqueda["nombre"];
                 queryCondition = "nombre = " + "'" + nombre + "'";
@@ -64,14 +62,18 @@ namespace UberFrba.Abm_Cliente
             if (parametrosDeBusqueda.ContainsKey("apellido"))
             {
                 String apellido = parametrosDeBusqueda["apellido"];
-               // queryCondition += "and apellido = " + apellido;
                 queryCondition = "apellido = " + "'" + apellido + "'";
+            }
+
+            if (parametrosDeBusqueda.ContainsKey("estado"))
+            {
+                String apellido = parametrosDeBusqueda["estado"];
+                queryCondition = "estado = " + "'" + apellido + "'";
             }
 
             if (parametrosDeBusqueda.ContainsKey("dni"))
             {
                 String dni = parametrosDeBusqueda["dni"];
-               // queryCondition += "and dni = " + dni;
                 queryCondition = "dni = " + "'" + dni + "'";
             }
 

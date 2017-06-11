@@ -57,6 +57,7 @@
     <Compile Include="Abm Automovil\FRMMarcaVehiculo.designer.cs">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Chofer\Chofer.cs" />
     <Compile Include="Abm Chofer\FRMChoferAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +70,7 @@
     <Compile Include="Abm Chofer\FRMChofer.designer.cs">
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Chofer\RepositorioChofer.cs" />
     <Compile Include="Abm Cliente\FRMClienteAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +90,8 @@
     <Compile Include="Abm Funcionalidad\FRMFuncionalidad.Designer.cs">
       <DependentUpon>FRMFuncionalidad.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Funcionalidad\Funcionalidad.cs" />
+    <Compile Include="Abm Funcionalidad\RepositorioFuncionalidad.cs" />
     <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +104,8 @@
     <Compile Include="Abm Turno\FRMTurno.Designer.cs">
       <DependentUpon>FRMTurno.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Turno\RepositorioTurno.cs" />
+    <Compile Include="Abm Turno\Turno.cs" />
     <Compile Include="Bienvenida\FRMBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
