@@ -39,6 +39,7 @@
             this.BTNbuscar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
+            this.CHKsoloActivos = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +134,7 @@
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(14, 164);
+            this.BTNbuscar.Location = new System.Drawing.Point(14, 177);
             this.BTNbuscar.Name = "BTNbuscar";
             this.BTNbuscar.Size = new System.Drawing.Size(543, 23);
             this.BTNbuscar.TabIndex = 23;
@@ -160,11 +161,24 @@
             this.label19.TabIndex = 26;
             this.label19.Text = "Resultados de busqueda";
             // 
+            // CHKsoloActivos
+            // 
+            this.CHKsoloActivos.AutoSize = true;
+            this.CHKsoloActivos.Checked = true;
+            this.CHKsoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CHKsoloActivos.Location = new System.Drawing.Point(14, 152);
+            this.CHKsoloActivos.Name = "CHKsoloActivos";
+            this.CHKsoloActivos.Size = new System.Drawing.Size(144, 20);
+            this.CHKsoloActivos.TabIndex = 48;
+            this.CHKsoloActivos.Text = "Buscar solo activos";
+            this.CHKsoloActivos.UseVisualStyleBackColor = true;
+            // 
             // FRMBuscarChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 432);
+            this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNbuscar);
@@ -197,5 +211,6 @@
         private System.Windows.Forms.Button BTNbuscar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.CheckBox CHKsoloActivos;
     }
 }

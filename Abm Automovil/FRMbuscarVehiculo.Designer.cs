@@ -42,7 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.CHKsoloActivos = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -190,24 +190,24 @@
             this.label19.TabIndex = 43;
             this.label19.Text = "Resultados de busqueda";
             // 
-            // checkBox1
+            // CHKsoloActivos
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(18, 101);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 17);
-            this.checkBox1.TabIndex = 47;
-            this.checkBox1.Text = "Buscar solo activos";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.CHKsoloActivos.AutoSize = true;
+            this.CHKsoloActivos.Checked = true;
+            this.CHKsoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.CHKsoloActivos.Location = new System.Drawing.Point(18, 101);
+            this.CHKsoloActivos.Name = "CHKsoloActivos";
+            this.CHKsoloActivos.Size = new System.Drawing.Size(118, 17);
+            this.CHKsoloActivos.TabIndex = 47;
+            this.CHKsoloActivos.Text = "Buscar solo activos";
+            this.CHKsoloActivos.UseVisualStyleBackColor = true;
             // 
             // FRMbuscarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 443);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.TXTmodelo);
             this.Controls.Add(this.BTNChofer);
             this.Controls.Add(this.CMBmarca);
@@ -246,6 +246,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox CHKsoloActivos;
     }
 }
