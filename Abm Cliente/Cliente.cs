@@ -14,10 +14,10 @@ namespace UberFrba.Abm_Cliente
         private Int64 dni;
         private String mail;
         private String telefono;
-        private String calle;
-        private Int16 numero;
-        private Int16 piso;
-        private String departamento;
+        private String domicilio;
+        //private Int16 numero;
+        //private Int16 piso;
+        //private String departamento;
         private Int16 codigoPostal;
         private String localidad;
         private DateTime fechaNacimiento;
@@ -47,20 +47,9 @@ namespace UberFrba.Abm_Cliente
         {
             get { return telefono; }
         }
-        public string Calle{
-            get { return calle; }
-        }
-        public Int16 Numero
+        public string Domicilio
         {
-            get { return numero; }
-        }
-        public Int16 Piso
-        {
-            get { return piso; }
-        }
-        public String Departamento 
-        {
-            get { return departamento; }
+            get { return domicilio; }
         }
         public Int16 CodigoPostal
         {
@@ -83,7 +72,7 @@ namespace UberFrba.Abm_Cliente
 
         #region constructor
         public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
-            String calle, Int16 numero, Int16 piso, String departamento, Int16 codigoPostal, String localidad, DateTime fechaNacimiento, String estado)
+            String domicilio, Int16 codigoPostal, String localidad, DateTime fechaNacimiento, String estado)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
@@ -102,18 +91,10 @@ namespace UberFrba.Abm_Cliente
            
             this.telefono = telefono;
             this.camposObligatorios.Add(new CampoYValor("Telefono", this.telefono));
+
+            this.domicilio = domicilio;
+            this.camposObligatorios.Add(new CampoYValor("Domicilio", this.domicilio));
             
-            this.calle = calle;
-            this.camposObligatorios.Add(new CampoYValor("Direccion", this.calle));
-            
-            this.numero = numero;
-            this.camposObligatorios.Add(new CampoYValor("Numero", this.numero.ToString()));
-
-            this.piso = piso;
-
-
-            this.departamento = departamento;
-
             this.localidad = localidad;
             this.camposObligatorios.Add(new CampoYValor("Localidad", this.localidad));
   
@@ -150,7 +131,10 @@ namespace UberFrba.Abm_Cliente
 
         public String GetValues()
         {
-            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' + "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.calle + "'" + ',' + "'" + Convert.ToString(this.numero) + "'" + ',' + "'" + Convert.ToString(this.piso) + "'" + ',' + "'" + this.departamento + "'" + ',' + "'" + Convert.ToString(this.codigoPostal) + "'" + ',' + "'" + this.localidad + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'" + ',' + "'" + this.estado + "'";
+            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ','
+                + "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.domicilio + "'" + ','
+                + "'" + Convert.ToString(this.codigoPostal) + "'" + ',' + "'" + this.localidad + "'" + ',' 
+                + "'" + Convert.ToString(this.fechaNacimiento) + "'" + ',' + "'" + this.estado + "'";
         }
 
     }
