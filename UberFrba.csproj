@@ -108,7 +108,9 @@
       <DependentUpon>FRMFuncionalidadesAsignadas.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Rol\RepositorioRol.cs" />
+    <Compile Include="Abm Rol\RepositorioRolAsignado.cs" />
     <Compile Include="Abm Rol\Rol.cs" />
+    <Compile Include="Abm Rol\RolAsignado.cs" />
     <Compile Include="Abm Turno\FRMbuscarTurno.cs">
       <SubType>Form</SubType>
     </Compile>

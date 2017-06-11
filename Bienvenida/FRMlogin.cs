@@ -17,11 +17,12 @@ namespace UberFrba.Bienvenida
             InitializeComponent();
         }
 
+        private Usuario usuario;
+
         private void BTNingresar_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMBienvenida formularioBienvenida = new FRMBienvenida();
-
+            FRMBienvenida formularioBienvenida = new FRMBienvenida(usuario);
             // Show form
             formularioBienvenida.Show();
 
@@ -55,10 +56,11 @@ namespace UberFrba.Bienvenida
             parametrosBusquedaUsuario.Add("usu_estado", "Activo");
             parametrosBusquedaUsuario.Add("username", this.TXTusername.Text);
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
+            usuario = usuariosEncontrados.First();
 
-            if ((usuariosEncontrados.Count() > 0) && (usuariosEncontrados.First().Password == this.TXTpassword.Text))
+            if ((usuariosEncontrados.Count() > 0) && (usuario.Password == this.TXTpassword.Text))
             {
-                this.RellenarComboRoles(usuariosEncontrados.First());
+                this.RellenarComboRoles(usuario);
                 return true;
             }
             else
@@ -77,7 +79,7 @@ namespace UberFrba.Bienvenida
         {
             this.LBLerrorLogueo.Visible = false;
             
-            if (this.ValidarLogueo())
+/*            if (this.ValidarLogueo())
             {
                 this.HabilitarLogueo();
             }
@@ -85,7 +87,7 @@ namespace UberFrba.Bienvenida
             {
                 this.MostrarErrorLogueo();
             }
-
+*/
 
         }
     }
