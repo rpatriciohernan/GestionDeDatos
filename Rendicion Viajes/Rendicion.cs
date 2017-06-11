@@ -107,7 +107,10 @@ namespace UberFrba.Rendicion_Viajes
             return errores;
         }
 
-
+        public String GetValues()
+        {
+            return "'" + Convert.ToString(this.idChofer) + "'" + ',' + "'" + Convert.ToString(this.idTurno) + "'" + ',' + "'" + Convert.ToString(this.fecha) + "'" + ',' + "'" + Convert.ToString(this.importe);
+        }
 
     }
 }

@@ -19,7 +19,7 @@ namespace UberFrba.Abm_Chofer
          private String localidad;
          private String telefono;
          private String mail;
-         private DateTime fecha_nacimiento;
+         private DateTime fechaNacimiento;
          private String estado;
          private List<CampoYValor> camposObligatorios;
          private static RepositorioChofer repositorioChofer = RepositorioChofer.Instance;
@@ -69,7 +69,7 @@ namespace UberFrba.Abm_Chofer
          }
          public DateTime FechaNacimiento
          {
-             get { return fecha_nacimiento; }
+             get { return fechaNacimiento; }
          }
          public String Estado
          {
@@ -111,8 +111,8 @@ namespace UberFrba.Abm_Chofer
             this.mail = mail;
             this.camposObligatorios.Add(new CampoYValor("Mail", this.mail));
 
-            this.fecha_nacimiento = fechaNacimiento;
-            this.camposObligatorios.Add(new CampoYValor("FechaNacimiento", this.fecha_nacimiento.ToString()));
+            this.fechaNacimiento = fechaNacimiento;
+            this.camposObligatorios.Add(new CampoYValor("FechaNacimiento", this.fechaNacimiento.ToString()));
 
             this.estado = estado;
             this.camposObligatorios.Add(new CampoYValor("Estado", this.estado));
@@ -143,7 +143,7 @@ namespace UberFrba.Abm_Chofer
 
         public String GetValues()
         {
-            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' + "'" + this.calle + "'" + ',' + "'" + this.numero + "'" + ',' + "'" + this.piso + "'" + ',' + "'" + this.departamento + "'" + ',' + "'" + this.localidad + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.mail + "'" + ',' + "'" + Convert.ToString(this.fecha_nacimiento) + "'" + ',' + "'" + this.estado + "'";
+            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' + "'" + this.calle + "'" + ',' + "'" + Convert.ToString(this.numero) + "'" + ',' + "'" + Convert.ToString(this.piso) + "'" + ',' + "'" + this.departamento + "'" + ',' + "'" + this.localidad + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.mail + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'" + ',' + "'" + this.estado + "'";
         }
 
 

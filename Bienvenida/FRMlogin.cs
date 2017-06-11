@@ -37,5 +37,13 @@ namespace UberFrba.Bienvenida
             // Show form
             formularioNuevoUsuario.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //SI LA CONTRASENA ES CORRECTA ENTONCES SELECCIONA ELROL
+            BTNingresar.Visible = true;
+            CMBrolDeAcceso.Visible = true;
+            LBLrol.Visible = true;
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace UberFrba.Abm_Cliente
         private String departamento;
         private Int16 codigoPostal;
         private String localidad;
-        private DateTime fecha_nacimiento;
+        private DateTime fechaNacimiento;
         private String estado;
         private List<CampoYValor> camposObligatorios;
         private static RepositorioCliente repositorioCliente = RepositorioCliente.Instance;
@@ -73,7 +73,7 @@ namespace UberFrba.Abm_Cliente
         }
         public DateTime FechaNacimiento
         {
-            get { return fecha_nacimiento; }
+            get { return fechaNacimiento; }
         }
         public String Estado
         {
@@ -119,8 +119,8 @@ namespace UberFrba.Abm_Cliente
             this.codigoPostal = codigoPostal;
             this.camposObligatorios.Add(new CampoYValor("CodigoPostal", this.codigoPostal.ToString()));
             
-            this.fecha_nacimiento = fechaNacimiento;
-            this.camposObligatorios.Add(new CampoYValor("FechaNacimiento", Convert.ToString(this.fecha_nacimiento)));
+            this.fechaNacimiento = fechaNacimiento;
+            this.camposObligatorios.Add(new CampoYValor("FechaNacimiento", Convert.ToString(this.fechaNacimiento)));
 
             this.estado = estado;
             this.camposObligatorios.Add(new CampoYValor("Estado", this.estado));
@@ -133,11 +133,6 @@ namespace UberFrba.Abm_Cliente
         {
             return repositorioCliente.buscar(parametrosDeBusqueda);
         }
-
-       /* public static List<Cliente> buscarTodos()
-        {
-            return repositorioCliente.buscarTodos();
-        }*/
 
         //metodos de instancia
         public void guardate() {
@@ -152,17 +147,9 @@ namespace UberFrba.Abm_Cliente
             return errores;
         }
 
-        public Boolean validarNombre() { //era de prueba, borrarlo
-            return nombre != null;
-        }
-
-        public String toString() { //era de prueba, borrarlo
-            return this.apellido;        
-        }
-
-        public String GetValues() { //ojo al agregar nuevos atributo, volcarlos aca!!!
-            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' +
-                "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.calle + "'" + ',' + "'" + Convert.ToString(this.numero) + "'" + ',' + "'" + Convert.ToString(this.piso) + "'" + ',' + "'" + this.departamento + "'" + ',' + "'" + Convert.ToString(this.codigoPostal) + "'" + ',' + "'" + this.localidad + "'" + ',' + "'" + Convert.ToString(this.fecha_nacimiento) + "'" + ',' + "'" + this.estado + "'";
+        public String GetValues()
+        {
+            return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' + "'" + this.mail + "'" + ',' + "'" + this.telefono + "'" + ',' + "'" + this.calle + "'" + ',' + "'" + Convert.ToString(this.numero) + "'" + ',' + "'" + Convert.ToString(this.piso) + "'" + ',' + "'" + this.departamento + "'" + ',' + "'" + Convert.ToString(this.codigoPostal) + "'" + ',' + "'" + this.localidad + "'" + ',' + "'" + Convert.ToString(this.fechaNacimiento) + "'" + ',' + "'" + this.estado + "'";
         }
 
     }

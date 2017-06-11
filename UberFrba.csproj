@@ -57,6 +57,8 @@
     <Compile Include="Abm Automovil\FRMMarcaVehiculo.designer.cs">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Automovil\Marca.cs" />
+    <Compile Include="Abm Automovil\RepositorioMarca.cs" />
     <Compile Include="Abm Chofer\Chofer.cs" />
     <Compile Include="Abm Chofer\FRMChoferAdministrador.cs">
       <SubType>Form</SubType>
@@ -127,6 +129,8 @@
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />
+    <Compile Include="Rendicion Viajes\Rendicion.cs" />
+    <Compile Include="Rendicion Viajes\RepositorioRendicion.cs" />
     <Compile Include="Repositorio\Repositorio.cs" />
     <Compile Include="Abm Cliente\RepositorioCliente.cs" />
     <Compile Include="Abm Cliente\Cliente.cs" />
