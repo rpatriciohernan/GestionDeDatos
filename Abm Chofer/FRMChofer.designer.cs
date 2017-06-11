@@ -64,6 +64,8 @@
             this.TXTtelefono = new System.Windows.Forms.TextBox();
             this.BTNguardar = new System.Windows.Forms.Button();
             this.BTNeliminar = new System.Windows.Forms.Button();
+            this.label21 = new System.Windows.Forms.Label();
+            this.CMBestado = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -416,7 +418,9 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label21);
             this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.CMBestado);
             this.groupBox3.Controls.Add(this.TXTmail);
             this.groupBox3.Controls.Add(this.TXTtelefono);
             this.groupBox3.Controls.Add(this.label10);
@@ -471,6 +475,26 @@
             this.BTNeliminar.TabIndex = 23;
             this.BTNeliminar.Text = "ELIMINAR";
             this.BTNeliminar.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label21.Location = new System.Drawing.Point(387, 21);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(51, 16);
+            this.label21.TabIndex = 33;
+            this.label21.Text = "Estado";
+            // 
+            // CMBestado
+            // 
+            this.CMBestado.FormattingEnabled = true;
+            this.CMBestado.Location = new System.Drawing.Point(390, 40);
+            this.CMBestado.Name = "CMBestado";
+            this.CMBestado.Size = new System.Drawing.Size(142, 24);
+            this.CMBestado.TabIndex = 34;
             // 
             // FRMChofer
             // 
@@ -538,5 +562,7 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button BTNeliminar;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox CMBestado;
     }
 }
