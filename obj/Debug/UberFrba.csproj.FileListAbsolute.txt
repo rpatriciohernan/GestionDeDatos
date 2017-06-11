@@ -33,3 +33,19 @@ C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Registro_Viaj
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Rendicion_Viajes.FRMrendicion.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Facturacion.FRMfacturacion.resources
 C:\Users\win7vm\Documents\GitHub\GestionDeDatos\obj\Debug\UberFrba.Listado_Estadistico.FRMestadistica.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Automovil.FRMAutomovil.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Automovil.FRMMarcaVehiculo.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Chofer_Administrador.FRMChoferAdministrador.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Chofer.FRMChofer.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Cliente.FRMClienteAdministrador.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Funcionalidad.FRMFuncionalidad.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Rol.FRMFuncionalidadesAsignadas.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Rol.FRMRol.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Abm_Turno.FRMTurno.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Bienvenida.FRMBienvenida.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Bienvenida.FRMlogin.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Bienvenida.FRMnuevoUsuario.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Facturacion.FRMfacturacion.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Listado_Estadistico.FRMestadistica.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Registro_Viajes.FRMregistroViaje.resources
+C:\Users\Mago\Documents\repo gdd\UberFrba\obj\Debug\UberFrba.Rendicion_Viajes.FRMrendicion.resources

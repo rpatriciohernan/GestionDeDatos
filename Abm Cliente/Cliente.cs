@@ -47,8 +47,7 @@ namespace UberFrba.Abm_Cliente
         {
             get { return telefono; }
         }
-        public string Calle
-        {
+        public string Calle{
             get { return calle; }
         }
         public Int16 Numero
@@ -81,6 +80,7 @@ namespace UberFrba.Abm_Cliente
         }
         #endregion
 
+
         #region constructor
         public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
             String calle, Int16 numero, Int16 piso, String departamento, Int16 codigoPostal, String localidad, DateTime fechaNacimiento, String estado)
@@ -105,11 +105,12 @@ namespace UberFrba.Abm_Cliente
             
             this.calle = calle;
             this.camposObligatorios.Add(new CampoYValor("Direccion", this.calle));
-
+            
             this.numero = numero;
             this.camposObligatorios.Add(new CampoYValor("Numero", this.numero.ToString()));
 
             this.piso = piso;
+
 
             this.departamento = departamento;
 

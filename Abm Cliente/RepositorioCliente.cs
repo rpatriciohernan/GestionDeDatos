@@ -27,8 +27,7 @@ namespace UberFrba.Abm_Cliente
             }
         }
         #endregion
-
-        
+              
         
        
         #region builder del objeto cliente
@@ -42,13 +41,13 @@ namespace UberFrba.Abm_Cliente
         public List<Cliente> buscar(Dictionary<String, String> parametrosDeBusqueda)
         {
             String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Cliente> clientesEncontrados = SearchManager(query, "Clientes", 0, 6);
+            List<Cliente> clientesEncontrados = SearchManager(query, "overhead.clientes", 0, 6);
             return clientesEncontrados;
         }
 
         public void Guardar(Cliente cliente)
         {
-            SqlDataReader dr = queryManager("Insert into Clientes " + "values(" + cliente.GetValues() + ")");
+            SqlDataReader dr = queryManager("Insert into overhead.clientes " + "values(" + cliente.GetValues() + ")");
             dr.Close();
         }
 
