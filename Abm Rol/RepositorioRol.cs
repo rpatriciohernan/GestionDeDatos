@@ -53,7 +53,7 @@ namespace UberFrba.Abm_Rol
         private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
         {
             String queryCondition = "";
-            String queryResult = "Select * from Clientes";
+            String queryResult = "Select * from overhead.roles";
             if (parametrosDeBusqueda.ContainsKey("nombre"))
             {
                 String nombre = parametrosDeBusqueda["nombre"];

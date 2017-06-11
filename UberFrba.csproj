@@ -159,6 +159,8 @@
     <Compile Include="Bienvenida\FRMusuario.Designer.cs">
       <DependentUpon>FRMusuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bienvenida\RepositorioUsuario.cs" />
+    <Compile Include="Bienvenida\Usuario.cs" />
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />

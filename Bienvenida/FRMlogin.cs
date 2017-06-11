@@ -40,7 +40,13 @@ namespace UberFrba.Bienvenida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //SI LA CONTRASENA ES CORRECTA ENTONCES SELECCIONA ELROL
+            
+            //obtener usuario
+
+
+            //consultar si la contra es correcta
+            
+            //SI LA CONTRASENA ES CORRECTA ENTONCES SELECCIONA EL ROL
             BTNingresar.Visible = true;
             CMBrolDeAcceso.Visible = true;
             LBLrol.Visible = true;
