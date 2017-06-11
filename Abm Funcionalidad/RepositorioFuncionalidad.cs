@@ -37,12 +37,7 @@ namespace UberFrba.Abm_Funcionalidad
         }
         #endregion
 
-        public List<Funcionalidad> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Funcionalidad> funcionalidadesEncontradas = SearchManager(query, "Funcionalidades", 0, 6);
-            return funcionalidadesEncontradas;
-        }
+        public override String tableName() { return "overhead.funcionalidades"; }
 
         public void guardar(Funcionalidad funcionalidad)
         {
@@ -50,27 +45,5 @@ namespace UberFrba.Abm_Funcionalidad
             dr.Close();
         }
 
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.funcionalidades";
-            if (parametrosDeBusqueda.ContainsKey("idFuncionalidad"))
-            {
-                String idFuncionalidad = parametrosDeBusqueda["idFuncionalidad"];
-                queryCondition = "ID_FUNCIONALIDAD = " + "'" + idFuncionalidad + "'";
-            }
-            if (parametrosDeBusqueda.ContainsKey("nombre"))
-            {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }    
     }
 }

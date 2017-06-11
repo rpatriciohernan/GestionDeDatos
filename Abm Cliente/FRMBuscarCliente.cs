@@ -85,7 +85,27 @@ namespace UberFrba.Abm_Cliente
         {
 
         }
-        //---------------------------------------------------------
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            if (txtNombre.Text != "") {
+                parametrosDeBusqueda.Add("cliente_nombre", txtNombre.Text);
+            }
+            if (txtApellido.Text != "")
+            {
+                parametrosDeBusqueda.Add("cliente_apellido", txtApellido.Text);
+            }
+            if (txtDni.Text != "")
+            {
+                parametrosDeBusqueda.Add("cliente_dni", txtDni.Text);
+            }
+
+            List<Cliente> clientes = Cliente.buscar(parametrosDeBusqueda);
+
+            BindingSource bs = new BindingSource(clientes, "");
+            dataGridView1.DataSource = bs; //bs.ResetBindings(false); hay que hacerlo cada vez que se actualiza la lista
+        }
 
     }
 }

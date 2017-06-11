@@ -385,6 +385,7 @@
             this.TXTdni.Name = "TXTdni";
             this.TXTdni.Size = new System.Drawing.Size(155, 20);
             this.TXTdni.TabIndex = 3;
+            this.TXTdni.TextChanged += new System.EventHandler(this.TXTdni_TextChanged);
             // 
             // label2
             // 
@@ -476,6 +477,7 @@
             this.DTEfechaNacimiento.ShowUpDown = true;
             this.DTEfechaNacimiento.Size = new System.Drawing.Size(174, 20);
             this.DTEfechaNacimiento.TabIndex = 27;
+            this.DTEfechaNacimiento.ValueChanged += new System.EventHandler(this.DTEfechaNacimiento_ValueChanged);
             // 
             // label1
             // 

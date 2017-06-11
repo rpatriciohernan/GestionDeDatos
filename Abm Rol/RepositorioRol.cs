@@ -37,50 +37,12 @@ namespace UberFrba.Abm_Rol
         }
         #endregion
 
-        public List<Rol> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Rol> rolesEncontrados = SearchManager(query, "overhead.roles", 0, 6);
-            return rolesEncontrados;
-        }
+        public override String tableName() { return "overhead.roles"; }
 
         public void Guardar(Rol rol)
         {
             SqlDataReader dr = queryManager("Insert into overhead.roles " + "values(" + rol.GetValues() + ")");
             dr.Close();
         }
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from Clientes";
-            if (parametrosDeBusqueda.ContainsKey("nombre"))
-            {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("apellido"))
-            {
-                String apellido = parametrosDeBusqueda["apellido"];
-                // queryCondition += "and apellido = " + apellido;
-                queryCondition = "apellido = " + "'" + apellido + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("dni"))
-            {
-                String dni = parametrosDeBusqueda["dni"];
-                // queryCondition += "and dni = " + dni;
-                queryCondition = "dni = " + "'" + dni + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }
-
     }
 }

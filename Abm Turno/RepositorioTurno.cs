@@ -43,38 +43,7 @@ namespace UberFrba.Abm_Turno
             dr.Close();
         }
 
-        public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Turno> rendicionesEncontradas = SearchManager(query, "Turnos", 0, 6);
-            return rendicionesEncontradas;
-        }
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.turnos";
-            if (parametrosDeBusqueda.ContainsKey("idTurno"))
-            {
-                String idTurno = parametrosDeBusqueda["idTurno"];
-                queryCondition = "id_turno = " + "'" + idTurno + "'";
-            }       
-            
-            if (parametrosDeBusqueda.ContainsKey("descripcion"))
-            {
-                String descripcion = parametrosDeBusqueda["descripcion"];
-                queryCondition = "descripcion = " + "'" + descripcion + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }
-
-
+        public override String tableName() { return "overhead.turnos"; }
 
     }
 }

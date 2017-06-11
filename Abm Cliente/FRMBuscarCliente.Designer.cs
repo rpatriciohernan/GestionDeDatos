@@ -86,6 +86,7 @@
             this.btnBuscar.TabIndex = 32;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // label14
             // 
@@ -201,7 +202,7 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Gestion de Clientes";
             // 
-            // FRMClienteAdministrador
+            // FRMBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +212,7 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Name = "FRMClienteAdministrador";
+            this.Name = "FRMBuscarCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.FRMCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

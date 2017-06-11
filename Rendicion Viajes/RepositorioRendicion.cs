@@ -37,43 +37,13 @@ namespace UberFrba.Rendicion_Viajes
         }
         #endregion
 
-        public List<Rendicion> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Rendicion> rendicionesEncontradas = SearchManager(query, "Rendiciones", 0, 6);
-            return rendicionesEncontradas;
-        }
+
+        public override String tableName() { return "overhead.rendiciones"; }
 
         public void Guardar(Rendicion rendicion)
         {
             SqlDataReader dr = queryManager("Insert into overhead.rendiciones " + "values(" + rendicion.GetValues() + ")");
             dr.Close();
         }
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.rendiciones";
-            if (parametrosDeBusqueda.ContainsKey("fechaInicio"))
-            {
-                String fecha = parametrosDeBusqueda["fechaInicio"];
-                queryCondition = "fecha >= " + "'" + fecha + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("fechaFin"))
-            {
-                String fecha = parametrosDeBusqueda["fechaFin"];
-                queryCondition = "fecha <= " + "'" + fecha + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }
-
     }
 }

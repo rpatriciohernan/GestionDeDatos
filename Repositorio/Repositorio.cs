@@ -22,6 +22,7 @@ namespace UberFrba.Abm_Cliente
             return cmd.ExecuteReader();
         }
 
+
         protected List<T> SearchManager(String query, String table, int numeroDePagina, int tamanioDePagina)
         {
             int pageNumber = numeroDePagina * tamanioDePagina; //el principio de todo es cero (0)
@@ -45,5 +46,37 @@ namespace UberFrba.Abm_Cliente
         }
 
         public abstract T BuilderEntityFromDataRow(DataRow dr);
+
+        public abstract String tableName();
+
+        //public abstract String prefijoColumna();
+
+        protected String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda, String operador)
+        {
+            String queryCondition = "";
+            String queryResult = "Select * from " + tableName();
+
+            List<string> keyList = new List<string>(parametrosDeBusqueda.Keys);
+
+            foreach (String key in keyList)
+            {
+                String value = parametrosDeBusqueda[key];
+                queryCondition += key + " = " + "'" + value + "'" + " " + operador + " "; //se podria hacer un mapa por cada repo para abstraerte del nombre de la tabla, pero mucha paja
+            }
+
+            if (queryCondition != "")
+            {
+                queryCondition = queryCondition.Substring(0, queryCondition.Length - (operador.Length + 2));
+                queryResult += " where " + queryCondition;
+            }
+            Console.WriteLine("leete el queryResult: " + queryResult);
+            return queryResult;
+        }
+
+        public List<T> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
+        {
+            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda, operador);
+            return SearchManager(query, tableName(), 0, 6);
+        }
     }
 }

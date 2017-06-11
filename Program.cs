@@ -16,6 +16,7 @@ namespace UberFrba
         [STAThread]
         static void Main()
         {
+            Conexion.startConexion();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FRMlogin());

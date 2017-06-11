@@ -30,12 +30,8 @@ namespace UberFrba.Facturacion
         }
         #endregion
 
-        public List<Facturacion> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Facturacion> facturacionesEncontradas = SearchManager(query, "overhead.facturaciones", 0, 6);
-            return facturacionesEncontradas;
-        }
+
+        public override String tableName() { return "overhead.facturaciones"; }
 
         public void Guardar(Facturacion facturacion)
         {
@@ -50,38 +46,5 @@ namespace UberFrba.Facturacion
             return facturacion;
         }
         #endregion
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) //Tip: le agregamos el and al final siempre y a lo ultimo de todo se lo sacamos
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from Clientes";
-            if (parametrosDeBusqueda.ContainsKey("nombre"))
-            {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("apellido"))
-            {
-                String apellido = parametrosDeBusqueda["apellido"];
-                // queryCondition += "and apellido = " + apellido;
-                queryCondition = "apellido = " + "'" + apellido + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("dni"))
-            {
-                String dni = parametrosDeBusqueda["dni"];
-                // queryCondition += "and dni = " + dni;
-                queryCondition = "dni = " + "'" + dni + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }
-
     }
 }

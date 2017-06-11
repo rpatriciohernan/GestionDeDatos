@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace UberFrba.Abm_Cliente
 {
@@ -38,52 +39,25 @@ namespace UberFrba.Abm_Cliente
         }
         #endregion
 
-        public List<Cliente> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Cliente> clientesEncontrados = SearchManager(query, "overhead.clientes", 0, 6);
-            return clientesEncontrados;
-        }
+        public override String tableName() { return "overhead.clientes"; }
 
         public void Guardar(Cliente cliente)
         {
-            SqlDataReader dr = queryManager("Insert into overhead.clientes " + "values(" + cliente.GetValues() + ")");
-            dr.Close();
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            parametrosDeBusqueda.Add("cliente_dni", cliente.Dni.ToString());
+            parametrosDeBusqueda.Add("cliente_telefono", cliente.Telefono.ToString());
+
+            List<Cliente> clientes = buscar(parametrosDeBusqueda,"or");
+
+            if (clientes.Count > 0)
+            {
+                MessageBox.Show("Ya Existe un cliente con el mismo DNI o el mismo TELEFONO");
+            } else {
+                SqlDataReader dr = queryManager("Insert into overhead.clientes " + "values(" + cliente.GetValues() + ")");
+                dr.Close();
+                MessageBox.Show("El cliente se a guardado correctamente");
+            }
         }
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.clientes";
-            if (parametrosDeBusqueda.ContainsKey("nombre")) {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("apellido"))
-            {
-                String apellido = parametrosDeBusqueda["apellido"];
-                queryCondition = "apellido = " + "'" + apellido + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("estado"))
-            {
-                String apellido = parametrosDeBusqueda["estado"];
-                queryCondition = "estado = " + "'" + apellido + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("dni"))
-            {
-                String dni = parametrosDeBusqueda["dni"];
-                queryCondition = "dni = " + "'" + dni + "'";
-            }
-
-            if (queryCondition != "") {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }
-
     }
 }
 

@@ -25,13 +25,53 @@ namespace UberFrba.Abm_Cliente
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
+          //  LimpiarErrores();
+
+            Cliente cliente = crearCliente();
+            List<ErrorDeCampo> errores = cliente.validarCampos();
+
+            if (errores.Count > 0)
+            {
+               // mostrarErrores(errores);
+            }
+            else
+            {
+                cliente.guardate();
+            }
+        }
+
+
+        private void TXTdni_TextChanged(object sender, EventArgs e)
+        {
 
         }
 
-       /* private Cliente CrearCliente()
+        private Cliente crearCliente() {
+
+            String nombre = TXTnombre.Text;
+            String apellido = TXTapellido.Text;
+            Int64 dni = Convert.ToInt64(TXTdni.Text);
+            String mail = TXTmail.Text;
+            String telefono = TXTtelefono.Text;
+            String calle = TXTcalle.Text;
+            Int16 numero = Convert.ToInt16(TXTnumero.Text);
+            String depto = TXTdepto.Text;
+            Int16 cp = Convert.ToInt16(TXTcodigoPostal.Text);
+            String localidad = TXTlocalidad.Text;
+            DateTime fechaNacimiento = Convert.ToDateTime(DTEfechaNacimiento.Text);
+
+
+
+
+            return new Cliente(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
+                TXTtelefono.Text, TXTcalle.Text, Convert.ToInt16(TXTnumero.Text), Convert.ToInt16(TXTpiso.Text),
+                TXTdepto.Text, Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), "A");
+        }
+
+        private void DTEfechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            return new Cliente(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text, TXTtelefono.Text,
-            TXTcalle.Text, Convert.ToInt16(TXTnumero.Text), TXTpiso.Text, TXTdepto.Text, TXTlocalidad.Text, TXTcodigoPostal.Text, Convert.ToDateTime(DTEfechaNacimiento.Text));
-        } */
+
+        }
+
     }
 }

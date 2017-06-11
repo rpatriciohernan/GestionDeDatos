@@ -38,49 +38,13 @@ namespace UberFrba.Registro_Viajes
         }
         #endregion
 
-        public List<Viaje> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Viaje> clientesEncontrados = SearchManager(query, "overhead.clientes", 0, 6);
-            return clientesEncontrados;
-        }
+
+        public override String tableName() { return "overhead.viajes"; }
 
         public void Guardar(Viaje viaje)
         {
             SqlDataReader dr = queryManager("Insert into overhead.viajes " + "values(" + viaje.GetValues() + ")");
             dr.Close();
-        }
-
-        private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from Clientes";
-            if (parametrosDeBusqueda.ContainsKey("nombre"))
-            {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("apellido"))
-            {
-                String apellido = parametrosDeBusqueda["apellido"];
-                // queryCondition += "and apellido = " + apellido;
-                queryCondition = "apellido = " + "'" + apellido + "'";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("dni"))
-            {
-                String dni = parametrosDeBusqueda["dni"];
-                // queryCondition += "and dni = " + dni;
-                queryCondition = "dni = " + "'" + dni + "'";
-            }
-
-            if (queryCondition != "")
-            {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
         }
     }
 }
