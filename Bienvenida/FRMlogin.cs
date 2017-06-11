@@ -38,18 +38,55 @@ namespace UberFrba.Bienvenida
             formularioNuevoUsuario.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            //obtener usuario
-
-
-            //consultar si la contra es correcta
-            
-            //SI LA CONTRASENA ES CORRECTA ENTONCES SELECCIONA EL ROL
+        private void HabilitarLogueo() {
             BTNingresar.Visible = true;
             CMBrolDeAcceso.Visible = true;
             LBLrol.Visible = true;
+        }
+
+        private void MostrarErrorLogueo()
+        {
+            LBLerrorLogueo.Visible = true;
+        }
+
+        private Boolean ValidarLogueo()
+        {
+            Dictionary<String, String> parametrosBusquedaUsuario = new Dictionary<String, String>();
+            parametrosBusquedaUsuario.Add("usu_estado", "Activo");
+            parametrosBusquedaUsuario.Add("username", this.TXTusername.Text);
+            List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
+
+            if ((usuariosEncontrados.Count() > 0) && (usuariosEncontrados.First().Password == this.TXTpassword.Text))
+            {
+                this.RellenarComboRoles(usuariosEncontrados.First());
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        private void RellenarComboRoles(Usuario ingresante)
+        {
+            List<String> rolesAsignados = ingresante.RolesAsignados();
+            rolesAsignados.ForEach( rol => CMBrolDeAcceso.Items.Add(rol));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.LBLerrorLogueo.Visible = false;
+            
+            if (this.ValidarLogueo())
+            {
+                this.HabilitarLogueo();
+            }
+            else
+            {
+                this.MostrarErrorLogueo();
+            }
+
+
         }
     }
 }

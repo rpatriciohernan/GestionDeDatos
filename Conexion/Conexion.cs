@@ -40,7 +40,7 @@ namespace UberFrba.Abm_Cliente
         {
             try
             {
-                cn = new SqlConnection("Data Source=DESKTOP-BFA24AK" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
+                cn = new SqlConnection("Data Source=WIN7VM-PC" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
                 cn.Open();
                 MessageBox.Show("Conectado");
 

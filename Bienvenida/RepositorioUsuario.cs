@@ -33,7 +33,7 @@ namespace UberFrba.Bienvenida
         #region builder del objeto
         public override Usuario BuilderEntityFromDataRow(DataRow dr)
         {
-            Usuario usuario = new Usuario(dr[0].ToString(), dr[1].ToString(), Convert.ToInt16(dr[2]), Convert.ToInt16(dr[3]), dr[4].ToString());
+            Usuario usuario = new Usuario(dr[0].ToString(), dr[1].ToString(), Convert.ToInt16(dr[2]), Convert.ToInt64(dr[3]), dr[4].ToString());
             return usuario;
         }
         #endregion

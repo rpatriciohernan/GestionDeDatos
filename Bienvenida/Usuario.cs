@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.Abm_Rol;
 
 namespace UberFrba.Bienvenida
 {
@@ -14,6 +15,7 @@ namespace UberFrba.Bienvenida
         private Int16 loginFallidos;
         private Int64 dni;
         private String estado;
+        private List<Rol> rolesAsignados = new List<Rol>();
         private List<CampoYValor> camposObligatorios;
         private static RepositorioUsuario repositorioUsuario = RepositorioUsuario.Instance;
         #endregion
@@ -84,6 +86,40 @@ namespace UberFrba.Bienvenida
             repositorioUsuario.Guardar(this);
         }
 
+
+        public List<String> RolesAsignados()
+        {
+            List<String> nombreDeRoles = new List<String>();
+            this.ActualizarRoles();
+            rolesAsignados.ForEach(rol => nombreDeRoles.Add(rol.Nombre));
+            return nombreDeRoles;
+
+        }
+
+        private void ActualizarRoles()
+        {
+            //busco los roles asignados del usuario en la tabla intermedia roles_asignados
+            Dictionary<String, String> parametrosBusquedaRolesAsignados = new Dictionary<String, String>();
+            parametrosBusquedaRolesAsignados.Add("username", this.username);
+            List<RolAsignado> rolesAsignadosEncontrados = RolAsignado.buscar(parametrosBusquedaRolesAsignados);
+            
+            //con los roles encontrados, cargo la entidad de rol en la tabla Rol
+            rolesAsignadosEncontrados.ForEach(rolAsignado => this.CargarRolDeUsuario(rolAsignado.IdRol));
+
+        }
+
+        private void CargarRolDeUsuario(Int16 idRol)
+        {
+            Dictionary<String, String> parametrosBusquedaRoles = new Dictionary<String, String>();
+            parametrosBusquedaRoles.Add("id_rol", idRol.ToString());
+            if (Rol.buscar(parametrosBusquedaRoles).Count > 0)
+            {
+                rolesAsignados.Add(Rol.buscar(parametrosBusquedaRoles).First());
+            }
+        }
+
+
+
         public List<ErrorDeCampo> validarCampos()
         { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
             //filter
@@ -92,6 +128,8 @@ namespace UberFrba.Bienvenida
             List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(error => new ErrorDeCampo(error.Campo, "falta completar")).ToList();
             return errores;
         }
+
+
 
         #region values
         public String GetValues()
