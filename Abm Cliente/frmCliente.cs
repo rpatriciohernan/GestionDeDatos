@@ -53,7 +53,7 @@ namespace UberFrba.Abm_Cliente
             Int64 dni = Convert.ToInt64(TXTdni.Text);
             String mail = TXTmail.Text;
             String telefono = TXTtelefono.Text;
-            String calle = TXTcalle.Text;
+            String calle = TXTdomicilio.Text;
             Int16 numero = Convert.ToInt16(TXTnumero.Text);
             String depto = TXTdepto.Text;
             Int16 cp = Convert.ToInt16(TXTcodigoPostal.Text);
@@ -64,7 +64,7 @@ namespace UberFrba.Abm_Cliente
 
 
             return new Cliente(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
-                TXTtelefono.Text, TXTcalle.Text, Convert.ToInt16(TXTnumero.Text), Convert.ToInt16(TXTpiso.Text),
+                TXTtelefono.Text, TXTdomicilio.Text, Convert.ToInt16(TXTnumero.Text), Convert.ToInt16(TXTpiso.Text),
                 TXTdepto.Text, Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), "A");
         }
 
