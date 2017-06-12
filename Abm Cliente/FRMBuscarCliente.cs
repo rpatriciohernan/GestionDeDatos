@@ -12,7 +12,6 @@ namespace UberFrba.Abm_Cliente
 {
     public partial class FRMBuscarCliente : Form
     {
-        private List<Label> labelsConErrores = new List<Label>();
         public FRMBuscarCliente()
         {
             InitializeComponent();
@@ -33,52 +32,9 @@ namespace UberFrba.Abm_Cliente
 
         }
 
-        private Cliente CrearCliente()
-        {
-           /* return new Cliente(txtNombre.Text, txtApellido.Text, Convert.ToInt64(txtDni.Text), txtMail.Text, txtTelefono.Text,
-            txtCalle.Text, Convert.ToInt16(txtNumero.Text), txtPiso.Text, txtDepto.Text, txtLocalidad.Text, txtCodigoPostal.Text, Convert.ToDateTime(dteFechaNacimiento.Text));
-        
-            */
-            return null;
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            LimpiarErrores();
 
-            Cliente cliente = CrearCliente();
-            List<ErrorDeCampo> errores = cliente.validarCampos();
-
-            if (errores.Count > 0)
-            {
-                mostrarErrores(errores);
-            }
-            else
-            {
-                cliente.guardate();
-            }
-        }
-
-
-
-
-        //-----logica de visualizacion de errores, hubiese estado copado generalizarla pero es un bardo :(-------
-        private void LimpiarErrores()
-        {
-            labelsConErrores.ForEach(lbl => lbl.Text = "");
-        }
-
-        private void mostrarErrores(List<ErrorDeCampo> errores)
-        {
-            foreach (ErrorDeCampo error in errores)
-            {
-                Label lbl = this.Controls.Find("lbl" + error.NombreCampo + "Error", true).FirstOrDefault() as Label;
-                if (lbl != null)
-                {
-                    lbl.Text = error.Sugerencia;
-                    labelsConErrores.Add(lbl);
-                }
-            }
         }
 
         private void lblNombreError_Click(object sender, EventArgs e)
@@ -100,7 +56,10 @@ namespace UberFrba.Abm_Cliente
             {
                 parametrosDeBusqueda.Add("cliente_dni", txtDni.Text);
             }
-
+            if (CHKsoloActivos.Checked)
+            {
+                parametrosDeBusqueda.Add("cliente_estado", "Activo");
+            }
             List<Cliente> clientes = Cliente.buscar(parametrosDeBusqueda);
 
             BindingSource bs = new BindingSource(clientes, "");

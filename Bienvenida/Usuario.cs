@@ -74,6 +74,14 @@ namespace UberFrba.Bienvenida
         {
             get { return username; }
         }
+        public string Estado
+        {
+            get { return estado; }
+        }
+        public Int16 LoginFallidos
+        {
+            get { return loginFallidos; }
+        }
         #endregion
 
         //metodos de clase (no se necesita tener una instancia para usarlos)
@@ -87,6 +95,12 @@ namespace UberFrba.Bienvenida
         {
             repositorioUsuario.Guardar(this);
         }
+
+        public void Actualizate()
+        {
+            repositorioUsuario.Actualizar(this);
+        }
+
 
         public Boolean TenesFuncionalidad(String funcionalidadConsultada, String rolactivo)
         {
@@ -154,6 +168,11 @@ namespace UberFrba.Bienvenida
             }
         }
 
+        public void IncrementarLoguinfallido() {
+            loginFallidos++;
+            if (loginFallidos >= 3) { this.estado = "Inactivo"; };
+            this.Actualizate();
+        }
 
 
         public List<ErrorDeCampo> validarCampos()

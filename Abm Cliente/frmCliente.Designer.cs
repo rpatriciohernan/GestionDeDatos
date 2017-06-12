@@ -61,6 +61,7 @@
             this.DTEfechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.BTNeliminar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -153,7 +154,7 @@
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(78, 26);
+            this.label15.Location = new System.Drawing.Point(67, 25);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(14, 18);
             this.label15.TabIndex = 25;
@@ -193,6 +194,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.label22);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.CMBestado);
@@ -439,6 +441,18 @@
             this.BTNeliminar.Text = "ELIMINAR";
             this.BTNeliminar.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(436, 16);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 18);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "*";
+            // 
             // FRMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -499,5 +513,6 @@
         private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox CMBestado;
+        private System.Windows.Forms.Label label6;
     }
 }

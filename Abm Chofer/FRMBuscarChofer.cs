@@ -53,6 +53,10 @@ namespace UberFrba.Abm_Chofer_Administrador
             {
                 parametrosDeBusqueda.Add("chofer_dni", TXTdni.Text);
             }
+            if (CHKsoloActivos.Checked)
+            {
+                parametrosDeBusqueda.Add("chofer_estado", "Activo");
+            }
 
             List<Chofer> choferes = Chofer.buscar(parametrosDeBusqueda);
 
