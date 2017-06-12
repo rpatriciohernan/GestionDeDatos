@@ -45,5 +45,12 @@ namespace UberFrba.Bienvenida
             SqlDataReader dr = queryManager("Insert into overhead.usuarios " + "values(" + usuario.GetValues() + ")");
             dr.Close();
         }
+
+        public void Actualizar(Usuario usuario)
+        {
+            //UPDATE table_name SET column1 = value1, column2 = value2, ... wHERE condition;
+            SqlDataReader dr = queryManager("UPDATE overhead.usuarios SET " + "username=" + "'" + usuario.Username.ToString() + "'" + "," + "usu_password=" + "'" + usuario.Password.ToString() + "'" + "," + "usu_login_fallidos=" + "'" + usuario.LoginFallidos.ToString() + "'" + "," + "usu_dni=" + "'" + usuario.Dni.ToString() + "'" + "," + "usu_estado=" + "'" + usuario.Estado + "'" + " where usu_dni=" + usuario.Dni.ToString());
+            dr.Close();
+        }
     }
 }

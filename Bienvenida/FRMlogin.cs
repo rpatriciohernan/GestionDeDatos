@@ -56,7 +56,7 @@ namespace UberFrba.Bienvenida
             parametrosBusquedaUsuario.Add("usu_estado", "Activo");
             parametrosBusquedaUsuario.Add("username", this.TXTusername.Text);
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
-            usuario = usuariosEncontrados.First();
+            if (usuariosEncontrados.Count() > 0) { usuario = usuariosEncontrados.First(); };
 
             if ((usuariosEncontrados.Count() > 0) && (usuario.Password == this.TXTpassword.Text))
             {
@@ -65,6 +65,7 @@ namespace UberFrba.Bienvenida
             }
             else
             {
+                if (usuariosEncontrados.Count() > 0) { usuario.IncrementarLoguinfallido(); };
                 return false;
             }
         }
