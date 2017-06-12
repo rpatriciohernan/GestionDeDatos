@@ -22,12 +22,13 @@ namespace UberFrba.Bienvenida
 {
     public partial class FRMBienvenida : Form
     {
-        public FRMBienvenida( Usuario usuario)
+        public FRMBienvenida(String username)
         {
-            this.usuario = usuario;
+            this.username = username;
             InitializeComponent();
         }
 
+        private String username;
         private Usuario usuario;
 
         private void button1_Click(object sender, EventArgs e)
@@ -91,8 +92,24 @@ namespace UberFrba.Bienvenida
 
         private void FRMBienvenida_Load(object sender, EventArgs e)
         {
+            this.IndicarUsuarioLogueado();
             this.OcultarTodo();
+            this.IdentificarAlUsuario();
             this.ControlarFuncionalidades();
+        }
+
+        private void IdentificarAlUsuario()
+        {
+            Dictionary<String, String> parametrosBusquedaUsuario = new Dictionary<String, String>();
+            parametrosBusquedaUsuario.Add("usu_estado", "Activo");
+            parametrosBusquedaUsuario.Add("username", username);
+            List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
+            usuario = usuariosEncontrados.First();
+        }
+
+        private void IndicarUsuarioLogueado()
+        {
+            this.TXTusuarioLogueado.Text = "Usuario: " + username;
         }
 
         private void OcultarTodo()
@@ -118,20 +135,21 @@ namespace UberFrba.Bienvenida
 
         private void ControlarFuncionalidades()
         {
-            if (usuario.tenesFuncionalidad("Administrar Usuarios"))
+            if (usuario.TenesFuncionalidad("Administrar Usuarios"))
             {
                 this.BTNaltaUsuario.Visible = true;
                 this.BTNbuscarUsuarios.Visible = true;
+                this.BTNgestionRoles.Visible = true;
             }
 
-            if (usuario.tenesFuncionalidad("Administrar Clientes"))
+            if (usuario.TenesFuncionalidad("Administrar Clientes"))
             {
                 this.BTNfacturarCliente.Visible = true;
                 this.BTNgestionClientes.Visible = true;
                 this.BTNregistrarViaje.Visible = true;
             }
 
-            if (usuario.tenesFuncionalidad("Administrar Choferes"))
+            if (usuario.TenesFuncionalidad("Administrar Choferes"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNgestionChoferes.Visible = true;
@@ -140,7 +158,7 @@ namespace UberFrba.Bienvenida
                 this.BTNrendirViajes.Visible = true;
             }
 
-            if (usuario.tenesFuncionalidad("Consulta Movimientos Personales"))
+            if (usuario.TenesFuncionalidad("Consulta Movimientos Personales"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNmisFacturas.Visible = true;
@@ -148,12 +166,12 @@ namespace UberFrba.Bienvenida
                 this.BTNmisViajesRendidos.Visible = true;
             }
 
-            if (usuario.tenesFuncionalidad("Estadistica"))
+            if (usuario.TenesFuncionalidad("Estadistica"))
             {
                 this.BTNestadistica.Visible = true;
             }
 
-            if (usuario.tenesFuncionalidad("Consulta Vehiculos"))
+            if (usuario.TenesFuncionalidad("Consulta Vehiculos"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
             }
