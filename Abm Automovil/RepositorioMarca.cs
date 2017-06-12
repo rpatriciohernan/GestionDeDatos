@@ -41,13 +41,6 @@ namespace UberFrba.Abm_Automovil
 
         public override String tableName() { return "overhead.marcas"; }
 
-      /*  public List<Marca> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Marca> marcasEncontradas = SearchManager(query, "Marcas", 0, 6);
-            return marcasEncontradas;
-        }*/
-
         public void Guardar(Marca marca)
         {
             Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
@@ -63,33 +56,7 @@ namespace UberFrba.Abm_Automovil
                 dr.Close();
                 MessageBox.Show("La marca se a guardado correctamente");
             }
-
-            
         }
-
-       /* private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.marcas";
-            if (parametrosDeBusqueda.ContainsKey("idMarca"))
-            {
-                String idMarca = parametrosDeBusqueda["idMarca"];
-                queryCondition = "idMarca = " + "'" + idMarca + "'";
-            }
-            
-            if (parametrosDeBusqueda.ContainsKey("nombre")) {
-                String nombre = parametrosDeBusqueda["nombre"];
-                queryCondition = "nombre = " + "'" + nombre + "'";
-            }
-
-            if (queryCondition != "") {
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }*/
-        
-
-
     }
 
     }

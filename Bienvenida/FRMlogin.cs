@@ -22,7 +22,7 @@ namespace UberFrba.Bienvenida
         private void BTNingresar_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMBienvenida formularioBienvenida = new FRMBienvenida(usuario);
+            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString());
             // Show form
             formularioBienvenida.Show();
 
@@ -79,14 +79,14 @@ namespace UberFrba.Bienvenida
         {
             this.LBLerrorLogueo.Visible = false;
             
-            //if (this.ValidarLogueo())
-            //{
+          /*  if (this.ValidarLogueo())
+            {*/
                 this.HabilitarLogueo();
-            //}
-            //else
-            //{
-             //   this.MostrarErrorLogueo();
-            //}
+          /*  }
+            else
+            {
+                this.MostrarErrorLogueo();
+            }*/
 
 
         }

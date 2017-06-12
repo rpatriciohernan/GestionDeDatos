@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.Abm_Funcionalidad;
 using UberFrba.Abm_Rol;
 
 namespace UberFrba.Bienvenida
@@ -16,6 +17,7 @@ namespace UberFrba.Bienvenida
         private Int64 dni;
         private String estado;
         private List<Rol> rolesAsignados = new List<Rol>();
+        private List<Funcionalidad> funcionalidadesAsignadas = new List<Funcionalidad>();
         private List<CampoYValor> camposObligatorios;
         private static RepositorioUsuario repositorioUsuario = RepositorioUsuario.Instance;
         #endregion
@@ -84,6 +86,28 @@ namespace UberFrba.Bienvenida
         public void guardate()
         {
             repositorioUsuario.Guardar(this);
+        }
+
+        public Boolean TenesFuncionalidad(String funcionalidadConsultada)
+        {
+            this.ActualizarFuncionalidades();
+            Funcionalidad funcionalidadEncontrada = funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
+            if (funcionalidadEncontrada.Nombre == funcionalidadConsultada)
+            { return true; }
+            else { return false; }
+        }
+
+        private void ActualizarFuncionalidades()
+        {
+            this.ActualizarRoles();
+            rolesAsignados.ForEach(rol => this.CargarFuncionalidadDelRol(rol.Id));
+        }
+
+        private void CargarFuncionalidadDelRol(Int16 rolID)
+        {
+           // Dictionary<String,String> parametrosBusquedaFuncionalidad = new Dictionary<string,string>();
+           // parametrosBusquedaFuncionalidad("
+           // Funcionalidad.buscar(
         }
 
 

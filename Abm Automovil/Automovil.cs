@@ -12,7 +12,7 @@ namespace UberFrba.Abm_Automovil
         Int16 idMarca;
         Int16 idModelo;
         Int16 idTurno;
-        Int16 idChofer;
+        Int64 choferDni;
         String estado;
         private List<CampoYValor> camposObligatorios;
         private static RepositorioAutomovil repositorioAutomovil = RepositorioAutomovil.Instance;
@@ -36,9 +36,9 @@ namespace UberFrba.Abm_Automovil
         {
             get { return idTurno; }
         }
-        public Int16 IdChofer
+        public Int64 ChoferDni
         {
-            get { return idChofer; }
+            get { return choferDni; }
         }
 
         public string Estado
@@ -48,7 +48,7 @@ namespace UberFrba.Abm_Automovil
         #endregion
 
         #region constructor
-        public Automovil(String patente, Int16 idMarca, Int16 idModelo, Int16 idTurno, Int16 idChofer, String estado) {
+        public Automovil(String patente, Int16 idMarca, Int16 idModelo, Int16 idTurno, Int64 choferDni, String estado) {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
 
@@ -64,8 +64,8 @@ namespace UberFrba.Abm_Automovil
             this.idTurno = idTurno;
             this.camposObligatorios.Add(new CampoYValor("Turno", this.idTurno.ToString()));
 
-            this.idChofer = idChofer;
-            this.camposObligatorios.Add(new CampoYValor("Chofer", this.idChofer.ToString()));
+            this.choferDni = choferDni;
+            this.camposObligatorios.Add(new CampoYValor("Chofer", this.choferDni.ToString()));
 
             this.estado = estado;
             this.camposObligatorios.Add(new CampoYValor("Estado", this.estado));
@@ -96,7 +96,7 @@ namespace UberFrba.Abm_Automovil
         #region values
         public String GetValues() { //ojo al agregar nuevos atributo, volcarlos aca!!!
             return "'" + this.patente + "'" + ',' + "'" + this.idMarca + "'" + ',' + "'" + this.idModelo + "'" + ',' +
-                "'" + this.idTurno + "'" + ',' + "'" + this.idChofer + "'" + ',' + "'" + this.estado + "'";
+                "'" + this.idTurno + "'" + ',' + "'" + this.choferDni + "'" + ',' + "'" + this.estado + "'";
         }
         #endregion
 

@@ -35,7 +35,7 @@ namespace UberFrba.Abm_Automovil
         #region builder del objeto automovil
         public override Automovil BuilderEntityFromDataRow(DataRow dr)
         {
-            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToInt16(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt16(dr[4]), dr[5].ToString());
+            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToInt16(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt64(dr[4]), dr[5].ToString());
             return automovil;
         }
         #endregion

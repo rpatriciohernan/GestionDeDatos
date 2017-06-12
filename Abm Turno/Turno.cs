@@ -135,7 +135,9 @@ namespace UberFrba.Abm_Turno
 
         public String GetValues()
         {
-            return "'" + this.descripcion + "'" + ',' + "'" + this.estado + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" + Convert.ToString(this.horaFin) + "'" + ',' + "'" + Convert.ToString(this.valorKilometro) + "'" + ',' + "'" + Convert.ToString(this.precioBase) + "'";
+            return "'" + this.descripcion + "'" + ',' + "'" + this.estado + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" + 
+                Convert.ToString(this.horaFin) + "'" + ',' + "'" + Convert.ToString(this.valorKilometro) + "'" + ',' + "'" + 
+                Convert.ToString(this.precioBase) + "'";
         }
    
     

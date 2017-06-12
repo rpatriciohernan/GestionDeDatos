@@ -33,7 +33,7 @@
             this.BTNeliminar = new System.Windows.Forms.Button();
             this.BTNguardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.TXTnombre = new System.Windows.Forms.TextBox();
+            this.TXTdescripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -89,6 +89,7 @@
             this.BTNguardar.TabIndex = 54;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label1
             // 
@@ -102,13 +103,13 @@
             this.label1.TabIndex = 53;
             this.label1.Text = "Gestion de Turnos";
             // 
-            // TXTnombre
+            // TXTdescripcion
             // 
-            this.TXTnombre.Location = new System.Drawing.Point(14, 59);
-            this.TXTnombre.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTnombre.Name = "TXTnombre";
-            this.TXTnombre.Size = new System.Drawing.Size(134, 20);
-            this.TXTnombre.TabIndex = 51;
+            this.TXTdescripcion.Location = new System.Drawing.Point(14, 59);
+            this.TXTdescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.TXTdescripcion.Name = "TXTdescripcion";
+            this.TXTdescripcion.Size = new System.Drawing.Size(134, 20);
+            this.TXTdescripcion.TabIndex = 51;
             // 
             // label2
             // 
@@ -298,7 +299,7 @@
             this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.TXTnombre);
+            this.Controls.Add(this.TXTdescripcion);
             this.Controls.Add(this.label2);
             this.Name = "FRMTurno";
             this.Text = "Turno";
@@ -314,7 +315,7 @@
         private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Button BTNguardar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TXTnombre;
+        private System.Windows.Forms.TextBox TXTdescripcion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
