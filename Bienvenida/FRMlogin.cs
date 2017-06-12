@@ -22,7 +22,7 @@ namespace UberFrba.Bienvenida
         private void BTNingresar_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString());
+            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
             // Show form
             formularioBienvenida.Show();
 

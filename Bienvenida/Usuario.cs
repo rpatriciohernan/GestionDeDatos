@@ -88,28 +88,40 @@ namespace UberFrba.Bienvenida
             repositorioUsuario.Guardar(this);
         }
 
-        public Boolean TenesFuncionalidad(String funcionalidadConsultada)
+        public Boolean TenesFuncionalidad(String funcionalidadConsultada, String rolactivo)
         {
-            this.ActualizarFuncionalidades();
-            Funcionalidad funcionalidadEncontrada = funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
-            if (funcionalidadEncontrada.Nombre == funcionalidadConsultada)
-            { return true; }
-            else { return false; }
+            this.ActualizarFuncionalidades(rolactivo);
+            Funcionalidad funcionalidadEncontrada = this.funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
+            if (funcionalidadEncontrada == null) { return false; } else { return funcionalidadEncontrada.Nombre == funcionalidadConsultada; }
         }
 
-        private void ActualizarFuncionalidades()
+        private void ActualizarFuncionalidades(String rolactivo)
         {
+
             this.ActualizarRoles();
-            rolesAsignados.ForEach(rol => this.CargarFuncionalidadDelRol(rol.Id));
+            //busco el id del rol activo (seleccionado por el usuario en login)
+            Int16 idrolactivo = this.rolesAsignados.Find(rolasignado => rolasignado.Nombre == rolactivo).Id;
+
+            //busca id de funcionalidades asignadas al rol en tabla intermedia
+           Dictionary<String,String> parametrosBusquedaFuncionalidadAsignadaAlRol = new Dictionary<string,string>();
+           parametrosBusquedaFuncionalidadAsignadaAlRol.Add("id_rol", idrolactivo.ToString());
+
+           List<FuncionalidadAsignada> funcionalidadesAsignadasEncontradas = FuncionalidadAsignada.buscar(parametrosBusquedaFuncionalidadAsignadaAlRol);
+           //crea una lista de id de las funcionalidades asignadas encontradas
+           List<Int16> IdFuncionalidades = new List<Int16>();
+           funcionalidadesAsignadasEncontradas.ForEach(funcionalidadAsignadaEncontrada => IdFuncionalidades.Add(funcionalidadAsignadaEncontrada.IdFuncionalidad));
+           //por cada id de funcionalidad asignada encontrada, la envia para que sea cargada
+            IdFuncionalidades.ForEach(idfuncionalidad => this.CargarFuncionalidadEncontrada(idfuncionalidad));
+
         }
 
-        private void CargarFuncionalidadDelRol(Int16 rolID)
-        {
-           // Dictionary<String,String> parametrosBusquedaFuncionalidad = new Dictionary<string,string>();
-           // parametrosBusquedaFuncionalidad("
-           // Funcionalidad.buscar(
+        private void CargarFuncionalidadEncontrada(Int16 idFuncionalidad) {
+            //busca funcionalidad segun id y luego la asigna a la lista de funcionalildades asignadas
+            Dictionary<String, String> parametrosBusquedaFuncionalidad = new Dictionary<string, string>();
+            parametrosBusquedaFuncionalidad.Add("id_funcionalidad", idFuncionalidad.ToString());
+            List<Funcionalidad> resultados = Funcionalidad.buscar(parametrosBusquedaFuncionalidad);
+            if (resultados.Count() > 0) { this.funcionalidadesAsignadas.Add(resultados.First()); };
         }
-
 
         public List<String> RolesAsignados()
         {
