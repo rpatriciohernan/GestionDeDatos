@@ -35,54 +35,52 @@ namespace UberFrba.Abm_Chofer
 
         private void FRMChofer_Load(object sender, EventArgs e)
         {
+            this.CMBestado.Items.Add("Activo");
+            this.CMBestado.Items.Add("Inactivo");
+            if (this.CMBestado.Text == "") { this.CMBestado.Text = "Activo"; };
 
         }
 
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.TXTnombre.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTapellido.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTdomicilio.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTdni.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.DTEfechaNacimiento.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTlocalidad.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTtelefono.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBestado.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTmail.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            //  LimpiarErrores();
-
-            Chofer chofer = crearChofer();
-            List<ErrorDeCampo> errores = chofer.validarCampos();
-
-            if (errores.Count > 0)
+            if (this.ValidarCamposMandatorios())
             {
-                // mostrarErrores(errores);
+                this.crearChofer().guardate();
             }
             else
             {
-                chofer.guardate();
-            }
+                this.MensajeError();
+            };           
         }
 
         private Chofer crearChofer()
         {
-
-            String nombre = TXTnombre.Text;
-            String apellido = TXTapellido.Text;
-            Int64 dni = Convert.ToInt64(TXTdni.Text);
-            String mail = TXTmail.Text;
-            String telefono = TXTtelefono.Text;
-            String domicilio = TXTdomicilio.Text;
-            //Int16 numero = Convert.ToInt16(TXTnumero.Text);
-            //String depto = TXTdepto.Text;
-            String localidad = TXTlocalidad.Text;
-            DateTime fechaNacimiento = Convert.ToDateTime(DTEfechaNacimiento.Text);
-
             return new Chofer(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTdomicilio.Text, 
-                TXTlocalidad.Text, TXTtelefono.Text,  TXTmail.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), "Activo");
+                TXTlocalidad.Text, TXTtelefono.Text,  TXTmail.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), CMBestado.Text);
         }
-
-        /*
-         private String nombre;
-         private String apellido;
-         private Int64 dni;
-         private String domicilio;
-         private String localidad;
-         private String telefono;
-         private String mail;
-         private DateTime fechaNacimiento;
-         private String estado;
-         */
     }
 }

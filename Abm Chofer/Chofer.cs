@@ -62,10 +62,6 @@ namespace UberFrba.Abm_Chofer
          }
        #endregion
 
-         /*
-           new Chofer(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
-                TXTtelefono.Text, TXTdomicilio.Text, Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), "Activo");
-          */
 
          #region constructor
          public Chofer(String nombre, String apellido, Int64 dni, String domicilio, String localidad, String telefono, String mail, DateTime fechaNacimiento, String estado)
