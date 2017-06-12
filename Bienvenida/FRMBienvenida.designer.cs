@@ -29,141 +29,141 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRMBienvenida));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.BTNgestionClientes = new System.Windows.Forms.Button();
+            this.BTNgestionChoferes = new System.Windows.Forms.Button();
+            this.BTNgestionVehiculos = new System.Windows.Forms.Button();
+            this.BTNregistrarViaje = new System.Windows.Forms.Button();
+            this.BTNrendirViajes = new System.Windows.Forms.Button();
+            this.BTNfacturarCliente = new System.Windows.Forms.Button();
+            this.BTNestadistica = new System.Windows.Forms.Button();
+            this.BTNgestionRoles = new System.Windows.Forms.Button();
+            this.BTNgestionTurnos = new System.Windows.Forms.Button();
             this.BTNaltaUsuario = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.BTNbuscarUsuarios = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BTNbuscarVehiculos = new System.Windows.Forms.Button();
-            this.BTNviajesRendidos = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.BTNmisViajesRendidos = new System.Windows.Forms.Button();
+            this.BTNmisFacturas = new System.Windows.Forms.Button();
             this.BTNmisViajesRegistrados = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // BTNgestionClientes
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(28, 163);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 61);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "GESTION DE CLIENTES";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.BTNgestionClientes.BackColor = System.Drawing.Color.White;
+            this.BTNgestionClientes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNgestionClientes.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNgestionClientes.Location = new System.Drawing.Point(28, 163);
+            this.BTNgestionClientes.Name = "BTNgestionClientes";
+            this.BTNgestionClientes.Size = new System.Drawing.Size(124, 61);
+            this.BTNgestionClientes.TabIndex = 0;
+            this.BTNgestionClientes.Text = "GESTION DE CLIENTES";
+            this.BTNgestionClientes.UseVisualStyleBackColor = false;
+            this.BTNgestionClientes.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // BTNgestionChoferes
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(158, 163);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 61);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "GESTION DE CHOFERES";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.BTNgestionChoferes.BackColor = System.Drawing.Color.White;
+            this.BTNgestionChoferes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNgestionChoferes.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNgestionChoferes.Location = new System.Drawing.Point(158, 163);
+            this.BTNgestionChoferes.Name = "BTNgestionChoferes";
+            this.BTNgestionChoferes.Size = new System.Drawing.Size(115, 61);
+            this.BTNgestionChoferes.TabIndex = 1;
+            this.BTNgestionChoferes.Text = "GESTION DE CHOFERES";
+            this.BTNgestionChoferes.UseVisualStyleBackColor = false;
+            this.BTNgestionChoferes.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // BTNgestionVehiculos
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(524, 163);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 60);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "GESTION DE VEHICULOS";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.BTNgestionVehiculos.BackColor = System.Drawing.Color.White;
+            this.BTNgestionVehiculos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNgestionVehiculos.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNgestionVehiculos.Location = new System.Drawing.Point(524, 163);
+            this.BTNgestionVehiculos.Name = "BTNgestionVehiculos";
+            this.BTNgestionVehiculos.Size = new System.Drawing.Size(116, 60);
+            this.BTNgestionVehiculos.TabIndex = 2;
+            this.BTNgestionVehiculos.Text = "GESTION DE VEHICULOS";
+            this.BTNgestionVehiculos.UseVisualStyleBackColor = false;
+            this.BTNgestionVehiculos.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button4
+            // BTNregistrarViaje
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(28, 232);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(124, 61);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "REGISTRAR VIAJE";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.BTNregistrarViaje.BackColor = System.Drawing.Color.White;
+            this.BTNregistrarViaje.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNregistrarViaje.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNregistrarViaje.Location = new System.Drawing.Point(28, 232);
+            this.BTNregistrarViaje.Name = "BTNregistrarViaje";
+            this.BTNregistrarViaje.Size = new System.Drawing.Size(124, 61);
+            this.BTNregistrarViaje.TabIndex = 3;
+            this.BTNregistrarViaje.Text = "REGISTRAR VIAJE";
+            this.BTNregistrarViaje.UseVisualStyleBackColor = false;
+            this.BTNregistrarViaje.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // BTNrendirViajes
             // 
-            this.button5.BackColor = System.Drawing.Color.White;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(402, 163);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(115, 61);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "RENDIR VIAJES A CHOFER";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.BTNrendirViajes.BackColor = System.Drawing.Color.White;
+            this.BTNrendirViajes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNrendirViajes.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNrendirViajes.Location = new System.Drawing.Point(402, 163);
+            this.BTNrendirViajes.Name = "BTNrendirViajes";
+            this.BTNrendirViajes.Size = new System.Drawing.Size(115, 61);
+            this.BTNrendirViajes.TabIndex = 4;
+            this.BTNrendirViajes.Text = "RENDIR VIAJES A CHOFER";
+            this.BTNrendirViajes.UseVisualStyleBackColor = false;
+            this.BTNrendirViajes.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button6
+            // BTNfacturarCliente
             // 
-            this.button6.BackColor = System.Drawing.Color.White;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(280, 163);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(116, 62);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "FACTURAR CLIENTE";
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.BTNfacturarCliente.BackColor = System.Drawing.Color.White;
+            this.BTNfacturarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNfacturarCliente.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNfacturarCliente.Location = new System.Drawing.Point(280, 163);
+            this.BTNfacturarCliente.Name = "BTNfacturarCliente";
+            this.BTNfacturarCliente.Size = new System.Drawing.Size(116, 62);
+            this.BTNfacturarCliente.TabIndex = 5;
+            this.BTNfacturarCliente.Text = "FACTURAR CLIENTE";
+            this.BTNfacturarCliente.UseVisualStyleBackColor = false;
+            this.BTNfacturarCliente.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button7
+            // BTNestadistica
             // 
-            this.button7.BackColor = System.Drawing.Color.White;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(524, 304);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(116, 63);
-            this.button7.TabIndex = 6;
-            this.button7.Text = "ESTADISTICA";
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.BTNestadistica.BackColor = System.Drawing.Color.White;
+            this.BTNestadistica.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNestadistica.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNestadistica.Location = new System.Drawing.Point(524, 304);
+            this.BTNestadistica.Name = "BTNestadistica";
+            this.BTNestadistica.Size = new System.Drawing.Size(116, 63);
+            this.BTNestadistica.TabIndex = 6;
+            this.BTNestadistica.Text = "ESTADISTICA";
+            this.BTNestadistica.UseVisualStyleBackColor = false;
+            this.BTNestadistica.Click += new System.EventHandler(this.button7_Click);
             // 
-            // button8
+            // BTNgestionRoles
             // 
-            this.button8.BackColor = System.Drawing.Color.White;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(280, 304);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(116, 63);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "GESTION DE ROLES";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
+            this.BTNgestionRoles.BackColor = System.Drawing.Color.White;
+            this.BTNgestionRoles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNgestionRoles.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNgestionRoles.Location = new System.Drawing.Point(280, 304);
+            this.BTNgestionRoles.Name = "BTNgestionRoles";
+            this.BTNgestionRoles.Size = new System.Drawing.Size(116, 63);
+            this.BTNgestionRoles.TabIndex = 8;
+            this.BTNgestionRoles.Text = "GESTION DE ROLES";
+            this.BTNgestionRoles.UseVisualStyleBackColor = false;
+            this.BTNgestionRoles.Click += new System.EventHandler(this.button8_Click);
             // 
-            // button9
+            // BTNgestionTurnos
             // 
-            this.button9.BackColor = System.Drawing.Color.White;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(402, 304);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(115, 63);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "GESTION DE TURNOS";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.BTNgestionTurnos.BackColor = System.Drawing.Color.White;
+            this.BTNgestionTurnos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNgestionTurnos.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNgestionTurnos.Location = new System.Drawing.Point(402, 304);
+            this.BTNgestionTurnos.Name = "BTNgestionTurnos";
+            this.BTNgestionTurnos.Size = new System.Drawing.Size(115, 63);
+            this.BTNgestionTurnos.TabIndex = 9;
+            this.BTNgestionTurnos.Text = "GESTION DE TURNOS";
+            this.BTNgestionTurnos.UseVisualStyleBackColor = false;
+            this.BTNgestionTurnos.Click += new System.EventHandler(this.button9_Click);
             // 
             // BTNaltaUsuario
             // 
@@ -178,18 +178,18 @@
             this.BTNaltaUsuario.UseVisualStyleBackColor = false;
             this.BTNaltaUsuario.Click += new System.EventHandler(this.BTNaltaUsuario_Click);
             // 
-            // button10
+            // BTNbuscarUsuarios
             // 
-            this.button10.BackColor = System.Drawing.Color.White;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button10.Location = new System.Drawing.Point(158, 304);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(115, 63);
-            this.button10.TabIndex = 11;
-            this.button10.Text = "BUSCAR USUARIOS";
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.BTNbuscarUsuarios.BackColor = System.Drawing.Color.White;
+            this.BTNbuscarUsuarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNbuscarUsuarios.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNbuscarUsuarios.Location = new System.Drawing.Point(158, 304);
+            this.BTNbuscarUsuarios.Name = "BTNbuscarUsuarios";
+            this.BTNbuscarUsuarios.Size = new System.Drawing.Size(115, 63);
+            this.BTNbuscarUsuarios.TabIndex = 11;
+            this.BTNbuscarUsuarios.Text = "BUSCAR USUARIOS";
+            this.BTNbuscarUsuarios.UseVisualStyleBackColor = false;
+            this.BTNbuscarUsuarios.Click += new System.EventHandler(this.button10_Click);
             // 
             // pictureBox1
             // 
@@ -215,31 +215,31 @@
             this.BTNbuscarVehiculos.UseVisualStyleBackColor = false;
             this.BTNbuscarVehiculos.Click += new System.EventHandler(this.BTNbuscarVehiculos_Click);
             // 
-            // BTNviajesRendidos
+            // BTNmisViajesRendidos
             // 
-            this.BTNviajesRendidos.BackColor = System.Drawing.Color.White;
-            this.BTNviajesRendidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BTNviajesRendidos.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BTNviajesRendidos.Location = new System.Drawing.Point(402, 232);
-            this.BTNviajesRendidos.Name = "BTNviajesRendidos";
-            this.BTNviajesRendidos.Size = new System.Drawing.Size(115, 61);
-            this.BTNviajesRendidos.TabIndex = 16;
-            this.BTNviajesRendidos.Text = "MIS RENDICIONES DE VIAJES";
-            this.BTNviajesRendidos.UseVisualStyleBackColor = false;
-            this.BTNviajesRendidos.Click += new System.EventHandler(this.button12_Click);
+            this.BTNmisViajesRendidos.BackColor = System.Drawing.Color.White;
+            this.BTNmisViajesRendidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNmisViajesRendidos.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNmisViajesRendidos.Location = new System.Drawing.Point(402, 232);
+            this.BTNmisViajesRendidos.Name = "BTNmisViajesRendidos";
+            this.BTNmisViajesRendidos.Size = new System.Drawing.Size(115, 61);
+            this.BTNmisViajesRendidos.TabIndex = 16;
+            this.BTNmisViajesRendidos.Text = "MIS RENDICIONES DE VIAJES";
+            this.BTNmisViajesRendidos.UseVisualStyleBackColor = false;
+            this.BTNmisViajesRendidos.Click += new System.EventHandler(this.button12_Click);
             // 
-            // button13
+            // BTNmisFacturas
             // 
-            this.button13.BackColor = System.Drawing.Color.White;
-            this.button13.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button13.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(280, 232);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(116, 61);
-            this.button13.TabIndex = 15;
-            this.button13.Text = "MIS FACTURACIONES CERRADAS";
-            this.button13.UseVisualStyleBackColor = false;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.BTNmisFacturas.BackColor = System.Drawing.Color.White;
+            this.BTNmisFacturas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BTNmisFacturas.Font = new System.Drawing.Font("Lucida Sans Unicode", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNmisFacturas.Location = new System.Drawing.Point(280, 232);
+            this.BTNmisFacturas.Name = "BTNmisFacturas";
+            this.BTNmisFacturas.Size = new System.Drawing.Size(116, 61);
+            this.BTNmisFacturas.TabIndex = 15;
+            this.BTNmisFacturas.Text = "MIS FACTURACIONES CERRADAS";
+            this.BTNmisFacturas.UseVisualStyleBackColor = false;
+            this.BTNmisFacturas.Click += new System.EventHandler(this.button13_Click);
             // 
             // BTNmisViajesRegistrados
             // 
@@ -261,21 +261,21 @@
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(677, 385);
             this.Controls.Add(this.BTNbuscarVehiculos);
-            this.Controls.Add(this.BTNviajesRendidos);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.BTNmisViajesRendidos);
+            this.Controls.Add(this.BTNmisFacturas);
             this.Controls.Add(this.BTNmisViajesRegistrados);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button10);
+            this.Controls.Add(this.BTNbuscarUsuarios);
             this.Controls.Add(this.BTNaltaUsuario);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BTNgestionTurnos);
+            this.Controls.Add(this.BTNgestionRoles);
+            this.Controls.Add(this.BTNestadistica);
+            this.Controls.Add(this.BTNfacturarCliente);
+            this.Controls.Add(this.BTNrendirViajes);
+            this.Controls.Add(this.BTNregistrarViaje);
+            this.Controls.Add(this.BTNgestionVehiculos);
+            this.Controls.Add(this.BTNgestionChoferes);
+            this.Controls.Add(this.BTNgestionClientes);
             this.Name = "FRMBienvenida";
             this.Text = "Uber FRBA";
             this.Load += new System.EventHandler(this.FRMBienvenida_Load);
@@ -286,21 +286,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button BTNgestionClientes;
+        private System.Windows.Forms.Button BTNgestionChoferes;
+        private System.Windows.Forms.Button BTNgestionVehiculos;
+        private System.Windows.Forms.Button BTNregistrarViaje;
+        private System.Windows.Forms.Button BTNrendirViajes;
+        private System.Windows.Forms.Button BTNfacturarCliente;
+        private System.Windows.Forms.Button BTNestadistica;
+        private System.Windows.Forms.Button BTNgestionRoles;
+        private System.Windows.Forms.Button BTNgestionTurnos;
         private System.Windows.Forms.Button BTNaltaUsuario;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button BTNbuscarUsuarios;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button BTNbuscarVehiculos;
-        private System.Windows.Forms.Button BTNviajesRendidos;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button BTNmisViajesRendidos;
+        private System.Windows.Forms.Button BTNmisFacturas;
         private System.Windows.Forms.Button BTNmisViajesRegistrados;
     }
 }

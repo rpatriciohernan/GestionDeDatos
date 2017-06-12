@@ -22,10 +22,13 @@ namespace UberFrba.Bienvenida
 {
     public partial class FRMBienvenida : Form
     {
-        public FRMBienvenida()
+        public FRMBienvenida( Usuario usuario)
         {
+            this.usuario = usuario;
             InitializeComponent();
         }
+
+        private Usuario usuario;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -88,8 +91,78 @@ namespace UberFrba.Bienvenida
 
         private void FRMBienvenida_Load(object sender, EventArgs e)
         {
+            this.OcultarTodo();
+            this.ControlarFuncionalidades();
+        }
+
+        private void OcultarTodo()
+        {
+            this.BTNaltaUsuario.Visible = false;
+            this.BTNbuscarUsuarios.Visible = false;
+            this.BTNbuscarVehiculos.Visible = false;
+            this.BTNestadistica.Visible = false;
+            this.BTNfacturarCliente.Visible = false;
+            this.BTNgestionChoferes.Visible = false;
+            this.BTNgestionClientes.Visible = false;
+            this.BTNgestionRoles.Visible = false;
+            this.BTNgestionTurnos.Visible = false;
+            this.BTNgestionVehiculos.Visible = false;
+            this.BTNmisFacturas.Visible = false;
+            this.BTNmisViajesRegistrados.Visible = false;
+            this.BTNmisViajesRendidos.Visible = false;
+            this.BTNregistrarViaje.Visible = false;
+            this.BTNrendirViajes.Visible = false;
 
         }
+
+
+        private void ControlarFuncionalidades()
+        {
+            if (usuario.tenesFuncionalidad("Administrar Usuarios"))
+            {
+                this.BTNaltaUsuario.Visible = true;
+                this.BTNbuscarUsuarios.Visible = true;
+            }
+
+            if (usuario.tenesFuncionalidad("Administrar Clientes"))
+            {
+                this.BTNfacturarCliente.Visible = true;
+                this.BTNgestionClientes.Visible = true;
+                this.BTNregistrarViaje.Visible = true;
+            }
+
+            if (usuario.tenesFuncionalidad("Administrar Choferes"))
+            {
+                this.BTNbuscarVehiculos.Visible = true;
+                this.BTNgestionChoferes.Visible = true;
+                this.BTNgestionTurnos.Visible = true;
+                this.BTNgestionVehiculos.Visible = true;
+                this.BTNrendirViajes.Visible = true;
+            }
+
+            if (usuario.tenesFuncionalidad("Consulta Movimientos Personales"))
+            {
+                this.BTNbuscarVehiculos.Visible = true;
+                this.BTNmisFacturas.Visible = true;
+                this.BTNmisViajesRegistrados.Visible = true;
+                this.BTNmisViajesRendidos.Visible = true;
+            }
+
+            if (usuario.tenesFuncionalidad("Estadistica"))
+            {
+                this.BTNestadistica.Visible = true;
+            }
+
+            if (usuario.tenesFuncionalidad("Consulta Vehiculos"))
+            {
+                this.BTNbuscarVehiculos.Visible = true;
+            }
+
+        }
+
+
+
+
 
         private void button4_Click(object sender, EventArgs e)
         {
