@@ -16,5 +16,15 @@ namespace UberFrba.Abm_Turno
         {
             InitializeComponent();
         }
+
+        private void BTNnuevoTurno_Click(object sender, EventArgs e)
+        {
+            // Create a new instance of the form
+            FRMTurno formularioTurno = new FRMTurno();
+
+            // Show form
+            formularioTurno.Show();
+
+        }
     }
 }

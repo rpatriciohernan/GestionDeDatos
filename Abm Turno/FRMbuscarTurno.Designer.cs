@@ -35,6 +35,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TXTnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.BTNnuevoTurno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,7 +75,7 @@
             // 
             this.BTNbuscar.Location = new System.Drawing.Point(10, 84);
             this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(442, 23);
+            this.BTNbuscar.Size = new System.Drawing.Size(219, 23);
             this.BTNbuscar.TabIndex = 79;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
@@ -111,11 +112,22 @@
             this.label2.TabIndex = 76;
             this.label2.Text = "Descripcion";
             // 
+            // BTNnuevoTurno
+            // 
+            this.BTNnuevoTurno.Location = new System.Drawing.Point(233, 84);
+            this.BTNnuevoTurno.Name = "BTNnuevoTurno";
+            this.BTNnuevoTurno.Size = new System.Drawing.Size(219, 23);
+            this.BTNnuevoTurno.TabIndex = 94;
+            this.BTNnuevoTurno.Text = "NUEVO TURNO";
+            this.BTNnuevoTurno.UseVisualStyleBackColor = true;
+            this.BTNnuevoTurno.Click += new System.EventHandler(this.BTNnuevoTurno_Click);
+            // 
             // FRMbuscarTurno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 258);
+            this.Controls.Add(this.BTNnuevoTurno);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.dataGridView1);
@@ -140,6 +152,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTnombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BTNnuevoTurno;
 
     }
 }
