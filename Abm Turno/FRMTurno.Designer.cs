@@ -303,6 +303,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMTurno";
             this.Text = "Turno";
+            this.Load += new System.EventHandler(this.FRMTurno_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

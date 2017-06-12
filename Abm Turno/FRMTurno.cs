@@ -15,18 +15,19 @@ namespace UberFrba.Abm_Turno
         public FRMTurno()
         {
             InitializeComponent();
-            CMBestado.Items.Add("Habilitado");
-            CMBestado.Items.Add("Inhabilitado");
+            CMBestado.Items.Add("Activo");
+            CMBestado.Items.Add("InActivo");
         }
 
         private void CMBestado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-        //Turno(String descripcion, String estado, DateTime horaInicio, DateTime horaFin, Int16 valorKilometro, Int16 precioBase)
 
         private Turno crearTurno() {
-            return new Turno(TXTdescripcion.Text, CMBestado.Text, Convert.ToDateTime(DTEhoraInicio.Text), Convert.ToDateTime(DTEhoraFin.Text), Convert.ToInt16(TXTvalorKilometro.Text), Convert.ToInt16(TXTprecioBase.Text));
+            String horaInicio = String.Format("{0:t}", Convert.ToDateTime(DTEhoraInicio.Text));
+            String horaFin = String.Format("{0:t}", Convert.ToDateTime(DTEhoraFin.Text));
+            return new Turno(TXTdescripcion.Text, CMBestado.Text, horaInicio, horaFin, Convert.ToInt16(TXTvalorKilometro.Text), Convert.ToInt16(TXTprecioBase.Text));
         }
 
         private void BTNguardar_Click(object sender, EventArgs e)
@@ -44,6 +45,11 @@ namespace UberFrba.Abm_Turno
             {
                 turno.guardate();
             }
+        }
+
+        private void FRMTurno_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
