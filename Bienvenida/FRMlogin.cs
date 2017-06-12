@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,21 @@ namespace UberFrba.Bienvenida
             LBLerrorLogueo.Visible = true;
         }
 
+        public string SHA256Encrypt(string input)
+        {
+            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+
+            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+            byte[] hashedBytes = provider.ComputeHash(inputBytes);
+
+            StringBuilder output = new StringBuilder();
+
+            for (int i = 0; i < hashedBytes.Length; i++)
+                output.Append(hashedBytes[i].ToString("x2").ToLower());
+
+            return output.ToString();
+        }
+
         private Boolean ValidarLogueo()
         {
             Dictionary<String, String> parametrosBusquedaUsuario = new Dictionary<String, String>();
@@ -57,7 +73,7 @@ namespace UberFrba.Bienvenida
             parametrosBusquedaUsuario.Add("username", this.TXTusername.Text);
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
             if (usuariosEncontrados.Count() > 0) { usuario = usuariosEncontrados.First(); };
-
+                                                          // colocar funcion HASH para transformar password
             if ((usuariosEncontrados.Count() > 0) && (usuario.Password == this.TXTpassword.Text))
             {
                 this.RellenarComboRoles(usuario);
@@ -80,14 +96,14 @@ namespace UberFrba.Bienvenida
         {
             this.LBLerrorLogueo.Visible = false;
             
-          /*  if (this.ValidarLogueo())
-            {*/
+            if (this.ValidarLogueo())
+            {
                 this.HabilitarLogueo();
-          /*  }
+            }
             else
             {
                 this.MostrarErrorLogueo();
-            }*/
+            }
 
 
         }
