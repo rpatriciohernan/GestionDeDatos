@@ -54,8 +54,6 @@ namespace UberFrba.Abm_Cliente
             String mail = TXTmail.Text;
             String telefono = TXTtelefono.Text;
             String domicilio = TXTdomicilio.Text;
-            //Int16 numero = Convert.ToInt16(TXTnumero.Text);
-            //String depto = TXTdepto.Text;
             Int16 cp = Convert.ToInt16(TXTcodigoPostal.Text);
             String localidad = TXTlocalidad.Text;
             DateTime fechaNacimiento = Convert.ToDateTime(DTEfechaNacimiento.Text);

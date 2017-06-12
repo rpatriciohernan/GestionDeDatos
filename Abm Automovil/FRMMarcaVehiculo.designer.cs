@@ -86,6 +86,7 @@
             this.BTNguardar.TabIndex = 36;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label1
             // 

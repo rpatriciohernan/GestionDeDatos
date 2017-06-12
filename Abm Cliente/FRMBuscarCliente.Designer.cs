@@ -214,6 +214,7 @@
             this.CHKsoloActivos.TabIndex = 48;
             this.CHKsoloActivos.Text = "Buscar solo activos";
             this.CHKsoloActivos.UseVisualStyleBackColor = true;
+            this.CHKsoloActivos.CheckedChanged += new System.EventHandler(this.CHKsoloActivos_CheckedChanged);
             // 
             // FRMBuscarCliente
             // 

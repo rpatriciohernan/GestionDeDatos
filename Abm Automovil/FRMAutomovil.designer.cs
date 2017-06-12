@@ -39,7 +39,7 @@
             this.CMBmarca = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.BTNpatente = new System.Windows.Forms.TextBox();
+            this.TXTpatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.CMBestado = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.BTNChofer = new System.Windows.Forms.ComboBox();
+            this.CMBChofer = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,7 +63,7 @@
             this.groupBox1.Controls.Add(this.CMBmarca);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.BTNpatente);
+            this.groupBox1.Controls.Add(this.TXTpatente);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
@@ -73,6 +73,7 @@
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del vehiculo";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // TXTmodelo
             // 
@@ -93,7 +94,16 @@
             // 
             // CMBturno
             // 
+            this.CMBturno.AutoCompleteCustomSource.AddRange(new string[] {
+            "mañana",
+            "tarde",
+            "noche"});
             this.CMBturno.FormattingEnabled = true;
+            this.CMBturno.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
             this.CMBturno.Location = new System.Drawing.Point(485, 48);
             this.CMBturno.Name = "CMBturno";
             this.CMBturno.Size = new System.Drawing.Size(65, 21);
@@ -113,7 +123,15 @@
             // 
             // CMBmarca
             // 
+            this.CMBmarca.AutoCompleteCustomSource.AddRange(new string[] {
+            "fiat",
+            "ford",
+            "chevrolet",
+            "renault"});
             this.CMBmarca.FormattingEnabled = true;
+            this.CMBmarca.Items.AddRange(new object[] {
+            "0",
+            "1"});
             this.CMBmarca.Location = new System.Drawing.Point(131, 49);
             this.CMBmarca.Name = "CMBmarca";
             this.CMBmarca.Size = new System.Drawing.Size(152, 21);
@@ -143,13 +161,13 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "*";
             // 
-            // BTNpatente
+            // TXTpatente
             // 
-            this.BTNpatente.Location = new System.Drawing.Point(11, 49);
-            this.BTNpatente.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNpatente.Name = "BTNpatente";
-            this.BTNpatente.Size = new System.Drawing.Size(116, 20);
-            this.BTNpatente.TabIndex = 1;
+            this.TXTpatente.Location = new System.Drawing.Point(11, 49);
+            this.TXTpatente.Margin = new System.Windows.Forms.Padding(4);
+            this.TXTpatente.Name = "TXTpatente";
+            this.TXTpatente.Size = new System.Drawing.Size(116, 20);
+            this.TXTpatente.TabIndex = 1;
             // 
             // label2
             // 
@@ -207,7 +225,7 @@
             this.label1.Location = new System.Drawing.Point(-1, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(320, 45);
+            this.label1.Size = new System.Drawing.Size(318, 45);
             this.label1.TabIndex = 20;
             this.label1.Text = "Gestion de Vehiculos";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -231,10 +249,17 @@
             this.BTNguardar.TabIndex = 27;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // CMBestado
             // 
+            this.CMBestado.AutoCompleteCustomSource.AddRange(new string[] {
+            "Activo",
+            "Inactivo"});
             this.CMBestado.FormattingEnabled = true;
+            this.CMBestado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.CMBestado.Location = new System.Drawing.Point(14, 181);
             this.CMBestado.Name = "CMBestado";
             this.CMBestado.Size = new System.Drawing.Size(174, 21);
@@ -264,13 +289,24 @@
             this.label7.TabIndex = 33;
             this.label7.Text = "Chofer Asignado";
             // 
-            // BTNChofer
+            // CMBChofer
             // 
-            this.BTNChofer.FormattingEnabled = true;
-            this.BTNChofer.Location = new System.Drawing.Point(199, 181);
-            this.BTNChofer.Name = "BTNChofer";
-            this.BTNChofer.Size = new System.Drawing.Size(364, 21);
-            this.BTNChofer.TabIndex = 34;
+            this.CMBChofer.AutoCompleteCustomSource.AddRange(new string[] {
+            "Javeee",
+            "Patoo",
+            "Aguss",
+            "Car",
+            "Ojos Locos"});
+            this.CMBChofer.FormattingEnabled = true;
+            this.CMBChofer.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2",
+            "3"});
+            this.CMBChofer.Location = new System.Drawing.Point(199, 181);
+            this.CMBChofer.Name = "CMBChofer";
+            this.CMBChofer.Size = new System.Drawing.Size(364, 21);
+            this.CMBChofer.TabIndex = 34;
             // 
             // FRMAutomovil
             // 
@@ -278,7 +314,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 261);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.BTNChofer);
+            this.Controls.Add(this.CMBChofer);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CMBestado);
             this.Controls.Add(this.label14);
@@ -288,6 +324,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FRMAutomovil";
             this.Text = "Vehiculo";
+            this.Load += new System.EventHandler(this.FRMAutomovil_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -301,7 +338,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox BTNpatente;
+        private System.Windows.Forms.TextBox TXTpatente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -315,7 +352,7 @@
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox BTNChofer;
+        private System.Windows.Forms.ComboBox CMBChofer;
         private System.Windows.Forms.TextBox TXTmodelo;
     }
 }

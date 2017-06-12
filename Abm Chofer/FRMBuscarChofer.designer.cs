@@ -140,6 +140,7 @@
             this.BTNbuscar.TabIndex = 23;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
+            this.BTNbuscar.Click += new System.EventHandler(this.BTNbuscar_Click);
             // 
             // dataGridView1
             // 

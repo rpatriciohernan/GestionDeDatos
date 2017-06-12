@@ -27,14 +27,17 @@ namespace UberFrba.Abm_Automovil
         }
         #endregion
 
-        #region constructor
+        #region constructores
         public Marca(Int16 idMarca, String nombre)
+        {
+            this.idMarca = idMarca;
+            this.nombre = nombre;
+        }
+
+        public Marca(String nombre)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
-
-            this.idMarca = idMarca;
-            this.camposObligatorios.Add(new CampoYValor("IdMarca", this.idMarca.ToString()));
 
             this.nombre = nombre;
             this.camposObligatorios.Add(new CampoYValor("Nombre", this.nombre));

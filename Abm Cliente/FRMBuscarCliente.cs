@@ -107,5 +107,10 @@ namespace UberFrba.Abm_Cliente
             dataGridView1.DataSource = bs; //bs.ResetBindings(false); hay que hacerlo cada vez que se actualiza la lista
         }
 
+        private void CHKsoloActivos_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

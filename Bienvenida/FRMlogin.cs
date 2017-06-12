@@ -80,14 +80,14 @@ namespace UberFrba.Bienvenida
         {
             this.LBLerrorLogueo.Visible = false;
             
-            if (this.ValidarLogueo())
-            {
+          /*  if (this.ValidarLogueo())
+            {*/
                 this.HabilitarLogueo();
-            }
+          /*  }
             else
             {
                 this.MostrarErrorLogueo();
-            }
+            }*/
 
 
         }
