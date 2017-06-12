@@ -49,8 +49,6 @@ namespace UberFrba.Abm_Cliente
 
         public abstract String tableName();
 
-        //public abstract String prefijoColumna();
-
         protected String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda, String operador)
         {
             String queryCondition = "";

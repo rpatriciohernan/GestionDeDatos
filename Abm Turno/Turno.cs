@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UberFrba.Abm_Turno
 {
@@ -13,8 +14,8 @@ namespace UberFrba.Abm_Turno
         private Int16 idTurno;
         private String descripcion;
         private String estado;
-        private DateTime horaInicio;
-        private DateTime horaFin;
+        private String horaInicio; //private DateTime horaInicio;
+        private String horaFin; //private DateTime horaFin;
         private Int16 valorKilometro;
         private Int16 precioBase;
         private List<CampoYValor> camposObligatorios;
@@ -36,11 +37,11 @@ namespace UberFrba.Abm_Turno
          {
             get { return estado; }
         }
-        public DateTime HoraInicio
+        public String HoraInicio
         {
             get { return horaInicio; }
         }
-        public DateTime HoraFin
+        public String HoraFin
         {
             get { return horaFin; }
         }
@@ -55,7 +56,7 @@ namespace UberFrba.Abm_Turno
         #endregion
 
         #region constructor
-        public Turno(Int16 idTurno ,String descripcion, String estado, DateTime horaInicio, DateTime horaFin, Int16 valorKilometro, Int16 precioBase)
+        public Turno(Int16 idTurno, String descripcion, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase, String estado)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
@@ -85,7 +86,7 @@ namespace UberFrba.Abm_Turno
         #endregion  
         
         #region constructor
-        public Turno(String descripcion, String estado, DateTime horaInicio, DateTime horaFin, Int16 valorKilometro, Int16 precioBase)
+        public Turno(String descripcion, String estado, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase)
         {
             //--cargar en esta lista, los campos obligatorios del cliente--
             this.camposObligatorios = new List<CampoYValor>();
@@ -120,7 +121,15 @@ namespace UberFrba.Abm_Turno
         //metodos de instancia
         public void guardate()
         {
-            repositorioTurno.guardar(this);
+            List<Turno> turnosSuperpuestos = repositorioTurno.buscarTurnosSuperpuestos(this);
+
+            if (turnosSuperpuestos.Count > 0)
+            {
+                MessageBox.Show("La franja horaria seleccionada se superpone con la de otro turno, por favor elija otra");
+            } else {
+                repositorioTurno.guardar(this);
+                MessageBox.Show("El turno se guardo correctamente");
+            }
         }
 
         public List<ErrorDeCampo> validarCampos() //devuelve lista de campos obligatorios sin completar
@@ -135,9 +144,9 @@ namespace UberFrba.Abm_Turno
 
         public String GetValues()
         {
-            return "'" + this.descripcion + "'" + ',' + "'" + this.estado + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" + 
-                Convert.ToString(this.horaFin) + "'" + ',' + "'" + Convert.ToString(this.valorKilometro) + "'" + ',' + "'" + 
-                Convert.ToString(this.precioBase) + "'";
+            return "'" + this.descripcion + "'" + ',' + "'" + this.horaInicio + "'" + ',' + "'" +
+                Convert.ToString(this.horaFin) + "'" + ',' + "'" + this.valorKilometro + "'" + ',' + "'" +
+                Convert.ToString(this.precioBase) + "'" + ',' + "'" + this.estado + "'";
         }
    
     
