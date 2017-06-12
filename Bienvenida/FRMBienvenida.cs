@@ -22,12 +22,14 @@ namespace UberFrba.Bienvenida
 {
     public partial class FRMBienvenida : Form
     {
-        public FRMBienvenida(String username)
+        public FRMBienvenida(String username, String rolactivo)
         {
+            this.rolactivo = rolactivo;
             this.username = username;
             InitializeComponent();
         }
 
+        private String rolactivo;
         private String username;
         private Usuario usuario;
 
@@ -135,21 +137,21 @@ namespace UberFrba.Bienvenida
 
         private void ControlarFuncionalidades()
         {
-            if (usuario.TenesFuncionalidad("Administrar Usuarios"))
+            if (usuario.TenesFuncionalidad("Administrar Usuarios", rolactivo))
             {
                 this.BTNaltaUsuario.Visible = true;
                 this.BTNbuscarUsuarios.Visible = true;
                 this.BTNgestionRoles.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Administrar Clientes"))
+            if (usuario.TenesFuncionalidad("Administrar Clientes", rolactivo))
             {
                 this.BTNfacturarCliente.Visible = true;
                 this.BTNgestionClientes.Visible = true;
                 this.BTNregistrarViaje.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Administrar Choferes"))
+            if (usuario.TenesFuncionalidad("Administrar Choferes", rolactivo))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNgestionChoferes.Visible = true;
@@ -158,7 +160,7 @@ namespace UberFrba.Bienvenida
                 this.BTNrendirViajes.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Consulta Movimientos Personales"))
+            if (usuario.TenesFuncionalidad("Consulta Movimientos Personales", rolactivo))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNmisFacturas.Visible = true;
@@ -166,12 +168,12 @@ namespace UberFrba.Bienvenida
                 this.BTNmisViajesRendidos.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Estadistica"))
+            if (usuario.TenesFuncionalidad("Estadistica", rolactivo))
             {
                 this.BTNestadistica.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Consulta Vehiculos"))
+            if (usuario.TenesFuncionalidad("Consulta Vehiculos", rolactivo))
             {
                 this.BTNbuscarVehiculos.Visible = true;
             }

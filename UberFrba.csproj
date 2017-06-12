@@ -100,7 +100,9 @@
       <DependentUpon>FRMFuncionalidad.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Funcionalidad\Funcionalidad.cs" />
+    <Compile Include="Abm Funcionalidad\FuncionalidadAsignada.cs" />
     <Compile Include="Abm Funcionalidad\RepositorioFuncionalidad.cs" />
+    <Compile Include="Abm Funcionalidad\RepositorioFuncionalidadAsignada.cs" />
     <Compile Include="Abm Rol\FRMFuncionalidadesAsignadas.cs">
       <SubType>Form</SubType>
     </Compile>
