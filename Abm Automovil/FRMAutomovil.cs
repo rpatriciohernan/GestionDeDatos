@@ -38,21 +38,37 @@ namespace UberFrba.Abm_Automovil
             formularioMarcas.Show();
         }
 
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.TXTpatente.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBmarca.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTmodelo.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBturno.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBChofer.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBestado.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            //  LimpiarErrores();
-
-            Automovil automovil = crearAutomovil();
-            List<ErrorDeCampo> errores = automovil.validarCampos();
-
-            if (errores.Count > 0)
+            if (this.ValidarCamposMandatorios())
             {
-                // mostrarErrores(errores);
+                this.crearAutomovil().guardate();
             }
             else
             {
-                automovil.guardate();
-            }
+                this.MensajeError();
+            };
+           
         }
 
         
@@ -73,6 +89,10 @@ namespace UberFrba.Abm_Automovil
 
         private void FRMAutomovil_Load(object sender, EventArgs e)
         {
+            this.CMBestado.Items.Add("Activo");
+            this.CMBestado.Items.Add("Inactivo");
+            if (this.CMBestado.Text == "") { this.CMBestado.Text = "Activo"; };
+
             Dictionary<String, String> searchAll = new Dictionary<string, string>();
 
             marcas = Marca.buscar(searchAll);

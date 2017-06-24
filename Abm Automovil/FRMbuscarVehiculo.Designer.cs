@@ -28,12 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTNChofer = new System.Windows.Forms.ComboBox();
+            this.CMBChofer = new System.Windows.Forms.ComboBox();
             this.TXTmodelo = new System.Windows.Forms.TextBox();
             this.CMBmarca = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.BTNpatente = new System.Windows.Forms.TextBox();
+            this.TXTpatente = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTNbuscar = new System.Windows.Forms.Button();
@@ -46,13 +44,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // BTNChofer
+            // CMBChofer
             // 
-            this.BTNChofer.FormattingEnabled = true;
-            this.BTNChofer.Location = new System.Drawing.Point(442, 72);
-            this.BTNChofer.Name = "BTNChofer";
-            this.BTNChofer.Size = new System.Drawing.Size(170, 21);
-            this.BTNChofer.TabIndex = 46;
+            this.CMBChofer.FormattingEnabled = true;
+            this.CMBChofer.Location = new System.Drawing.Point(442, 72);
+            this.CMBChofer.Name = "CMBChofer";
+            this.CMBChofer.Size = new System.Drawing.Size(170, 21);
+            this.CMBChofer.TabIndex = 46;
             // 
             // TXTmodelo
             // 
@@ -69,37 +67,13 @@
             this.CMBmarca.Size = new System.Drawing.Size(152, 21);
             this.CMBmarca.TabIndex = 27;
             // 
-            // label13
+            // TXTpatente
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(177, 51);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 18);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(67, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 18);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "*";
-            // 
-            // BTNpatente
-            // 
-            this.BTNpatente.Location = new System.Drawing.Point(17, 74);
-            this.BTNpatente.Margin = new System.Windows.Forms.Padding(4);
-            this.BTNpatente.Name = "BTNpatente";
-            this.BTNpatente.Size = new System.Drawing.Size(116, 20);
-            this.BTNpatente.TabIndex = 1;
+            this.TXTpatente.Location = new System.Drawing.Point(17, 74);
+            this.TXTpatente.Margin = new System.Windows.Forms.Padding(4);
+            this.TXTpatente.Name = "TXTpatente";
+            this.TXTpatente.Size = new System.Drawing.Size(116, 20);
+            this.TXTpatente.TabIndex = 1;
             // 
             // label2
             // 
@@ -129,6 +103,7 @@
             this.BTNbuscar.TabIndex = 39;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
+            this.BTNbuscar.Click += new System.EventHandler(this.BTNbuscar_Click);
             // 
             // label3
             // 
@@ -209,12 +184,10 @@
             this.ClientSize = new System.Drawing.Size(624, 443);
             this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.TXTmodelo);
-            this.Controls.Add(this.BTNChofer);
+            this.Controls.Add(this.CMBChofer);
             this.Controls.Add(this.CMBmarca);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BTNpatente);
+            this.Controls.Add(this.TXTpatente);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BTNbuscar);
             this.Controls.Add(this.label3);
@@ -224,6 +197,7 @@
             this.Controls.Add(this.label19);
             this.Name = "FRMbuscarVehiculo";
             this.Text = "Buscar Vehiculos";
+            this.Load += new System.EventHandler(this.FRMbuscarVehiculo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -232,12 +206,10 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox BTNChofer;
+        private System.Windows.Forms.ComboBox CMBChofer;
         private System.Windows.Forms.TextBox TXTmodelo;
         private System.Windows.Forms.ComboBox CMBmarca;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox BTNpatente;
+        private System.Windows.Forms.TextBox TXTpatente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BTNbuscar;
