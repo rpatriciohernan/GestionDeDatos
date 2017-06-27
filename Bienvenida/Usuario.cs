@@ -102,11 +102,15 @@ namespace UberFrba.Bienvenida
         }
 
 
-        public Boolean TenesFuncionalidad(String funcionalidadConsultada, String rolactivo)
+        public Boolean TenesFuncionalidad(String funcionalidadConsultada)
         {
-            this.ActualizarFuncionalidades(rolactivo);
             Funcionalidad funcionalidadEncontrada = this.funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
             if (funcionalidadEncontrada == null) { return false; } else { return funcionalidadEncontrada.Nombre == funcionalidadConsultada; }
+        }
+
+        public void AsignarRol(String rolactivo)
+        {
+            this.ActualizarFuncionalidades(rolactivo);
         }
 
         private void ActualizarFuncionalidades(String rolactivo)

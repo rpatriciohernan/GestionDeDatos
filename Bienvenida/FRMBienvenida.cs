@@ -11,6 +11,7 @@ using UberFrba.Abm_Automovil;
 using UberFrba.Abm_Chofer;
 using UberFrba.Abm_Chofer_Administrador;
 using UberFrba.Abm_Cliente;
+using UberFrba.Abm_Funcionalidad;
 using UberFrba.Abm_Rol;
 using UberFrba.Abm_Turno;
 using UberFrba.Facturacion;
@@ -140,30 +141,34 @@ namespace UberFrba.Bienvenida
 
         private void ControlarFuncionalidades()
         {
-            if (usuario.TenesFuncionalidad("Administrar Usuarios", rolactivo))
+            usuario.AsignarRol(rolactivo);
+
+            if (usuario.TenesFuncionalidad("Administrar Usuarios"))
             {
                 this.BTNaltaUsuario.Visible = true;
                 this.BTNbuscarUsuarios.Visible = true;
                 this.BTNgestionRoles.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Administrar Clientes", rolactivo))
+            if (usuario.TenesFuncionalidad("Administrar Clientes"))
             {
-                this.BTNfacturarCliente.Visible = true;
                 this.BTNgestionClientes.Visible = true;
+            }
+
+            if (usuario.TenesFuncionalidad("Registro de Viajes"))
+            {
                 this.BTNregistrarViaje.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Administrar Choferes", rolactivo))
+            if (usuario.TenesFuncionalidad("Administrar Choferes"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNgestionChoferes.Visible = true;
                 this.BTNgestionTurnos.Visible = true;
                 this.BTNgestionVehiculos.Visible = true;
-                this.BTNrendirViajes.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Consulta Movimientos Personales", rolactivo))
+            if (usuario.TenesFuncionalidad("Consulta Movimientos Personales"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
                 this.BTNmisFacturas.Visible = true;
@@ -171,16 +176,25 @@ namespace UberFrba.Bienvenida
                 this.BTNmisViajesRendidos.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Estadistica", rolactivo))
+            if (usuario.TenesFuncionalidad("Estadistica"))
             {
                 this.BTNestadistica.Visible = true;
             }
 
-            if (usuario.TenesFuncionalidad("Consulta Vehiculos", rolactivo))
+            if (usuario.TenesFuncionalidad("Consulta Vehiculos"))
             {
                 this.BTNbuscarVehiculos.Visible = true;
             }
 
+            if (usuario.TenesFuncionalidad("Facturacion del Cliente"))
+            {
+                this.BTNfacturarCliente.Visible = true;
+            }
+
+            if (usuario.TenesFuncionalidad("Rendicion de cuenta del chofer"))
+            {
+                this.BTNrendirViajes.Visible = true;
+            }
         }
 
 
