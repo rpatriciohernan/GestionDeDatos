@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label19 = new System.Windows.Forms.Label();
-            this.BTNeliminar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTNagregar = new System.Windows.Forms.Button();
             this.TXTnombre = new System.Windows.Forms.TextBox();
@@ -52,28 +51,19 @@
             this.label19.TabIndex = 54;
             this.label19.Text = "Funcionalidades Asignadas";
             // 
-            // BTNeliminar
-            // 
-            this.BTNeliminar.Location = new System.Drawing.Point(152, 254);
-            this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(112, 23);
-            this.BTNeliminar.TabIndex = 53;
-            this.BTNeliminar.Text = "ELIMINAR";
-            this.BTNeliminar.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 66);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(252, 118);
+            this.dataGridView1.Size = new System.Drawing.Size(360, 165);
             this.dataGridView1.TabIndex = 52;
             // 
             // BTNagregar
             // 
-            this.BTNagregar.Location = new System.Drawing.Point(12, 254);
+            this.BTNagregar.Location = new System.Drawing.Point(12, 281);
             this.BTNagregar.Name = "BTNagregar";
-            this.BTNagregar.Size = new System.Drawing.Size(108, 23);
+            this.BTNagregar.Size = new System.Drawing.Size(360, 23);
             this.BTNagregar.TabIndex = 51;
             this.BTNagregar.Text = "AGREGAR";
             this.BTNagregar.UseVisualStyleBackColor = true;
@@ -84,7 +74,7 @@
             this.TXTnombre.Location = new System.Drawing.Point(12, 24);
             this.TXTnombre.Margin = new System.Windows.Forms.Padding(4);
             this.TXTnombre.Name = "TXTnombre";
-            this.TXTnombre.Size = new System.Drawing.Size(252, 20);
+            this.TXTnombre.Size = new System.Drawing.Size(360, 20);
             this.TXTnombre.TabIndex = 49;
             // 
             // label2
@@ -104,7 +94,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(13, 198);
+            this.label1.Location = new System.Drawing.Point(13, 234);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 16);
@@ -114,9 +104,9 @@
             // 
             // BTNterminar
             // 
-            this.BTNterminar.Location = new System.Drawing.Point(12, 284);
+            this.BTNterminar.Location = new System.Drawing.Point(12, 310);
             this.BTNterminar.Name = "BTNterminar";
-            this.BTNterminar.Size = new System.Drawing.Size(250, 23);
+            this.BTNterminar.Size = new System.Drawing.Size(360, 23);
             this.BTNterminar.TabIndex = 57;
             this.BTNterminar.Text = "TERMINAR";
             this.BTNterminar.UseVisualStyleBackColor = true;
@@ -125,21 +115,20 @@
             // CMBfuncionalidad
             // 
             this.CMBfuncionalidad.FormattingEnabled = true;
-            this.CMBfuncionalidad.Location = new System.Drawing.Point(12, 218);
+            this.CMBfuncionalidad.Location = new System.Drawing.Point(12, 254);
             this.CMBfuncionalidad.Name = "CMBfuncionalidad";
-            this.CMBfuncionalidad.Size = new System.Drawing.Size(250, 21);
+            this.CMBfuncionalidad.Size = new System.Drawing.Size(360, 21);
             this.CMBfuncionalidad.TabIndex = 58;
             // 
             // FRMFuncionalidadesAsignadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(274, 317);
+            this.ClientSize = new System.Drawing.Size(385, 341);
             this.Controls.Add(this.CMBfuncionalidad);
             this.Controls.Add(this.BTNterminar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNagregar);
             this.Controls.Add(this.TXTnombre);
@@ -156,7 +145,6 @@
         #endregion
 
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BTNagregar;
         private System.Windows.Forms.TextBox TXTnombre;

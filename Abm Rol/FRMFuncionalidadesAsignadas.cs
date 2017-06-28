@@ -12,17 +12,26 @@ namespace UberFrba.Abm_Rol
 {
     public partial class FRMFuncionalidadesAsignadas : Form
     {
+        String nombreRol;
+        Int16 idRol;
         public FRMFuncionalidadesAsignadas(String rol)
         {
             InitializeComponent();
             TXTnombre.Text = rol;
         }
 
-        private void FRMFuncionalidadesAsignadas_Load(object sender, EventArgs e)
-        {
-
+        public void recibirDatos(Int16 idRol, String nombreRol) {
+            this.idRol = idRol;
+            this.nombreRol = nombreRol;
         }
 
+        private void FRMFuncionalidadesAsignadas_Load(object sender, EventArgs e)
+        {
+            TXTnombre.Text = nombreRol;
+        }
+
+        
+        
         private void BTNterminar_Click(object sender, EventArgs e)
         {
             this.Close();

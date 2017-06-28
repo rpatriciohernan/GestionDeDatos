@@ -69,7 +69,7 @@ namespace UberFrba.Bienvenida
         private void button8_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMRol formularioRoles = new FRMRol();
+            FRMBuscarRol formularioRoles = new FRMBuscarRol();
 
             // Show form
             formularioRoles.Show();

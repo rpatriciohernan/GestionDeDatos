@@ -74,7 +74,7 @@ namespace UberFrba.Abm_Cliente
         public List<T> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
         {
             String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda, operador);
-            return SearchManager(query, tableName(), 0, 6);
+            return SearchManager(query, tableName(), 0, 50);
         }
     }
 }
