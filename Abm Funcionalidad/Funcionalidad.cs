@@ -66,6 +66,11 @@ namespace UberFrba.Abm_Funcionalidad
             repositorioFuncionalidad.guardar(this);
         }
 
+        public void eliminate()
+        {
+            repositorioFuncionalidad.eliminar(this);
+        }
+
         public List<ErrorDeCampo> validarCampos() //devuelve lista de campos obligatorios sin completar
         { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
             //filter

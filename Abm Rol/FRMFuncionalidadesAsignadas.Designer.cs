@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BTNterminar = new System.Windows.Forms.Button();
             this.CMBfuncionalidad = new System.Windows.Forms.ComboBox();
+            this.BTNnuevaFuncionalidad = new System.Windows.Forms.Button();
+            this.BTNeliminarFuncionalidad = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +69,7 @@
             this.BTNagregar.TabIndex = 51;
             this.BTNagregar.Text = "AGREGAR";
             this.BTNagregar.UseVisualStyleBackColor = true;
+            this.BTNagregar.Click += new System.EventHandler(this.BTNagregar_Click);
             // 
             // TXTnombre
             // 
@@ -114,17 +117,41 @@
             // 
             // CMBfuncionalidad
             // 
+            this.CMBfuncionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBfuncionalidad.FormattingEnabled = true;
             this.CMBfuncionalidad.Location = new System.Drawing.Point(12, 254);
             this.CMBfuncionalidad.Name = "CMBfuncionalidad";
-            this.CMBfuncionalidad.Size = new System.Drawing.Size(360, 21);
+            this.CMBfuncionalidad.Size = new System.Drawing.Size(303, 21);
             this.CMBfuncionalidad.TabIndex = 58;
+            this.CMBfuncionalidad.Click += new System.EventHandler(this.CMBfuncionalidad_Click);
+            // 
+            // BTNnuevaFuncionalidad
+            // 
+            this.BTNnuevaFuncionalidad.Location = new System.Drawing.Point(321, 252);
+            this.BTNnuevaFuncionalidad.Name = "BTNnuevaFuncionalidad";
+            this.BTNnuevaFuncionalidad.Size = new System.Drawing.Size(25, 23);
+            this.BTNnuevaFuncionalidad.TabIndex = 59;
+            this.BTNnuevaFuncionalidad.Text = "+";
+            this.BTNnuevaFuncionalidad.UseVisualStyleBackColor = true;
+            this.BTNnuevaFuncionalidad.Click += new System.EventHandler(this.BTNnuevaFuncionalidad_Click);
+            // 
+            // BTNeliminarFuncionalidad
+            // 
+            this.BTNeliminarFuncionalidad.Location = new System.Drawing.Point(347, 252);
+            this.BTNeliminarFuncionalidad.Name = "BTNeliminarFuncionalidad";
+            this.BTNeliminarFuncionalidad.Size = new System.Drawing.Size(25, 23);
+            this.BTNeliminarFuncionalidad.TabIndex = 60;
+            this.BTNeliminarFuncionalidad.Text = "-";
+            this.BTNeliminarFuncionalidad.UseVisualStyleBackColor = true;
+            this.BTNeliminarFuncionalidad.Click += new System.EventHandler(this.BTNeliminarFuncionalidad_Click);
             // 
             // FRMFuncionalidadesAsignadas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(385, 341);
+            this.Controls.Add(this.BTNeliminarFuncionalidad);
+            this.Controls.Add(this.BTNnuevaFuncionalidad);
             this.Controls.Add(this.CMBfuncionalidad);
             this.Controls.Add(this.BTNterminar);
             this.Controls.Add(this.label1);
@@ -152,5 +179,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BTNterminar;
         private System.Windows.Forms.ComboBox CMBfuncionalidad;
+        private System.Windows.Forms.Button BTNnuevaFuncionalidad;
+        private System.Windows.Forms.Button BTNeliminarFuncionalidad;
     }
 }

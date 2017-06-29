@@ -89,7 +89,7 @@ namespace UberFrba.Abm_Rol
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         { 
-            if (e.RowIndex>0){
+            if (e.RowIndex >= 0){
                 if (e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];

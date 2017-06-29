@@ -43,6 +43,7 @@
             this.BTNeliminar.TabIndex = 47;
             this.BTNeliminar.Text = "ELIMINAR";
             this.BTNeliminar.UseVisualStyleBackColor = true;
+            this.BTNeliminar.Click += new System.EventHandler(this.BTNeliminar_Click);
             // 
             // BTNguardar
             // 
@@ -52,6 +53,7 @@
             this.BTNguardar.TabIndex = 44;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label1
             // 
@@ -97,6 +99,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMFuncionalidad";
             this.Text = "Funcionalidad";
+            this.Load += new System.EventHandler(this.FRMFuncionalidad_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

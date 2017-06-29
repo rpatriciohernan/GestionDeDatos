@@ -105,6 +105,7 @@
             // 
             // CMBrolDeAcceso
             // 
+            this.CMBrolDeAcceso.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBrolDeAcceso.FormattingEnabled = true;
             this.CMBrolDeAcceso.Location = new System.Drawing.Point(13, 348);
             this.CMBrolDeAcceso.Name = "CMBrolDeAcceso";

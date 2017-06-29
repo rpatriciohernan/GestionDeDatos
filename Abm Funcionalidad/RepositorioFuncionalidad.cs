@@ -45,5 +45,11 @@ namespace UberFrba.Abm_Funcionalidad
             dr.Close();
         }
 
+        public void eliminar(Funcionalidad funcionalidad)
+        {
+            SqlDataReader dr = queryManager("DELETE FROM overhead.funcionalidades WHERE funcionalidad_nombre = " + "'" + Convert.ToString(funcionalidad.Nombre) + "'");
+            dr.Close();
+        }
+
     }
 }
