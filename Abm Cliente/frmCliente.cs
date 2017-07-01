@@ -76,5 +76,10 @@ namespace UberFrba.Abm_Cliente
 
         }
 
+        private void BTNeliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

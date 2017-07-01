@@ -58,10 +58,22 @@ namespace UberFrba.Abm_Rol
             return repositorioRol.buscar(parametrosDeBusqueda);
         }
 
+
+
         //metodos de instancia
         public void guardate()
         {
             repositorioRol.Guardar(this);
+        }
+
+        public void modificate()
+        {
+            repositorioRol.Modificar(this);
+        }
+
+        public void eliminate()
+        {
+            repositorioRol.Modificar(this);
         }
 
         public List<ErrorDeCampo> validarCampos()
@@ -75,8 +87,8 @@ namespace UberFrba.Abm_Rol
 
         #region values
         public String GetValues()
-        { //ojo al agregar nuevos atributo, volcarlos aca!!!
-            return "'" + this.id + "'" + ',' + "'" + this.nombre + "'" + ',' + "'" + this.estado + "'";
+        { 
+            return "'" + this.nombre + "'" + ',' + "'" + this.estado + "'";
         }
         #endregion
     }

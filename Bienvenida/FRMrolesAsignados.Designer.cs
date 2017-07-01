@@ -42,6 +42,7 @@
             // 
             // CMBrol
             // 
+            this.CMBrol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBrol.FormattingEnabled = true;
             this.CMBrol.Location = new System.Drawing.Point(12, 233);
             this.CMBrol.Name = "CMBrol";

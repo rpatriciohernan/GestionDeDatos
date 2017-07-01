@@ -44,5 +44,11 @@ namespace UberFrba.Abm_Funcionalidad
             SqlDataReader dr = queryManager("Insert into overhead.funcionalidades_asignadas " + "values(" + funcionalidadAsignada.GetValues() + ")");
             dr.Close();
         }
+
+        public void eliminar(FuncionalidadAsignada funcionalidadAsignada)
+        {
+            SqlDataReader dr = queryManager("DELETE FROM overhead.funcionalidades_asignadas WHERE id_rol = " + Convert.ToString(funcionalidadAsignada.IdRol) + " AND " + "id_funcionalidad =" + Convert.ToString(funcionalidadAsignada.IdFuncionalidad));
+            dr.Close();
+        }
     }
 }
