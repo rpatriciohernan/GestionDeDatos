@@ -88,6 +88,7 @@
             this.BTNguardar.TabIndex = 44;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label1
             // 
@@ -97,7 +98,7 @@
             this.label1.Location = new System.Drawing.Point(8, -2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 25);
+            this.label1.Size = new System.Drawing.Size(151, 25);
             this.label1.TabIndex = 43;
             this.label1.Text = "Gestion de Roles";
             // 

@@ -58,8 +58,20 @@ namespace UberFrba.Abm_Cliente
 
             foreach (String key in keyList)
             {
-                String value = parametrosDeBusqueda[key];
-                queryCondition += key + " = " + "'" + value + "'" + " " + operador + " "; //se podria hacer un mapa por cada repo para abstraerte del nombre de la tabla, pero mucha paja
+                //---Esto que se agrega es nuevo, si falla algo es por esto------
+                if (key == "entreFechas")
+                {
+                    String[] fechas = parametrosDeBusqueda[key].Split('&');
+                    String fechaInicio = fechas[0];
+                    String fechaFinal = fechas[1];
+                    queryCondition += "viaje_fecha_inicio >= " + "'" + fechaInicio + "'" + " and viaje_fecha_fin <= " + "'" + fechaFinal + "'" + " " + operador + " "; //Esto es una ultra negrada, ya que solo se usa para los viajes, en caso de usarse para otras entidades. Hacerlo bien
+
+                } else {
+
+                    String value = parametrosDeBusqueda[key];
+                    queryCondition += key + " = " + "'" + value + "'" + " " + operador + " "; //se podria hacer un mapa por cada repo para abstraerte del nombre de la tabla, pero mucha paja
+                }
+                //---------------------------------------------------------------
             }
 
             if (queryCondition != "")
@@ -75,6 +87,11 @@ namespace UberFrba.Abm_Cliente
         {
             String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda, operador);
             return SearchManager(query, tableName(), 0, 6);
+        }
+
+        public T getUltimoRegistro(String idColumn) {
+            String querySearch = "Select top 1 * from " + tableName() + " order by " + idColumn + " desc";
+            return SearchManager(querySearch, tableName(), 0, 6).First();
         }
     }
 }

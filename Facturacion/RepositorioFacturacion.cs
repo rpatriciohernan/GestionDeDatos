@@ -33,16 +33,19 @@ namespace UberFrba.Facturacion
 
         public override String tableName() { return "overhead.facturaciones"; }
 
-        public void Guardar(Facturacion facturacion)
+        public Facturacion Guardar(Facturacion facturacion)
         {
             SqlDataReader dr = queryManager("Insert into overhead.facturaciones " + "values(" + facturacion.GetValues() + ")");
             dr.Close();
+
+            Facturacion facturacionStored = getUltimoRegistro("id_factura");
+            return facturacionStored;
         }
 
         #region builder del objeto Facturacion
         public override Facturacion BuilderEntityFromDataRow(DataRow dr)
         {
-            Facturacion facturacion = new Facturacion(Convert.ToInt16(dr[0]), Convert.ToDateTime(dr[1]), Convert.ToDateTime(dr[2]), Convert.ToInt16(dr[4]));
+            Facturacion facturacion = new Facturacion(Convert.ToInt16(dr[0]), Convert.ToDateTime(dr[1]), Convert.ToInt64(dr[2]), Convert.ToDateTime(dr[3]), Convert.ToDateTime(dr[4]), Convert.ToDouble(dr[5]));
             return facturacion;
         }
         #endregion

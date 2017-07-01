@@ -77,6 +77,7 @@
             this.BTNagregar.TabIndex = 51;
             this.BTNagregar.Text = "AGREGAR";
             this.BTNagregar.UseVisualStyleBackColor = true;
+            this.BTNagregar.Click += new System.EventHandler(this.BTNagregar_Click);
             // 
             // TXTnombre
             // 

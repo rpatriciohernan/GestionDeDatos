@@ -77,7 +77,8 @@ namespace UberFrba.Abm_Automovil
             //obtenemos el id de los datos de los combos, ya que provienen de otras tablas
             Int16 idMarca = marcas.Find(marca => marca.Nombre == CMBmarca.Text).IdMarca;
 
-            Int16 idTurno = -1;//turnos.Find(turno => turno.Descripcion == CMBturno.Text).IdTurno;
+            //Int16 idTurno = -1;
+            Int16 idTurno = turnos.Find(turno => turno.Descripcion == CMBturno.Text).IdTurno;
 
             Int64 idChofer = choferes.Find(chofer => chofer.Nombre == CMBChofer.Text).Dni;
 
@@ -96,13 +97,13 @@ namespace UberFrba.Abm_Automovil
             Dictionary<String, String> searchAll = new Dictionary<string, string>();
 
             marcas = Marca.buscar(searchAll);
-           // turnos = Turno.buscar(searchAll);
+            turnos = Turno.buscar(searchAll);
             choferes = Chofer.buscar(searchAll);
 
             //---Atributos que mostramos en los combos---
             marcas.ForEach(marca => CMBmarca.Items.Add(marca.Nombre));
 
-           // turnos.ForEach(turno => CMBturno.Items.Add(turno.Descripcion));
+            turnos.ForEach(turno => CMBturno.Items.Add(turno.Descripcion));
 
             choferes.ForEach(chofer => CMBChofer.Items.Add(chofer.Nombre));
 

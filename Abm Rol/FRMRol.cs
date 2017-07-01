@@ -30,5 +30,10 @@ namespace UberFrba.Abm_Rol
             // Show form
             formularioFuncionalidades.Show();
         }
+
+        private void BTNguardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

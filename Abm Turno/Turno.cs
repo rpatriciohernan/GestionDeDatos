@@ -118,6 +118,11 @@ namespace UberFrba.Abm_Turno
             return repositorioTurno.buscar(parametrosDeBusqueda);
         }
 
+        public static Turno find(Dictionary<String, String> parametrosDeBusqueda)
+        {
+            return buscar(parametrosDeBusqueda).First();
+        }
+
         //metodos de instancia
         public void guardate()
         {

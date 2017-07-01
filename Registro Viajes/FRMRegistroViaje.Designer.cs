@@ -30,21 +30,21 @@
         {
             this.BTNguardar = new System.Windows.Forms.Button();
             this.label21 = new System.Windows.Forms.Label();
-            this.DTEfechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.dteFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.TXTapellido = new System.Windows.Forms.TextBox();
-            this.TXTdni = new System.Windows.Forms.TextBox();
+            this.txtAutomovil = new System.Windows.Forms.TextBox();
+            this.txtKilometros = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cmbChofer = new System.Windows.Forms.ComboBox();
+            this.cmbTurno = new System.Windows.Forms.ComboBox();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbCliente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.BTNguardar.TabIndex = 34;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
+            this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
             // 
             // label21
             // 
@@ -71,12 +72,12 @@
             this.label21.TabIndex = 28;
             this.label21.Text = "Inicio";
             // 
-            // DTEfechaNacimiento
+            // dteFechaInicio
             // 
-            this.DTEfechaNacimiento.Location = new System.Drawing.Point(14, 125);
-            this.DTEfechaNacimiento.Name = "DTEfechaNacimiento";
-            this.DTEfechaNacimiento.Size = new System.Drawing.Size(193, 20);
-            this.DTEfechaNacimiento.TabIndex = 27;
+            this.dteFechaInicio.Location = new System.Drawing.Point(14, 125);
+            this.dteFechaInicio.Name = "dteFechaInicio";
+            this.dteFechaInicio.Size = new System.Drawing.Size(193, 20);
+            this.dteFechaInicio.TabIndex = 27;
             // 
             // label14
             // 
@@ -114,22 +115,22 @@
             this.label12.TabIndex = 24;
             this.label12.Text = "*";
             // 
-            // TXTapellido
+            // txtAutomovil
             // 
-            this.TXTapellido.Enabled = false;
-            this.TXTapellido.Location = new System.Drawing.Point(214, 78);
-            this.TXTapellido.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTapellido.Name = "TXTapellido";
-            this.TXTapellido.Size = new System.Drawing.Size(99, 20);
-            this.TXTapellido.TabIndex = 2;
+            this.txtAutomovil.Enabled = false;
+            this.txtAutomovil.Location = new System.Drawing.Point(214, 78);
+            this.txtAutomovil.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAutomovil.Name = "txtAutomovil";
+            this.txtAutomovil.Size = new System.Drawing.Size(99, 20);
+            this.txtAutomovil.TabIndex = 2;
             // 
-            // TXTdni
+            // txtKilometros
             // 
-            this.TXTdni.Location = new System.Drawing.Point(218, 176);
-            this.TXTdni.Margin = new System.Windows.Forms.Padding(4);
-            this.TXTdni.Name = "TXTdni";
-            this.TXTdni.Size = new System.Drawing.Size(187, 20);
-            this.TXTdni.TabIndex = 3;
+            this.txtKilometros.Location = new System.Drawing.Point(218, 176);
+            this.txtKilometros.Margin = new System.Windows.Forms.Padding(4);
+            this.txtKilometros.Name = "txtKilometros";
+            this.txtKilometros.Size = new System.Drawing.Size(187, 20);
+            this.txtKilometros.TabIndex = 3;
             // 
             // label2
             // 
@@ -175,33 +176,41 @@
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 45);
+            this.label1.Size = new System.Drawing.Size(260, 45);
             this.label1.TabIndex = 32;
             this.label1.Text = "Registro de Viaje";
             // 
-            // comboBox1
+            // cmbChofer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 78);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(195, 21);
-            this.comboBox1.TabIndex = 35;
+            this.cmbChofer.FormattingEnabled = true;
+            this.cmbChofer.Items.AddRange(new object[] {
+            "Chofer1",
+            "Chofer2",
+            "Chofer3"});
+            this.cmbChofer.Location = new System.Drawing.Point(12, 78);
+            this.cmbChofer.Name = "cmbChofer";
+            this.cmbChofer.Size = new System.Drawing.Size(195, 21);
+            this.cmbChofer.TabIndex = 35;
             // 
-            // comboBox2
+            // cmbTurno
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(320, 77);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(87, 21);
-            this.comboBox2.TabIndex = 36;
+            this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.Items.AddRange(new object[] {
+            "maniana",
+            "tarde",
+            "noche"});
+            this.cmbTurno.Location = new System.Drawing.Point(320, 77);
+            this.cmbTurno.Name = "cmbTurno";
+            this.cmbTurno.Size = new System.Drawing.Size(87, 21);
+            this.cmbTurno.TabIndex = 36;
             // 
-            // dateTimePicker1
+            // dtpFechaFin
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(216, 125);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(191, 20);
-            this.dateTimePicker1.TabIndex = 37;
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpFechaFin.Location = new System.Drawing.Point(216, 125);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(191, 20);
+            this.dtpFechaFin.TabIndex = 37;
             // 
             // label5
             // 
@@ -215,13 +224,17 @@
             this.label5.TabIndex = 38;
             this.label5.Text = "Fin";
             // 
-            // comboBox3
+            // cmbCliente
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(12, 176);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(195, 21);
-            this.comboBox3.TabIndex = 41;
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.Items.AddRange(new object[] {
+            "cliente1",
+            "cliente2",
+            "cliente3"});
+            this.cmbCliente.Location = new System.Drawing.Point(12, 176);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.Size = new System.Drawing.Size(195, 21);
+            this.cmbCliente.TabIndex = 41;
             // 
             // label6
             // 
@@ -265,24 +278,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(418, 248);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cmbCliente);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.dtpFechaFin);
+            this.Controls.Add(this.cmbTurno);
+            this.Controls.Add(this.cmbChofer);
             this.Controls.Add(this.BTNguardar);
-            this.Controls.Add(this.DTEfechaNacimiento);
+            this.Controls.Add(this.dteFechaInicio);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TXTapellido);
+            this.Controls.Add(this.txtAutomovil);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TXTdni);
+            this.Controls.Add(this.txtKilometros);
             this.Controls.Add(this.label2);
             this.Name = "FRMregistroViaje";
             this.Text = "Registro de Viaje";
@@ -295,21 +308,21 @@
 
         private System.Windows.Forms.Button BTNguardar;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.DateTimePicker DTEfechaNacimiento;
+        private System.Windows.Forms.DateTimePicker dteFechaInicio;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox TXTapellido;
-        private System.Windows.Forms.TextBox TXTdni;
+        private System.Windows.Forms.TextBox txtAutomovil;
+        private System.Windows.Forms.TextBox txtKilometros;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cmbChofer;
+        private System.Windows.Forms.ComboBox cmbTurno;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbCliente;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

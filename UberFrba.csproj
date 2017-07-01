@@ -165,6 +165,8 @@
     </Compile>
     <Compile Include="Bienvenida\RepositorioUsuario.cs" />
     <Compile Include="Bienvenida\Usuario.cs" />
+    <Compile Include="BuilderObjectViews\BuilderObjectView.cs" />
+    <Compile Include="BuilderObjectViews\ViajeView.cs" />
     <Compile Include="CampoYValor.cs" />
     <Compile Include="Conexion\Conexion.cs" />
     <Compile Include="ErrorDeCampo.cs" />

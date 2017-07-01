@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.BTNcargar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtImporteTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
@@ -55,14 +55,15 @@
             this.BTNcargar.TabIndex = 78;
             this.BTNcargar.Text = "CARGAR";
             this.BTNcargar.UseVisualStyleBackColor = true;
+            this.BTNcargar.Click += new System.EventHandler(this.BTNcargar_Click);
             // 
-            // textBox1
+            // txtImporteTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(12, 153);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(426, 20);
-            this.textBox1.TabIndex = 77;
+            this.txtImporteTotal.Enabled = false;
+            this.txtImporteTotal.Location = new System.Drawing.Point(12, 153);
+            this.txtImporteTotal.Name = "txtImporteTotal";
+            this.txtImporteTotal.Size = new System.Drawing.Size(426, 20);
+            this.txtImporteTotal.TabIndex = 77;
             // 
             // label6
             // 
@@ -104,6 +105,7 @@
             this.BTNgenerar.TabIndex = 73;
             this.BTNgenerar.Text = "GENERAR";
             this.BTNgenerar.UseVisualStyleBackColor = true;
+            this.BTNgenerar.Click += new System.EventHandler(this.BTNgenerar_Click);
             // 
             // DTEinicio
             // 
@@ -153,7 +155,7 @@
             this.label1.Location = new System.Drawing.Point(-2, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(291, 45);
+            this.label1.Size = new System.Drawing.Size(290, 45);
             this.label1.TabIndex = 69;
             this.label1.Text = "Facturacion Cliente";
             // 
@@ -220,7 +222,7 @@
             this.ClientSize = new System.Drawing.Size(449, 491);
             this.Controls.Add(this.DTEfin);
             this.Controls.Add(this.BTNcargar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtImporteTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -236,6 +238,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMfacturacion";
             this.Text = "Facturacion Cliente";
+            this.Load += new System.EventHandler(this.FRMfacturacion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,7 +248,7 @@
         #endregion
 
         private System.Windows.Forms.Button BTNcargar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtImporteTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;

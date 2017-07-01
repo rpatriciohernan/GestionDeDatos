@@ -32,5 +32,10 @@ namespace UberFrba.Abm_Rol
         {
 
         }
+
+        private void BTNagregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

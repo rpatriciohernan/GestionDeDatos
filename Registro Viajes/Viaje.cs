@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.Abm_Turno;
 
 namespace UberFrba.Registro_Viajes
 {
@@ -15,10 +16,10 @@ namespace UberFrba.Registro_Viajes
         private Double cantidadKilometros;
         private DateTime inicio;
         private DateTime fin;
-        private Int16 idFactura;
+        private Int16 idFactura; //vamos a hacer las facturas calculables, asi que setteamos este id una vez que se haya creado la factura
         private Int16 idCliente;
 
-        private List<CampoYValor> camposObligatorios; //nose si aca se hace lo de validar los campos vacios, ya que no es un ABM ??
+        private double monto;
         private static RepositorioViaje repositorioViaje = RepositorioViaje.Instance;
 
 
@@ -59,10 +60,14 @@ namespace UberFrba.Registro_Viajes
         {
             get { return idCliente; }
         }
+        public double Monto
+        {
+            get { return monto; }
+        }
         #endregion
 
         #region constructores
-        public Viaje(Int16 id, Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idFactura, Int16 idCliente)
+        public Viaje(Int16 id, Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idCliente, Int16 idFactura)
         {
             this.id = id;
             this.idChofer = idChofer;
@@ -75,7 +80,7 @@ namespace UberFrba.Registro_Viajes
             this.idCliente = idCliente;
         }
 
-        public Viaje(Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idFactura, Int16 idCliente)
+        public Viaje(Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idCliente, Int16 idFactura)
         {
             this.idChofer = idChofer;
             this.idAutomovil = idAutomovil;
@@ -101,13 +106,26 @@ namespace UberFrba.Registro_Viajes
             repositorioViaje.Guardar(this);
         }
 
+        public double calcularMonto() //le pegamos a la base por cada viaje, no es lo mas copado, pero por ahora lo dejamos asi :/
+        { 
+            //supongo que el monto es el precioBase del turno + (precioDelKilometro x cantKilometrosRecorridos)
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<String, String>();
+            parametrosDeBusqueda.Add("id_turno", idTurno.ToString());
+
+            Turno turno = Turno.find(parametrosDeBusqueda);
+
+            double monto = turno.PrecioBase + turno.ValorKilometro * this.cantidadKilometros;
+            this.monto = monto; //para que el viajeView tenga el monto
+            return monto;
+        }
+
 
         #region values
         public String GetValues()
-        { //ojo al agregar nuevos atributo, volcarlos aca!!! 
-            return "'" + this.id + "'" + ',' + "'" + this.idChofer + "'" + ',' + "'" + this.idAutomovil + "'" + ',' +
+        { //ojo al agregar nuevos atributo, volcarlos aca!!! , EL iD NO VA se genera automaticamente ;)
+            return "'" + this.idChofer + "'" + ',' + "'" + this.idAutomovil + "'" + ',' +
                 "'" + this.idTurno + "'" + ',' + "'" + this.cantidadKilometros + "'" + ',' + "'" + this.inicio + "'" + ',' +
-                "'" + this.fin + "'" + ',' + "'" + this.idFactura + "'" + ',' + "'" + this.idCliente + "'";
+                "'" + this.fin + "'" + ',' + "'" + this.idCliente + "'" + ',' + "'" + this.idFactura + "'";
         #endregion
 
 

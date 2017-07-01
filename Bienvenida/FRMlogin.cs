@@ -94,16 +94,16 @@ namespace UberFrba.Bienvenida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.LBLerrorLogueo.Visible = false;
+          /*  this.LBLerrorLogueo.Visible = false;
             
             if (this.ValidarLogueo())
-            {
+            {*/
                 this.HabilitarLogueo();
-            }
+           /* }
             else
             {
                 this.MostrarErrorLogueo();
-            }
+            }*/
 
 
         }
