@@ -15,6 +15,7 @@ namespace UberFrba.Abm_Rol
         Int16 idRol;
         String nombre;
         String estado;
+        Boolean formularioPrecargado = true;
 
         public FRMRol()
         {
@@ -66,13 +67,15 @@ namespace UberFrba.Abm_Rol
             MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        public void altaDeRolActivada() { this.formularioPrecargado = false; }
+
         private void BTNguardar_Click(object sender, EventArgs e)
         {
 
             if (this.ValidarCamposMandatorios())
             {
                 this.crearRol().modificate();
-                this.Close();
+                if (!formularioPrecargado) { BTNFuncionalidades.Enabled = true; };
             }
             else
             {
@@ -88,8 +91,9 @@ namespace UberFrba.Abm_Rol
 
         private void FRMRol_Load(object sender, EventArgs e)
         {
-           TXTnombre.Text = this.nombre;
-           CMBestado.Text = this.estado;
+            if (formularioPrecargado) { BTNFuncionalidades.Enabled = true; } else { BTNFuncionalidades.Enabled = false; };
+            TXTnombre.Text = this.nombre;
+            CMBestado.Text = this.estado;
         }
     }
 }

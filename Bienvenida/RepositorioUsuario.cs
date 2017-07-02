@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using UberFrba.Abm_Cliente;
@@ -40,16 +41,30 @@ namespace UberFrba.Bienvenida
 
         public override String tableName() { return "overhead.usuarios"; }
 
+        public string Encrypt(string input)
+        {
+            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
+
+            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+            byte[] hashedBytes = provider.ComputeHash(inputBytes);
+
+            StringBuilder output = new StringBuilder();
+
+            for (int i = 0; i < hashedBytes.Length; i++)
+                output.Append(hashedBytes[i].ToString("x2").ToLower());
+
+            return output.ToString();
+        }
+
         public void Guardar(Usuario usuario)
         {
             SqlDataReader dr = queryManager("Insert into overhead.usuarios " + "values(" + usuario.GetValues() + ")");
             dr.Close();
         }
 
-        public void Actualizar(Usuario usuario)
+        public void Modificar(Usuario usuario)
         {
-            //UPDATE table_name SET column1 = value1, column2 = value2, ... wHERE condition;
-            SqlDataReader dr = queryManager("UPDATE overhead.usuarios SET " + "username=" + "'" + usuario.Username.ToString() + "'" + "," + "usu_password=" + "'" + usuario.Password.ToString() + "'" + "," + "usu_login_fallidos=" + "'" + usuario.LoginFallidos.ToString() + "'" + "," + "usu_dni=" + "'" + usuario.Dni.ToString() + "'" + "," + "usu_estado=" + "'" + usuario.Estado + "'" + " where usu_dni=" + usuario.Dni.ToString());
+            SqlDataReader dr = queryManager("UPDATE overhead.usuarios SET usu_password =" + "'" + usuario.Password.ToString() + "'" + ", " + "usu_login_fallidos =" + "'" + usuario.LoginFallidos.ToString() + "'" + ", " + "usu_dni =" + "'" + usuario.Dni.ToString() + "'" + ", " + "usu_estado =" + "'" + usuario.Estado.ToString() + "'" + " WHERE username =" + "'" + Convert.ToString(usuario.Username) + "'");
             dr.Close();
         }
     }

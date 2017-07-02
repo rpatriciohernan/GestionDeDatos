@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BTNeliminar = new System.Windows.Forms.Button();
             this.BTNguardar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.TXTnombre = new System.Windows.Forms.TextBox();
@@ -36,23 +35,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.CMBestado = new System.Windows.Forms.ComboBox();
             this.BTNFuncionalidades = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // BTNeliminar
-            // 
-            this.BTNeliminar.Location = new System.Drawing.Point(138, 153);
-            this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(126, 23);
-            this.BTNeliminar.TabIndex = 47;
-            this.BTNeliminar.Text = "ELIMINAR";
-            this.BTNeliminar.UseVisualStyleBackColor = true;
-            this.BTNeliminar.Click += new System.EventHandler(this.BTNeliminar_Click);
             // 
             // BTNguardar
             // 
             this.BTNguardar.Location = new System.Drawing.Point(12, 153);
             this.BTNguardar.Name = "BTNguardar";
-            this.BTNguardar.Size = new System.Drawing.Size(120, 23);
+            this.BTNguardar.Size = new System.Drawing.Size(252, 23);
             this.BTNguardar.TabIndex = 44;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
@@ -66,7 +57,7 @@
             this.label1.Location = new System.Drawing.Point(8, -2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 25);
+            this.label1.Size = new System.Drawing.Size(152, 25);
             this.label1.TabIndex = 43;
             this.label1.Text = "Gestion de Roles";
             // 
@@ -125,15 +116,40 @@
             this.BTNFuncionalidades.UseVisualStyleBackColor = true;
             this.BTNFuncionalidades.Click += new System.EventHandler(this.BTNFuncionalidades_Click);
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(65, 33);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(14, 18);
+            this.label13.TabIndex = 52;
+            this.label13.Text = "*";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(65, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(14, 18);
+            this.label4.TabIndex = 53;
+            this.label4.Text = "*";
+            // 
             // FRMRol
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(276, 187);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.BTNFuncionalidades);
             this.Controls.Add(this.CMBestado);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TXTnombre);
@@ -148,7 +164,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Button BTNguardar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTnombre;
@@ -156,6 +171,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Button BTNFuncionalidades;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label4;
 
     }
 }
