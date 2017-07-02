@@ -26,5 +26,10 @@ namespace UberFrba.Abm_Turno
             formularioTurno.Show();
 
         }
+
+        private void BTNbuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

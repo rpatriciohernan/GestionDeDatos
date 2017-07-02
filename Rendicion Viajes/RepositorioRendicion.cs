@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Rendicion_Viajes
@@ -42,8 +43,20 @@ namespace UberFrba.Rendicion_Viajes
 
         public void Guardar(Rendicion rendicion)
         {
-            SqlDataReader dr = queryManager("Insert into overhead.rendiciones " + "values(" + rendicion.GetValues() + ")");
-            dr.Close();
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            parametrosDeBusqueda.Add("id_chofer", rendicion.IdChofer.ToString());
+            parametrosDeBusqueda.Add("rendicion_fecha", rendicion.Fecha.ToString()); //esta fecha tiene que ser la del viaje
+            parametrosDeBusqueda.Add("id_turno", rendicion.IdTurno.ToString());
+
+            List<Rendicion> rendiciones = buscar(parametrosDeBusqueda);
+
+            if (rendiciones.Count > 0) {
+                MessageBox.Show("Ya Se hizo una rendicion para este chofer en el dia seleccionado");
+            } else {
+                SqlDataReader dr = queryManager("Insert into overhead.rendiciones " + "values(" + rendicion.GetValues() + ")");
+                dr.Close();
+                MessageBox.Show("El automovil se guardo correctamente");
+            }
         }
     }
 }

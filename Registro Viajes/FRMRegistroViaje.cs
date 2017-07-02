@@ -7,11 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UberFrba.Abm_Chofer;
+using UberFrba.Abm_Cliente;
+using UberFrba.Abm_Turno;
 
 namespace UberFrba.Registro_Viajes
 {
     public partial class FRMregistroViaje : Form
     {
+        private List<Cliente> clientes;
+        private List<Chofer> choferes;
+        private List<Turno> turnos;
+
         public FRMregistroViaje()
         {
             InitializeComponent();
@@ -24,11 +31,41 @@ namespace UberFrba.Registro_Viajes
 
         private Viaje crearViaje() {
 
-            Int16 idChofer = Convert.ToInt16(cmbChofer.Text);
+            Int64 idChofer = getIdChoferSeleccionado();
+            Int64 idCliente = getIdClienteSeleccionado();
+            Int64 idTurno = getIdTurno();
             Double cantidadKilometros = Convert.ToDouble(txtKilometros.Text);
-            Int16 idCliente = Convert.ToInt16(cmbCliente.Text);
-            
-            return new Viaje(Convert.ToInt16(cmbChofer.Text), txtAutomovil.Text, Convert.ToInt16(cmbTurno.Text), Convert.ToDouble(txtKilometros.Text), Convert.ToDateTime(dteFechaInicio.Text), Convert.ToDateTime(dtpFechaFin.Text), Convert.ToInt16(cmbCliente.Text),-1); //como no tenemos idFactura, le seteamos -1
+
+            return new Viaje(idChofer, txtAutomovil.Text, idTurno, cantidadKilometros, Convert.ToDateTime(dteFechaInicio.Text), Convert.ToDateTime(dtpFechaFin.Text), idCliente, -1); //como no tenemos idFactura, le seteamos -1
+        }
+
+        private void FRMregistroViaje_Load(object sender, EventArgs e)
+        {
+            Dictionary<String, String> searchAll = new Dictionary<string, string>();
+
+            clientes = Cliente.buscar(searchAll);
+            choferes = Chofer.buscar(searchAll);
+            turnos = Turno.buscar(searchAll);
+
+            //---Atributos que mostramos en los combos---
+            clientes.ForEach(cliente => cmbCliente.Items.Add(cliente.Nombre + ", " + cliente.Apellido));
+            choferes.ForEach(chofer => cmbChofer.Items.Add(chofer.Nombre + ", " + chofer.Apellido));
+            turnos.ForEach(turno => cmbTurno.Items.Add(turno.Descripcion));
+        }
+
+        private Int64 getIdChoferSeleccionado()
+        {//si hay 2 choferes con mismo nombre y apellido no funciona -> habria que hacerlo por posicion del combo, mostrando en el combo el nombre, apellido y dni ;)!!
+            return choferes.Find(chofer => chofer.Nombre + ", " + chofer.Apellido == cmbChofer.Text).Dni;
+        }
+
+        private Int64 getIdTurno()
+        {
+            return turnos.Find(turno => turno.Descripcion == cmbTurno.Text).IdTurno;
+        }
+
+        private Int64 getIdClienteSeleccionado()
+        {//si hay 2 choferes con mismo nombre y apellido no funciona -> habria que hacerlo por posicion del combo, mostrando en el combo el nombre, apellido y dni ;)!!
+            return clientes.Find(cliente => cliente.Nombre + ", " + cliente.Apellido == cmbCliente.Text).Dni;
         }
     }
 }

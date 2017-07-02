@@ -79,6 +79,7 @@
             this.BTNbuscar.TabIndex = 79;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
+            this.BTNbuscar.Click += new System.EventHandler(this.BTNbuscar_Click);
             // 
             // label1
             // 

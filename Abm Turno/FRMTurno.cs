@@ -32,19 +32,8 @@ namespace UberFrba.Abm_Turno
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            //  LimpiarErrores();
-
             Turno turno = crearTurno();
-            List<ErrorDeCampo> errores = turno.validarCampos();
-
-            if (errores.Count > 0)
-            {
-                // mostrarErrores(errores);
-            }
-            else
-            {
-                turno.guardate();
-            }
+            turno.guardate();
         }
 
         private void FRMTurno_Load(object sender, EventArgs e)

@@ -71,8 +71,6 @@ namespace UberFrba.Facturacion
 
         private void BTNcargar_Click(object sender, EventArgs e)
         {
-           /* Facturacion facturacion = crearFacturacion().guardate(); //la logica de modificar los viajes con el id de la facturacion es responsabilidad de guardar la factura
-            MessageBox.Show("id de la facturacion recien guardada: " + facturacion.Id.ToString());*/
             facturacion.guardate();
         }
 
