@@ -13,6 +13,7 @@ namespace UberFrba.Abm_Funcionalidad
     public partial class FRMFuncionalidad : Form
     {
         String nombreFuncionalidad = "";
+        Boolean formularioPrecargado = false;
         
         public FRMFuncionalidad()
         {
@@ -37,6 +38,7 @@ namespace UberFrba.Abm_Funcionalidad
 
         public void obtenerValores(String nombreFuncionalidad) {
             this.nombreFuncionalidad = nombreFuncionalidad;
+            this.formularioPrecargado = true;
         }
 
 
@@ -57,6 +59,7 @@ namespace UberFrba.Abm_Funcionalidad
         private void FRMFuncionalidad_Load(object sender, EventArgs e)
         {
             TXTnombre.Text = this.nombreFuncionalidad;
+            if (!formularioPrecargado) { BTNeliminar.Visible = false; };
         }
 
 

@@ -61,10 +61,11 @@ namespace UberFrba.Abm_Automovil
         }
 
         public void Modificar(Automovil automovil) { 
-            SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET id_marca =" + "'" + automovil.IdMarca+ "'" + ", "
-                + "id_chofer =" + "'" + automovil.ChoferDni+ "'" + ", "
-                + "auto_modelo =" + "'" + automovil.IdModelo+ "'" + ", "
-                + "auto_estado =" + "'" + automovil.Estado+ "'" + ", "
+            SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET id_marca =" + "'" + Convert.ToString(automovil.IdMarca)+ "'" + ", "
+                + "id_chofer =" + "'" + Convert.ToString(automovil.ChoferDni)+ "'" + ", "
+                + "auto_modelo =" + "'" + Convert.ToString(automovil.IdModelo) + "'" + ", "
+                + "auto_estado =" + "'" + automovil.Estado + "'" + ", "
+                + "id_turno =" + "'" + Convert.ToString(automovil.IdTurno) + "'" + ", "
                 + " WHERE auto_patente =" + Convert.ToString(automovil.Patente));
                 dr.Close();
         }

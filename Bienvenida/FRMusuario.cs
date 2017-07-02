@@ -46,22 +46,51 @@ namespace UberFrba.Bienvenida
         {
             CMBestado.Items.Add("Activo");
             CMBestado.Items.Add("Inactivo");
-            if (formularioPrecargado) {
+            if (formularioPrecargado)
+            {
                 TXTdni.Text = Convert.ToString(dni);
                 TXTpassword.Text = password;
                 TXTuserName.Text = username;
                 CMBestado.Text = estado;
                 TXTloginFallidos.Text = Convert.ToString(loginFallidos);
             }
+            else {
+                button1.Enabled = false;
+            }
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.TXTuserName.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTpassword.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.TXTdni.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBestado.Text)) { validado = false; }
+
+            return validado;
+
         }
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            if (this.estado != CMBestado.Text & CMBestado.Text == "Activo") { loginFallidos = 0; }
-            if (this.password != TXTpassword.Text) { password = RepositorioUsuario.Instance.Encrypt(TXTpassword.Text); }
-            Usuario nuevoUsuario = new Usuario(TXTuserName.Text, password, loginFallidos, Convert.ToInt64(TXTdni.Text), CMBestado.Text);
-            if (formularioPrecargado) {nuevoUsuario.modificate();}else{nuevoUsuario.guardate();}
-            this.Close();
+            if (this.ValidarCamposMandatorios())
+            {
+                if (this.estado != CMBestado.Text & CMBestado.Text == "Activo") { loginFallidos = 0; }
+                if (this.password != TXTpassword.Text) { password = RepositorioUsuario.Instance.Encrypt(TXTpassword.Text); }
+                Usuario nuevoUsuario = new Usuario(TXTuserName.Text, password, loginFallidos, Convert.ToInt64(TXTdni.Text), CMBestado.Text);
+                if (formularioPrecargado) { nuevoUsuario.modificate(); } else { nuevoUsuario.guardate(); button1.Enabled = true; TXTuserName.Enabled = false; }
+                this.Close();
+            }
+            else
+            {
+                this.MensajeError();
+            };
         }
     }
 }

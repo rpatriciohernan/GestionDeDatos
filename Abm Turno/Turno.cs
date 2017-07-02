@@ -141,6 +141,14 @@ namespace UberFrba.Abm_Turno
             repositorioTurno.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            this.estado = "Inactivo";
+            repositorioTurno.Modificar(this);
+        }
+
+
+
         public List<ErrorDeCampo> validarCampos() //devuelve lista de campos obligatorios sin completar
         { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
             //filter
@@ -153,9 +161,9 @@ namespace UberFrba.Abm_Turno
 
         public String GetValues()
         {
-            return "'" + this.descripcion + "'" + ',' + "'" + this.horaInicio + "'" + ',' + "'" +
-                Convert.ToString(this.horaFin) + "'" + ',' + "'" + this.valorKilometro + "'" + ',' + "'" +
-                Convert.ToString(this.precioBase) + "'" + ',' + "'" + this.estado + "'";
+            return "'" + this.descripcion + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" +
+                Convert.ToString(this.horaFin) + "'" + ',' + this.valorKilometro + ',' + 
+                Convert.ToString(this.precioBase) + ',' + "'" + this.estado + "'";
         }
    
     

@@ -33,10 +33,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.TXTnombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // BTNeliminar
             // 
+            this.BTNeliminar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNeliminar.Location = new System.Drawing.Point(151, 94);
             this.BTNeliminar.Name = "BTNeliminar";
             this.BTNeliminar.Size = new System.Drawing.Size(119, 23);
@@ -47,6 +49,7 @@
             // 
             // BTNguardar
             // 
+            this.BTNguardar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNguardar.Location = new System.Drawing.Point(18, 94);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(127, 23);
@@ -87,11 +90,24 @@
             this.label2.TabIndex = 42;
             this.label2.Text = "Nombre";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(69, 40);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(14, 18);
+            this.label14.TabIndex = 48;
+            this.label14.Text = "*";
+            // 
             // FRMFuncionalidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 134);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.label1);
@@ -112,5 +128,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TXTnombre;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label14;
     }
 }

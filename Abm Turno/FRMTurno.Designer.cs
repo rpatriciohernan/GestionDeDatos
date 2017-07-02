@@ -74,6 +74,7 @@
             // 
             // BTNeliminar
             // 
+            this.BTNeliminar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNeliminar.Location = new System.Drawing.Point(164, 182);
             this.BTNeliminar.Name = "BTNeliminar";
             this.BTNeliminar.Size = new System.Drawing.Size(131, 23);
@@ -83,6 +84,7 @@
             // 
             // BTNguardar
             // 
+            this.BTNguardar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNguardar.Location = new System.Drawing.Point(14, 182);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(134, 23);

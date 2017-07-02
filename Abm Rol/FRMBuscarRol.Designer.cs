@@ -63,6 +63,7 @@
             // 
             // BTNbuscar
             // 
+            this.BTNbuscar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNbuscar.Location = new System.Drawing.Point(265, 80);
             this.BTNbuscar.Name = "BTNbuscar";
             this.BTNbuscar.Size = new System.Drawing.Size(257, 23);
@@ -128,6 +129,7 @@
             // 
             // BTNnuevo
             // 
+            this.BTNnuevo.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNnuevo.Location = new System.Drawing.Point(12, 80);
             this.BTNnuevo.Name = "BTNnuevo";
             this.BTNnuevo.Size = new System.Drawing.Size(247, 23);

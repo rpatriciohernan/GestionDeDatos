@@ -12,11 +12,22 @@ namespace UberFrba.Abm_Chofer
 {
     public partial class FRMChofer : Form
     {
-        public FRMChofer(String dni)
+        public FRMChofer()
         {
             InitializeComponent();
-            TXTdni.Text = dni;
         }
+
+        String nombre;
+        String apellido;
+        Int64 dni;
+        String domicilio;
+        String localidad;
+        String telefono;
+        String mail;
+        DateTime fechaNacimiento;
+        String estado;
+        Boolean formularioPrecargado = false;
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -37,8 +48,31 @@ namespace UberFrba.Abm_Chofer
         {
             this.CMBestado.Items.Add("Activo");
             this.CMBestado.Items.Add("Inactivo");
-            if (this.CMBestado.Text == "") { this.CMBestado.Text = "Activo"; };
+            if (!formularioPrecargado) { this.CMBestado.Text = "Activo"; } else {
+                this.TXTnombre.Text = nombre;
+                this.TXTapellido.Text = apellido;
+                this.TXTdni.Text = dni.ToString();
+                this.TXTdomicilio.Text = domicilio;
+                this.TXTlocalidad.Text = localidad;
+                this.TXTtelefono.Text = telefono;
+                this.TXTmail.Text = mail;
+                this.DTEfechaNacimiento.Value= fechaNacimiento;
+                this.CMBestado.Text = estado;
+            };
 
+        }
+
+        public void recibirDatos(String nombre, String apellido, Int64 dni, String domicilio, String localidad, String telefono, String mail, DateTime fechaNacimiento, String estado) {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.domicilio = domicilio;
+            this.localidad = localidad;
+            this.telefono = telefono;
+            this.mail = mail ;
+            this.fechaNacimiento = fechaNacimiento;
+            this.estado = estado;
+            formularioPrecargado = true;
         }
 
         private void MensajeError()

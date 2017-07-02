@@ -65,6 +65,8 @@ namespace UberFrba.Abm_Cliente
                 + "cliente_mail =" + "'" + cliente.Mail + "'" + ", "
                 + "cliente_telefono =" + "'" + cliente.Telefono + "'" + ", "
                 + "cliente_domicilio =" + "'" + cliente.Domicilio + "'" + ", "
+                + "cliente_codigo_postal =" + "'" + cliente.CodigoPostal + "'" + ", "
+                + "cliente_localidad =" + "'" + cliente.Localidad + "'" + ", "
                 + "cliente_fecha_nacimiento =" + "'" + cliente.FechaNacimiento + "'" + ", "
                 + "cliente_estado =" + "'" + cliente.Estado + "'" + " WHERE cliente_dni =" + Convert.ToString(cliente.Dni));
             dr.Close();

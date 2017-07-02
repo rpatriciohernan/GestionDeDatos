@@ -74,8 +74,14 @@ namespace UberFrba.Abm_Automovil
             repositorioAutomovil.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            this.estado = "Inactivo";
+            repositorioAutomovil.Modificar(this);
+        }
+
         #region values
-        public String GetValues() { //ojo al agregar nuevos atributo, volcarlos aca!!!
+        public String GetValues() { 
             return "'" + this.patente + "'" + ',' + "'" + this.idMarca + "'" + ',' + "'" + this.idModelo + "'" + ',' +
                 "'" + this.idTurno + "'" + ',' + "'" + this.choferDni + "'" + ',' + "'" + this.estado + "'";
         }
