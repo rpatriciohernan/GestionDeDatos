@@ -63,6 +63,7 @@
             // 
             // BTNagregar
             // 
+            this.BTNagregar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNagregar.Location = new System.Drawing.Point(12, 281);
             this.BTNagregar.Name = "BTNagregar";
             this.BTNagregar.Size = new System.Drawing.Size(360, 23);

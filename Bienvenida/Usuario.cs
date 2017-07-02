@@ -24,41 +24,33 @@ namespace UberFrba.Bienvenida
         
         #region constructores
         public Usuario(String username, String password, Int64 dni, String estado) {
-            //--cargar en esta lista, los campos obligatorios del cliente--
+
             this.camposObligatorios = new List<CampoYValor>();
-            
             this.username = username;
-            this.camposObligatorios.Add(new CampoYValor("Nombre", this.username));
-
             this.password = password;
-            this.camposObligatorios.Add(new CampoYValor("Estado", this.password));
-
             this.dni = dni;
-            this.camposObligatorios.Add(new CampoYValor("Dni", this.dni.ToString()));
-
             this.estado = estado;
-            this.camposObligatorios.Add(new CampoYValor("Estado", this.estado));
+        }
+
+        public Usuario(String username, Int16 loginFallidos, Int64 dni, String estado)
+        {
+            this.camposObligatorios = new List<CampoYValor>();
+            this.username = username;
+            this.dni = dni;
+            this.estado = estado;
+            this.loginFallidos = loginFallidos;
+            this.password = this.recuperarPassword();
         }
 
         public Usuario(String username, String password, Int16 loginFallidos, Int64 dni, String estado)
         {
-            //--cargar en esta lista, los campos obligatorios del cliente--
-            this.camposObligatorios = new List<CampoYValor>();
-
             this.username = username;
-            this.camposObligatorios.Add(new CampoYValor("Nombre", this.username));
-
             this.password = password;
-            this.camposObligatorios.Add(new CampoYValor("Estado", this.password));
-
             this.dni = dni;
-            this.camposObligatorios.Add(new CampoYValor("Dni", this.dni.ToString()));
-
             this.estado = estado;
-            this.camposObligatorios.Add(new CampoYValor("Estado", this.estado));
-
             this.loginFallidos = loginFallidos;
         }
+
         #endregion
 
         #region getters y setters
@@ -96,12 +88,21 @@ namespace UberFrba.Bienvenida
             repositorioUsuario.Guardar(this);
         }
 
-        public void Actualizate()
+        public void modificate()
         {
-            repositorioUsuario.Actualizar(this);
+            repositorioUsuario.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            repositorioUsuario.Modificar(this);
+        }
 
+        private String recuperarPassword(){
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            parametrosDeBusqueda.Add("username", this.username);
+            return buscar(parametrosDeBusqueda).First().Password;
+        }
         public Boolean TenesFuncionalidad(String funcionalidadConsultada)
         {
             Funcionalidad funcionalidadEncontrada = this.funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
@@ -175,7 +176,7 @@ namespace UberFrba.Bienvenida
         public void IncrementarLoguinfallido() {
             loginFallidos++;
             if (loginFallidos >= 3) { this.estado = "Inactivo"; };
-            this.Actualizate();
+            this.modificate();
         }
 
 

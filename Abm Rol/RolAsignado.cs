@@ -54,6 +54,11 @@ namespace UberFrba.Abm_Rol
             repositorioRolAsignado.Guardar(this);
         }
 
+        public void eliminate()
+        {
+            repositorioRolAsignado.Eliminar(this);
+        }
+
         public List<ErrorDeCampo> validarCampos()
         { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
             //filter

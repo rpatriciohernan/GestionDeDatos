@@ -52,7 +52,7 @@
             // 
             this.TXTuserName.Location = new System.Drawing.Point(8, 60);
             this.TXTuserName.Name = "TXTuserName";
-            this.TXTuserName.Size = new System.Drawing.Size(267, 20);
+            this.TXTuserName.Size = new System.Drawing.Size(639, 20);
             this.TXTuserName.TabIndex = 49;
             // 
             // label1
@@ -72,23 +72,24 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 138);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(267, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(639, 188);
             this.dataGridView1.TabIndex = 51;
             // 
             // BTNbuscar
             // 
             this.BTNbuscar.Location = new System.Drawing.Point(8, 96);
             this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(267, 23);
+            this.BTNbuscar.Size = new System.Drawing.Size(639, 23);
             this.BTNbuscar.TabIndex = 52;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
+            this.BTNbuscar.Click += new System.EventHandler(this.BTNbuscar_Click);
             // 
             // FRMbusquedaUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 338);
+            this.ClientSize = new System.Drawing.Size(659, 338);
             this.Controls.Add(this.BTNbuscar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
@@ -96,6 +97,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FRMbusquedaUsuarios";
             this.Text = "Busqueda de Usuario";
+            this.Load += new System.EventHandler(this.FRMbusquedaUsuarios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

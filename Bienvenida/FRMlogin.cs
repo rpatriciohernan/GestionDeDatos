@@ -74,7 +74,7 @@ namespace UberFrba.Bienvenida
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
             if (usuariosEncontrados.Count() > 0) { usuario = usuariosEncontrados.First(); };
                                                           // colocar funcion HASH para transformar password
-            if ((usuariosEncontrados.Count() > 0) && (usuario.Password == this.TXTpassword.Text))
+            if ((usuariosEncontrados.Count() > 0) && (usuario.Password == RepositorioUsuario.Instance.Encrypt(this.TXTpassword.Text)))
             {
                 this.RellenarComboRoles(usuario);
                 return true;
@@ -94,16 +94,16 @@ namespace UberFrba.Bienvenida
 
         private void button1_Click(object sender, EventArgs e)
         {
-          /*  this.LBLerrorLogueo.Visible = false;
+            this.LBLerrorLogueo.Visible = false;
             
             if (this.ValidarLogueo())
-            {*/
+            {
                 this.HabilitarLogueo();
-           /* }
+            }
             else
             {
                 this.MostrarErrorLogueo();
-            }*/
+            }
 
 
         }
