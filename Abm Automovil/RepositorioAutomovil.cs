@@ -43,13 +43,6 @@ namespace UberFrba.Abm_Automovil
 
         public override String tableName() { return "overhead.automoviles"; }
 
-       /* public List<Automovil> buscar(Dictionary<String, String> parametrosDeBusqueda)
-        {
-            String query = obtenerCondicionesDeBusqueda(parametrosDeBusqueda);
-            List<Automovil> automovilesEncontrados = SearchManager(query, "overhead.automoviles", 0, 6);
-            return automovilesEncontrados;
-        }*/
-
         public void Guardar(Automovil automovil)
         {
             Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
@@ -67,41 +60,13 @@ namespace UberFrba.Abm_Automovil
             }
         }
 
-      /*  private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda) //hacerlo en base a los parametros de busqueda definidos por la consigna
-        {
-            String queryCondition = "";
-            String queryResult = "Select * from overhead.automoviles";
-            if (parametrosDeBusqueda.ContainsKey("marca"))
-            {
-                String marca = parametrosDeBusqueda["marca"];
-                queryCondition = "marca = " + "'" + marca + "'" + "'" + " and ";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("modelo"))
-            {
-                String modelo = parametrosDeBusqueda["modelo"];
-                queryCondition = "modelo = " + "'" + modelo + "'" + "'" + " and ";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("patente"))
-            {
-                String patente = parametrosDeBusqueda["patente"];
-                queryCondition = "patente = " + "'" + patente + "'" + "'" + " and ";
-            }
-
-            if (parametrosDeBusqueda.ContainsKey("chofer"))
-            {
-                String chofer = parametrosDeBusqueda["chofer"];
-                queryCondition = "chofer = " + "'" + chofer + "'" + "'" + " and ";
-            }
-
-            if (queryCondition != "")
-            {
-                queryCondition = queryCondition.Substring(0, queryCondition.Length - 5);
-                queryResult += " where " + queryCondition;
-            }
-            Console.WriteLine("leete el queryResult: " + queryResult);
-            return queryResult;
-        }*/
+        public void Modificar(Automovil automovil) { 
+            SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET id_marca =" + "'" + automovil.IdMarca+ "'" + ", "
+                + "id_chofer =" + "'" + automovil.ChoferDni+ "'" + ", "
+                + "auto_modelo =" + "'" + automovil.IdModelo+ "'" + ", "
+                + "auto_estado =" + "'" + automovil.Estado+ "'" + ", "
+                + " WHERE auto_patente =" + Convert.ToString(automovil.Patente));
+                dr.Close();
+        }
     }
 }

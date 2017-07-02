@@ -58,6 +58,17 @@ namespace UberFrba.Abm_Cliente
                 MessageBox.Show("El cliente se a guardado correctamente");
             }
         }
+
+        public void Modificar(Cliente cliente) {
+            SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET cliente_nombre =" + "'" + cliente.Nombre + "'" + ", "
+                + "cliente_apellido =" + "'" + cliente.Apellido + "'" + ", "
+                + "cliente_mail =" + "'" + cliente.Mail + "'" + ", "
+                + "cliente_telefono =" + "'" + cliente.Telefono + "'" + ", "
+                + "cliente_domicilio =" + "'" + cliente.Domicilio + "'" + ", "
+                + "cliente_fecha_nacimiento =" + "'" + cliente.FechaNacimiento + "'" + ", "
+                + "cliente_estado =" + "'" + cliente.Estado + "'" + " WHERE cliente_dni =" + Convert.ToString(cliente.Dni));
+            dr.Close();
+        }
     }
 }
 

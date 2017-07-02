@@ -57,5 +57,16 @@ namespace UberFrba.Abm_Chofer
                 MessageBox.Show("El chofer se guardo correctamente");
             }
         }
+
+        public void Modificar(Chofer chofer) {
+            SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET chofer_nombre =" + "'" + chofer.Nombre + "'" + ", "
+                + "chofer_apellido =" + "'" + chofer.Apellido + "'" + ", "
+                + "chofer_domicilio =" + "'" + chofer.Domicilio + "'" + ", "
+                + "chofer_telefono =" + "'" + chofer.Telefono + "'" + ", "
+                + "chofer_mail =" + "'" + chofer.Mail + "'" + ", "
+                + "chofer_fecha_nacimiento =" + "'" + chofer.FechaNacimiento + "'" + ", "
+                + "chofer_estado =" + "'" + chofer.Estado + "'" + ", " + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
+            dr.Close();
+        }
     }
 }

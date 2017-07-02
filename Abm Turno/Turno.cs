@@ -137,6 +137,10 @@ namespace UberFrba.Abm_Turno
             }
         }
 
+        public void modificate() {
+            repositorioTurno.Modificar(this);
+        }
+
         public List<ErrorDeCampo> validarCampos() //devuelve lista de campos obligatorios sin completar
         { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
             //filter

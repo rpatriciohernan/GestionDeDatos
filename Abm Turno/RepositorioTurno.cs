@@ -51,5 +51,16 @@ namespace UberFrba.Abm_Turno
             return SearchManager(query, tableName(), 0, 6);
         }
 
+        public void Modificar(Turno turno) {
+           SqlDataReader dr = queryManager("UPDATE  " + tableName() + " SET turno_descripcion =" + "'" + turno.Descripcion + "'" + ", "
+                + "turno_estado =" + "'" + turno.Estado + "'" + ", "
+                + "turno_hora_inicio =" + "'" + turno.HoraInicio + "'" + ", "
+                + "turno_hora_fin =" + "'" + turno.HoraFin + "'" + ", "
+                + "turno_valor_km =" + "'" + turno.ValorKilometro + "'" + ", "
+                + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + ", "
+                + " WHERE id_turno =" + Convert.ToString(turno.IdTurno));
+            dr.Close();
+        }
+
     }
 }

@@ -17,6 +17,7 @@ namespace UberFrba.Facturacion
     {
         private List<Cliente> clientes;
         private Int64 idCliente;
+        private Facturacion facturacion;
         DateTime fechaInicio;
         DateTime fechaFin;
 
@@ -39,17 +40,23 @@ namespace UberFrba.Facturacion
             fechaInicio = Convert.ToDateTime(DTEinicio.Text);
             fechaFin = Convert.ToDateTime(DTEfin.Text);
             
-            parametrosDeFacturacion.Add("id_cliente", idCliente.ToString()); 
-            parametrosDeFacturacion.Add("entreFechas", "01/06/2017&30/06/2017"); //el viaje sabe solo como buscar esto
+            parametrosDeFacturacion.Add("id_cliente", idCliente.ToString());
+            
+            parametrosDeFacturacion.Add("entreFechas", fechaInicio + "&" + fechaFin); //"01/06/2017&30/06/2017"); el viaje sabe solo como buscar esto
 
-            Facturacion facturacion = Facturacion.facturarIntervalo(parametrosDeFacturacion); 
+            facturacion = Facturacion.facturarIntervalo(parametrosDeFacturacion); 
 
             txtImporteTotal.Text = facturacion.ImporteTotal.ToString();
 
+            mostrarViajes();
+        }
+
+        private void mostrarViajes()
+        {
             List<Viaje> viajes = facturacion.Viajes;
             List<ViajeView> viajesViews = viajes.Select(viaje => BuilderObjectView.Instance.createViajeViewFromViaje(viaje)).ToList(); //dados los viajes normales, creamos los viajesViews que son mas copados de vista al usuario. Al usuario no le interesa ver ids y demas
             BindingSource bs = new BindingSource(viajesViews, "");
-            dataGridView1.DataSource = bs;
+            dataGridView1.DataSource = bs; 
         }
 
         private void FRMfacturacion_Load(object sender, EventArgs e)
@@ -64,8 +71,9 @@ namespace UberFrba.Facturacion
 
         private void BTNcargar_Click(object sender, EventArgs e)
         {
-            Facturacion facturacion = crearFacturacion().guardate(); //la logica de modificar los viajes con el id de la facturacion es responsabilidad de guardar la factura
-            MessageBox.Show("id de la facturacion recien guardada: " + facturacion.Id.ToString());
+           /* Facturacion facturacion = crearFacturacion().guardate(); //la logica de modificar los viajes con el id de la facturacion es responsabilidad de guardar la factura
+            MessageBox.Show("id de la facturacion recien guardada: " + facturacion.Id.ToString());*/
+            facturacion.guardate();
         }
 
         private Facturacion crearFacturacion() {

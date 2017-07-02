@@ -97,6 +97,11 @@ namespace UberFrba.Abm_Chofer
             repositorioChofer.guardar(this);
         }
 
+        public void modificate()
+        {
+            repositorioChofer.Modificar(this);
+        }
+
         public String GetValues()
         {
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' 

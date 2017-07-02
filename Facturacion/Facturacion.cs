@@ -99,9 +99,14 @@ namespace UberFrba.Facturacion
         }
 
         //metodos de instancia
-        public Facturacion guardate()
+        public void guardate()
         {
-           return repositorioFacturacion.Guardar(this);
+           Facturacion facturacionStored = repositorioFacturacion.Guardar(this);
+           this.viajes.ForEach(viaje =>
+               {
+               viaje.setIdFactura(facturacionStored.Id);
+               viaje.modificate();
+               });
         }
 
         public String GetValues()

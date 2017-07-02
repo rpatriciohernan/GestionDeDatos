@@ -28,6 +28,10 @@ namespace UberFrba.Registro_Viajes
         {
             get { return id; }
         }
+        public void setIdFactura(Int16 idFactura)
+        {
+            this.idFactura = idFactura;
+        }
         public Int16 IdChofer
         {
             get { return idChofer; }
@@ -104,6 +108,11 @@ namespace UberFrba.Registro_Viajes
         public void guardate()
         {
             repositorioViaje.Guardar(this);
+        }
+
+        public void modificate()
+        {
+            repositorioViaje.Modificar(this);
         }
 
         public double calcularMonto() //le pegamos a la base por cada viaje, no es lo mas copado, pero por ahora lo dejamos asi :/

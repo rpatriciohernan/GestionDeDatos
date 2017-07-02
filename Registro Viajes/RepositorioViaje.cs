@@ -46,5 +46,20 @@ namespace UberFrba.Registro_Viajes
             SqlDataReader dr = queryManager("Insert into overhead.viajes " + "values(" + viaje.GetValues() + ")");
             dr.Close();
         }
+
+        public void Modificar(Viaje viaje) {
+            SqlDataReader dr = queryManager("UPDATE " +tableName()+ " SET id_chofer =" + "'" + viaje.IdChofer + "'" + ", " +
+                    "id_automovil =" + "'" + viaje.IdAutomovil + "'" + ", " +
+                    "id_turno =" + "'" + viaje.IdTurno + "'" + ", " +
+                    "viaje_cant_km =" + "'" + viaje.CantidadKilometros + "'" + ", " +
+                    "viaje_fecha_inicio =" + "'" + viaje.Inicio + "'" + ", " +
+                    "viaje_fecha_fin =" + "'" + viaje.Fin + "'" + ", " +
+                    "id_factura =" + "'" + viaje.IdFactura + "'" + ", " +
+                    "id_cliente =" + "'" + viaje.IdCliente + "'"
+                    + " WHERE id_viaje =" + Convert.ToString(viaje.Id));
+            dr.Close();
+        }
+
+
     }
 }

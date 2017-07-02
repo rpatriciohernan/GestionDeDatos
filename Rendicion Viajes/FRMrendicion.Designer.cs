@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CMBturno = new System.Windows.Forms.ComboBox();
+            this.CMBchofer = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,37 +37,37 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DTEfecha = new System.Windows.Forms.DateTimePicker();
             this.BTNgenerar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TXTimporteTotal = new System.Windows.Forms.TextBox();
             this.BTNcargar = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TXTkilometros = new System.Windows.Forms.TextBox();
+            this.TXTprecioBase = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TXTvalorKm = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // CMBturno
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(324, 84);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(87, 21);
-            this.comboBox2.TabIndex = 49;
+            this.CMBturno.FormattingEnabled = true;
+            this.CMBturno.Location = new System.Drawing.Point(324, 84);
+            this.CMBturno.Name = "CMBturno";
+            this.CMBturno.Size = new System.Drawing.Size(87, 21);
+            this.CMBturno.TabIndex = 49;
             // 
-            // comboBox1
+            // CMBchofer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 85);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(171, 21);
-            this.comboBox1.TabIndex = 48;
+            this.CMBchofer.FormattingEnabled = true;
+            this.CMBchofer.Location = new System.Drawing.Point(16, 85);
+            this.CMBchofer.Name = "CMBchofer";
+            this.CMBchofer.Size = new System.Drawing.Size(171, 21);
+            this.CMBchofer.TabIndex = 48;
             // 
             // label14
             // 
@@ -101,7 +101,7 @@
             this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(298, 45);
+            this.label1.Size = new System.Drawing.Size(297, 45);
             this.label1.TabIndex = 47;
             this.label1.Text = "Rendicion de Viajes";
             // 
@@ -153,13 +153,13 @@
             this.label2.TabIndex = 40;
             this.label2.Text = "Chofer";
             // 
-            // dateTimePicker1
+            // DTEfecha
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(200, 84);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(117, 20);
-            this.dateTimePicker1.TabIndex = 50;
+            this.DTEfecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTEfecha.Location = new System.Drawing.Point(200, 84);
+            this.DTEfecha.Name = "DTEfecha";
+            this.DTEfecha.Size = new System.Drawing.Size(117, 20);
+            this.DTEfecha.TabIndex = 50;
             // 
             // BTNgenerar
             // 
@@ -202,13 +202,13 @@
             this.label6.TabIndex = 54;
             this.label6.Text = "Viajes Rendidos";
             // 
-            // textBox1
+            // TXTimporteTotal
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(260, 167);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
-            this.textBox1.TabIndex = 55;
+            this.TXTimporteTotal.Enabled = false;
+            this.TXTimporteTotal.Location = new System.Drawing.Point(260, 167);
+            this.TXTimporteTotal.Name = "TXTimporteTotal";
+            this.TXTimporteTotal.Size = new System.Drawing.Size(151, 20);
+            this.TXTimporteTotal.TabIndex = 55;
             // 
             // BTNcargar
             // 
@@ -219,21 +219,21 @@
             this.BTNcargar.Text = "CARGAR";
             this.BTNcargar.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // TXTkilometros
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(16, 166);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(75, 20);
-            this.textBox2.TabIndex = 57;
+            this.TXTkilometros.Enabled = false;
+            this.TXTkilometros.Location = new System.Drawing.Point(16, 166);
+            this.TXTkilometros.Name = "TXTkilometros";
+            this.TXTkilometros.Size = new System.Drawing.Size(75, 20);
+            this.TXTkilometros.TabIndex = 57;
             // 
-            // textBox3
+            // TXTprecioBase
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(97, 166);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(75, 20);
-            this.textBox3.TabIndex = 58;
+            this.TXTprecioBase.Enabled = false;
+            this.TXTprecioBase.Location = new System.Drawing.Point(97, 166);
+            this.TXTprecioBase.Name = "TXTprecioBase";
+            this.TXTprecioBase.Size = new System.Drawing.Size(75, 20);
+            this.TXTprecioBase.TabIndex = 58;
             // 
             // label7
             // 
@@ -259,13 +259,13 @@
             this.label8.TabIndex = 60;
             this.label8.Text = "Precio Base";
             // 
-            // textBox4
+            // TXTvalorKm
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(178, 167);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(75, 20);
-            this.textBox4.TabIndex = 61;
+            this.TXTvalorKm.Enabled = false;
+            this.TXTvalorKm.Location = new System.Drawing.Point(178, 167);
+            this.TXTvalorKm.Name = "TXTvalorKm";
+            this.TXTvalorKm.Size = new System.Drawing.Size(75, 20);
+            this.TXTvalorKm.TabIndex = 61;
             // 
             // label9
             // 
@@ -285,20 +285,20 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 494);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.TXTvalorKm);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.TXTprecioBase);
+            this.Controls.Add(this.TXTkilometros);
             this.Controls.Add(this.BTNcargar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.TXTimporteTotal);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.BTNgenerar);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.DTEfecha);
+            this.Controls.Add(this.CMBturno);
+            this.Controls.Add(this.CMBchofer);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label1);
@@ -316,8 +316,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CMBturno;
+        private System.Windows.Forms.ComboBox CMBchofer;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
@@ -325,18 +325,18 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DTEfecha;
         private System.Windows.Forms.Button BTNgenerar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TXTimporteTotal;
         private System.Windows.Forms.Button BTNcargar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TXTkilometros;
+        private System.Windows.Forms.TextBox TXTprecioBase;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox TXTvalorKm;
         private System.Windows.Forms.Label label9;
     }
 }

@@ -104,6 +104,10 @@ namespace UberFrba.Abm_Cliente
             repositorioCliente.Guardar(this);
         }
 
+        public void modificate() {
+            repositorioCliente.Modificar(this);
+        }
+
         public String GetValues()
         {
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ','
