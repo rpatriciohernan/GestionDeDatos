@@ -299,6 +299,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMregistroViaje";
             this.Text = "Registro de Viaje";
+            this.Load += new System.EventHandler(this.FRMregistroViaje_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

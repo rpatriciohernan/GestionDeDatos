@@ -9,22 +9,22 @@ namespace UberFrba.Registro_Viajes
 {
     class Viaje
     {
-        private Int16 id;
-        private Int16 idChofer;
+        private Int64 id;
+        private Int64 idChofer;
         private String idAutomovil;
-        private Int16 idTurno;
+        private Int64 idTurno;
         private Double cantidadKilometros;
         private DateTime inicio;
         private DateTime fin;
-        private Int16 idFactura; //vamos a hacer las facturas calculables, asi que setteamos este id una vez que se haya creado la factura
-        private Int16 idCliente;
+        private Int64 idFactura; //vamos a hacer las facturas calculables, asi que setteamos este id una vez que se haya creado la factura
+        private Int64 idCliente;
 
         private double monto;
         private static RepositorioViaje repositorioViaje = RepositorioViaje.Instance;
 
 
         #region getters y setters
-        public Int16 Id
+        public Int64 Id
         {
             get { return id; }
         }
@@ -32,7 +32,7 @@ namespace UberFrba.Registro_Viajes
         {
             this.idFactura = idFactura;
         }
-        public Int16 IdChofer
+        public Int64 IdChofer
         {
             get { return idChofer; }
         }
@@ -40,7 +40,7 @@ namespace UberFrba.Registro_Viajes
         {
             get { return idAutomovil; }
         }
-        public Int16 IdTurno
+        public Int64 IdTurno
         {
             get { return idTurno; }
         }
@@ -56,11 +56,11 @@ namespace UberFrba.Registro_Viajes
         {
             get { return fin; }
         }
-        public Int16 IdFactura
+        public Int64 IdFactura
         {
             get { return idFactura; }
         }
-        public Int16 IdCliente
+        public Int64 IdCliente
         {
             get { return idCliente; }
         }
@@ -71,7 +71,7 @@ namespace UberFrba.Registro_Viajes
         #endregion
 
         #region constructores
-        public Viaje(Int16 id, Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idCliente, Int16 idFactura)
+        public Viaje(Int64 id, Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, Int64 idFactura)
         {
             this.id = id;
             this.idChofer = idChofer;
@@ -84,7 +84,7 @@ namespace UberFrba.Registro_Viajes
             this.idCliente = idCliente;
         }
 
-        public Viaje(Int16 idChofer, String idAutomovil, Int16 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int16 idCliente, Int16 idFactura)
+        public Viaje(Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, Int64 idFactura)
         {
             this.idChofer = idChofer;
             this.idAutomovil = idAutomovil;
@@ -136,13 +136,6 @@ namespace UberFrba.Registro_Viajes
                 "'" + this.idTurno + "'" + ',' + "'" + this.cantidadKilometros + "'" + ',' + "'" + this.inicio + "'" + ',' +
                 "'" + this.fin + "'" + ',' + "'" + this.idCliente + "'" + ',' + "'" + this.idFactura + "'";
         #endregion
-
-
-
         }
-
-
-
-
     }
 }

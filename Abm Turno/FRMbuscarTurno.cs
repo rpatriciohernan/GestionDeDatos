@@ -19,7 +19,6 @@ namespace UberFrba.Abm_Turno
 
         private void BTNnuevoTurno_Click(object sender, EventArgs e)
         {
-
             FRMTurno formularioTurno = new FRMTurno();
             formularioTurno.Show();
 

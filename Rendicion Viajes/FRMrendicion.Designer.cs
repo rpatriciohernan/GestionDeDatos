@@ -169,6 +169,7 @@
             this.BTNgenerar.TabIndex = 51;
             this.BTNgenerar.Text = "GENERAR";
             this.BTNgenerar.UseVisualStyleBackColor = true;
+            this.BTNgenerar.Click += new System.EventHandler(this.BTNgenerar_Click);
             // 
             // label5
             // 
@@ -218,6 +219,7 @@
             this.BTNcargar.TabIndex = 56;
             this.BTNcargar.Text = "CARGAR";
             this.BTNcargar.UseVisualStyleBackColor = true;
+            this.BTNcargar.Click += new System.EventHandler(this.BTNcargar_Click);
             // 
             // TXTkilometros
             // 
@@ -308,6 +310,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMrendicion";
             this.Text = "Rendicion de viajes";
+            this.Load += new System.EventHandler(this.FRMrendicion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

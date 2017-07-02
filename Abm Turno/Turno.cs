@@ -18,7 +18,6 @@ namespace UberFrba.Abm_Turno
         private String horaFin; //private DateTime horaFin;
         private Int16 valorKilometro;
         private Int16 precioBase;
-        private List<CampoYValor> camposObligatorios;
         private static RepositorioTurno repositorioTurno = RepositorioTurno.Instance;
 
         #endregion
@@ -58,57 +57,25 @@ namespace UberFrba.Abm_Turno
         #region constructor
         public Turno(Int16 idTurno, String descripcion, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase, String estado)
         {
-            //--cargar en esta lista, los campos obligatorios del cliente--
-            this.camposObligatorios = new List<CampoYValor>();
-
             this.idTurno = idTurno;
-            this.camposObligatorios.Add(new CampoYValor("idTurno", this.idTurno.ToString()));
-
             this.descripcion = descripcion;
-            this.camposObligatorios.Add(new CampoYValor("Descripcion", this.descripcion));
-
             this.estado = estado;
-            this.camposObligatorios.Add(new CampoYValor("Apellido", this.estado));
-
             this.horaInicio = horaInicio;
-            this.camposObligatorios.Add(new CampoYValor("HoraInicio", this.horaInicio.ToString()));
-
             this.horaFin = horaFin;
-            this.camposObligatorios.Add(new CampoYValor("HoraFin", this.horaFin.ToString()));
-
             this.valorKilometro = valorKilometro;
-            this.camposObligatorios.Add(new CampoYValor("ValorKilometro", this.valorKilometro.ToString()));
-
             this.precioBase = precioBase;
-            this.camposObligatorios.Add(new CampoYValor("PrecioBase", this.precioBase.ToString()));
-
         }
         #endregion  
         
         #region constructor
         public Turno(String descripcion, String estado, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase)
         {
-            //--cargar en esta lista, los campos obligatorios del cliente--
-            this.camposObligatorios = new List<CampoYValor>();
-            
             this.descripcion = descripcion;
-            this.camposObligatorios.Add(new CampoYValor("Descripcion", this.descripcion));
-
             this.estado = estado;
-            this.camposObligatorios.Add(new CampoYValor("Apellido", this.estado));
-            
             this.horaInicio = horaInicio;
-            this.camposObligatorios.Add(new CampoYValor("HoraInicio", this.horaInicio.ToString()));
-
             this.horaFin = horaFin;
-            this.camposObligatorios.Add(new CampoYValor("HoraFin", this.horaFin.ToString()));
-
             this.valorKilometro = valorKilometro;
-            this.camposObligatorios.Add(new CampoYValor("ValorKilometro", this.valorKilometro.ToString()));
-
             this.precioBase = precioBase;
-            this.camposObligatorios.Add(new CampoYValor("PrecioBase", this.precioBase.ToString()));
-
         }
         #endregion  
   
@@ -147,34 +114,11 @@ namespace UberFrba.Abm_Turno
             repositorioTurno.Modificar(this);
         }
 
-
-
-        public List<ErrorDeCampo> validarCampos() //devuelve lista de campos obligatorios sin completar
-        { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
-            //filter
-            List<CampoYValor> camposObligatoriosVacios = camposObligatorios.Where(elem => (elem.Valor == null || elem.Valor == "")).ToList();
-            //map
-            List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(error => new ErrorDeCampo(error.Campo, "falta completar")).ToList();
-            return errores;
-        }
-
-
         public String GetValues()
         {
             return "'" + this.descripcion + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" +
                 Convert.ToString(this.horaFin) + "'" + ',' + this.valorKilometro + ',' + 
                 Convert.ToString(this.precioBase) + ',' + "'" + this.estado + "'";
         }
-   
-    
-    
-    
-    
-    
-    
-    
-    
     }
-
-
 }

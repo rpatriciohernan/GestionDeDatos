@@ -81,6 +81,8 @@
       <DependentUpon>FRMChofer.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Chofer\RepositorioChofer.cs" />
+    <Compile Include="Abm Chofer\RepositorioChoferConMayorRecaudacion.cs" />
+    <Compile Include="Abm Chofer\RepositorioChoferConViajeMasLargo.cs" />
     <Compile Include="Abm Cliente\FRMBuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +95,8 @@
     <Compile Include="Abm Cliente\FRMCliente.Designer.cs">
       <DependentUpon>FRMCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Cliente\RepositorioClienteConMayorConsumo.cs" />
+    <Compile Include="Abm Cliente\RepositorioClienteConMayorUsoDeUnMismoAutomovil.cs" />
     <Compile Include="Abm Funcionalidad\FRMBuscarFuncionalidad.cs">
       <SubType>Form</SubType>
     </Compile>

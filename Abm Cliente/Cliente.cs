@@ -99,6 +99,18 @@ namespace UberFrba.Abm_Cliente
             return repositorioCliente.buscar(parametrosDeBusqueda);
         }
 
+        public static List<Cliente> buscarClientesConMayorConsumo(Dictionary<String, String> parametrosDeBusqueda)
+        {
+            RepositorioClienteConMayorConsumo repositorioClienteConMayorConsumo = RepositorioClienteConMayorConsumo.Instance;
+            return repositorioClienteConMayorConsumo.buscar(parametrosDeBusqueda);
+        }
+
+        public static List<Cliente> buscarClientesConMayorUsoDeUnMismoAutomovil(Dictionary<String, String> parametrosDeBusqueda)
+        {
+            RepositorioClienteConMayorUsoDeUnMismoAutomovil repositorioClienteConMayorUsoDeUnMismoAutomovil = RepositorioClienteConMayorUsoDeUnMismoAutomovil.Instance;
+            return repositorioClienteConMayorUsoDeUnMismoAutomovil.buscar(parametrosDeBusqueda);
+        }
+
         //metodos de instancia
         public void guardate() {
             repositorioCliente.Guardar(this);
