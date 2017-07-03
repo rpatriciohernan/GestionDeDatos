@@ -56,8 +56,8 @@ namespace UberFrba.Abm_Turno
                 + "turno_hora_inicio =" + "'" + turno.HoraInicio + "'" + ", "
                 + "turno_hora_fin =" + "'" + turno.HoraFin + "'" + ", "
                 + "turno_valor_km =" + "'" + turno.ValorKilometro + "'" + ", "
-                + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + ", "
-                + " WHERE id_turno =" + Convert.ToString(turno.IdTurno));
+                + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + " "
+                + " WHERE id_turno = " + Convert.ToString(turno.IdTurno));
             dr.Close();
         }
 

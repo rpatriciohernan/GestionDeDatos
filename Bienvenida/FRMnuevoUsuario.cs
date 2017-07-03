@@ -27,10 +27,7 @@ namespace UberFrba.Bienvenida
 
         private void BTNSoyChofer_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the form
-            FRMChofer formularioChofer = new FRMChofer(TXTdni.Text);
-
-            // Show form
+            FRMChofer formularioChofer = new FRMChofer();
             formularioChofer.Show();           
         }
 
@@ -53,7 +50,7 @@ namespace UberFrba.Bienvenida
         private void BTNSoyCliente_Click(object sender, EventArgs e)
         {
             // Create a new instance of the form
-            FRMCliente formularioCliente = new FRMCliente(TXTdni.Text);
+            FRMCliente formularioCliente = new FRMCliente();
 
             // Show form
             formularioCliente.Show();  

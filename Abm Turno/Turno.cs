@@ -32,10 +32,6 @@ namespace UberFrba.Abm_Turno
         {
             get { return descripcion; }
         }
-        public string Estado    
-         {
-            get { return estado; }
-        }
         public TimeSpan HoraInicio
         {
             get { return horaInicio; }
@@ -51,6 +47,10 @@ namespace UberFrba.Abm_Turno
         public double PrecioBase
         {
             get { return precioBase; }
+        }
+        public string Estado
+        {
+            get { return estado; }
         }
         #endregion
 
@@ -68,7 +68,7 @@ namespace UberFrba.Abm_Turno
         #endregion  
         
         #region constructor
-        public Turno(String descripcion, String estado, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase)
+        public Turno(String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
         {
             this.descripcion = descripcion;
             this.estado = estado;
@@ -108,11 +108,17 @@ namespace UberFrba.Abm_Turno
             repositorioTurno.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            this.estado = "Inactivo";
+            repositorioTurno.Modificar(this);
+        }
+
         public String GetValues()
         {
-            return "'" + this.descripcion + "'" + ',' + "'" + this.horaInicio + "'" + ',' + "'" +
-                Convert.ToString(this.horaFin) + "'" + ',' + "'" + this.valorKilometro + "'" + ',' + "'" +
-                Convert.ToString(this.precioBase) + "'" + ',' + "'" + this.estado + "'";
+            return "'" + this.descripcion + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" +
+                Convert.ToString(this.horaFin) + "'" + ',' + this.valorKilometro + ',' + 
+                Convert.ToString(this.precioBase) + ',' + "'" + this.estado + "'";
         }
     }
 }

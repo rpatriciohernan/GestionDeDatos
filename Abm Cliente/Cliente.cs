@@ -123,6 +123,12 @@ namespace UberFrba.Abm_Cliente
             repositorioCliente.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            this.estado = "Inactivo";
+            repositorioCliente.Modificar(this);
+        }
+
         public String GetValues()
         {
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ','

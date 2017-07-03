@@ -110,7 +110,7 @@ namespace UberFrba.Facturacion
         }
 
         public String GetValues()
-        { //ojo al agregar nuevos atributo, volcarlos aca!!!
+        {
             String fechaCreacion = DateTime.Now.ToString();
             return "'" + fechaCreacion + "'" + ',' + "'" + this.idCliente + "'" + ',' + "'" + this.fechaInicio + "'" + ',' + "'" + this.FechaFin + "'" + ',' +
                 "'" + this.importeTotal + "'";

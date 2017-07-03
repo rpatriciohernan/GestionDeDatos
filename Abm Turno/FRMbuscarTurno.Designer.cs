@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label12 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BTNbuscar = new System.Windows.Forms.Button();
@@ -38,18 +37,6 @@
             this.BTNnuevoTurno = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(85, 36);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 18);
-            this.label12.TabIndex = 93;
-            this.label12.Text = "*";
             // 
             // label19
             // 
@@ -73,7 +60,8 @@
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(10, 84);
+            this.BTNbuscar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BTNbuscar.Location = new System.Drawing.Point(236, 84);
             this.BTNbuscar.Name = "BTNbuscar";
             this.BTNbuscar.Size = new System.Drawing.Size(219, 23);
             this.BTNbuscar.TabIndex = 79;
@@ -115,11 +103,12 @@
             // 
             // BTNnuevoTurno
             // 
-            this.BTNnuevoTurno.Location = new System.Drawing.Point(233, 84);
+            this.BTNnuevoTurno.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BTNnuevoTurno.Location = new System.Drawing.Point(11, 84);
             this.BTNnuevoTurno.Name = "BTNnuevoTurno";
             this.BTNnuevoTurno.Size = new System.Drawing.Size(219, 23);
             this.BTNnuevoTurno.TabIndex = 94;
-            this.BTNnuevoTurno.Text = "NUEVO TURNO";
+            this.BTNnuevoTurno.Text = "NUEVA CARGA";
             this.BTNnuevoTurno.UseVisualStyleBackColor = true;
             this.BTNnuevoTurno.Click += new System.EventHandler(this.BTNnuevoTurno_Click);
             // 
@@ -129,7 +118,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 258);
             this.Controls.Add(this.BTNnuevoTurno);
-            this.Controls.Add(this.label12);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.BTNbuscar);
@@ -138,6 +126,7 @@
             this.Controls.Add(this.label2);
             this.Name = "FRMbuscarTurno";
             this.Text = "FRMbuscarTurno";
+            this.Load += new System.EventHandler(this.FRMbuscarTurno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -146,7 +135,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button BTNbuscar;

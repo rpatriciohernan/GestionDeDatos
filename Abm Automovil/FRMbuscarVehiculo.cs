@@ -25,6 +25,11 @@ namespace UberFrba.Abm_Automovil
 
         private void BTNbuscar_Click(object sender, EventArgs e)
         {
+            busquedaDeValores();
+        }
+
+        private void busquedaDeValores()
+        {
             Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
             if (TXTpatente.Text != "")
             {
@@ -46,13 +51,72 @@ namespace UberFrba.Abm_Automovil
             }
             if (CHKsoloActivos.Checked)
             {
-                parametrosDeBusqueda.Add("cliente_estado", "Activo");
+                parametrosDeBusqueda.Add("auto_estado", "Activo");
             }
-            List<Automovil> clientes = Automovil.buscar(parametrosDeBusqueda);
+            List<Automovil> automoviles = Automovil.buscar(parametrosDeBusqueda);
 
-            BindingSource bs = new BindingSource(clientes, "");
-            dataGridView1.DataSource = bs; //bs.ResetBindings(false); hay que hacerlo cada vez que se actualiza la lista
- 
+            construccionDeGridView(automoviles);
+        }
+
+        private void construccionDeGridView(object dataSource)
+        {
+            //asociacion de datagrid con base de datos
+            BindingSource bs = new BindingSource(dataSource, "");
+            dataGridView1.DataSource = bs;
+            dataGridView1.RowHeadersVisible = false;
+            //creacion de boton para editar
+            DataGridViewButtonColumn editButtonColumn = new DataGridViewButtonColumn();
+            editButtonColumn.Name = "Editar";
+            editButtonColumn.HeaderText = "";
+            editButtonColumn.Text = "Editar";
+            editButtonColumn.UseColumnTextForButtonValue = true;
+            if (dataGridView1.Columns["Editar"] == null)
+            {
+                dataGridView1.Columns.Add(editButtonColumn);
+            }
+            else
+            {
+                dataGridView1.Columns.Remove("Editar");
+                dataGridView1.Columns.Add(editButtonColumn);
+
+            }
+            //creacion de boton para buscar
+            DataGridViewButtonColumn deleteButtonColumn = new DataGridViewButtonColumn();
+            deleteButtonColumn.Name = "Eliminar";
+            deleteButtonColumn.HeaderText = "";
+            deleteButtonColumn.Text = "Eliminar";
+            deleteButtonColumn.UseColumnTextForButtonValue = true;
+            if (dataGridView1.Columns["Eliminar"] == null)
+            {
+                dataGridView1.Columns.Add(deleteButtonColumn);
+            }
+            else
+            {
+                dataGridView1.Columns.Remove("Eliminar");
+                dataGridView1.Columns.Add(deleteButtonColumn);
+            }
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
+                {
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    FRMAutomovil formularioAuto = new FRMAutomovil();
+                    formularioAuto.obtenerDatos(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value), Convert.ToInt16(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value));
+                    formularioAuto.Show();
+                }
+                if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
+                {
+                    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                    Automovil unAutomovil = new Automovil(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value),Convert.ToInt16(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), "Inactivo");
+                    unAutomovil.modificate();
+                    this.busquedaDeValores();
+                }
+            }
         }
 
         private void FRMbuscarVehiculo_Load(object sender, EventArgs e)
@@ -70,6 +134,12 @@ namespace UberFrba.Abm_Automovil
 
             choferes.ForEach(chofer => CMBChofer.Items.Add(chofer.Nombre));
 
+        }
+
+        private void BTNnuevoVehiculo_Click(object sender, EventArgs e)
+        {
+            FRMAutomovil formularioAutomovil = new FRMAutomovil();
+            formularioAutomovil.Show();
         }
     }
 }

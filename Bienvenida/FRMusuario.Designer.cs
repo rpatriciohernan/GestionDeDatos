@@ -52,7 +52,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Location = new System.Drawing.Point(13, 132);
+            this.label4.Location = new System.Drawing.Point(13, 129);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 16);
@@ -61,7 +61,7 @@
             // 
             // TXTdni
             // 
-            this.TXTdni.Location = new System.Drawing.Point(15, 151);
+            this.TXTdni.Location = new System.Drawing.Point(15, 148);
             this.TXTdni.Name = "TXTdni";
             this.TXTdni.Size = new System.Drawing.Size(253, 20);
             this.TXTdni.TabIndex = 56;
@@ -209,7 +209,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(45, 130);
+            this.label8.Location = new System.Drawing.Point(45, 127);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(14, 18);
             this.label8.TabIndex = 67;

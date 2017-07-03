@@ -117,6 +117,12 @@ namespace UberFrba.Abm_Chofer
             repositorioChofer.Modificar(this);
         }
 
+        public void eliminate()
+        {
+            this.estado = "Inactivo";
+            repositorioChofer.Modificar(this);
+        }
+
         public String GetValues()
         {
             return "'" + this.nombre + "'" + ',' + "'" + this.apellido + "'" + ',' + "'" + Convert.ToString(this.dni) + "'" + ',' 

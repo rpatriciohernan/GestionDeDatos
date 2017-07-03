@@ -131,7 +131,7 @@ namespace UberFrba.Registro_Viajes
 
         #region values
         public String GetValues()
-        { //ojo al agregar nuevos atributo, volcarlos aca!!! , EL iD NO VA se genera automaticamente ;)
+        { 
             return "'" + this.idChofer + "'" + ',' + "'" + this.idAutomovil + "'" + ',' +
                 "'" + this.idTurno + "'" + ',' + "'" + this.cantidadKilometros + "'" + ',' + "'" + this.inicio + "'" + ',' +
                 "'" + this.fin + "'" + ',' + "'" + this.idCliente + "'" + ',' + "'" + this.idFactura + "'";

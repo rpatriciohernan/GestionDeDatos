@@ -65,7 +65,7 @@ namespace UberFrba.Abm_Chofer
                 + "chofer_telefono =" + "'" + chofer.Telefono + "'" + ", "
                 + "chofer_mail =" + "'" + chofer.Mail + "'" + ", "
                 + "chofer_fecha_nacimiento =" + "'" + chofer.FechaNacimiento + "'" + ", "
-                + "chofer_estado =" + "'" + chofer.Estado + "'" + ", " + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
+                + "chofer_estado =" + "'" + chofer.Estado + "'" + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
             dr.Close();
         }
     }

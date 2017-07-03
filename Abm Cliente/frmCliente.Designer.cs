@@ -61,7 +61,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.DTEfechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.BTNeliminar = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -296,7 +295,7 @@
             this.BTNguardar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNguardar.Location = new System.Drawing.Point(12, 346);
             this.BTNguardar.Name = "BTNguardar";
-            this.BTNguardar.Size = new System.Drawing.Size(270, 23);
+            this.BTNguardar.Size = new System.Drawing.Size(542, 23);
             this.BTNguardar.TabIndex = 31;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
@@ -443,23 +442,11 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Gestion de Clientes";
             // 
-            // BTNeliminar
-            // 
-            this.BTNeliminar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BTNeliminar.Location = new System.Drawing.Point(301, 346);
-            this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(254, 23);
-            this.BTNeliminar.TabIndex = 32;
-            this.BTNeliminar.Text = "ELIMINAR";
-            this.BTNeliminar.UseVisualStyleBackColor = true;
-            this.BTNeliminar.Click += new System.EventHandler(this.BTNeliminar_Click);
-            // 
             // FRMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 376);
-            this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.BTNguardar);
@@ -511,7 +498,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox TXTcodigoPostal;
-        private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Label label6;

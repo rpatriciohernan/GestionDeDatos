@@ -12,17 +12,63 @@ namespace UberFrba.Abm_Cliente
 {
     public partial class FRMCliente : Form
     {
-        public FRMCliente( String dni)
+
+
+
+        public FRMCliente()
         {
             InitializeComponent();
-            TXTdni.Text = dni;
         }
+
+
+        String nombre;
+        String apellido;
+        Int64 dni;
+        String mail;
+        String telefono;
+        String domicilio;
+        Int16 codigoPostal;
+        String localidad;
+        DateTime fecha;
+        String estado;
+        Boolean formularioPrecargado = false;
+
 
         private void FRMCliente_Load(object sender, EventArgs e)
         {
             this.CMBestado.Items.Add("Activo");
             this.CMBestado.Items.Add("Inactivo");
-            if (this.CMBestado.Text == "") { this.CMBestado.Text = "Activo"; };
+            if (!formularioPrecargado) { this.CMBestado.Text = "Activo"; } else { 
+                TXTdni.Enabled = false;
+                this.TXTnombre.Text = nombre;
+                this.TXTapellido.Text = apellido;
+                this.TXTdni.Text = dni.ToString();
+                this.TXTmail.Text = mail;
+                this.TXTtelefono.Text = telefono.ToString();
+                this.TXTdomicilio.Text = domicilio;
+                this.TXTcodigoPostal.Text = codigoPostal.ToString();
+                this.TXTlocalidad.Text = localidad;
+                this.DTEfechaNacimiento.Value = fecha;
+                this.CMBestado.Text = estado;
+                formularioPrecargado = true;
+            
+            };
+        }
+
+        public void recibirDatos(String nombre, String apellido, Int64 dni, String mail, String telefono, String domicilio, Int16 codigoPostal, String localidad, DateTime fecha, String estado)
+        {
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.mail = mail;
+            this.telefono = telefono;
+            this.domicilio = domicilio;
+            this.codigoPostal = codigoPostal;
+            this.localidad = localidad;
+            this.fecha = fecha;
+            this.estado = estado;
+            formularioPrecargado = true;
+
         }
 
         private void MensajeError() { 
@@ -34,7 +80,7 @@ namespace UberFrba.Abm_Cliente
 
             if (this.ValidarCamposMandatorios())
             {
-                this.crearCliente().guardate();
+                if (formularioPrecargado) { this.crearCliente().modificate(); } else { this.crearCliente().guardate(); };
             }
             else
             {

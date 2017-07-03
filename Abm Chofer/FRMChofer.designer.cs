@@ -52,14 +52,13 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.CMBestado = new System.Windows.Forms.ComboBox();
             this.TXTmail = new System.Windows.Forms.TextBox();
             this.TXTtelefono = new System.Windows.Forms.TextBox();
             this.BTNguardar = new System.Windows.Forms.Button();
-            this.BTNeliminar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -348,6 +347,18 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contacto";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(228, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(14, 18);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "*";
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -398,39 +409,17 @@
             // 
             this.BTNguardar.Location = new System.Drawing.Point(14, 356);
             this.BTNguardar.Name = "BTNguardar";
-            this.BTNguardar.Size = new System.Drawing.Size(255, 23);
+            this.BTNguardar.Size = new System.Drawing.Size(542, 23);
             this.BTNguardar.TabIndex = 22;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
             this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
-            // 
-            // BTNeliminar
-            // 
-            this.BTNeliminar.Location = new System.Drawing.Point(290, 356);
-            this.BTNeliminar.Name = "BTNeliminar";
-            this.BTNeliminar.Size = new System.Drawing.Size(266, 23);
-            this.BTNeliminar.TabIndex = 23;
-            this.BTNeliminar.Text = "ELIMINAR";
-            this.BTNeliminar.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Red;
-            this.label6.Location = new System.Drawing.Point(228, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(14, 18);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "*";
             // 
             // FRMChofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(573, 389);
-            this.Controls.Add(this.BTNeliminar);
             this.Controls.Add(this.BTNguardar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -483,7 +472,6 @@
         private System.Windows.Forms.DateTimePicker DTEfechaNacimiento;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button BTNeliminar;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.ComboBox CMBestado;
         private System.Windows.Forms.Label label6;

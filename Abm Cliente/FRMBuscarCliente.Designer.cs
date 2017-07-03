@@ -28,11 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -43,33 +40,10 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CHKsoloActivos = new System.Windows.Forms.CheckBox();
+            this.BTNnuevoCliente = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Red;
-            this.label13.Location = new System.Drawing.Point(241, 15);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(14, 18);
-            this.label13.TabIndex = 25;
-            this.label13.Text = "*";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Red;
-            this.label12.Location = new System.Drawing.Point(61, 15);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(14, 18);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "*";
             // 
             // dataGridView1
             // 
@@ -82,25 +56,14 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(12, 157);
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnBuscar.Location = new System.Drawing.Point(298, 157);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(553, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(267, 23);
             this.btnBuscar.TabIndex = 32;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(404, 14);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(14, 18);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "*";
             // 
             // label19
             // 
@@ -176,9 +139,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.txtApellido);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtDni);
@@ -217,11 +177,23 @@
             this.CHKsoloActivos.UseVisualStyleBackColor = true;
             this.CHKsoloActivos.CheckedChanged += new System.EventHandler(this.CHKsoloActivos_CheckedChanged);
             // 
+            // BTNnuevoCliente
+            // 
+            this.BTNnuevoCliente.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BTNnuevoCliente.Location = new System.Drawing.Point(12, 157);
+            this.BTNnuevoCliente.Name = "BTNnuevoCliente";
+            this.BTNnuevoCliente.Size = new System.Drawing.Size(267, 23);
+            this.BTNnuevoCliente.TabIndex = 49;
+            this.BTNnuevoCliente.Text = "CARGAR NUEVO";
+            this.BTNnuevoCliente.UseVisualStyleBackColor = true;
+            this.BTNnuevoCliente.Click += new System.EventHandler(this.BTNnuevoCliente_Click);
+            // 
             // FRMBuscarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 409);
+            this.Controls.Add(this.BTNnuevoCliente);
             this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBuscar);
@@ -241,11 +213,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
@@ -256,5 +225,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox CHKsoloActivos;
+        private System.Windows.Forms.Button BTNnuevoCliente;
     }
 }

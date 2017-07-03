@@ -122,27 +122,29 @@
             this.CMBfuncionalidad.FormattingEnabled = true;
             this.CMBfuncionalidad.Location = new System.Drawing.Point(12, 254);
             this.CMBfuncionalidad.Name = "CMBfuncionalidad";
-            this.CMBfuncionalidad.Size = new System.Drawing.Size(303, 21);
+            this.CMBfuncionalidad.Size = new System.Drawing.Size(264, 21);
             this.CMBfuncionalidad.TabIndex = 58;
             this.CMBfuncionalidad.Click += new System.EventHandler(this.CMBfuncionalidad_Click);
             // 
             // BTNnuevaFuncionalidad
             // 
-            this.BTNnuevaFuncionalidad.Location = new System.Drawing.Point(321, 252);
+            this.BTNnuevaFuncionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNnuevaFuncionalidad.Location = new System.Drawing.Point(282, 252);
             this.BTNnuevaFuncionalidad.Name = "BTNnuevaFuncionalidad";
-            this.BTNnuevaFuncionalidad.Size = new System.Drawing.Size(25, 23);
+            this.BTNnuevaFuncionalidad.Size = new System.Drawing.Size(44, 23);
             this.BTNnuevaFuncionalidad.TabIndex = 59;
-            this.BTNnuevaFuncionalidad.Text = "+";
+            this.BTNnuevaFuncionalidad.Text = "NUEVA";
             this.BTNnuevaFuncionalidad.UseVisualStyleBackColor = true;
             this.BTNnuevaFuncionalidad.Click += new System.EventHandler(this.BTNnuevaFuncionalidad_Click);
             // 
             // BTNeliminarFuncionalidad
             // 
-            this.BTNeliminarFuncionalidad.Location = new System.Drawing.Point(347, 252);
+            this.BTNeliminarFuncionalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BTNeliminarFuncionalidad.Location = new System.Drawing.Point(332, 252);
             this.BTNeliminarFuncionalidad.Name = "BTNeliminarFuncionalidad";
-            this.BTNeliminarFuncionalidad.Size = new System.Drawing.Size(25, 23);
+            this.BTNeliminarFuncionalidad.Size = new System.Drawing.Size(40, 23);
             this.BTNeliminarFuncionalidad.TabIndex = 60;
-            this.BTNeliminarFuncionalidad.Text = "-";
+            this.BTNeliminarFuncionalidad.Text = "EDITAR";
             this.BTNeliminarFuncionalidad.UseVisualStyleBackColor = true;
             this.BTNeliminarFuncionalidad.Click += new System.EventHandler(this.BTNeliminarFuncionalidad_Click);
             // 

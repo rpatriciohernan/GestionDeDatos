@@ -76,13 +76,8 @@ namespace UberFrba.Bienvenida
         }
 
         private void button9_Click(object sender, EventArgs e)
-        {/*
-            // Create a new instance of the form
+        {
             FRMbuscarTurno formularioTurno = new FRMbuscarTurno();
-
-            // Show form
-            formularioTurno.Show();*/
-            FRMTurno formularioTurno = new FRMTurno();
             formularioTurno.Show();
 
         }

@@ -41,6 +41,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.CHKsoloActivos = new System.Windows.Forms.CheckBox();
+            this.BTNnuevoVehiculo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,9 +98,10 @@
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(17, 131);
+            this.BTNbuscar.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BTNbuscar.Location = new System.Drawing.Point(293, 131);
             this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(595, 23);
+            this.BTNbuscar.Size = new System.Drawing.Size(319, 23);
             this.BTNbuscar.TabIndex = 39;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
@@ -177,11 +179,23 @@
             this.CHKsoloActivos.Text = "Buscar solo activos";
             this.CHKsoloActivos.UseVisualStyleBackColor = true;
             // 
+            // BTNnuevoVehiculo
+            // 
+            this.BTNnuevoVehiculo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.BTNnuevoVehiculo.Location = new System.Drawing.Point(17, 131);
+            this.BTNnuevoVehiculo.Name = "BTNnuevoVehiculo";
+            this.BTNnuevoVehiculo.Size = new System.Drawing.Size(272, 23);
+            this.BTNnuevoVehiculo.TabIndex = 48;
+            this.BTNnuevoVehiculo.Text = "NUEVA CARGA";
+            this.BTNnuevoVehiculo.UseVisualStyleBackColor = true;
+            this.BTNnuevoVehiculo.Click += new System.EventHandler(this.BTNnuevoVehiculo_Click);
+            // 
             // FRMbuscarVehiculo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 443);
+            this.Controls.Add(this.BTNnuevoVehiculo);
             this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.TXTmodelo);
             this.Controls.Add(this.CMBChofer);
@@ -219,5 +233,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.CheckBox CHKsoloActivos;
+        private System.Windows.Forms.Button BTNnuevoVehiculo;
     }
 }
