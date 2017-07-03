@@ -198,6 +198,7 @@
             this.TXTvalorKilometro.Name = "TXTvalorKilometro";
             this.TXTvalorKilometro.Size = new System.Drawing.Size(133, 20);
             this.TXTvalorKilometro.TabIndex = 67;
+            this.TXTvalorKilometro.TextChanged += new System.EventHandler(this.TXTvalorKilometro_TextChanged);
             // 
             // TXTprecioBase
             // 
@@ -205,6 +206,7 @@
             this.TXTprecioBase.Name = "TXTprecioBase";
             this.TXTprecioBase.Size = new System.Drawing.Size(133, 20);
             this.TXTprecioBase.TabIndex = 68;
+            this.TXTprecioBase.TextChanged += new System.EventHandler(this.TXTprecioBase_TextChanged);
             // 
             // label12
             // 

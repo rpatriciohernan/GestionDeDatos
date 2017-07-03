@@ -99,6 +99,7 @@
             this.TXTdni.Name = "TXTdni";
             this.TXTdni.Size = new System.Drawing.Size(155, 22);
             this.TXTdni.TabIndex = 3;
+            this.TXTdni.TextChanged += new System.EventHandler(this.TXTdni_TextChanged);
             // 
             // TXTdomicilio
             // 
@@ -405,6 +406,7 @@
             this.TXTtelefono.Name = "TXTtelefono";
             this.TXTtelefono.Size = new System.Drawing.Size(172, 22);
             this.TXTtelefono.TabIndex = 22;
+            this.TXTtelefono.TextChanged += new System.EventHandler(this.TXTtelefono_TextChanged);
             // 
             // BTNguardar
             // 

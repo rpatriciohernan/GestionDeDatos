@@ -24,9 +24,36 @@ namespace UberFrba.Registro_Viajes
             InitializeComponent();
         }
 
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.cmbChofer.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.txtAutomovil.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.cmbTurno.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.dteFechaInicio.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.dtpFechaFin.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.cmbCliente.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.txtKilometros.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            this.crearViaje().guardate();
+            if (this.ValidarCamposMandatorios())
+            {
+                this.crearViaje().guardate();
+            }
+            else
+            {
+                this.MensajeError();
+            };
         }
 
         private Viaje crearViaje() {

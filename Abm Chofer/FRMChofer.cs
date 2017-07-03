@@ -46,6 +46,10 @@ namespace UberFrba.Abm_Chofer
 
         private void FRMChofer_Load(object sender, EventArgs e)
         {
+            //asociacion de controlador de tipo de datos
+            this.TXTtelefono.KeyPress += TXTtelefono_KeyPress;
+            this.TXTdni.KeyPress += TXTdni_KeyPress;
+
             this.CMBestado.Items.Add("Activo");
             this.CMBestado.Items.Add("Inactivo");
             if (!formularioPrecargado) { this.CMBestado.Text = "Activo"; } else {
@@ -58,6 +62,7 @@ namespace UberFrba.Abm_Chofer
                 this.TXTmail.Text = mail;
                 this.DTEfechaNacimiento.Value= fechaNacimiento;
                 this.CMBestado.Text = estado;
+                this.TXTdni.Enabled = false;
             };
 
         }
@@ -117,5 +122,36 @@ namespace UberFrba.Abm_Chofer
             return new Chofer(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTdomicilio.Text, 
                 TXTlocalidad.Text, TXTtelefono.Text,  TXTmail.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), CMBestado.Text);
         }
+
+        private void TXTdni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTtelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TXTdni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TXTtelefono_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

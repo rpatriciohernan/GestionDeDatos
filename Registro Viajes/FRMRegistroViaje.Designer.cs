@@ -177,12 +177,13 @@
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 45);
+            this.label1.Size = new System.Drawing.Size(261, 45);
             this.label1.TabIndex = 32;
             this.label1.Text = "Registro de Viaje";
             // 
             // cmbChofer
             // 
+            this.cmbChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChofer.FormattingEnabled = true;
             this.cmbChofer.Location = new System.Drawing.Point(12, 78);
             this.cmbChofer.Name = "cmbChofer";
@@ -191,6 +192,7 @@
             // 
             // cmbTurno
             // 
+            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.FormattingEnabled = true;
             this.cmbTurno.Location = new System.Drawing.Point(320, 77);
             this.cmbTurno.Name = "cmbTurno";
@@ -220,6 +222,7 @@
             // 
             // cmbCliente
             // 
+            this.cmbCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCliente.FormattingEnabled = true;
             this.cmbCliente.Location = new System.Drawing.Point(12, 176);
             this.cmbCliente.Name = "cmbCliente";

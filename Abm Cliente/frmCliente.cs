@@ -36,6 +36,10 @@ namespace UberFrba.Abm_Cliente
 
         private void FRMCliente_Load(object sender, EventArgs e)
         {
+
+            //asociacion de controlador de tipo de datos
+            this.TXTtelefono.KeyPress += TXTtelefono_KeyPress;
+            this.TXTdni.KeyPress += TXTdni_KeyPress;
             this.CMBestado.Items.Add("Activo");
             this.CMBestado.Items.Add("Inactivo");
             if (!formularioPrecargado) { this.CMBestado.Text = "Activo"; } else { 
@@ -72,7 +76,7 @@ namespace UberFrba.Abm_Cliente
         }
 
         private void MensajeError() { 
-        MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void BTNguardar_Click(object sender, EventArgs e)
@@ -113,6 +117,16 @@ namespace UberFrba.Abm_Cliente
 
         }
 
+        private void TXTdni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
         private Cliente crearCliente() {
             return new Cliente(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
                 TXTtelefono.Text, TXTdomicilio.Text,Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), CMBestado.Text);
@@ -127,6 +141,21 @@ namespace UberFrba.Abm_Cliente
         {
 
         }
+
+        private void TXTtelefono_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void TXTtelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+  
 
     }
 }

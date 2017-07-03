@@ -117,6 +117,7 @@
             // 
             // CMBcliente
             // 
+            this.CMBcliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBcliente.FormattingEnabled = true;
             this.CMBcliente.Location = new System.Drawing.Point(10, 77);
             this.CMBcliente.Name = "CMBcliente";
@@ -155,7 +156,7 @@
             this.label1.Location = new System.Drawing.Point(-2, 1);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 45);
+            this.label1.Size = new System.Drawing.Size(291, 45);
             this.label1.TabIndex = 69;
             this.label1.Text = "Facturacion Cliente";
             // 

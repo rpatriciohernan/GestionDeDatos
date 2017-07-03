@@ -118,6 +118,7 @@
             // 
             // CMBestado
             // 
+            this.CMBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBestado.FormattingEnabled = true;
             this.CMBestado.Items.AddRange(new object[] {
             "Activo",

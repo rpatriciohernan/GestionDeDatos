@@ -122,9 +122,6 @@ namespace UberFrba.Abm_Rol
 
         private void BTNnuevo_Click(object sender, EventArgs e)
         {
-            Rol nuevoRol = new Rol(TXTnombre.Text, CMBestado.Text);
-            nuevoRol.guardate();
-            busquedaDeValores();
             FRMRol formularioNuevoRol = new FRMRol();
             formularioNuevoRol.altaDeRolActivada();
             formularioNuevoRol.Show();

@@ -25,9 +25,7 @@ namespace UberFrba.Bienvenida
             if (String.IsNullOrEmpty(CMBrolDeAcceso.Text)) { 
                 MessageBox.Show("SELECCIONE UN ROL DE ACCESO", "ATENCION!"); }
             else {
-                // Create a new instance of the form
                 FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
-                // Show form
                 formularioBienvenida.Show();
 
                 //Hide actual form (not closing cause it turns the app off)
@@ -80,16 +78,16 @@ namespace UberFrba.Bienvenida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /*this.LBLerrorLogueo.Visible = false;
+            this.LBLerrorLogueo.Visible = false;
             
             if (this.ValidarLogueo())
-            {*/
+            {
                 this.HabilitarLogueo();
-           /* }
+            }
             else
             {
                 this.MostrarErrorLogueo();
-            }*/
+            }
 
 
         }

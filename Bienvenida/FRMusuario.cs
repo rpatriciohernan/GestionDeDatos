@@ -43,7 +43,8 @@ namespace UberFrba.Bienvenida
         }
 
         private void FRMusuario_Load(object sender, EventArgs e)
-        {
+        {            //asociacion de controlador de tipo de datos
+            this.TXTdni.KeyPress += TXTdni_KeyPress;
             CMBestado.Items.Add("Activo");
             CMBestado.Items.Add("Inactivo");
             if (formularioPrecargado)
@@ -56,6 +57,7 @@ namespace UberFrba.Bienvenida
             }
             else {
                 button1.Enabled = false;
+                CMBestado.Text = "Activo";
             }
         }
 
@@ -92,5 +94,21 @@ namespace UberFrba.Bienvenida
                 this.MensajeError();
             };
         }
+
+        private void TXTdni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTdni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
     }
 }

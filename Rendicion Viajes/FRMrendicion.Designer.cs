@@ -55,6 +55,7 @@
             // 
             // CMBturno
             // 
+            this.CMBturno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBturno.FormattingEnabled = true;
             this.CMBturno.Location = new System.Drawing.Point(324, 84);
             this.CMBturno.Name = "CMBturno";
@@ -63,6 +64,7 @@
             // 
             // CMBchofer
             // 
+            this.CMBchofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBchofer.FormattingEnabled = true;
             this.CMBchofer.Location = new System.Drawing.Point(16, 85);
             this.CMBchofer.Name = "CMBchofer";
@@ -101,7 +103,7 @@
             this.label1.Location = new System.Drawing.Point(4, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 45);
+            this.label1.Size = new System.Drawing.Size(298, 45);
             this.label1.TabIndex = 47;
             this.label1.Text = "Rendicion de Viajes";
             // 
@@ -163,6 +165,7 @@
             // 
             // BTNgenerar
             // 
+            this.BTNgenerar.ForeColor = System.Drawing.SystemColors.Highlight;
             this.BTNgenerar.Location = new System.Drawing.Point(18, 115);
             this.BTNgenerar.Name = "BTNgenerar";
             this.BTNgenerar.Size = new System.Drawing.Size(393, 22);

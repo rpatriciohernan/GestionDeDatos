@@ -65,6 +65,7 @@
             this.TXTdni.Name = "TXTdni";
             this.TXTdni.Size = new System.Drawing.Size(253, 20);
             this.TXTdni.TabIndex = 56;
+            this.TXTdni.TextChanged += new System.EventHandler(this.TXTdni_TextChanged);
             // 
             // label3
             // 

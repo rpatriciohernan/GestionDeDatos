@@ -95,7 +95,7 @@ namespace UberFrba.Facturacion
             String fechaInicio = fechas[0];
             String fechaFinal = fechas[1];
 
-            return new Facturacion(Convert.ToInt16(parametrosDeBusqueda["id_cliente"]), Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFinal), importeTotal, viajes);
+            return new Facturacion(Convert.ToInt64(parametrosDeBusqueda["id_cliente"]), Convert.ToDateTime(fechaInicio), Convert.ToDateTime(fechaFinal), importeTotal, viajes);
         }
 
         //metodos de instancia

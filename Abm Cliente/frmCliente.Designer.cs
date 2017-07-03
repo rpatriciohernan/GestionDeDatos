@@ -266,6 +266,7 @@
             this.TXTtelefono.Name = "TXTtelefono";
             this.TXTtelefono.Size = new System.Drawing.Size(172, 20);
             this.TXTtelefono.TabIndex = 22;
+            this.TXTtelefono.TextChanged += new System.EventHandler(this.TXTtelefono_TextChanged);
             // 
             // label10
             // 

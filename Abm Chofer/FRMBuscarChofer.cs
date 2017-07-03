@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Chofer_Administrador
             }
             if (TXTapellido.Text != "")
             {
-                parametrosDeBusqueda.Add("chofere_apellido", TXTapellido.Text);
+                parametrosDeBusqueda.Add("chofer_apellido", TXTapellido.Text);
             }
             if (TXTdni.Text != "")
             {

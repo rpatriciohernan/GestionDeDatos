@@ -144,10 +144,17 @@ namespace UberFrba.Abm_Rol
 
         private void BTNagregar_Click(object sender, EventArgs e)
         {
-            idFuncionalidadSeleccionada = obtenerIdFuncionalidadSeleccionada();
-            FuncionalidadAsignada funcionalidadAsignada = new FuncionalidadAsignada(idRol, idFuncionalidadSeleccionada);
-            funcionalidadAsignada.guardate();
-            this.busquedaDeValores();
+            if (String.IsNullOrEmpty(CMBfuncionalidad.Text))
+            {
+                MessageBox.Show("SELECCIONE UNA FUNCIONALIDAD");
+            }
+            else
+            {
+                idFuncionalidadSeleccionada = obtenerIdFuncionalidadSeleccionada();
+                FuncionalidadAsignada funcionalidadAsignada = new FuncionalidadAsignada(idRol, idFuncionalidadSeleccionada);
+                funcionalidadAsignada.guardate();
+                this.busquedaDeValores();
+            }
         }
 
         private void BTNeliminarFuncionalidad_Click(object sender, EventArgs e)

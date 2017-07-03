@@ -105,6 +105,9 @@ namespace UberFrba.Abm_Turno
 
         private void FRMTurno_Load(object sender, EventArgs e)
         {
+            //asociacion de controlador de tipo de datos
+            this.TXTprecioBase.KeyPress += TXTprecioBase_KeyPress;
+            this.TXTvalorKilometro.KeyPress += TXTvalorKilometro_KeyPress;
             if (!formularioPrecargado) { BTNeliminar.Visible = false; CMBestado.Text = "Activo"; };
             if (formularioPrecargado) {
                 formularioPrecargado = true;
@@ -115,6 +118,36 @@ namespace UberFrba.Abm_Turno
                 this.TXTvalorKilometro.Text = valorKilometro.ToString();
                 this.TXTprecioBase.Text = precioBase.ToString();       
             
+            }
+        }
+
+        private void TXTvalorKilometro_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTprecioBase_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TXTvalorKilometro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TXTprecioBase_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
             }
         }
     }
