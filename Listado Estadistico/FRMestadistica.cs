@@ -49,16 +49,46 @@ namespace UberFrba.Listado_Estadistico
 
         private void BTNchoferMayorRecaudacion_Click(object sender, EventArgs e)
         {
+             if (this.ValidarCamposMandatorios())
+            {
             List<ChoferConMayorRecaudacionView> choferes = Chofer.buscarChoferesConMayorRecaudacion(buscarPorTrimestreYAnio());
             //mostar -> nombre,apellido,dni,recaudacion
             render(choferes);
+                        }
+            else
+            {
+                this.MensajeError();
+            };
+        }
+
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.TXTanio.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBtrimestre.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void BTNchoferViajeLargo_Click(object sender, EventArgs e)
         {
-            List<ChoferConViajeMasLargoView> choferes = Chofer.buscarChoferesConViajeMasLargo(buscarPorTrimestreYAnio());
+            if (this.ValidarCamposMandatorios())
+            {
+                List<ChoferConViajeMasLargoView> choferes = Chofer.buscarChoferesConViajeMasLargo(buscarPorTrimestreYAnio());
             //mostar -> nombre,apellido,dni,kms viaje
             render(choferes);
+            }
+            else
+            {
+                this.MensajeError();
+            };
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -68,16 +98,47 @@ namespace UberFrba.Listado_Estadistico
 
         private void BTNclienteConsumo_Click(object sender, EventArgs e)
         {
-            List<ClienteConMayorConsumoView> clientes = Cliente.buscarClientesConMayorConsumo(buscarPorTrimestreYAnio());
-            //mostar -> nombre,apellido,dni,consumo
-            render(clientes);
+            if (this.ValidarCamposMandatorios())
+            {
+                List<ClienteConMayorConsumoView> clientes = Cliente.buscarClientesConMayorConsumo(buscarPorTrimestreYAnio());
+                //mostar -> nombre,apellido,dni,consumo
+                render(clientes);
+            }
+            else
+            {
+                this.MensajeError();
+            }; 
         }
 
         private void BTNclienteUsoMismoAutomovil_Click(object sender, EventArgs e)
         {
-            List<ClienteConMayorUsoDeUnAutomovilView> clientes = Cliente.buscarClientesConMayorUsoDeUnMismoAutomovil(buscarPorTrimestreYAnio());
-            //mostar -> nombre,apellido,dni, patenteAuto, veces de uso
-            render(clientes);
+            if (this.ValidarCamposMandatorios())
+            {
+                List<ClienteConMayorUsoDeUnAutomovilView> clientes = Cliente.buscarClientesConMayorUsoDeUnMismoAutomovil(buscarPorTrimestreYAnio());
+                //mostar -> nombre,apellido,dni, patenteAuto, veces de uso
+                render(clientes);
+            }
+            else
+            {
+                this.MensajeError();
+            }; 
+
+        }
+
+        private void TXTanio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            {
+                MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+        private void FRMestadistica_Load(object sender, EventArgs e)
+        {
+            //asociacion de controlador de tipo de datos
+            this.TXTanio.KeyPress += TXTanio_KeyPress;
+
         }
     }
 }

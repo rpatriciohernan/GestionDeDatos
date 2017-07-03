@@ -137,6 +137,7 @@
             // 
             // CMBtrimestre
             // 
+            this.CMBtrimestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBtrimestre.FormattingEnabled = true;
             this.CMBtrimestre.Items.AddRange(new object[] {
             "1: Primer Trimestre",
@@ -164,7 +165,7 @@
             // 
             this.TXTanio.Location = new System.Drawing.Point(261, 84);
             this.TXTanio.Name = "TXTanio";
-            this.TXTanio.Size = new System.Drawing.Size(168, 20);
+            this.TXTanio.Size = new System.Drawing.Size(240, 20);
             this.TXTanio.TabIndex = 42;
             // 
             // label4
@@ -198,6 +199,7 @@
             this.Controls.Add(this.BTNchoferMayorRecaudacion);
             this.Name = "FRMestadistica";
             this.Text = "Modulo Estadistica";
+            this.Load += new System.EventHandler(this.FRMestadistica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

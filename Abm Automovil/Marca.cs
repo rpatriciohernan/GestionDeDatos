@@ -56,13 +56,12 @@ namespace UberFrba.Abm_Automovil
             repositorioMarca.Guardar(this);
         }
 
-        public List<ErrorDeCampo> validarCampos()
-        { //controlar que el nombre del campo sea igual al que conoce el form pq sino no funciona
-            //filter
-            List<CampoYValor> camposObligatoriosVacios = camposObligatorios.Where(elem => (elem.Valor == null || elem.Valor == "")).ToList();
-            //map
-            List<ErrorDeCampo> errores = camposObligatoriosVacios.Select(error => new ErrorDeCampo(error.Campo, "falta completar")).ToList();
-            return errores;
+        public void modificate() {
+            repositorioMarca.Modificar(this);
+        }
+
+        public void eliminate() {
+            repositorioMarca.Eliminar(this);
         }
 
         public String GetValues()

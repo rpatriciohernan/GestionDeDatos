@@ -29,7 +29,7 @@ namespace UberFrba.Bienvenida
             this.username = username;
             InitializeComponent();
         }
-
+        Boolean administrador = false;
         private String rolactivo;
         private String username;
         private Usuario usuario;
@@ -91,12 +91,19 @@ namespace UberFrba.Bienvenida
             formularioNuevoUsuario.Show();
         }
 
+        public void ActivarAdministrador(){
+           administrador = true;
+        }
+
         private void FRMBienvenida_Load(object sender, EventArgs e)
         {
             this.IndicarUsuarioLogueado();
-           // this.OcultarTodo();
-           // this.IdentificarAlUsuario();
-           // this.ControlarFuncionalidades();
+            if (!administrador)
+            {
+                this.OcultarTodo();
+                this.IdentificarAlUsuario();
+                this.ControlarFuncionalidades();
+            }
         }
 
         private void IdentificarAlUsuario()

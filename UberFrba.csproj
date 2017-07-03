@@ -58,6 +58,12 @@
     <Compile Include="Abm Automovil\FRMbuscarVehiculo.Designer.cs">
       <DependentUpon>FRMbuscarVehiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Abm Automovil\FRMmarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Automovil\FRMmarca.Designer.cs">
+      <DependentUpon>FRMmarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Abm Automovil\FRMMarcaVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -254,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Automovil\FRMbuscarVehiculo.resx">
       <DependentUpon>FRMbuscarVehiculo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Automovil\FRMmarca.resx">
+      <DependentUpon>FRMmarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Automovil\FRMMarcaVehiculo.resx">
       <DependentUpon>FRMMarcaVehiculo.cs</DependentUpon>
