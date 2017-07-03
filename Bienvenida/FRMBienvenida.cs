@@ -94,9 +94,9 @@ namespace UberFrba.Bienvenida
         private void FRMBienvenida_Load(object sender, EventArgs e)
         {
             this.IndicarUsuarioLogueado();
-            this.OcultarTodo();
-            this.IdentificarAlUsuario();
-            this.ControlarFuncionalidades();
+           // this.OcultarTodo();
+           // this.IdentificarAlUsuario();
+           // this.ControlarFuncionalidades();
         }
 
         private void IdentificarAlUsuario()

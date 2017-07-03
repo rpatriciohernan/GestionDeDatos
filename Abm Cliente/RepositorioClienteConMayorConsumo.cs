@@ -4,10 +4,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.BuilderObjectViews;
 
 namespace UberFrba.Abm_Cliente
 {
-    class RepositorioClienteConMayorConsumo : Repositorio<Cliente>
+    class RepositorioClienteConMayorConsumo : Repositorio<ClienteConMayorConsumoView>
     {
         #region declaracion singleton
         private static RepositorioClienteConMayorConsumo instance;
@@ -26,14 +27,12 @@ namespace UberFrba.Abm_Cliente
             }
         }
         #endregion
-              
-        
-       
+
         #region builder del objeto cliente
-        public override Cliente BuilderEntityFromDataRow(DataRow dr)
+        public override ClienteConMayorConsumoView BuilderEntityFromDataRow(DataRow dr)
         {
-            Cliente cliente = new Cliente(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToInt16(dr[6]), dr[7].ToString(), Convert.ToDateTime(dr[8]), dr[9].ToString());
-            return cliente;
+            ClienteConMayorConsumoView clienteConMayorConsumoView = new ClienteConMayorConsumoView(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), Convert.ToDouble(dr[3]));
+            return clienteConMayorConsumoView;
         }
         #endregion
 

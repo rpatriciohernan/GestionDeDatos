@@ -104,7 +104,7 @@ namespace UberFrba.Rendicion_Viajes
             //chekear que el chofer este activo
             Int64 idChofer = Convert.ToInt64(parametrosDeBusqueda["id_chofer"]);
             Int64 idTurno = Convert.ToInt64(parametrosDeBusqueda["id_turno"]);
-            DateTime fecha = Convert.ToDateTime(parametrosDeBusqueda["fecha"]);
+            DateTime fecha = Convert.ToDateTime(parametrosDeBusqueda["fecha_viaje_para_rendicion"]);
 
             //viajes --> buscar por idChofer, idTurno y fecha
             List<Viaje> viajes = Viaje.buscar(parametrosDeBusqueda);

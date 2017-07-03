@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.BuilderObjectViews;
 
 namespace UberFrba.Abm_Cliente
 {
@@ -99,13 +100,15 @@ namespace UberFrba.Abm_Cliente
             return repositorioCliente.buscar(parametrosDeBusqueda);
         }
 
-        public static List<Cliente> buscarClientesConMayorConsumo(Dictionary<String, String> parametrosDeBusqueda)
+        // en vez de devolver un Cliente, devuelve un ClienteConMayorConsumoView
+        public static List<ClienteConMayorConsumoView> buscarClientesConMayorConsumo(Dictionary<String, String> parametrosDeBusqueda)
         {
             RepositorioClienteConMayorConsumo repositorioClienteConMayorConsumo = RepositorioClienteConMayorConsumo.Instance;
             return repositorioClienteConMayorConsumo.buscar(parametrosDeBusqueda);
         }
 
-        public static List<Cliente> buscarClientesConMayorUsoDeUnMismoAutomovil(Dictionary<String, String> parametrosDeBusqueda)
+        // en vez de devolver un Cliente, devuelve un ClienteConMayorUsoDeUnAutomovilView
+        public static List<ClienteConMayorUsoDeUnAutomovilView> buscarClientesConMayorUsoDeUnMismoAutomovil(Dictionary<String, String> parametrosDeBusqueda) 
         {
             RepositorioClienteConMayorUsoDeUnMismoAutomovil repositorioClienteConMayorUsoDeUnMismoAutomovil = RepositorioClienteConMayorUsoDeUnMismoAutomovil.Instance;
             return repositorioClienteConMayorUsoDeUnMismoAutomovil.buscar(parametrosDeBusqueda);

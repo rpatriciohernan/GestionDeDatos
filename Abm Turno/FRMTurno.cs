@@ -12,6 +12,16 @@ namespace UberFrba.Abm_Turno
 {
     public partial class FRMTurno : Form
     {
+        private TimeSpan horaInicio;
+        private TimeSpan horaFin;
+
+        private Boolean formularioPrecargado = false;
+        private String descripcion;
+        private String estado;
+        private double valorKilometro;
+        private double precioBase;
+        private Int16 idTurno;
+
         public FRMTurno()
         {
             InitializeComponent();
@@ -19,34 +29,27 @@ namespace UberFrba.Abm_Turno
             CMBestado.Items.Add("Inactivo");
         }
 
-        Boolean formularioPrecargado = false;
-        String descripcion;
-        String estado;
-        DateTime horaInicio;
-        DateTime horaFin;
-        Int16 valorKilometro;
-        Int16 precioBase;
+        
 
         private void CMBestado_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        public void obtenerValores(String descripcion, String estado, DateTime horaInicio, DateTime horaFin, Int16 valorKilometro, Int16 precioBase) {
+        public void obtenerValores(Int16 idTurno, String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
+        {
             formularioPrecargado = true;
             this.descripcion = descripcion;
             this.estado= estado;
             this.horaInicio = horaInicio;
             this.horaFin = horaFin;
             this.valorKilometro = valorKilometro;
-            this.precioBase = precioBase;            
-        
+            this.precioBase = precioBase;
+            this.idTurno = idTurno;
         }
 
         private Turno crearTurno() {
-            String horaInicio = String.Format("{0:t}", Convert.ToDateTime(DTEhoraInicio.Text));
-            String horaFin = String.Format("{0:t}", Convert.ToDateTime(DTEhoraFin.Text));
-            return new Turno(TXTdescripcion.Text, CMBestado.Text, horaInicio, horaFin, Convert.ToInt16(TXTvalorKilometro.Text), Convert.ToInt16(TXTprecioBase.Text));
+            return new Turno(idTurno, TXTdescripcion.Text, horaInicio, horaFin, Convert.ToDouble(TXTvalorKilometro.Text), Convert.ToDouble(TXTprecioBase.Text), CMBestado.Text);
         }
 
         private void MensajeError()
@@ -72,11 +75,10 @@ namespace UberFrba.Abm_Turno
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-
             if (this.ValidarCamposMandatorios())
             {
                 if (!formularioPrecargado) {
-                    this.crearTurno().guardate();
+                    guardarTurno();
                     this.BTNeliminar.Enabled = true; };
                 if (formularioPrecargado) { this.crearTurno().modificate(); };
                 this.Close();
@@ -87,6 +89,20 @@ namespace UberFrba.Abm_Turno
             };
         }
 
+        private void guardarTurno() {
+            horaInicio = Convert.ToDateTime(DTEhoraInicio.Text).TimeOfDay;
+            horaFin = Convert.ToDateTime(DTEhoraFin.Text).TimeOfDay;
+
+            if (horaFin < horaInicio)
+            {
+                MessageBox.Show("El turno debe estar contemplado dentro de un mismo dia");
+            }
+            else
+            {
+                crearTurno().guardate();
+            }
+        }
+
         private void FRMTurno_Load(object sender, EventArgs e)
         {
             if (!formularioPrecargado) { BTNeliminar.Visible = false; CMBestado.Text = "Activo"; };
@@ -94,8 +110,8 @@ namespace UberFrba.Abm_Turno
                 formularioPrecargado = true;
                 this.TXTdescripcion.Text = descripcion;
                 this.CMBestado.Text = estado;
-                this.DTEhoraInicio.Value = horaInicio;
-                this.DTEhoraFin.Value = horaFin;
+                this.DTEhoraInicio.Text = horaInicio.ToString();
+                this.DTEhoraFin.Text = horaFin.ToString();
                 this.TXTvalorKilometro.Text = valorKilometro.ToString();
                 this.TXTprecioBase.Text = precioBase.ToString();       
             
