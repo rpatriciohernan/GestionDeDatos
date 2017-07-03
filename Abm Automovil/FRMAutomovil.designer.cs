@@ -123,10 +123,6 @@
             // 
             // CMBturno
             // 
-            this.CMBturno.AutoCompleteCustomSource.AddRange(new string[] {
-            "mañana",
-            "tarde",
-            "noche"});
             this.CMBturno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBturno.FormattingEnabled = true;
             this.CMBturno.Items.AddRange(new object[] {
@@ -153,11 +149,6 @@
             // 
             // CMBmarca
             // 
-            this.CMBmarca.AutoCompleteCustomSource.AddRange(new string[] {
-            "fiat",
-            "ford",
-            "chevrolet",
-            "renault"});
             this.CMBmarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBmarca.FormattingEnabled = true;
             this.CMBmarca.Items.AddRange(new object[] {
@@ -323,12 +314,6 @@
             // 
             // CMBChofer
             // 
-            this.CMBChofer.AutoCompleteCustomSource.AddRange(new string[] {
-            "Javeee",
-            "Patoo",
-            "Aguss",
-            "Car",
-            "Ojos Locos"});
             this.CMBChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBChofer.FormattingEnabled = true;
             this.CMBChofer.Items.AddRange(new object[] {

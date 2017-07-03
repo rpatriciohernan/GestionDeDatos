@@ -47,6 +47,7 @@
             // 
             // CMBChofer
             // 
+            this.CMBChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBChofer.FormattingEnabled = true;
             this.CMBChofer.Location = new System.Drawing.Point(442, 72);
             this.CMBChofer.Name = "CMBChofer";
@@ -62,6 +63,7 @@
             // 
             // CMBmarca
             // 
+            this.CMBmarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBmarca.FormattingEnabled = true;
             this.CMBmarca.Location = new System.Drawing.Point(137, 74);
             this.CMBmarca.Name = "CMBmarca";
