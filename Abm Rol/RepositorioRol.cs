@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Abm_Rol
@@ -43,12 +44,14 @@ namespace UberFrba.Abm_Rol
         {
             SqlDataReader dr = queryManager("Insert into overhead.roles " + "values(" + rol.GetValues() + ")");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         public void Modificar(Rol rol)
         {
             SqlDataReader dr = queryManager("UPDATE overhead.roles SET rol_nombre =" + "'" + rol.Nombre + "'" + ", " + "rol_estado =" + "'" + rol.Estado + "'" + " WHERE id_rol =" + Convert.ToString(rol.Id));
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
     }
 }

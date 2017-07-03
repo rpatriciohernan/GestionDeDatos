@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Abm_Funcionalidad
@@ -43,12 +44,14 @@ namespace UberFrba.Abm_Funcionalidad
         {
             SqlDataReader dr = queryManager("Insert into overhead.funcionalidades " + "values(" + funcionalidad.GetValues() + ")");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         public void eliminar(Funcionalidad funcionalidad)
         {
             SqlDataReader dr = queryManager("DELETE FROM overhead.funcionalidades WHERE funcionalidad_nombre = " + "'" + Convert.ToString(funcionalidad.Nombre) + "'");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
     }

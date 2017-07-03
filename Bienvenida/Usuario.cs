@@ -94,7 +94,8 @@ namespace UberFrba.Bienvenida
         }
 
         public void eliminate()
-        {
+        {   
+            this.estado = "Inactivo";
             repositorioUsuario.Modificar(this);
         }
 
@@ -103,6 +104,7 @@ namespace UberFrba.Bienvenida
             parametrosDeBusqueda.Add("username", this.username);
             return buscar(parametrosDeBusqueda).First().Password;
         }
+
         public Boolean TenesFuncionalidad(String funcionalidadConsultada)
         {
             Funcionalidad funcionalidadEncontrada = this.funcionalidadesAsignadas.Find(funcionalidad => funcionalidad.Nombre == funcionalidadConsultada);
@@ -167,6 +169,7 @@ namespace UberFrba.Bienvenida
         {
             Dictionary<String, String> parametrosBusquedaRoles = new Dictionary<String, String>();
             parametrosBusquedaRoles.Add("id_rol", idRol.ToString());
+            parametrosBusquedaRoles.Add("rol_estado", "Activo");
             if (Rol.buscar(parametrosBusquedaRoles).Count > 0)
             {
                 rolesAsignados.Add(Rol.buscar(parametrosBusquedaRoles).First());

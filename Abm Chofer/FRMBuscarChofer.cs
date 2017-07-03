@@ -124,7 +124,7 @@ namespace UberFrba.Abm_Chofer_Administrador
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    Chofer unChofer = new Chofer(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), Convert.ToDateTime(row.Cells[7].Value), Convert.ToString(row.Cells[8].Value));
+                    Chofer unChofer = new Chofer(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), Convert.ToString(row.Cells[3].Value), Convert.ToDateTime(row.Cells[7].Value), Convert.ToString(row.Cells[8].Value));
                     unChofer.eliminate();
                     this.busquedaDeValores();
                 }

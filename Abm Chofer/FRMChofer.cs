@@ -62,7 +62,7 @@ namespace UberFrba.Abm_Chofer
 
         }
 
-        public void recibirDatos(String nombre, String apellido, Int64 dni, String domicilio, String localidad, String telefono, String mail, DateTime fechaNacimiento, String estado) {
+        public void recibirDatos(String nombre, String apellido, Int64 dni, String mail, String domicilio, String localidad, String telefono, DateTime fechaNacimiento, String estado) {
             this.nombre = nombre;
             this.apellido = apellido;
             this.dni = dni;
@@ -103,7 +103,8 @@ namespace UberFrba.Abm_Chofer
         {
             if (this.ValidarCamposMandatorios())
             {
-                this.crearChofer().guardate();
+                if (formularioPrecargado) { this.crearChofer().modificate(); } else { this.crearChofer().guardate();}
+                this.Close();
             }
             else
             {

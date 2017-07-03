@@ -600,3 +600,7 @@ INSERT INTO overhead.funcionalidades_asignadas VALUES(1,7)
 
 SELECT f.funcionalidad_nombre FROM overhead.funcionalidades_asignadas rf
 	JOIN overhead.funcionalidades f ON rf.id_funcionalidad = f.id_funcionalidad AND rf.id_rol = 2
+
+
+	UPDATE overhead.usuarios SET usu_login_fallidos=0, usu_estado='Activo' WHERE username = 'admin'
+	select * from overhead.choferes

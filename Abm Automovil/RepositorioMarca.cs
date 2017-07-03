@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Automovil
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.marcas " + "values(" + marca.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("La marca se a guardado correctamente");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO");
             }
         }
     }

@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Chofer
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.choferes " + "values(" + chofer.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("El chofer se guardo correctamente");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO");
             }
         }
 
@@ -62,11 +62,13 @@ namespace UberFrba.Abm_Chofer
             SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET chofer_nombre =" + "'" + chofer.Nombre + "'" + ", "
                 + "chofer_apellido =" + "'" + chofer.Apellido + "'" + ", "
                 + "chofer_domicilio =" + "'" + chofer.Domicilio + "'" + ", "
+                + "chofer_localidad =" + "'" + chofer.Locaildad + "'" + ", "
                 + "chofer_telefono =" + "'" + chofer.Telefono + "'" + ", "
                 + "chofer_mail =" + "'" + chofer.Mail + "'" + ", "
                 + "chofer_fecha_nacimiento =" + "'" + chofer.FechaNacimiento + "'" + ", "
-                + "chofer_estado =" + "'" + chofer.Estado + "'" + ", " + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
+                + "chofer_estado =" + "'" + chofer.Estado + "'" + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
     }
 }

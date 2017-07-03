@@ -70,6 +70,7 @@ namespace UberFrba.Abm_Automovil
             if (this.ValidarCamposMandatorios())
             {
                 if (formularioPrecargado) { this.crearAutomovil().modificate(); } else { this.crearAutomovil().guardate(); BTNeliminar.Visible = true; }
+                this.Close();
             }
             else
             {

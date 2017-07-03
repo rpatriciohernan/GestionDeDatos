@@ -81,6 +81,7 @@ namespace UberFrba.Abm_Cliente
             if (this.ValidarCamposMandatorios())
             {
                 if (formularioPrecargado) { this.crearCliente().modificate(); } else { this.crearCliente().guardate(); };
+                this.Close();
             }
             else
             {

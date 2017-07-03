@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Facturacion
@@ -37,6 +38,8 @@ namespace UberFrba.Facturacion
         {
             SqlDataReader dr = queryManager("Insert into overhead.facturaciones " + "values(" + facturacion.GetValues() + ")");
             dr.Close();
+
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
 
             Facturacion facturacionStored = getUltimoRegistro("id_factura");
             return facturacionStored;

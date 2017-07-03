@@ -385,6 +385,7 @@
             // 
             // CMBestado
             // 
+            this.CMBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBestado.FormattingEnabled = true;
             this.CMBestado.Location = new System.Drawing.Point(390, 40);
             this.CMBestado.Name = "CMBestado";

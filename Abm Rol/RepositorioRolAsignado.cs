@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Abm_Rol
@@ -43,12 +44,14 @@ namespace UberFrba.Abm_Rol
         {
             SqlDataReader dr = queryManager("Insert into overhead.roles_asignados " + "values(" + rolAsignado.GetValues() + ")");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         public void Eliminar(RolAsignado rolAsignado)
         {
             SqlDataReader dr = queryManager("DELETE FROM overhead.roles_asignados WHERE username = " + "'" + Convert.ToString(rolAsignado.Username)+ "'" + " AND " + "id_rol =" + Convert.ToString(rolAsignado.IdRol));
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)

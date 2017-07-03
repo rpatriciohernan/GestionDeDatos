@@ -22,21 +22,22 @@ namespace UberFrba.Bienvenida
 
         private void BTNingresar_Click(object sender, EventArgs e)
         {
-            // Create a new instance of the form
-            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
-            // Show form
-            formularioBienvenida.Show();
+            if (String.IsNullOrEmpty(CMBrolDeAcceso.Text)) { 
+                MessageBox.Show("SELECCIONE UN ROL DE ACCESO", "ATENCION!"); }
+            else {
+                // Create a new instance of the form
+                FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
+                // Show form
+                formularioBienvenida.Show();
 
-            //Hide actual form (not closing cause it turns the app off)
-            this.Hide();
+                //Hide actual form (not closing cause it turns the app off)
+                this.Hide();
+            }
         }
 
         private void BTNnuevoUsuario_Click_1(object sender, EventArgs e)
         {
-            // Create a new instance of the form
             FRMnuevoUsuario formularioNuevoUsuario = new FRMnuevoUsuario();
-
-            // Show form
             formularioNuevoUsuario.Show();
         }
 
@@ -49,21 +50,6 @@ namespace UberFrba.Bienvenida
         private void MostrarErrorLogueo()
         {
             LBLerrorLogueo.Visible = true;
-        }
-
-        public string SHA256Encrypt(string input)
-        {
-            SHA256CryptoServiceProvider provider = new SHA256CryptoServiceProvider();
-
-            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-            byte[] hashedBytes = provider.ComputeHash(inputBytes);
-
-            StringBuilder output = new StringBuilder();
-
-            for (int i = 0; i < hashedBytes.Length; i++)
-                output.Append(hashedBytes[i].ToString("x2").ToLower());
-
-            return output.ToString();
         }
 
         private Boolean ValidarLogueo()

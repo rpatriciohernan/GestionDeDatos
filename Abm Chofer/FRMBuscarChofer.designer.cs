@@ -120,14 +120,16 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.TXTapellido);
+            this.groupBox1.Controls.Add(this.CHKsoloActivos);
             this.groupBox1.Controls.Add(this.TXTnombre);
+            this.groupBox1.Controls.Add(this.BTNbuscar);
             this.groupBox1.Controls.Add(this.TXTdni);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(14, 59);
+            this.groupBox1.Location = new System.Drawing.Point(14, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(543, 87);
+            this.groupBox1.Size = new System.Drawing.Size(800, 103);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -135,9 +137,9 @@
             // 
             // BTNbuscar
             // 
-            this.BTNbuscar.Location = new System.Drawing.Point(293, 176);
+            this.BTNbuscar.Location = new System.Drawing.Point(564, 29);
             this.BTNbuscar.Name = "BTNbuscar";
-            this.BTNbuscar.Size = new System.Drawing.Size(263, 23);
+            this.BTNbuscar.Size = new System.Drawing.Size(218, 50);
             this.BTNbuscar.TabIndex = 23;
             this.BTNbuscar.Text = "BUSCAR";
             this.BTNbuscar.UseVisualStyleBackColor = true;
@@ -148,7 +150,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(14, 225);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(542, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(800, 196);
             this.dataGridView1.TabIndex = 24;
             // 
             // label19
@@ -168,7 +170,7 @@
             this.CHKsoloActivos.AutoSize = true;
             this.CHKsoloActivos.Checked = true;
             this.CHKsoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKsoloActivos.Location = new System.Drawing.Point(14, 152);
+            this.CHKsoloActivos.Location = new System.Drawing.Point(11, 78);
             this.CHKsoloActivos.Name = "CHKsoloActivos";
             this.CHKsoloActivos.Size = new System.Drawing.Size(144, 20);
             this.CHKsoloActivos.TabIndex = 48;
@@ -177,9 +179,9 @@
             // 
             // BTNnuevoChofer
             // 
-            this.BTNnuevoChofer.Location = new System.Drawing.Point(14, 176);
+            this.BTNnuevoChofer.Location = new System.Drawing.Point(14, 54);
             this.BTNnuevoChofer.Name = "BTNnuevoChofer";
-            this.BTNnuevoChofer.Size = new System.Drawing.Size(263, 23);
+            this.BTNnuevoChofer.Size = new System.Drawing.Size(800, 37);
             this.BTNnuevoChofer.TabIndex = 49;
             this.BTNnuevoChofer.Text = "CARGAR NUEVO";
             this.BTNnuevoChofer.UseVisualStyleBackColor = true;
@@ -189,12 +191,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 432);
+            this.ClientSize = new System.Drawing.Size(826, 432);
             this.Controls.Add(this.BTNnuevoChofer);
-            this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BTNbuscar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

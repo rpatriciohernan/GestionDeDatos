@@ -79,6 +79,7 @@ namespace UberFrba.Abm_Turno
                     this.crearTurno().guardate();
                     this.BTNeliminar.Enabled = true; };
                 if (formularioPrecargado) { this.crearTurno().modificate(); };
+                this.Close();
             }
             else
             {

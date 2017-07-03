@@ -50,16 +50,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 206);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(553, 193);
+            this.dataGridView1.Size = new System.Drawing.Size(772, 193);
             this.dataGridView1.TabIndex = 33;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // btnBuscar
             // 
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.btnBuscar.Location = new System.Drawing.Point(298, 157);
+            this.btnBuscar.Location = new System.Drawing.Point(548, 26);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(267, 23);
+            this.btnBuscar.Size = new System.Drawing.Size(199, 43);
             this.btnBuscar.TabIndex = 32;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label19.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label19.Location = new System.Drawing.Point(9, 183);
+            this.label19.Location = new System.Drawing.Point(9, 186);
             this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(160, 16);
@@ -140,14 +140,16 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtApellido);
+            this.groupBox1.Controls.Add(this.CHKsoloActivos);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtDni);
+            this.groupBox1.Controls.Add(this.btnBuscar);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 58);
+            this.groupBox1.Location = new System.Drawing.Point(12, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(553, 70);
+            this.groupBox1.Size = new System.Drawing.Size(772, 93);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
@@ -169,7 +171,7 @@
             this.CHKsoloActivos.AutoSize = true;
             this.CHKsoloActivos.Checked = true;
             this.CHKsoloActivos.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.CHKsoloActivos.Location = new System.Drawing.Point(12, 134);
+            this.CHKsoloActivos.Location = new System.Drawing.Point(12, 65);
             this.CHKsoloActivos.Name = "CHKsoloActivos";
             this.CHKsoloActivos.Size = new System.Drawing.Size(118, 17);
             this.CHKsoloActivos.TabIndex = 48;
@@ -180,9 +182,9 @@
             // BTNnuevoCliente
             // 
             this.BTNnuevoCliente.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.BTNnuevoCliente.Location = new System.Drawing.Point(12, 157);
+            this.BTNnuevoCliente.Location = new System.Drawing.Point(12, 51);
             this.BTNnuevoCliente.Name = "BTNnuevoCliente";
-            this.BTNnuevoCliente.Size = new System.Drawing.Size(267, 23);
+            this.BTNnuevoCliente.Size = new System.Drawing.Size(772, 31);
             this.BTNnuevoCliente.TabIndex = 49;
             this.BTNnuevoCliente.Text = "CARGAR NUEVO";
             this.BTNnuevoCliente.UseVisualStyleBackColor = true;
@@ -192,11 +194,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 409);
+            this.ClientSize = new System.Drawing.Size(796, 409);
             this.Controls.Add(this.BTNnuevoCliente);
-            this.Controls.Add(this.CHKsoloActivos);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);

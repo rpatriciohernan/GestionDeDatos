@@ -51,11 +51,11 @@ namespace UberFrba.Rendicion_Viajes
             List<Rendicion> rendiciones = buscar(parametrosDeBusqueda);
 
             if (rendiciones.Count > 0) {
-                MessageBox.Show("Ya Se hizo una rendicion para este chofer en el dia seleccionado");
+                MessageBox.Show("Ya Se hizo una rendicion para este chofer en el dia seleccionado","ATENCION!");
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.rendiciones " + "values(" + rendicion.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("El automovil se guardo correctamente");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO");
             }
         }
     }

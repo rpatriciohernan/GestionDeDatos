@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Registro_Viajes
@@ -45,6 +46,7 @@ namespace UberFrba.Registro_Viajes
         {
             SqlDataReader dr = queryManager("Insert into overhead.viajes " + "values(" + viaje.GetValues() + ")");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         public void Modificar(Viaje viaje) {
@@ -58,6 +60,7 @@ namespace UberFrba.Registro_Viajes
                     "id_cliente =" + "'" + viaje.IdCliente + "'"
                     + " WHERE id_viaje =" + Convert.ToString(viaje.Id));
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
     }
 }

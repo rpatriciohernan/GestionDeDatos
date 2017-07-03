@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Abm_Turno
@@ -42,6 +43,7 @@ namespace UberFrba.Abm_Turno
         {
             SqlDataReader dr = queryManager("Insert into overhead.turnos " + "values(" + turno.GetValues() + ")");
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
         public override String tableName() { return "overhead.turnos"; }
@@ -60,6 +62,7 @@ namespace UberFrba.Abm_Turno
                 + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + ", "
                 + " WHERE id_turno =" + Convert.ToString(turno.IdTurno));
             dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
     }
