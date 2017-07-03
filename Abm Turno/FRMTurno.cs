@@ -12,6 +12,8 @@ namespace UberFrba.Abm_Turno
 {
     public partial class FRMTurno : Form
     {
+        private TimeSpan horaInicio;
+        private TimeSpan horaFin;
         public FRMTurno()
         {
             InitializeComponent();
@@ -25,15 +27,22 @@ namespace UberFrba.Abm_Turno
         }
 
         private Turno crearTurno() {
-            String horaInicio = String.Format("{0:t}", Convert.ToDateTime(DTEhoraInicio.Text));
-            String horaFin = String.Format("{0:t}", Convert.ToDateTime(DTEhoraFin.Text));
-            return new Turno(TXTdescripcion.Text, CMBestado.Text, horaInicio, horaFin, Convert.ToInt16(TXTvalorKilometro.Text), Convert.ToInt16(TXTprecioBase.Text));
+            return new Turno(TXTdescripcion.Text, CMBestado.Text, horaInicio, horaFin, Convert.ToDouble(TXTvalorKilometro.Text), Convert.ToDouble(TXTprecioBase.Text));
         }
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            Turno turno = crearTurno();
-            turno.guardate();
+
+            horaInicio = Convert.ToDateTime(DTEhoraInicio.Text).TimeOfDay;
+            horaFin = Convert.ToDateTime(DTEhoraFin.Text).TimeOfDay;
+
+            if (horaFin < horaInicio)
+            {
+                MessageBox.Show("El turno debe estar contemplado dentro de un mismo dia");
+            } else {
+                Turno turno = crearTurno();
+                turno.guardate();
+            }
         }
 
         private void FRMTurno_Load(object sender, EventArgs e)

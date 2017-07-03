@@ -41,6 +41,9 @@ namespace UberFrba.Registro_Viajes
 
         private void FRMregistroViaje_Load(object sender, EventArgs e)
         {
+            dteFechaInicio.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+            dtpFechaFin.CustomFormat = "dd/MM/yyyy HH:mm:ss";
+
             Dictionary<String, String> searchAll = new Dictionary<string, string>();
 
             clientes = Cliente.buscar(searchAll);
@@ -66,6 +69,11 @@ namespace UberFrba.Registro_Viajes
         private Int64 getIdClienteSeleccionado()
         {//si hay 2 choferes con mismo nombre y apellido no funciona -> habria que hacerlo por posicion del combo, mostrando en el combo el nombre, apellido y dni ;)!!
             return clientes.Find(cliente => cliente.Nombre + ", " + cliente.Apellido == cmbCliente.Text).Dni;
+        }
+
+        private void dtpFechaFin_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -47,7 +47,7 @@ namespace UberFrba.Rendicion_Viajes
             Int64 idTurno = getIdTurno();
 
             parametrosDeBusqueda.Add("id_chofer", idChofer.ToString());
-            parametrosDeBusqueda.Add("fecha", fecha.ToString()); //hacer logica para comparar con las fechas de los viajes
+            parametrosDeBusqueda.Add("fecha_viaje_para_rendicion", fecha.ToString()); //hacer logica para comparar con las fechas de los viajes
             parametrosDeBusqueda.Add("id_turno", idTurno.ToString());
 
             rendicion = Rendicion.calcularRendicion(parametrosDeBusqueda);

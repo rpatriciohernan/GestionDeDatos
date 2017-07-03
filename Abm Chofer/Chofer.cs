@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UberFrba.BuilderObjectViews;
 
 namespace UberFrba.Abm_Chofer
 {
@@ -91,13 +92,15 @@ namespace UberFrba.Abm_Chofer
             return repositorioChofer.buscar(parametrosDeBusqueda);
         }
 
-        public static List<Chofer> buscarChoferesConMayorRecaudacion(Dictionary<String, String> parametrosDeBusqueda)
+        //en vez de devolver un Chofer devuelve un ChoferConMayorRecaudacionView
+        public static List<ChoferConMayorRecaudacionView> buscarChoferesConMayorRecaudacion(Dictionary<String, String> parametrosDeBusqueda)
         {
             RepositorioChoferConMayorRecaudacion repositorioChoferConMayorRecaudacion = RepositorioChoferConMayorRecaudacion.Instance;
             return repositorioChoferConMayorRecaudacion.buscar(parametrosDeBusqueda); // este repositorio apunta a una vista que tiene la query magica para conseguir los choferes con mayor recaudacion
         }
 
-        public static List<Chofer> buscarChoferesConViajeMasLargo(Dictionary<String, String> parametrosDeBusqueda)
+        //en vez de devolver un Chofer devuelve un ChoferConViajeMasLargoView
+        public static List<ChoferConViajeMasLargoView> buscarChoferesConViajeMasLargo(Dictionary<String, String> parametrosDeBusqueda)
         {
             RepositorioChoferConViajeMasLargo repositorioChoferConViajeMasLargo = RepositorioChoferConViajeMasLargo.Instance;
             return repositorioChoferConViajeMasLargo.buscar(parametrosDeBusqueda); // este repositorio apunta a una vista que tiene la query magica para conseguir los choferes con el viaje mas largo

@@ -74,6 +74,7 @@
             // 
             // dteFechaInicio
             // 
+            this.dteFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dteFechaInicio.Location = new System.Drawing.Point(14, 125);
             this.dteFechaInicio.Name = "dteFechaInicio";
             this.dteFechaInicio.Size = new System.Drawing.Size(193, 20);
@@ -183,10 +184,6 @@
             // cmbChofer
             // 
             this.cmbChofer.FormattingEnabled = true;
-            this.cmbChofer.Items.AddRange(new object[] {
-            "Chofer1",
-            "Chofer2",
-            "Chofer3"});
             this.cmbChofer.Location = new System.Drawing.Point(12, 78);
             this.cmbChofer.Name = "cmbChofer";
             this.cmbChofer.Size = new System.Drawing.Size(195, 21);
@@ -195,10 +192,6 @@
             // cmbTurno
             // 
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Items.AddRange(new object[] {
-            "maniana",
-            "tarde",
-            "noche"});
             this.cmbTurno.Location = new System.Drawing.Point(320, 77);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(87, 21);
@@ -211,6 +204,7 @@
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(191, 20);
             this.dtpFechaFin.TabIndex = 37;
+            this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
             // label5
             // 
@@ -227,10 +221,6 @@
             // cmbCliente
             // 
             this.cmbCliente.FormattingEnabled = true;
-            this.cmbCliente.Items.AddRange(new object[] {
-            "cliente1",
-            "cliente2",
-            "cliente3"});
             this.cmbCliente.Location = new System.Drawing.Point(12, 176);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(195, 21);

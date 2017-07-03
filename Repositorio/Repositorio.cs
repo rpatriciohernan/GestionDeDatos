@@ -59,13 +59,17 @@ namespace UberFrba.Abm_Cliente
             foreach (String key in keyList)
             {
                 //---Esto que se agrega es nuevo, si falla algo es por esto------
-                if (key == "entreFechas")
+                if (key == "entreFechas") //para la facturacion
                 {
                     String[] fechas = parametrosDeBusqueda[key].Split('&');
                     String fechaInicio = fechas[0];
                     String fechaFinal = fechas[1];
                     queryCondition += "viaje_fecha_inicio >= " + "'" + fechaInicio + "'" + " and viaje_fecha_fin <= " + "'" + fechaFinal + "'" + " " + operador + " "; //Esto es una ultra negrada, ya que solo se usa para los viajes, en caso de usarse para otras entidades. Hacerlo bien
 
+                }
+                else if (key == "fecha_viaje_para_rendicion") { //para la rendicion
+                    String fechaRendicion = parametrosDeBusqueda[key];
+                    queryCondition += "viaje_fecha_inicio <= " + "'" + fechaRendicion + "'" + " and viaje_fecha_fin >= " + "'" + fechaRendicion + "'" + " " + operador + " ";
                 } else {
 
                     String value = parametrosDeBusqueda[key];

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Cliente;
 
 namespace UberFrba.Bienvenida
@@ -58,8 +59,19 @@ namespace UberFrba.Bienvenida
 
         public void Guardar(Usuario usuario)
         {
-            SqlDataReader dr = queryManager("Insert into overhead.usuarios " + "values(" + usuario.GetValues() + ")");
-            dr.Close();
+            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
+            parametrosDeBusqueda.Add("usu_password", usuario.Password);
+
+            List<Usuario> usuarios = Usuario.buscar(parametrosDeBusqueda);
+
+            if (usuarios.Count > 0)
+            {
+                MessageBox.Show("Ya Existe un usuarios con el mismo UserName por favor ingrese uno diferente");
+            } else {
+                SqlDataReader dr = queryManager("Insert into overhead.usuarios " + "values(" + usuario.GetValues() + ")");
+                dr.Close();
+                MessageBox.Show("El usuario se ha registrado correctamente");
+            }
         }
 
         public void Modificar(Usuario usuario)

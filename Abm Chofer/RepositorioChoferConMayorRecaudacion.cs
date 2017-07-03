@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UberFrba.Abm_Cliente;
+using UberFrba.BuilderObjectViews;
 
 namespace UberFrba.Abm_Chofer
 {
-    class RepositorioChoferConMayorRecaudacion : Repositorio<Chofer>
+    class RepositorioChoferConMayorRecaudacion : Repositorio<ChoferConMayorRecaudacionView>
     {
         #region declaracion singleton
         private static RepositorioChoferConMayorRecaudacion instance;
@@ -29,15 +30,14 @@ namespace UberFrba.Abm_Chofer
         #endregion
 
         #region builder del objeto chofer
-        public override Chofer BuilderEntityFromDataRow(DataRow dr)
+        public override ChoferConMayorRecaudacionView BuilderEntityFromDataRow(DataRow dr)
         {
-            Chofer chofer = new Chofer(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToDateTime(dr[7]), dr[8].ToString());
-            return chofer;
+            ChoferConMayorRecaudacionView choferConMayorRecaudacionView = new ChoferConMayorRecaudacionView(dr[0].ToString(), dr[1].ToString(), Convert.ToInt64(dr[2]), Convert.ToDouble(dr[3]));
+            return choferConMayorRecaudacionView;
         }
         #endregion
 
 
         public override String tableName() { return "overhead.choferes_con_mayor_recaudacion"; }
-
     }
 }

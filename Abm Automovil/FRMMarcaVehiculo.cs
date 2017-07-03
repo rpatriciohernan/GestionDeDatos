@@ -33,19 +33,9 @@ namespace UberFrba.Abm_Automovil
 
         private void BTNguardar_Click(object sender, EventArgs e)
         {
-            //  LimpiarErrores();
-
             Marca marca = crearMarca();
-            List<ErrorDeCampo> errores = marca.validarCampos();
-
-            if (errores.Count > 0)
-            {
-                // mostrarErrores(errores);
-            }
-            else
-            {
                 marca.guardate();
             }
         }
-    }
 }
+

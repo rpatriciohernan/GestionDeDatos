@@ -32,8 +32,7 @@ namespace UberFrba.Abm_Turno
         #region builder del objeto
         public override Turno BuilderEntityFromDataRow(DataRow dr)
         {
-            
-            Turno turno = new Turno(Convert.ToInt16(dr[0]), dr[1].ToString(), dr[2].ToString(), Convert.ToString(dr[3]), Convert.ToInt16(dr[4]), Convert.ToInt16(dr[5]), dr[6].ToString());
+            Turno turno = new Turno(Convert.ToInt16(dr[0]), dr[1].ToString(), TimeSpan.Parse(dr[2].ToString()), TimeSpan.Parse(dr[3].ToString()), Convert.ToDouble(dr[4]), Convert.ToDouble(dr[5]), dr[6].ToString());
             return turno;
         }
         #endregion
@@ -47,7 +46,7 @@ namespace UberFrba.Abm_Turno
         public override String tableName() { return "overhead.turnos"; }
 
         public List<Turno> buscarTurnosSuperpuestos(Turno turno) {
-            String query = "Select * from " + tableName() + " where turno_hora_inicio <= " + "'" + turno.HoraFin + "'" + " and " + "turno_hora_fin >= " + "'" + turno.HoraInicio + "'";
+            String query = "Select * from " + tableName() + " where turno_hora_inicio < " + "'" + turno.HoraFin + "'" + " and " + "turno_hora_fin > " + "'" + turno.HoraInicio + "'";
             return SearchManager(query, tableName(), 0, 6);
         }
 

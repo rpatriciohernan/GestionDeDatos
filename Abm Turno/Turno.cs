@@ -14,10 +14,10 @@ namespace UberFrba.Abm_Turno
         private Int16 idTurno;
         private String descripcion;
         private String estado;
-        private String horaInicio; //private DateTime horaInicio;
-        private String horaFin; //private DateTime horaFin;
-        private Int16 valorKilometro;
-        private Int16 precioBase;
+        private TimeSpan horaInicio; 
+        private TimeSpan horaFin; 
+        private double valorKilometro;
+        private double precioBase;
         private static RepositorioTurno repositorioTurno = RepositorioTurno.Instance;
 
         #endregion
@@ -36,26 +36,26 @@ namespace UberFrba.Abm_Turno
          {
             get { return estado; }
         }
-        public String HoraInicio
+        public TimeSpan HoraInicio
         {
             get { return horaInicio; }
         }
-        public String HoraFin
+        public TimeSpan HoraFin
         {
             get { return horaFin; }
         }
-        public Int16 ValorKilometro
+        public double ValorKilometro
         {
             get { return valorKilometro; }
         }
-        public Int16 PrecioBase
+        public double PrecioBase
         {
             get { return precioBase; }
         }
         #endregion
 
         #region constructor
-        public Turno(Int16 idTurno, String descripcion, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase, String estado)
+        public Turno(Int16 idTurno, String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
         {
             this.idTurno = idTurno;
             this.descripcion = descripcion;
@@ -68,7 +68,7 @@ namespace UberFrba.Abm_Turno
         #endregion  
         
         #region constructor
-        public Turno(String descripcion, String estado, String horaInicio, String horaFin, Int16 valorKilometro, Int16 precioBase)
+        public Turno(String descripcion, String estado, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase)
         {
             this.descripcion = descripcion;
             this.estado = estado;

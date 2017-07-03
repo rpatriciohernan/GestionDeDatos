@@ -28,64 +28,68 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.BTNchoferMayorRecaudacion = new System.Windows.Forms.Button();
+            this.BTNchoferViajeLargo = new System.Windows.Forms.Button();
+            this.BTNclienteConsumo = new System.Windows.Forms.Button();
+            this.BTNclienteUsoMismoAutomovil = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label19 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CMBtrimestre = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TXTano = new System.Windows.Forms.TextBox();
+            this.TXTanio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // BTNchoferMayorRecaudacion
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(12, 139);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(118, 62);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "CHOFERES CON MAYOR RECAUDACION";
-            this.button1.UseVisualStyleBackColor = false;
+            this.BTNchoferMayorRecaudacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BTNchoferMayorRecaudacion.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNchoferMayorRecaudacion.Location = new System.Drawing.Point(12, 139);
+            this.BTNchoferMayorRecaudacion.Name = "BTNchoferMayorRecaudacion";
+            this.BTNchoferMayorRecaudacion.Size = new System.Drawing.Size(118, 62);
+            this.BTNchoferMayorRecaudacion.TabIndex = 0;
+            this.BTNchoferMayorRecaudacion.Text = "CHOFERES CON MAYOR RECAUDACION";
+            this.BTNchoferMayorRecaudacion.UseVisualStyleBackColor = false;
+            this.BTNchoferMayorRecaudacion.Click += new System.EventHandler(this.BTNchoferMayorRecaudacion_Click);
             // 
-            // button2
+            // BTNchoferViajeLargo
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(135, 139);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(118, 62);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "CHOFERES CON VIAJES MAS LARGOS";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BTNchoferViajeLargo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BTNchoferViajeLargo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNchoferViajeLargo.Location = new System.Drawing.Point(135, 139);
+            this.BTNchoferViajeLargo.Name = "BTNchoferViajeLargo";
+            this.BTNchoferViajeLargo.Size = new System.Drawing.Size(118, 62);
+            this.BTNchoferViajeLargo.TabIndex = 1;
+            this.BTNchoferViajeLargo.Text = "CHOFERES CON VIAJES MAS LARGOS";
+            this.BTNchoferViajeLargo.UseVisualStyleBackColor = false;
+            this.BTNchoferViajeLargo.Click += new System.EventHandler(this.BTNchoferViajeLargo_Click);
             // 
-            // button3
+            // BTNclienteConsumo
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(259, 139);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 62);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "CLIENTES CON MAYOR CONSUMO";
-            this.button3.UseVisualStyleBackColor = false;
+            this.BTNclienteConsumo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BTNclienteConsumo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNclienteConsumo.Location = new System.Drawing.Point(259, 139);
+            this.BTNclienteConsumo.Name = "BTNclienteConsumo";
+            this.BTNclienteConsumo.Size = new System.Drawing.Size(118, 62);
+            this.BTNclienteConsumo.TabIndex = 2;
+            this.BTNclienteConsumo.Text = "CLIENTES CON MAYOR CONSUMO";
+            this.BTNclienteConsumo.UseVisualStyleBackColor = false;
+            this.BTNclienteConsumo.Click += new System.EventHandler(this.BTNclienteConsumo_Click);
             // 
-            // button4
+            // BTNclienteUsoMismoAutomovil
             // 
-            this.button4.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(383, 139);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(118, 62);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "CLIENTE CON MAYOR USO DE AUTOMOVIL";
-            this.button4.UseVisualStyleBackColor = false;
+            this.BTNclienteUsoMismoAutomovil.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BTNclienteUsoMismoAutomovil.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.BTNclienteUsoMismoAutomovil.Location = new System.Drawing.Point(383, 139);
+            this.BTNclienteUsoMismoAutomovil.Name = "BTNclienteUsoMismoAutomovil";
+            this.BTNclienteUsoMismoAutomovil.Size = new System.Drawing.Size(118, 62);
+            this.BTNclienteUsoMismoAutomovil.TabIndex = 3;
+            this.BTNclienteUsoMismoAutomovil.Text = "CLIENTE CON MAYOR USO DE AUTOMOVIL";
+            this.BTNclienteUsoMismoAutomovil.UseVisualStyleBackColor = false;
+            this.BTNclienteUsoMismoAutomovil.Click += new System.EventHandler(this.BTNclienteUsoMismoAutomovil_Click);
             // 
             // dataGridView1
             // 
@@ -134,6 +138,10 @@
             // CMBtrimestre
             // 
             this.CMBtrimestre.FormattingEnabled = true;
+            this.CMBtrimestre.Items.AddRange(new object[] {
+            "1: Primer Trimestre",
+            "2: Segundo Trimestre",
+            "3: Tercer Trimestre"});
             this.CMBtrimestre.Location = new System.Drawing.Point(12, 84);
             this.CMBtrimestre.Name = "CMBtrimestre";
             this.CMBtrimestre.Size = new System.Drawing.Size(226, 21);
@@ -149,14 +157,15 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 16);
             this.label3.TabIndex = 41;
-            this.label3.Text = "Ano";
+            this.label3.Text = "Año";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // TXTano
+            // TXTanio
             // 
-            this.TXTano.Location = new System.Drawing.Point(261, 84);
-            this.TXTano.Name = "TXTano";
-            this.TXTano.Size = new System.Drawing.Size(168, 20);
-            this.TXTano.TabIndex = 42;
+            this.TXTanio.Location = new System.Drawing.Point(261, 84);
+            this.TXTanio.Name = "TXTanio";
+            this.TXTanio.Size = new System.Drawing.Size(168, 20);
+            this.TXTanio.TabIndex = 42;
             // 
             // label4
             // 
@@ -176,17 +185,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(515, 454);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TXTano);
+            this.Controls.Add(this.TXTanio);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CMBtrimestre);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BTNclienteUsoMismoAutomovil);
+            this.Controls.Add(this.BTNclienteConsumo);
+            this.Controls.Add(this.BTNchoferViajeLargo);
+            this.Controls.Add(this.BTNchoferMayorRecaudacion);
             this.Name = "FRMestadistica";
             this.Text = "Modulo Estadistica";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -197,17 +206,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button BTNchoferMayorRecaudacion;
+        private System.Windows.Forms.Button BTNchoferViajeLargo;
+        private System.Windows.Forms.Button BTNclienteConsumo;
+        private System.Windows.Forms.Button BTNclienteUsoMismoAutomovil;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox CMBtrimestre;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TXTano;
+        private System.Windows.Forms.TextBox TXTanio;
         private System.Windows.Forms.Label label4;
     }
 }
