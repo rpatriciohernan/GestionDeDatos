@@ -32,28 +32,13 @@ namespace UberFrba.Abm_Turno
                 if (e.ColumnIndex == dataGridView1.Columns["Editar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    int index = e.RowIndex;
-                    //Turno turno = turnos[index];
-                    //MessageBox.Show("El id del turno es: " + turno.IdTurno.ToString());
                     FRMTurno formularioTurno = new FRMTurno();
-                    Int16 idTurno = Convert.ToInt16(row.Cells[0].Value);
-                    String descripcion = Convert.ToString(row.Cells[1].Value);
-                    String horaInicio = Convert.ToString(row.Cells[2].Value);
-
-                    TimeSpan a = TimeSpan.Parse(row.Cells[3].Value.ToString());
-                    TimeSpan b = TimeSpan.Parse(row.Cells[4].Value.ToString());
-
-                    Int16 x = Convert.ToInt16(row.Cells[5].Value);
-                    //Int16 vvv = Convert.ToInt16(row.Cells[6].Value);
-
-        //TimeSpan.Parse(row.Cells[3].Value.ToString()), TimeSpan.Parse(row.Cells[4].Value.ToString()), Convert.ToInt16(row.Cells[5].Value), Convert.ToInt16(row.Cells[6].Value)
                     formularioTurno.obtenerValores(Convert.ToInt16(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), TimeSpan.Parse(row.Cells[2].Value.ToString()), TimeSpan.Parse(row.Cells[3].Value.ToString()), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value));
                     formularioTurno.Show();
                 }
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    //Turno(Int16 idTurno, String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
                     Turno unTurno = new Turno(Convert.ToInt16(row.Cells[0].Value),Convert.ToString(row.Cells[1].Value),TimeSpan.Parse(row.Cells[2].Value.ToString()), TimeSpan.Parse(row.Cells[3].Value.ToString()), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value),Convert.ToString(row.Cells[6].Value));
                     unTurno.eliminate();
                     this.busquedaDeValores();
