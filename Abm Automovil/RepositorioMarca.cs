@@ -57,6 +57,21 @@ namespace UberFrba.Abm_Automovil
                 MessageBox.Show("OPERACION REALIZADA CON EXITO");
             }
         }
+
+        public void Eliminar(Marca marca)
+        {
+            SqlDataReader dr = queryManager("DELETE FROM overhead.marcas WHERE id_marca = " + marca.IdMarca);
+            dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+        }
+
+        public void Modificar(Marca marca)
+        {
+            SqlDataReader dr = queryManager("UPDATE  " + tableName() + " SET marca_nombre =" + "'" + marca.Nombre + "'" + " WHERE id_marca = " + marca.IdMarca);
+            dr.Close();
+            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+        }
+
     }
 
     }

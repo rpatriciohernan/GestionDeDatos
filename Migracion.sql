@@ -9,19 +9,201 @@ GO
 -------------------------------------------------------------------------------------
 --CREACION DE ESQUEMA--
 -------------------------------------------------------------------------------------
-/*IF EXISTS (SELECT name FROM sys.schemas WHERE name = N'overhead')
+IF EXISTS (SELECT name FROM sys.schemas WHERE name = N'overhead')
    BEGIN
-      PRINT 'Dropping the Overhead schema'
-      DROP SCHEMA [overhead]
+
+  /*******************************************************/
+ /*               BORRADO DE TABLAS                     */
+/*******************************************************/
+
+-------------------------------------------------------------------------------------
+--TABLA RENDICIONES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.rendiciones', N'U') is not null
+	drop table overhead.rendiciones
+
+-------------------------------------------------------------------------------------
+--TABLA VIAJES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.viajes', N'U') is not null
+	drop table overhead.viajes
+
+
+
+if object_id(N'overhead.facturaciones', N'U') is not null
+	drop table overhead.facturaciones
+
+
+-------------------------------------------------------------------------------------
+--TABLA AUTOMOVILES POR TURNO--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.autos_por_turnos', N'U') is not null
+	drop table overhead.autos_por_turnos
+
+-------------------------------------------------------------------------------------
+--TABLA AUTOMOVILES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.automoviles', N'U') is not null
+	drop table overhead.automoviles
+
+-------------------------------------------------------------------------------------
+--TABLA TURNOS--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.turnos', N'U') is not null
+	drop table overhead.turnos
+
+-------------------------------------------------------------------------------------
+--TABLA MARCAS--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.marcas', N'U') is not null
+	drop table overhead.marcas
+
+-------------------------------------------------------------------------------------
+--TABLA ROLES ASIGNADOS--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.roles_asignados', N'U') is not null
+	drop table overhead.roles_asignados
+
+-------------------------------------------------------------------------------------
+--TABLA USUARIOS--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.usuarios', N'U') is not null
+	drop table overhead.usuarios
+
+-------------------------------------------------------------------------------------
+--TABLA CHOFERES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.choferes', N'U') is not null
+	drop table overhead.choferes
+
+-------------------------------------------------------------------------------------
+--TABLA CLIENTES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.clientes', N'U') is not null
+	drop table overhead.clientes
+
+-------------------------------------------------------------------------------------
+--TABLA FUNCIONALIDADES ASIGNADAS--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.funcionalidades_asignadas', N'U') is not null
+	drop table overhead.funcionalidades_asignadas
+
+---------------------------------------------------------------------------------
+--TABLA FUNCIONALIDADES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.funcionalidades', N'U') is not null
+	drop table overhead.funcionalidades
+
+-------------------------------------------------------------------------------------
+--TABLA ROLES--
+-------------------------------------------------------------------------------------
+if object_id(N'overhead.roles', N'U') is not null
+	drop table overhead.roles
+
+
+  /*******************************************************/
+ /*               BORRADO DE STORES PROCEDURES          */
+/*******************************************************/
+
+-------------------------------------------------------------------------------------
+--INICIACION ROLES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Roles','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Roles
+
+-------------------------------------------------------------------------------------
+--INICIACION FUNCIONALIDADES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Funcionalidades','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Funcionalidades
+
+-------------------------------------------------------------------------------------
+--INICIACION FUNCIONALIDADES ASIGNADAS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_FuncionalidadesAsignadas','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_FuncionalidadesAsignadas
+
+-------------------------------------------------------------------------------------
+--INICIACION CLIENTES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Clientes','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Clientes
+
+-------------------------------------------------------------------------------------
+--INICIACION CHOFERES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Choferes','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Choferes
+
+-------------------------------------------------------------------------------------
+--INICIACION USUARIOS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Usuarios','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Usuarios
+
+-------------------------------------------------------------------------------------
+--INICIACION ROLES ASIGNADOS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_RolesAsignados','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_RolesAsignados
+
+-------------------------------------------------------------------------------------
+--INICIACION MARCAS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Marcas','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Marcas
+
+-------------------------------------------------------------------------------------
+--INICIACION TURNOS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Turnos','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Turnos
+
+-------------------------------------------------------------------------------------
+--INICIACION AUTOS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Autos','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Autos
+
+-------------------------------------------------------------------------------------
+--INICIACION AUTOS POR TURNOS--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_AutosPorTurnos','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_AutosPorTurnos
+
+-------------------------------------------------------------------------------------
+--INICIACION FACTURACIONES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Facturaciones','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Facturaciones
+
+-------------------------------------------------------------------------------------
+--INICIACION VIAJES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Viajes','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Viajes
+
+-------------------------------------------------------------------------------------
+--INICIACION RENDICIONES--
+-------------------------------------------------------------------------------------
+IF OBJECT_ID('overhead.sp_Rendiciones','P') IS NOT NULL
+	DROP PROCEDURE overhead.sp_Rendiciones
+
+
+
+  /*******************************************************/
+ /*               BORRADO DE VISTAS                     */
+/*******************************************************/
+
+PRINT 'Dropping the Overhead schema'
+DROP SCHEMA [overhead]
 END
+
+GO
+CREATE SCHEMA [overhead] AUTHORIZATION [gd]
 GO
 
-CREATE SCHEMA [overhead] AUTHORIZATION [gd]
-GO
-*/
-go
-CREATE SCHEMA [overhead] AUTHORIZATION [gd]
-go
+
 -------------------------------------------------------------------------------------
 --CREACION DE TABLAS--
 -------------------------------------------------------------------------------------
@@ -29,8 +211,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA ROLES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.roles', N'U') is not null
-	drop table overhead.roles
 go
 create table overhead.roles(
 	id_rol int identity,
@@ -46,8 +226,6 @@ CREATE INDEX IN_Roles ON overhead.roles (rol_nombre, rol_estado);
 -------------------------------------------------------------------------------------
 --TABLA FUNCIONALIDADES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.funcionalidades', N'U') is not null
-	drop table overhead.funcionalidades
 go
 create table overhead.funcionalidades(
 	id_funcionalidad int identity,
@@ -62,8 +240,6 @@ CREATE INDEX IN_Funcionalidades ON overhead.funcionalidades (funcionalidad_nombr
 -------------------------------------------------------------------------------------
 --TABLA FUNCIONALIDADES ASIGNADAS--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.funcionalidades_asignadas', N'U') is not null
-	drop table overhead.funcionalidades_asignadas
 go
 create table overhead.funcionalidades_asignadas(
 	id_rol int NOT NULL,
@@ -82,8 +258,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA CLIENTES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.clientes', N'U') is not null
-	drop table overhead.clientes
 go
 create table overhead.clientes(
 	cliente_nombre varchar(255) NOT NULL,
@@ -108,8 +282,6 @@ CREATE INDEX search_cliente_apellido ON overhead.clientes (cliente_apellido);
 -------------------------------------------------------------------------------------
 --TABLA CHOFERES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.choferes', N'U') is not null
-	drop table overhead.choferes
 go
 create table overhead.choferes(
 	chofer_nombre varchar(255) NOT NULL,
@@ -131,8 +303,6 @@ CREATE INDEX search_chofer_apellido ON overhead.choferes (chofer_apellido);
 -------------------------------------------------------------------------------------
 --TABLA USUARIOS--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.usuarios', N'U') is not null
-	drop table overhead.usuarios
 go
 create table overhead.usuarios(
 	username varchar(20),
@@ -148,8 +318,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA ROLES ASIGNADOS--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.roles_asignados', N'U') is not null
-	drop table overhead.roles_asignados
 go
 create table overhead.roles_asignados(
 	username varchar(20),
@@ -168,8 +336,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA MARCAS--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.marcas', N'U') is not null
-	drop table overhead.marcas
 go
 create table overhead.marcas(
 	id_marca int identity,
@@ -185,8 +351,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA TURNOS--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.turnos', N'U') is not null
-	drop table overhead.turnos
 go
 create table overhead.turnos(
 	id_turno int identity,
@@ -206,8 +370,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA AUTOMOVILES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.automoviles', N'U') is not null
-	drop table overhead.automoviles
 go
 create table overhead.automoviles( -- -> modelo, licencia y rodado no nos interesan
 	auto_patente varchar(10) NOT NULL,
@@ -234,8 +396,6 @@ CREATE INDEX search_auto_from_chofer_dni ON overhead.automoviles (id_chofer);
 -------------------------------------------------------------------------------------
 --TABLA AUTOMOVILES POR TURNO--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.autos_por_turnos', N'U') is not null
-	drop table overhead.autos_por_turnos
 go
 create table overhead.autos_por_turnos(
 	auto_patente varchar(10) NOT NULL,
@@ -254,8 +414,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA FACTURACIONES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.facturaciones', N'U') is not null
-	drop table overhead.facturaciones
 go
 create table overhead.facturaciones(
 	id_factura numeric(18,0), --> tiene que ser int asi despues de la migracion hacemos que sea identity
@@ -275,8 +433,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA VIAJES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.viajes', N'U') is not null
-	drop table overhead.viajes
 go
 create table overhead.viajes(
 	id_viaje int identity,
@@ -306,8 +462,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA RENDICIONES--
 -------------------------------------------------------------------------------------
-if object_id(N'overhead.rendiciones', N'U') is not null
-	drop table overhead.rendiciones
 go
 create table overhead.rendiciones(
 	id_rendicion numeric(18,0), --> deberia ser int para el identity
@@ -333,9 +487,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION ROLES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Roles','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Roles
-GO
+go
 create procedure overhead.sp_Roles
 as
 	insert into overhead.roles (rol_nombre, rol_estado) values
@@ -351,9 +503,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION FUNCIONALIDADES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Funcionalidades','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Funcionalidades
-GO
+go
 create procedure overhead.sp_Funcionalidades
 as
 	insert into overhead.funcionalidades (funcionalidad_nombre)
@@ -391,9 +541,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION FUNCIONALIDADES ASIGNADAS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_FuncionalidadesAsignadas','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_FuncionalidadesAsignadas
-GO
+go
 create procedure overhead.sp_FuncionalidadesAsignadas
 as
 	INSERT INTO overhead.funcionalidades_asignadas VALUES(1, 1)
@@ -424,9 +572,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION CLIENTES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Clientes','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Clientes
-GO
+go
 create procedure overhead.sp_Clientes
 as
 	insert into overhead.clientes (cliente_nombre, cliente_apellido, cliente_dni, cliente_mail, cliente_telefono, cliente_domicilio, cliente_fecha_nacimiento, cliente_estado)
@@ -439,9 +585,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION CHOFERES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Choferes','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Choferes
-GO
+go
 create procedure overhead.sp_Choferes
 as
 	insert into overhead.choferes (chofer_nombre, chofer_apellido, chofer_dni, chofer_domicilio, chofer_telefono, chofer_mail, chofer_fecha_nacimiento, chofer_estado)
@@ -454,9 +598,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION USUARIOS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Usuarios','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Usuarios
-GO
+go
 create procedure overhead.sp_Usuarios
 as
 	insert into overhead.usuarios (username, usu_password, usu_estado)
@@ -480,9 +622,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION ROLES ASIGNADOS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_RolesAsignados','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_RolesAsignados
-GO
+go
 create procedure overhead.sp_RolesAsignados
 as
 	INSERT INTO overhead.roles_asignados 
@@ -518,9 +658,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION MARCAS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Marcas','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Marcas
-GO
+go
 create procedure overhead.sp_Marcas
 as
 	insert into overhead.marcas (marca_nombre)
@@ -533,9 +671,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION TURNOS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Turnos','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Turnos
-GO
+go
 create procedure overhead.sp_Turnos
 as
 	insert into overhead.turnos (turno_descripcion, turno_estado,turno_hora_inicio, turno_hora_fin, turno_valor_km, turno_precio_base)
@@ -548,9 +684,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION AUTOS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Autos','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Autos
-GO
+go
 create procedure overhead.sp_Autos
 as
 	insert into overhead.automoviles
@@ -564,9 +698,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION AUTOS POR TURNOS--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_AutosPorTurnos','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_AutosPorTurnos
-GO
+go
 create procedure overhead.sp_AutosPorTurnos
 as
 	insert into overhead.autos_por_turnos
@@ -580,9 +712,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION FACTURACIONES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Facturaciones','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Facturaciones
-GO
+go
 create procedure overhead.sp_Facturaciones
 as
 	insert into overhead.facturaciones
@@ -598,9 +728,7 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION VIAJES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Viajes','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Viajes
-GO
+go
 create procedure overhead.sp_Viajes
 as 
 	insert into overhead.viajes
@@ -614,10 +742,8 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION RENDICIONES--
 -------------------------------------------------------------------------------------
-IF OBJECT_ID('overhead.sp_Rendiciones','P') IS NOT NULL
-	DROP PROCEDURE overhead.sp_Rendiciones
-GO
 
+go
 create procedure overhead.sp_Rendiciones
 as
 	insert into overhead.rendiciones
@@ -629,7 +755,7 @@ as
 go
 
 ---------------------------------------------------------------------------------------------------------
---EjecuciÃ³n de stores procedures
+--Ejecución de stores procedures
 ---------------------------------------------------------------------------------------------------------
 execute overhead.sp_Roles;
 execute overhead.sp_Funcionalidades;

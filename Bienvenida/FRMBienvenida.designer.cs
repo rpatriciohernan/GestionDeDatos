@@ -225,7 +225,7 @@
             this.BTNmisViajesRendidos.Name = "BTNmisViajesRendidos";
             this.BTNmisViajesRendidos.Size = new System.Drawing.Size(115, 61);
             this.BTNmisViajesRendidos.TabIndex = 8;
-            this.BTNmisViajesRendidos.Text = "MIS RENDICIONES DE VIAJES";
+            this.BTNmisViajesRendidos.Text = "RENDICIONES DE VIAJES";
             this.BTNmisViajesRendidos.UseVisualStyleBackColor = false;
             this.BTNmisViajesRendidos.Click += new System.EventHandler(this.button12_Click);
             // 
@@ -238,7 +238,7 @@
             this.BTNmisFacturas.Name = "BTNmisFacturas";
             this.BTNmisFacturas.Size = new System.Drawing.Size(116, 61);
             this.BTNmisFacturas.TabIndex = 7;
-            this.BTNmisFacturas.Text = "MIS FACTURACIONES CERRADAS";
+            this.BTNmisFacturas.Text = "FACTURACIONES CERRADAS";
             this.BTNmisFacturas.UseVisualStyleBackColor = false;
             this.BTNmisFacturas.Click += new System.EventHandler(this.button13_Click);
             // 
@@ -251,7 +251,7 @@
             this.BTNmisViajesRegistrados.Name = "BTNmisViajesRegistrados";
             this.BTNmisViajesRegistrados.Size = new System.Drawing.Size(115, 61);
             this.BTNmisViajesRegistrados.TabIndex = 6;
-            this.BTNmisViajesRegistrados.Text = "MIS VIAJES REGISTRADOS";
+            this.BTNmisViajesRegistrados.Text = "VIAJES REGISTRADOS";
             this.BTNmisViajesRegistrados.UseVisualStyleBackColor = false;
             this.BTNmisViajesRegistrados.Click += new System.EventHandler(this.button14_Click);
             // 

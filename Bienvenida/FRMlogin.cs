@@ -91,5 +91,13 @@ namespace UberFrba.Bienvenida
 
 
         }
+
+        private void BTNadmin_Click(object sender, EventArgs e)
+        {
+            
+            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
+            formularioBienvenida.ActivarAdministrador();
+            formularioBienvenida.Show();
+        }
     }
 }

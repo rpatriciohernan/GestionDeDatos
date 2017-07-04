@@ -42,7 +42,6 @@ namespace UberFrba.Abm_Cliente
             {
                 cn = new SqlConnection("Data Source=localhost" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
                 cn.Open();
-                MessageBox.Show("Conectado");
 
                 String asd = "asdads";
 

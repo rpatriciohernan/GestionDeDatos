@@ -39,6 +39,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LBLerrorLogueo = new System.Windows.Forms.Label();
+            this.BTNadmin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,12 +147,23 @@
             this.LBLerrorLogueo.Text = "ACCESO DENEGADO";
             this.LBLerrorLogueo.Visible = false;
             // 
+            // BTNadmin
+            // 
+            this.BTNadmin.Location = new System.Drawing.Point(223, 24);
+            this.BTNadmin.Name = "BTNadmin";
+            this.BTNadmin.Size = new System.Drawing.Size(43, 33);
+            this.BTNadmin.TabIndex = 12;
+            this.BTNadmin.Text = "ADM";
+            this.BTNadmin.UseVisualStyleBackColor = true;
+            this.BTNadmin.Click += new System.EventHandler(this.BTNadmin_Click);
+            // 
             // FRMlogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(278, 416);
+            this.Controls.Add(this.BTNadmin);
             this.Controls.Add(this.LBLerrorLogueo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
@@ -182,5 +194,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label LBLerrorLogueo;
+        private System.Windows.Forms.Button BTNadmin;
     }
 }
