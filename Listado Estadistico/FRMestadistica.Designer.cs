@@ -141,7 +141,8 @@
             this.CMBtrimestre.Items.AddRange(new object[] {
             "1: Primer Trimestre",
             "2: Segundo Trimestre",
-            "3: Tercer Trimestre"});
+            "3: Tercer Trimestre",
+            "4: Cuarto Trimestre"});
             this.CMBtrimestre.Location = new System.Drawing.Point(12, 84);
             this.CMBtrimestre.Name = "CMBtrimestre";
             this.CMBtrimestre.Size = new System.Drawing.Size(226, 21);
@@ -198,6 +199,7 @@
             this.Controls.Add(this.BTNchoferMayorRecaudacion);
             this.Name = "FRMestadistica";
             this.Text = "Modulo Estadistica";
+            this.Load += new System.EventHandler(this.FRMestadistica_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

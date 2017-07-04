@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using UberFrba.Abm_Turno;
 
 namespace UberFrba.Registro_Viajes
@@ -107,12 +108,26 @@ namespace UberFrba.Registro_Viajes
         //metodos de instancia
         public void guardate()
         {
-            repositorioViaje.Guardar(this);
+            List<Viaje> viajes = repositorioViaje.buscarViajesSuperpuestos(this);
+            if (viajes.Count > 0)
+            {
+                MessageBox.Show("La franja horaria seleccionada se superpone con la de otro viaje para el mismo cliente o chofer ya cargado, por favor verifique el inicio y fin del viaje");
+            } else {
+                repositorioViaje.Guardar(this);
+            }
         }
 
         public void modificate()
         {
-            repositorioViaje.Modificar(this);
+            List<Viaje> viajes = repositorioViaje.buscarViajesSuperpuestos(this);
+            if (viajes.Count > 0)
+            {
+                MessageBox.Show("La franja horaria seleccionada se superpone con la de otro viaje ya cargado, por favor verifique el inicio y fin del viaje");
+            }
+            else
+            {
+                repositorioViaje.Modificar(this);
+            }
         }
 
         public double calcularMonto() //le pegamos a la base por cada viaje, no es lo mas copado, pero por ahora lo dejamos asi :/

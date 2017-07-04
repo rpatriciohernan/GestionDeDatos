@@ -31,6 +31,10 @@ namespace UberFrba.Listado_Estadistico
             {
                 trimestre = "3";
             }
+            else if (CMBtrimestre.Text == "4: Cuarto Trimestre")
+            {
+                trimestre = "4";
+            }
             return trimestre;
         }
 
@@ -78,6 +82,11 @@ namespace UberFrba.Listado_Estadistico
             List<ClienteConMayorUsoDeUnAutomovilView> clientes = Cliente.buscarClientesConMayorUsoDeUnMismoAutomovil(buscarPorTrimestreYAnio());
             //mostar -> nombre,apellido,dni, patenteAuto, veces de uso
             render(clientes);
+        }
+
+        private void FRMestadistica_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -105,7 +105,16 @@ namespace UberFrba.Abm_Turno
         }
 
         public void modificate() {
-            repositorioTurno.Modificar(this);
+            List<Turno> turnosSuperpuestos = repositorioTurno.buscarTurnosSuperpuestos(this);
+
+            if (turnosSuperpuestos.Count > 0)
+            {
+                MessageBox.Show("La franja horaria seleccionada se superpone con la de otro turno, por favor elija otra");
+            }
+            else
+            {
+                repositorioTurno.Modificar(this);
+            }
         }
 
         public void eliminate()

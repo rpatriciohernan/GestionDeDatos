@@ -49,6 +49,12 @@ namespace UberFrba.Registro_Viajes
             MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
+        public List<Viaje> buscarViajesSuperpuestos(Viaje viaje)
+        {
+            String query = "Select * from " + tableName() + " where viaje_fecha_inicio < " + "'" + viaje.Fin + "'" + " and " + "viaje_fecha_fin > " + "'" + viaje.Inicio + "'" + " and (id_cliente = " + "'" + viaje.IdCliente + "'" + " or id_chofer = " + "'" + viaje.IdChofer + "'" + ")";
+            return SearchManager(query, tableName(), 0, 6);
+        }
+
         public void Modificar(Viaje viaje) {
             SqlDataReader dr = queryManager("UPDATE " +tableName()+ " SET id_chofer =" + "'" + viaje.IdChofer + "'" + ", " +
                     "id_automovil =" + "'" + viaje.IdAutomovil + "'" + ", " +
