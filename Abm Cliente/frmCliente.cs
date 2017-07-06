@@ -27,7 +27,7 @@ namespace UberFrba.Abm_Cliente
         String mail;
         String telefono;
         String domicilio;
-        Int16 codigoPostal;
+        String codigoPostal;
         String localidad;
         DateTime fecha;
         String estado;
@@ -59,7 +59,7 @@ namespace UberFrba.Abm_Cliente
             };
         }
 
-        public void recibirDatos(String nombre, String apellido, Int64 dni, String mail, String telefono, String domicilio, Int16 codigoPostal, String localidad, DateTime fecha, String estado)
+        public void recibirDatos(String nombre, String apellido, Int64 dni, String mail, String telefono, String domicilio, String codigoPostal, String localidad, DateTime fecha, String estado)
         {
             this.nombre = nombre;
             this.apellido = apellido;
@@ -129,7 +129,7 @@ namespace UberFrba.Abm_Cliente
 
         private Cliente crearCliente() {
             return new Cliente(TXTnombre.Text, TXTapellido.Text, Convert.ToInt64(TXTdni.Text), TXTmail.Text,
-                TXTtelefono.Text, TXTdomicilio.Text,Convert.ToInt16(TXTcodigoPostal.Text), TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), CMBestado.Text);
+                TXTtelefono.Text, TXTdomicilio.Text, TXTcodigoPostal.Text, TXTlocalidad.Text, Convert.ToDateTime(DTEfechaNacimiento.Text), CMBestado.Text);
         }
 
         private void DTEfechaNacimiento_ValueChanged(object sender, EventArgs e)

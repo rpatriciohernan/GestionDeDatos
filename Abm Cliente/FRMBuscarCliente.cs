@@ -123,13 +123,13 @@ namespace UberFrba.Abm_Cliente
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                     FRMCliente formularioCliente = new FRMCliente();
-                    formularioCliente.recibirDatos(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToInt16(row.Cells[6].Value), Convert.ToString(row.Cells[7].Value), Convert.ToDateTime(row.Cells[8].Value), Convert.ToString(row.Cells[9].Value));
+                    formularioCliente.recibirDatos(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), Convert.ToString(row.Cells[7].Value), Convert.ToDateTime(row.Cells[8].Value), Convert.ToString(row.Cells[9].Value));
                     formularioCliente.Show();
                 }
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    Cliente unCliente = new Cliente(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToInt16(row.Cells[6].Value), Convert.ToString(row.Cells[7].Value), Convert.ToDateTime(row.Cells[8].Value), Convert.ToString(row.Cells[9].Value));
+                    Cliente unCliente = new Cliente(Convert.ToString(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToInt64(row.Cells[2].Value), Convert.ToString(row.Cells[3].Value), Convert.ToString(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value), Convert.ToString(row.Cells[7].Value), Convert.ToDateTime(row.Cells[8].Value), Convert.ToString(row.Cells[9].Value));
                     unCliente.eliminate();
                     this.busquedaDeValores();
                 }
@@ -152,6 +152,11 @@ namespace UberFrba.Abm_Cliente
         {
             FRMCliente formularioNuevoCliente = new FRMCliente();
             formularioNuevoCliente.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }

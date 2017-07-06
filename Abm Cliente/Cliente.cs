@@ -16,7 +16,7 @@ namespace UberFrba.Abm_Cliente
         private String mail;
         private String telefono;
         private String domicilio;
-        private Int16 codigoPostal;
+        private String codigoPostal;
         private String localidad;
         private DateTime fechaNacimiento;
         private String estado;
@@ -48,7 +48,7 @@ namespace UberFrba.Abm_Cliente
         {
             get { return domicilio; }
         }
-        public Int16 CodigoPostal
+        public String CodigoPostal
         {
             get { return codigoPostal; }
         }
@@ -69,7 +69,7 @@ namespace UberFrba.Abm_Cliente
 
         #region constructor
         public Cliente(String nombre, String apellido, Int64 dni, String mail, String telefono,
-            String domicilio, Int16 codigoPostal, String localidad, DateTime fechaNacimiento, String estado)
+            String domicilio, String codigoPostal, String localidad, DateTime fechaNacimiento, String estado)
         {            
             this.nombre = nombre;
 
