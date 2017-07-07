@@ -27,10 +27,14 @@ namespace UberFrba.Rendicion_Viajes
 
         private void FRMrendicion_Load(object sender, EventArgs e)
         {
-            Dictionary<String, String> searchAll = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllChoferes = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllTurnos = new Dictionary<string, string>();
 
-            choferes = Chofer.buscar(searchAll);
-            turnos = Turno.buscar(searchAll);
+            searchAllChoferes.Add("chofer_estado", "Activo");
+            searchAllTurnos.Add("turno_estado", "Activo");
+
+            choferes = Chofer.buscar(searchAllChoferes);
+            turnos = Turno.buscar(searchAllTurnos);
 
             //---Atributos que mostramos en los combos---
             choferes.ForEach(chofer => CMBchofer.Items.Add(chofer.Nombre + ", " + chofer.Apellido));

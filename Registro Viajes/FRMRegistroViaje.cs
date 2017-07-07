@@ -71,11 +71,16 @@ namespace UberFrba.Registro_Viajes
             dteFechaInicio.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             dtpFechaFin.CustomFormat = "dd/MM/yyyy HH:mm:ss";
 
-            Dictionary<String, String> searchAll = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllClientes = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllChoferes = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllTurnos = new Dictionary<string, string>();
 
-            clientes = Cliente.buscar(searchAll);
-            choferes = Chofer.buscar(searchAll);
-            turnos = Turno.buscar(searchAll);
+            searchAllClientes.Add("cliente_estado", "Activo");
+            searchAllChoferes.Add("chofer_estado", "Activo");
+            searchAllTurnos.Add("turno_estado", "Activo");
+            clientes = Cliente.buscar(searchAllClientes);
+            choferes = Chofer.buscar(searchAllChoferes);
+            turnos = Turno.buscar(searchAllTurnos);
 
             //---Atributos que mostramos en los combos---
             clientes.ForEach(cliente => cmbCliente.Items.Add(cliente.Nombre + ", " + cliente.Apellido));

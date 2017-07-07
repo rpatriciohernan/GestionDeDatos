@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,8 @@ namespace UberFrba.Abm_Turno
 {
     public partial class FRMTurno : Form
     {
-        private TimeSpan horaInicio;
-        private TimeSpan horaFin;
+        private double horaInicio;
+        private double horaFin;
 
         private Boolean formularioPrecargado = false;
         private String descripcion;
@@ -36,7 +37,7 @@ namespace UberFrba.Abm_Turno
 
         }
 
-        public void obtenerValores(Int16 idTurno, String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
+        public void obtenerValores(Int16 idTurno, String descripcion, double horaInicio, double horaFin, double valorKilometro, double precioBase, String estado)
         {
             formularioPrecargado = true;
             this.descripcion = descripcion;
@@ -90,9 +91,11 @@ namespace UberFrba.Abm_Turno
         }
 
         private void guardarTurno() {
-            horaInicio = Convert.ToDateTime(DTEhoraInicio.Text).TimeOfDay;
-            horaFin = Convert.ToDateTime(DTEhoraFin.Text).TimeOfDay;
 
+            horaInicio = Convert.ToDouble(DTEhoraInicio.Text);
+            horaFin = Convert.ToDouble(DTEhoraFin.Text);
+
+            
             if (horaFin < horaInicio)
             {
                 MessageBox.Show("El turno debe estar contemplado dentro de un mismo dia");
@@ -119,6 +122,14 @@ namespace UberFrba.Abm_Turno
                 this.TXTprecioBase.Text = precioBase.ToString();       
             
             }
+
+            DTEhoraInicio.Format = DateTimePickerFormat.Custom;
+            DTEhoraInicio.CustomFormat = "HH"; // Only use hours 
+            DTEhoraInicio.ShowUpDown = true;
+
+            DTEhoraFin.Format = DateTimePickerFormat.Custom;
+            DTEhoraFin.CustomFormat = "HH"; // Only use hours 
+            DTEhoraFin.ShowUpDown = true;
         }
 
         private void TXTvalorKilometro_TextChanged(object sender, EventArgs e)
@@ -133,7 +144,8 @@ namespace UberFrba.Abm_Turno
 
         private void TXTvalorKilometro_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && e.KeyChar.ToString() != cc.NumberFormat.NumberDecimalSeparator)
             {
                 MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;
@@ -143,7 +155,8 @@ namespace UberFrba.Abm_Turno
 
         private void TXTprecioBase_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back))
+            CultureInfo cc = System.Threading.Thread.CurrentThread.CurrentCulture;
+            if (!(char.IsNumber(e.KeyChar)) && (e.KeyChar != (char)Keys.Back) && e.KeyChar.ToString() != cc.NumberFormat.NumberDecimalSeparator)
             {
                 MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 e.Handled = true;

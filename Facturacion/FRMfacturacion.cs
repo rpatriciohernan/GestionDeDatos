@@ -61,9 +61,9 @@ namespace UberFrba.Facturacion
 
         private void FRMfacturacion_Load(object sender, EventArgs e)
         {
-            Dictionary<String, String> searchAll = new Dictionary<string, string>();
-
-            clientes = Cliente.buscar(searchAll);
+            Dictionary<String, String> searchAllClientes = new Dictionary<string, string>();
+            searchAllClientes.Add("cliente_estado", "Activo");
+            clientes = Cliente.buscar(searchAllClientes);
 
             //---Atributos que mostramos en los combos---
             clientes.ForEach(cliente => CMBcliente.Items.Add(cliente.Nombre + ", " + cliente.Apellido));

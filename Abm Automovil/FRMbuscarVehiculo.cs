@@ -121,11 +121,14 @@ namespace UberFrba.Abm_Automovil
 
         private void FRMbuscarVehiculo_Load(object sender, EventArgs e)
         {
-            Dictionary<String, String> searchAll = new Dictionary<string, string>();
+            Dictionary<String, String> searchAllMarcas = new Dictionary<string, string>();
 
-            marcas = Marca.buscar(searchAll);
+            marcas = Marca.buscar(searchAllMarcas);
             // turnos = Turno.buscar(searchAll);
-            choferes = Chofer.buscar(searchAll);
+
+            Dictionary<String, String> searchAllChoferes = new Dictionary<string, string>();
+            searchAllChoferes.Add("chofer_estado", "Activo");
+            choferes = Chofer.buscar(searchAllChoferes);
 
             //---Atributos que mostramos en los combos---
             marcas.ForEach(marca => CMBmarca.Items.Add(marca.Nombre));

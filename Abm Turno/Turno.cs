@@ -14,8 +14,8 @@ namespace UberFrba.Abm_Turno
         private Int16 idTurno;
         private String descripcion;
         private String estado;
-        private TimeSpan horaInicio; 
-        private TimeSpan horaFin; 
+        private double horaInicio;
+        private double horaFin; 
         private double valorKilometro;
         private double precioBase;
         private static RepositorioTurno repositorioTurno = RepositorioTurno.Instance;
@@ -32,11 +32,11 @@ namespace UberFrba.Abm_Turno
         {
             get { return descripcion; }
         }
-        public TimeSpan HoraInicio
+        public double HoraInicio
         {
             get { return horaInicio; }
         }
-        public TimeSpan HoraFin
+        public double HoraFin
         {
             get { return horaFin; }
         }
@@ -55,7 +55,7 @@ namespace UberFrba.Abm_Turno
         #endregion
 
         #region constructor
-        public Turno(Int16 idTurno, String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
+        public Turno(Int16 idTurno, String descripcion, double horaInicio, double horaFin, double valorKilometro, double precioBase, String estado)
         {
             this.idTurno = idTurno;
             this.descripcion = descripcion;
@@ -68,7 +68,7 @@ namespace UberFrba.Abm_Turno
         #endregion  
         
         #region constructor
-        public Turno(String descripcion, TimeSpan horaInicio, TimeSpan horaFin, double valorKilometro, double precioBase, String estado)
+        public Turno(String descripcion, double horaInicio, double horaFin, double valorKilometro, double precioBase, String estado)
         {
             this.descripcion = descripcion;
             this.estado = estado;

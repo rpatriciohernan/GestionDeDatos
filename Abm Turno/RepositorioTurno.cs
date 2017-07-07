@@ -33,10 +33,12 @@ namespace UberFrba.Abm_Turno
         #region builder del objeto
         public override Turno BuilderEntityFromDataRow(DataRow dr)
         {
-            Turno turno = new Turno(Convert.ToInt16(dr[0]), dr[1].ToString(), TimeSpan.Parse(dr[2].ToString()), TimeSpan.Parse(dr[3].ToString()), Convert.ToDouble(dr[4]), Convert.ToDouble(dr[5]), dr[6].ToString());
+            Turno turno = new Turno(Convert.ToInt16(dr[0]), dr[1].ToString(), Convert.ToDouble(dr[2]), Convert.ToDouble(dr[3]), Convert.ToDouble(dr[4]), Convert.ToDouble(dr[5]), dr[6].ToString());
             return turno;
         }
         #endregion
+
+        public override String tableName() { return "overhead.turnos"; }
 
         public void guardar(Turno turno)
         {
@@ -45,10 +47,16 @@ namespace UberFrba.Abm_Turno
             MessageBox.Show("OPERACION REALIZADA CON EXITO");
         }
 
-        public override String tableName() { return "overhead.turnos"; }
+        public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
+        {
+            String query = "Select * from " + tableName() + " where turno_descripcion like " + "'" + "%" + parametrosDeBusqueda["turno_descripcion"] + "%" + "'" ;
+            Console.WriteLine("leete el queryResult de turnossss: " + query);
+            return SearchManager(query, tableName(), 0, 6);
+        }
+        
 
         public List<Turno> buscarTurnosSuperpuestos(Turno turno) {
-            String query = "Select * from " + tableName() + " where turno_hora_inicio < " + "'" + turno.HoraFin + "'" + " and " + "turno_hora_fin > " + "'" + turno.HoraInicio + "'";
+            String query = "Select * from " + tableName() + " where turno_hora_inicio < " + "'" + turno.HoraFin + "'" + " and " + "turno_hora_fin > " + "'" + turno.HoraInicio + "'" + " and turno_estado = 'Activo'";
             return SearchManager(query, tableName(), 0, 6);
         }
 

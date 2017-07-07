@@ -33,13 +33,13 @@ namespace UberFrba.Abm_Turno
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                     FRMTurno formularioTurno = new FRMTurno();
-                    formularioTurno.obtenerValores(Convert.ToInt16(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), TimeSpan.Parse(row.Cells[2].Value.ToString()), TimeSpan.Parse(row.Cells[3].Value.ToString()), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value));
+                    formularioTurno.obtenerValores(Convert.ToInt16(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToDouble(row.Cells[2].Value), Convert.ToDouble(row.Cells[3].Value), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value));
                     formularioTurno.Show();
                 }
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    Turno unTurno = new Turno(Convert.ToInt16(row.Cells[0].Value),Convert.ToString(row.Cells[1].Value),TimeSpan.Parse(row.Cells[2].Value.ToString()), TimeSpan.Parse(row.Cells[3].Value.ToString()), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value),Convert.ToString(row.Cells[6].Value));
+                    Turno unTurno = new Turno(Convert.ToInt16(row.Cells[0].Value), Convert.ToString(row.Cells[1].Value), Convert.ToDouble(row.Cells[2].Value), Convert.ToDouble(row.Cells[3].Value), Convert.ToDouble(row.Cells[4].Value), Convert.ToDouble(row.Cells[5].Value), Convert.ToString(row.Cells[6].Value));
                     unTurno.eliminate();
                     this.busquedaDeValores();
                 }
