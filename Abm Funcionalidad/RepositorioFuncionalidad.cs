@@ -44,14 +44,14 @@ namespace UberFrba.Abm_Funcionalidad
         {
             SqlDataReader dr = queryManager("Insert into overhead.funcionalidades " + "values(" + funcionalidad.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void eliminar(Funcionalidad funcionalidad)
         {
             SqlDataReader dr = queryManager("DELETE FROM overhead.funcionalidades WHERE funcionalidad_nombre = " + "'" + Convert.ToString(funcionalidad.Nombre) + "'");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }

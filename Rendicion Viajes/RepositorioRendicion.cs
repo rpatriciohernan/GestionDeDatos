@@ -55,7 +55,7 @@ namespace UberFrba.Rendicion_Viajes
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.rendiciones " + "values(" + rendicion.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

@@ -55,7 +55,7 @@ namespace UberFrba.Abm_Cliente
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.clientes " + "values(" + cliente.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -70,7 +70,7 @@ namespace UberFrba.Abm_Cliente
                 + "cliente_fecha_nacimiento =" + "'" + cliente.FechaNacimiento + "'" + ", "
                 + "cliente_estado =" + "'" + cliente.Estado + "'" + " WHERE cliente_dni =" + Convert.ToString(cliente.Dni));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

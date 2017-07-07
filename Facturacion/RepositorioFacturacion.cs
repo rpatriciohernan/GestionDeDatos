@@ -39,7 +39,7 @@ namespace UberFrba.Facturacion
             SqlDataReader dr = queryManager("Insert into overhead.facturaciones " + "values(" + facturacion.GetValues() + ")");
             dr.Close();
 
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             Facturacion facturacionStored = getUltimoRegistro("id_factura");
             return facturacionStored;

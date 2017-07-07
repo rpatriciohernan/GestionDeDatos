@@ -56,7 +56,7 @@ namespace UberFrba.Abm_Automovil
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.automoviles " + "values(" + automovil.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -68,7 +68,7 @@ namespace UberFrba.Abm_Automovil
                 + "id_turno =" + "'" + Convert.ToString(automovil.IdTurno) + "'" + " "
                 + " WHERE auto_patente =" + Convert.ToString(automovil.Patente));
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

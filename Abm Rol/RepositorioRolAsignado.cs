@@ -44,14 +44,14 @@ namespace UberFrba.Abm_Rol
         {
             SqlDataReader dr = queryManager("Insert into overhead.roles_asignados " + "values(" + rolAsignado.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Eliminar(RolAsignado rolAsignado)
         {
             SqlDataReader dr = queryManager("DELETE FROM overhead.roles_asignados WHERE username = " + "'" + Convert.ToString(rolAsignado.Username)+ "'" + " AND " + "id_rol =" + Convert.ToString(rolAsignado.IdRol));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private String obtenerCondicionesDeBusqueda(Dictionary<String, String> parametrosDeBusqueda)

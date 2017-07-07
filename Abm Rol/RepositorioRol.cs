@@ -44,14 +44,14 @@ namespace UberFrba.Abm_Rol
         {
             SqlDataReader dr = queryManager("Insert into overhead.roles " + "values(" + rol.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Modificar(Rol rol)
         {
             SqlDataReader dr = queryManager("UPDATE overhead.roles SET rol_nombre =" + "'" + rol.Nombre + "'" + ", " + "rol_estado =" + "'" + rol.Estado + "'" + " WHERE id_rol =" + Convert.ToString(rol.Id));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

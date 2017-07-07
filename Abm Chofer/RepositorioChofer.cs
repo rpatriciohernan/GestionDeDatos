@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Chofer
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.choferes " + "values(" + chofer.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -68,7 +68,7 @@ namespace UberFrba.Abm_Chofer
                 + "chofer_fecha_nacimiento =" + "'" + chofer.FechaNacimiento + "'" + ", "
                 + "chofer_estado =" + "'" + chofer.Estado + "'" + " WHERE chofer_dni =" + Convert.ToString(chofer.Dni));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

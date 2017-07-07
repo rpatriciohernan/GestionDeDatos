@@ -44,7 +44,7 @@ namespace UberFrba.Abm_Turno
         {
             SqlDataReader dr = queryManager("Insert into overhead.turnos " + "values(" + turno.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO"); //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information); //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
      /*   public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
@@ -69,7 +69,7 @@ namespace UberFrba.Abm_Turno
                 + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + " "
                 + " WHERE id_turno = " + Convert.ToString(turno.IdTurno));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO", "Infomacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }

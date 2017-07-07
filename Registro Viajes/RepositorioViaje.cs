@@ -46,7 +46,7 @@ namespace UberFrba.Registro_Viajes
         {
             SqlDataReader dr = queryManager("Insert into overhead.viajes " + "values(" + viaje.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public List<Viaje> buscarViajesSuperpuestos(Viaje viaje)
@@ -66,7 +66,7 @@ namespace UberFrba.Registro_Viajes
                     "id_cliente =" + "'" + viaje.IdCliente + "'"
                     + " WHERE id_viaje =" + Convert.ToString(viaje.Id));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

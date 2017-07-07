@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Automovil
             } else {
                 SqlDataReader dr = queryManager("Insert into overhead.marcas " + "values(" + marca.GetValues() + ")");
                 dr.Close();
-                MessageBox.Show("OPERACION REALIZADA CON EXITO");
+                MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -62,14 +62,14 @@ namespace UberFrba.Abm_Automovil
         {
             SqlDataReader dr = queryManager("DELETE FROM overhead.marcas WHERE id_marca = " + marca.IdMarca);
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void Modificar(Marca marca)
         {
             SqlDataReader dr = queryManager("UPDATE  " + tableName() + " SET marca_nombre =" + "'" + marca.Nombre + "'" + " WHERE id_marca = " + marca.IdMarca);
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
