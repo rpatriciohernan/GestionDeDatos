@@ -44,15 +44,15 @@ namespace UberFrba.Abm_Turno
         {
             SqlDataReader dr = queryManager("Insert into overhead.turnos " + "values(" + turno.GetValues() + ")");
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO");
+            MessageBox.Show("OPERACION REALIZADA CON EXITO"); //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-        public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
+     /*   public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
         {
             String query = "Select * from " + tableName() + " where turno_descripcion like " + "'" + "%" + parametrosDeBusqueda["turno_descripcion"] + "%" + "'" ;
             Console.WriteLine("leete el queryResult de turnossss: " + query);
             return SearchManager(query, tableName(), 0, 6);
-        }
+        }*/
         
 
         public List<Turno> buscarTurnosSuperpuestos(Turno turno) {

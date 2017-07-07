@@ -93,6 +93,7 @@ namespace UberFrba.Abm_Turno
             if (TXTnombre.Text != "")
             {
                 parametrosDeBusqueda.Add("turno_descripcion", TXTnombre.Text);
+                parametrosDeBusqueda.Add("turno_estado", "Activo");
             }
 
             turnos = Turno.buscar(parametrosDeBusqueda);
