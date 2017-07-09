@@ -125,7 +125,7 @@
             this.Controls.Add(this.TXTnombre);
             this.Controls.Add(this.label2);
             this.Name = "FRMbuscarTurno";
-            this.Text = "FRMbuscarTurno";
+            this.Text = "Buscar Turno";
             this.Load += new System.EventHandler(this.FRMbuscarTurno_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

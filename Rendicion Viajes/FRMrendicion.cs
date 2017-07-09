@@ -41,21 +41,49 @@ namespace UberFrba.Rendicion_Viajes
             turnos.ForEach(turno => CMBturno.Items.Add(turno.Descripcion));
         }
 
+
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.CMBchofer.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.DTEfecha.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.CMBturno.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
         private void BTNgenerar_Click(object sender, EventArgs e)
         {
-            //validar que este todo bien seleccionado
-            Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
 
-            Int64 idChofer = getIdChoferSeleccionado();
-            DateTime fecha = Convert.ToDateTime(DTEfecha.Text);
-            Int64 idTurno = getIdTurno();
+            if (this.ValidarCamposMandatorios())
+            {
+                //validar que este todo bien seleccionado
+                Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
 
-            parametrosDeBusqueda.Add("id_chofer", idChofer.ToString());
-            parametrosDeBusqueda.Add("fecha_viaje_para_rendicion", fecha.ToString()); //hacer logica para comparar con las fechas de los viajes
-            parametrosDeBusqueda.Add("id_turno", idTurno.ToString());
+                Int64 idChofer = getIdChoferSeleccionado();
+                DateTime fecha = Convert.ToDateTime(DTEfecha.Text);
+                Int64 idTurno = getIdTurno();
 
-            rendicion = Rendicion.calcularRendicion(parametrosDeBusqueda);
-            mostrarAtributos();
+                parametrosDeBusqueda.Add("id_chofer", idChofer.ToString());
+                parametrosDeBusqueda.Add("fecha_viaje_para_rendicion", fecha.ToString()); //hacer logica para comparar con las fechas de los viajes
+                parametrosDeBusqueda.Add("id_turno", idTurno.ToString());
+
+                rendicion = Rendicion.calcularRendicion(parametrosDeBusqueda);
+                mostrarAtributos();
+            }
+            else
+            {
+                this.MensajeError();
+            };
+
         }
 
         private Int64 getIdChoferSeleccionado()

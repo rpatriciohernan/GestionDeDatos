@@ -107,5 +107,10 @@ namespace UberFrba.Registro_Viajes
         {
 
         }
+
+        private void txtAutomovil_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

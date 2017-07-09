@@ -31,24 +31,52 @@ namespace UberFrba.Facturacion
             return clientes.Find(cliente => cliente.Nombre + ", " + cliente.Apellido == CMBcliente.Text).Dni;
         }
 
+        private Boolean ValidarCamposMandatorios()
+        {
+            Boolean validado = true;
+
+            if (String.IsNullOrEmpty(this.CMBcliente.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.DTEfin.Text)) { validado = false; }
+            if (String.IsNullOrEmpty(this.DTEinicio.Text)) { validado = false; }
+
+            return validado;
+
+        }
+
+        private void MensajeError()
+        {
+            MessageBox.Show("ACCION RECHAZADA: No ha completado los campos mandatorios identificados con asterisco (*)", "ATENCION", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+
         private void BTNgenerar_Click(object sender, EventArgs e)
         {
-            Dictionary<String, String> parametrosDeFacturacion = new Dictionary<string, string>();
 
-            //obtenemos el id de los datos de los combos, ya que provienen de otras tablas
-            idCliente = getIdClienteSeleccionado(); //el idCliente lo dejamos fijo al momento de generar la factura entonces, si despues se cambia. Al momento de cargar la factura se toma con el que se genero
-            fechaInicio = Convert.ToDateTime(DTEinicio.Text);
-            fechaFin = Convert.ToDateTime(DTEfin.Text);
-            
-            parametrosDeFacturacion.Add("id_cliente", idCliente.ToString());
-            
-            parametrosDeFacturacion.Add("entreFechas", fechaInicio + "&" + fechaFin); //"01/06/2017&30/06/2017"); el viaje sabe solo como buscar esto
 
-            facturacion = Facturacion.facturarIntervalo(parametrosDeFacturacion); 
+            if (this.ValidarCamposMandatorios())
+            {
+                Dictionary<String, String> parametrosDeFacturacion = new Dictionary<string, string>();
 
-            txtImporteTotal.Text = facturacion.ImporteTotal.ToString();
+                //obtenemos el id de los datos de los combos, ya que provienen de otras tablas
+                idCliente = getIdClienteSeleccionado(); //el idCliente lo dejamos fijo al momento de generar la factura entonces, si despues se cambia. Al momento de cargar la factura se toma con el que se genero
+                fechaInicio = Convert.ToDateTime(DTEinicio.Text);
+                fechaFin = Convert.ToDateTime(DTEfin.Text);
 
-            mostrarViajes();
+                parametrosDeFacturacion.Add("id_cliente", idCliente.ToString());
+
+                parametrosDeFacturacion.Add("entreFechas", fechaInicio + "&" + fechaFin); //"01/06/2017&30/06/2017"); el viaje sabe solo como buscar esto
+
+                facturacion = Facturacion.facturarIntervalo(parametrosDeFacturacion);
+
+                txtImporteTotal.Text = facturacion.ImporteTotal.ToString();
+
+                mostrarViajes();
+            }
+            else
+            {
+                this.MensajeError();
+            };
+
         }
 
         private void mostrarViajes()

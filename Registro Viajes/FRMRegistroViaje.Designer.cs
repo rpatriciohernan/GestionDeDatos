@@ -125,6 +125,7 @@
             this.txtAutomovil.Size = new System.Drawing.Size(99, 20);
             this.txtAutomovil.TabIndex = 2;
             this.txtAutomovil.Text = "UFA767";
+            this.txtAutomovil.TextChanged += new System.EventHandler(this.txtAutomovil_TextChanged);
             // 
             // txtKilometros
             // 
@@ -178,7 +179,7 @@
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(260, 45);
+            this.label1.Size = new System.Drawing.Size(261, 45);
             this.label1.TabIndex = 32;
             this.label1.Text = "Registro de Viaje";
             // 

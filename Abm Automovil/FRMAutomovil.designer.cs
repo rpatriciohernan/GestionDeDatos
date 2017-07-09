@@ -125,11 +125,6 @@
             // 
             this.CMBturno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBturno.FormattingEnabled = true;
-            this.CMBturno.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
             this.CMBturno.Location = new System.Drawing.Point(485, 48);
             this.CMBturno.Name = "CMBturno";
             this.CMBturno.Size = new System.Drawing.Size(65, 21);
@@ -151,9 +146,6 @@
             // 
             this.CMBmarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBmarca.FormattingEnabled = true;
-            this.CMBmarca.Items.AddRange(new object[] {
-            "0",
-            "1"});
             this.CMBmarca.Location = new System.Drawing.Point(131, 49);
             this.CMBmarca.Name = "CMBmarca";
             this.CMBmarca.Size = new System.Drawing.Size(152, 21);
@@ -316,11 +308,6 @@
             // 
             this.CMBChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBChofer.FormattingEnabled = true;
-            this.CMBChofer.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2",
-            "3"});
             this.CMBChofer.Location = new System.Drawing.Point(199, 181);
             this.CMBChofer.Name = "CMBChofer";
             this.CMBChofer.Size = new System.Drawing.Size(364, 21);
