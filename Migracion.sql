@@ -1,13 +1,8 @@
 USE [GD1C2017]
 GO
 
-  /*******************************************************/
- /*              CREACION DE ESTRUCTURA                 */
-/*******************************************************/
-
-
 -------------------------------------------------------------------------------------
---CREACION DE ESQUEMA--
+--BORRADO DE ESQUEMA--
 -------------------------------------------------------------------------------------
 IF EXISTS (SELECT name FROM sys.schemas WHERE name = N'overhead')
    BEGIN
@@ -16,87 +11,45 @@ IF EXISTS (SELECT name FROM sys.schemas WHERE name = N'overhead')
  /*               BORRADO DE TABLAS                     */
 /*******************************************************/
 
--------------------------------------------------------------------------------------
---TABLA RENDICIONES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.rendiciones', N'U') is not null
 	drop table overhead.rendiciones
 
--------------------------------------------------------------------------------------
---TABLA VIAJES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.viajes', N'U') is not null
 	drop table overhead.viajes
-
-
 
 if object_id(N'overhead.facturaciones', N'U') is not null
 	drop table overhead.facturaciones
 
-
--------------------------------------------------------------------------------------
---TABLA AUTOMOVILES POR TURNO--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.autos_por_turnos', N'U') is not null
 	drop table overhead.autos_por_turnos
 
--------------------------------------------------------------------------------------
---TABLA AUTOMOVILES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.automoviles', N'U') is not null
 	drop table overhead.automoviles
 
--------------------------------------------------------------------------------------
---TABLA TURNOS--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.turnos', N'U') is not null
 	drop table overhead.turnos
 
--------------------------------------------------------------------------------------
---TABLA MARCAS--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.marcas', N'U') is not null
 	drop table overhead.marcas
 
--------------------------------------------------------------------------------------
---TABLA ROLES ASIGNADOS--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.roles_asignados', N'U') is not null
 	drop table overhead.roles_asignados
 
--------------------------------------------------------------------------------------
---TABLA USUARIOS--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.usuarios', N'U') is not null
 	drop table overhead.usuarios
 
--------------------------------------------------------------------------------------
---TABLA CHOFERES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.choferes', N'U') is not null
 	drop table overhead.choferes
 
--------------------------------------------------------------------------------------
---TABLA CLIENTES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.clientes', N'U') is not null
 	drop table overhead.clientes
 
--------------------------------------------------------------------------------------
---TABLA FUNCIONALIDADES ASIGNADAS--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.funcionalidades_asignadas', N'U') is not null
 	drop table overhead.funcionalidades_asignadas
 
----------------------------------------------------------------------------------
---TABLA FUNCIONALIDADES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.funcionalidades', N'U') is not null
 	drop table overhead.funcionalidades
 
--------------------------------------------------------------------------------------
---TABLA ROLES--
--------------------------------------------------------------------------------------
 if object_id(N'overhead.roles', N'U') is not null
 	drop table overhead.roles
 
@@ -105,113 +58,100 @@ if object_id(N'overhead.roles', N'U') is not null
  /*               BORRADO DE STORES PROCEDURES          */
 /*******************************************************/
 
--------------------------------------------------------------------------------------
---INICIACION ROLES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Roles','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Roles
 
--------------------------------------------------------------------------------------
---INICIACION FUNCIONALIDADES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Funcionalidades','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Funcionalidades
 
--------------------------------------------------------------------------------------
---INICIACION FUNCIONALIDADES ASIGNADAS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_FuncionalidadesAsignadas','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_FuncionalidadesAsignadas
 
--------------------------------------------------------------------------------------
---INICIACION CLIENTES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Clientes','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Clientes
 
--------------------------------------------------------------------------------------
---INICIACION CHOFERES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Choferes','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Choferes
 
--------------------------------------------------------------------------------------
---INICIACION USUARIOS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Usuarios','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Usuarios
 
--------------------------------------------------------------------------------------
---INICIACION ROLES ASIGNADOS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_RolesAsignados','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_RolesAsignados
 
--------------------------------------------------------------------------------------
---INICIACION MARCAS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Marcas','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Marcas
 
--------------------------------------------------------------------------------------
---INICIACION TURNOS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Turnos','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Turnos
 
--------------------------------------------------------------------------------------
---INICIACION AUTOS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Autos','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Autos
 
--------------------------------------------------------------------------------------
---INICIACION AUTOS POR TURNOS--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_AutosPorTurnos','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_AutosPorTurnos
 
--------------------------------------------------------------------------------------
---INICIACION FACTURACIONES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Facturaciones','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Facturaciones
 
--------------------------------------------------------------------------------------
---INICIACION VIAJES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Viajes','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Viajes
 
--------------------------------------------------------------------------------------
---INICIACION RENDICIONES--
--------------------------------------------------------------------------------------
 IF OBJECT_ID('overhead.sp_Rendiciones','P') IS NOT NULL
 	DROP PROCEDURE overhead.sp_Rendiciones
 
 
+  /*******************************************************/
+ /*               BORRADO DE TRIGGERS                   */
+/*******************************************************/
+IF OBJECT_ID('overhead.ActualizarRolesInactivos','T') IS NOT NULL
+	DROP PROCEDURE overhead.ActualizarRolesInactivos
 
+IF OBJECT_ID('overhead.ActualizarFuncionalidadesEliminadas','T') IS NOT NULL
+	DROP PROCEDURE overhead.ActualizarFuncionalidadesEliminadas
+
+	
   /*******************************************************/
  /*               BORRADO DE VISTAS                     */
 /*******************************************************/
 
+IF OBJECT_ID(N'overhead.choferes_con_mayor_recaudacion', N'V') IS NOT NULL
+    DROP VIEW overhead.choferes_con_mayor_recaudacion
+
+IF OBJECT_ID(N'overhead.choferes_con_viaje_mas_largo', N'V') IS NOT NULL
+    DROP VIEW overhead.choferes_con_viaje_mas_largo
+
+IF OBJECT_ID(N'overhead.clientes_con_mayor_uso_de_un_mismo_automovil', N'V') IS NOT NULL
+    DROP VIEW overhead.clientes_con_mayor_uso_de_un_mismo_automovil
+
+IF OBJECT_ID(N'overhead.clientes_con_mayor_consumo', N'V') IS NOT NULL
+    DROP VIEW overhead.clientes_con_mayor_consumo
+
+
+-----------------------------------------------------------------------------------------
+--BORRAR ESQUEMA
+-----------------------------------------------------------------------------------------
 PRINT 'Dropping the Overhead schema'
 DROP SCHEMA [overhead]
 END
+
+
+  /*******************************************************/
+ /*               CREACIÓN DE ESQUEMA                   */
+/*******************************************************/
 
 GO
 CREATE SCHEMA [overhead] AUTHORIZATION [gd]
 GO
 
 
--------------------------------------------------------------------------------------
---CREACION DE TABLAS--
--------------------------------------------------------------------------------------
+  /*******************************************************/
+ /*               CREACIÓN DE TABLAS                    */
+/*******************************************************/
 
 -------------------------------------------------------------------------------------
 --TABLA ROLES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.roles(
 	id_rol int identity,
 	rol_nombre varchar(15) NOT NULL,
@@ -220,13 +160,14 @@ create table overhead.roles(
 )
 go
 
-CREATE INDEX IN_Roles ON overhead.roles (rol_nombre, rol_estado);
+--GENERACIÓN DE INDICES
+CREATE INDEX search_rol_nombre ON overhead.roles (rol_nombre);
+CREATE INDEX search_rol_estado ON overhead.roles (rol_estado);
 
 
 -------------------------------------------------------------------------------------
 --TABLA FUNCIONALIDADES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.funcionalidades(
 	id_funcionalidad int identity,
 	funcionalidad_nombre varchar(100) NOT NULL,
@@ -234,13 +175,13 @@ create table overhead.funcionalidades(
 )
 go
 
-CREATE INDEX IN_Funcionalidades ON overhead.funcionalidades (funcionalidad_nombre);
+--GENERACIÓN DE INDICES
+CREATE INDEX search_funcionalidades_nombre ON overhead.funcionalidades (funcionalidad_nombre);
 
 
 -------------------------------------------------------------------------------------
 --TABLA FUNCIONALIDADES ASIGNADAS--
 -------------------------------------------------------------------------------------
-go
 create table overhead.funcionalidades_asignadas(
 	id_rol int NOT NULL,
 	id_funcionalidad int NOT NULL,
@@ -258,7 +199,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA CLIENTES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.clientes(
 	cliente_nombre varchar(255) NOT NULL,
 	cliente_apellido varchar(255) NOT NULL,
@@ -274,7 +214,8 @@ create table overhead.clientes(
 	CONSTRAINT AK_Telefono UNIQUE(cliente_telefono)
 )
 go
--- cliente_dni, cliente_telefono no tienen que ir ya que por el 1ro es pk y el 2do es unique
+
+--GENERACIÓN DE INDICES
 CREATE INDEX search_cliente_nombre ON overhead.clientes (cliente_nombre);
 CREATE INDEX search_cliente_apellido ON overhead.clientes (cliente_apellido);
 
@@ -282,7 +223,6 @@ CREATE INDEX search_cliente_apellido ON overhead.clientes (cliente_apellido);
 -------------------------------------------------------------------------------------
 --TABLA CHOFERES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.choferes(
 	chofer_nombre varchar(255) NOT NULL,
 	chofer_apellido varchar(255) NOT NULL,
@@ -296,17 +236,18 @@ create table overhead.choferes(
 	CONSTRAINT PK_ChoferDNI PRIMARY KEY CLUSTERED (chofer_dni)
 )
 go
--- chofer_dni no tiene que ir
-CREATE INDEX search_chofer_nombre ON overhead.choferes (chofer_nombre); --> si hacemos que el indice tenga muchas columnas es un indice tipo multiColumna sirve si haces muchas busquedas por ese juego de datos, a nosotros nos sirve mas tener un indice por cada columna ya que no siempre vamos a buscar por todos esos datos(nombre,dni,apellido)
+
+--GENERACIÓN DE INDICES
+CREATE INDEX search_chofer_nombre ON overhead.choferes (chofer_nombre);
 CREATE INDEX search_chofer_apellido ON overhead.choferes (chofer_apellido);
+
 
 -------------------------------------------------------------------------------------
 --TABLA USUARIOS--
 -------------------------------------------------------------------------------------
-go
 create table overhead.usuarios(
 	username varchar(20),
-	usu_password varchar(50),
+	usu_password varbinary(50),
 	usu_login_fallidos int,
 	usu_dni numeric(18,0),
 	usu_estado varchar(10),
@@ -318,7 +259,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA ROLES ASIGNADOS--
 -------------------------------------------------------------------------------------
-go
 create table overhead.roles_asignados(
 	username varchar(20),
 	id_rol int,
@@ -336,7 +276,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA MARCAS--
 -------------------------------------------------------------------------------------
-go
 create table overhead.marcas(
 	id_marca int identity,
 	marca_nombre varchar(255),
@@ -344,14 +283,13 @@ create table overhead.marcas(
 )
 go
 
--- no es necesario crearle este indice ya que desde la app laburamos con todas las marcas y al momento de editar una, tenemos el id de la misma
---CREATE INDEX IN_Marca ON overhead.marcas (marca_nombre);
+--GENERACIÓN DE INDICES
+CREATE INDEX search_marca_nombre ON overhead.marcas (marca_nombre);
 
 
 -------------------------------------------------------------------------------------
 --TABLA TURNOS--
 -------------------------------------------------------------------------------------
-go
 create table overhead.turnos(
 	id_turno int identity,
 	turno_descripcion varchar(255) NOT NULL,
@@ -363,40 +301,44 @@ create table overhead.turnos(
 	CONSTRAINT PK_TurnoID PRIMARY KEY CLUSTERED (id_turno)
 )
 go
--- no tiene que tener indice por descripcion, ya que se busca por like (y el indice no se lleva bien con eso) ademas hay pocos turnos en total ya que no se pueden superponer ni superar el dia
---CREATE INDEX IN_Turno ON overhead.turnos (turno_descripcion);
+
+--GENERACIÓN DE INDICES
+CREATE INDEX search_turno_descripcion ON overhead.turnos (turno_descripcion);
 
 
 -------------------------------------------------------------------------------------
 --TABLA AUTOMOVILES--
 -------------------------------------------------------------------------------------
-go
-create table overhead.automoviles( -- -> modelo, licencia y rodado no nos interesan
+create table overhead.automoviles(
 	auto_patente varchar(10) NOT NULL,
 	id_marca int NOT NULL,
 	auto_modelo varchar(255) NOT NULL,
+	id_turno int NOT NULL,		
+	id_chofer numeric(18,0) NOT NULL,
+	auto_estado varchar(10),
 	auto_licencia varchar(26),
 	auto_rodado varchar(26),
-	id_chofer numeric(18,0) NOT NULL,
-	auto_estado varchar(10),	
 	CONSTRAINT PK_Patente PRIMARY KEY CLUSTERED (auto_patente),
 	CONSTRAINT FK_AutosMarcas FOREIGN KEY (id_marca) REFERENCES overhead.marcas (id_marca)     
 		ON DELETE CASCADE    
 		ON UPDATE CASCADE,
 	CONSTRAINT FK_AutosChoferes FOREIGN KEY (id_chofer) REFERENCES overhead.choferes (chofer_dni)     
 		ON DELETE CASCADE    
+		ON UPDATE CASCADE,
+	CONSTRAINT FK_AutosTurno FOREIGN KEY (id_turno) REFERENCES overhead.turnos (id_turno)     
+		ON DELETE CASCADE    
 		ON UPDATE CASCADE
 )
 go
 
--- id_marca e id_chofer no tienen que definirse denuevo como indice, el modelo no es necesario que lo sea
-CREATE INDEX search_auto_from_chofer_dni ON overhead.automoviles (id_chofer);
-
+--GENERACIÓN DE INDICES
+create index search_autos_modelo on overhead.automoviles (auto_modelo);
+create index search_autos_marca on overhead.automoviles (id_marca);
+create index search_autos_chofer on overhead.automoviles (id_chofer);
 
 -------------------------------------------------------------------------------------
 --TABLA AUTOMOVILES POR TURNO--
 -------------------------------------------------------------------------------------
-go
 create table overhead.autos_por_turnos(
 	auto_patente varchar(10) NOT NULL,
 	id_turno int NOT NULL 
@@ -410,13 +352,15 @@ create table overhead.autos_por_turnos(
 )
 go
 
+--GENERACIÓN DE INDICES
+CREATE INDEX search_turno ON overhead.autos_por_turnos (id_turno);
+CREATE INDEX search_auto_patente ON overhead.automoviles (auto_patente);
 
 -------------------------------------------------------------------------------------
 --TABLA FACTURACIONES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.facturaciones(
-	id_factura numeric(18,0), --> tiene que ser int asi despues de la migracion hacemos que sea identity
+	id_factura numeric(18,0) identity,
 	factura_fecha datetime,
 	id_cliente numeric(18,0) NOT NULL,
 	factura_fecha_inicio datetime NOT NULL,
@@ -433,7 +377,6 @@ go
 -------------------------------------------------------------------------------------
 --TABLA VIAJES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.viajes(
 	id_viaje int identity,
 	id_chofer numeric(18,0) NOT NULL,
@@ -444,17 +387,13 @@ create table overhead.viajes(
 	viaje_fecha_fin datetime NOT NULL,
 	id_cliente numeric(18,0) NOT NULL,
 	id_factura numeric(18,0),	
-	CONSTRAINT PK_ViajeID_AutoID_ClienteID PRIMARY KEY CLUSTERED (id_viaje, id_automovil, id_cliente),
-	-- CONSTRAINT AK_ClienteID_Fecha UNIQUE (id_cliente, viaje_fecha_inicio), en teoria esta bien, pero como en la tabla maestra tenemos una sola fecha de viaje y la usamos para definir la fecha de inicio y la fecha de fin, esta validacion funciona mal ya que el hecho de que haya 2 viajes en la misma fecha se puede significar tmb que un viaje empezo a h1, finaliza a h2 otro viaje empezo a h2 y finalizo a h3 todo esto teniendo una sola fecha queda viaje1 empezo h1 termino h1 viaje2 empezo h1 termino h1 y no esta mal!!
+	CONSTRAINT PK_ViajeID_AutoID_ClienteID PRIMARY KEY CLUSTERED (id_viaje),
 	CONSTRAINT FK_ViajeChofer FOREIGN KEY (id_chofer) REFERENCES overhead.choferes (chofer_dni)     
 		ON DELETE CASCADE    
 		ON UPDATE CASCADE,
 	CONSTRAINT FK_ViajeTurno FOREIGN KEY (id_turno) REFERENCES overhead.turnos (id_turno)     
 		ON DELETE CASCADE    
-		ON UPDATE CASCADE,
-	--CONSTRAINT FK_ViajeFactura FOREIGN KEY (id_factura) REFERENCES overhead.facturaciones (id_factura)     esto hay que sacarlo ya que el viaje pudo no ser facturado y entonces no va a tener el nro de factura
-		--ON DELETE CASCADE    
-		--ON UPDATE CASCADE
+		ON UPDATE CASCADE
 )
 go
 
@@ -462,9 +401,8 @@ go
 -------------------------------------------------------------------------------------
 --TABLA RENDICIONES--
 -------------------------------------------------------------------------------------
-go
 create table overhead.rendiciones(
-	id_rendicion numeric(18,0), --> deberia ser int para el identity
+	id_rendicion numeric(18,0) identity,
 	id_chofer numeric(18,0) NOT NULL,
 	id_turno int NOT NULL,
 	rendicion_fecha datetime NOT NULL,
@@ -487,11 +425,10 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION ROLES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Roles
 as
-	insert into overhead.roles (rol_nombre, rol_estado) values
-	('Administradores', 'Activo');
+	insert into overhead.roles (rol_nombre, rol_estado)
+	values('Administradores', 'Activo');
 
 	insert into overhead.roles (rol_nombre, rol_estado)
 	values('Clientes', 'Activo');
@@ -503,7 +440,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION FUNCIONALIDADES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Funcionalidades
 as
 	insert into overhead.funcionalidades (funcionalidad_nombre)
@@ -541,7 +477,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION FUNCIONALIDADES ASIGNADAS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_FuncionalidadesAsignadas
 as
 	INSERT INTO overhead.funcionalidades_asignadas VALUES(1, 1)
@@ -572,7 +507,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION CLIENTES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Clientes
 as
 	insert into overhead.clientes (cliente_nombre, cliente_apellido, cliente_dni, cliente_mail, cliente_telefono, cliente_domicilio, cliente_fecha_nacimiento, cliente_estado)
@@ -585,7 +519,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION CHOFERES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Choferes
 as
 	insert into overhead.choferes (chofer_nombre, chofer_apellido, chofer_dni, chofer_domicilio, chofer_telefono, chofer_mail, chofer_fecha_nacimiento, chofer_estado)
@@ -598,23 +531,22 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION USUARIOS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Usuarios
 as
-	insert into overhead.usuarios (username, usu_password, usu_estado)
-	values('admin', HASHBYTES('SHA2_256', 'w23e'), 'Activo');
+	insert into overhead.usuarios (username, usu_password, usu_estado, usu_login_fallidos, usu_dni)
+	values('admin', HASHBYTES('SHA2_256', 'w23e'), 'Activo', 0, 0);
 
-	insert into overhead.usuarios (username, usu_password, usu_dni, usu_estado)
+	insert into overhead.usuarios (username, usu_password, usu_dni, usu_estado, usu_login_fallidos)
 	select 
-		SUBSTRING(cliente_nombre,1,1)+SUBSTRING(cliente_apellido,1,1)+substring(convert(varchar,cliente_dni),4,5),
-		HASHBYTES('SHA2_256', SUBSTRING(cliente_nombre,1,1)+SUBSTRING(cliente_apellido,1,1)+substring(convert(varchar,cliente_dni),4,5)),
-		cliente_dni,'Activo'
+		replace(SUBSTRING(cliente_nombre,1,1)+SUBSTRING(cliente_apellido,1,1)+substring(convert(varchar,cliente_dni),4,5), 'Á', 'A'),
+		HASHBYTES('SHA2_256', replace(SUBSTRING(cliente_nombre,1,1)+SUBSTRING(cliente_apellido,1,1)+substring(convert(varchar,cliente_dni),4,5), 'Á', 'A')),
+		cliente_dni,'Activo', 0
 	from overhead.clientes
 	union
 	select 
-		SUBSTRING(chofer_nombre,1,1)+SUBSTRING(chofer_apellido,1,1)+substring(convert(varchar,chofer_dni),4,5),
-		HASHBYTES('SHA2_256', SUBSTRING(chofer_nombre,1,1)+SUBSTRING(chofer_apellido,1,1)+substring(convert(varchar,chofer_dni),4,5)),
-		chofer_dni,'Activo'
+		replace(SUBSTRING(chofer_nombre,1,1)+SUBSTRING(chofer_apellido,1,1)+substring(convert(varchar,chofer_dni),4,5), 'Á', 'A'),
+		HASHBYTES('SHA2_256', replace(SUBSTRING(chofer_nombre,1,1)+SUBSTRING(chofer_apellido,1,1)+substring(convert(varchar,chofer_dni),4,5), 'Á', 'A')),
+		chofer_dni,'Activo', 0
 	from overhead.choferes
 go
 
@@ -622,7 +554,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION ROLES ASIGNADOS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_RolesAsignados
 as
 	INSERT INTO overhead.roles_asignados 
@@ -658,7 +589,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION MARCAS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Marcas
 as
 	insert into overhead.marcas (marca_nombre)
@@ -671,7 +601,6 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION TURNOS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Turnos
 as
 	insert into overhead.turnos (turno_descripcion, turno_estado,turno_hora_inicio, turno_hora_fin, turno_valor_km, turno_precio_base)
@@ -684,79 +613,80 @@ go
 -------------------------------------------------------------------------------------
 --INICIACION AUTOS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Autos
 as
 	insert into overhead.automoviles
-	select Auto_Patente, mc.id_marca, m.Auto_Modelo, Auto_Licencia, Auto_Rodado, Chofer_Dni, 'Activo'
+	select Auto_Patente, mc.id_marca, m.Auto_Modelo, Chofer_Dni, 'Activo', Auto_Licencia, Auto_Rodado
 	from gd_esquema.Maestra m
-	join overhead.marcas mc on (m.Auto_Marca = mc.marca_nombre) --> cambiamos left join por join , sino tendriamos autos sin marcas, y segun nuestro modelo no tiene sentido
-	group by Auto_Patente, mc.id_marca,  m.Auto_Modelo, Chofer_Dni, Auto_Licencia, Auto_Rodado --> modelo, licencia y rodado no nos interesan
+	join overhead.marcas mc on (m.Auto_Marca = mc.marca_nombre)
+	group by Auto_Patente, mc.id_marca, m.Auto_Modelo, Chofer_Dni, Auto_Licencia, Auto_Rodado
 go
 
 
 -------------------------------------------------------------------------------------
 --INICIACION AUTOS POR TURNOS--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_AutosPorTurnos
 as
 	insert into overhead.autos_por_turnos
 	select m.auto_patente, t.id_turno
 	from gd_esquema.Maestra m
-		join overhead.turnos t on (t.turno_descripcion = m.Turno_Descripcion) -- Si o si necesitamos joinnear para obtener el Id -> esto es clave, solo necesitamos joinnear cuando queremos el id de la entidad, sino no es necesario ya que tenemos todos los datos metidos en el registro de la tabla horrenda (tabla Maestra jaja)
-		group by m.auto_patente, t.id_turno
+	join overhead.turnos t on (t.turno_descripcion = m.Turno_Descripcion)
+	group by m.auto_patente, t.id_turno
 go
 
 
 -------------------------------------------------------------------------------------
 --INICIACION FACTURACIONES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Facturaciones
 as
-	insert into overhead.facturaciones
-	select 
-	Factura_Nro, Factura_Fecha, Cliente_Dni, Factura_Fecha_Inicio, Factura_Fecha_Fin, 
-	sum(Turno_Precio_Base + Viaje_Cant_Kilometros*Turno_Valor_Kilometro) factura_importe_total
-	from gd_esquema.Maestra m
+	SET IDENTITY_INSERT overhead.facturaciones ON
+
+		insert into overhead.facturaciones (id_factura, factura_fecha, id_cliente, factura_fecha_inicio, factura_fecha_fin, factura_importe_total)
+		select Factura_Nro, Factura_Fecha, Cliente_Dni, Factura_Fecha_Inicio, Factura_Fecha_Fin, 
+		sum(turno_precio_base + Viaje_Cant_Kilometros*Turno_Valor_Kilometro)
+		from gd_esquema.Maestra m
 		where m.Factura_Nro is not null
-		group by Factura_Nro, Factura_Fecha, Cliente_Dni, Factura_Fecha_Inicio, Factura_Fecha_Fin --> ver si hay que chekear el intervalo de fechas entre los viajes y las facturas
+		and convert(varchar,viaje_fecha,102) between convert(varchar,m.Factura_Fecha_Inicio,102) and convert(varchar,m.Factura_Fecha_Fin,102)
+		group by Factura_Nro, Factura_Fecha, Cliente_Dni, Factura_Fecha_Inicio, Factura_Fecha_Fin
+
+	SET IDENTITY_INSERT overhead.facturaciones OFF
 go
 
 
 -------------------------------------------------------------------------------------
 --INICIACION VIAJES--
 -------------------------------------------------------------------------------------
-go
 create procedure overhead.sp_Viajes
-as 
-	insert into overhead.viajes
-		select Chofer_Dni, Auto_Patente, t.id_turno, Viaje_Cant_Kilometros, Viaje_Fecha, Viaje_Fecha, Cliente_Dni, Factura_Nro from gd_esquema.Maestra m
+as
+	insert into overhead.viajes(id_chofer,  id_automovil, id_turno, viaje_cant_km, viaje_fecha_inicio, viaje_fecha_fin, id_cliente, id_factura)
+	select Chofer_Dni, Auto_Patente, t.id_turno, Viaje_Cant_Kilometros, Viaje_Fecha, Viaje_Fecha, Cliente_Dni, Factura_Nro 
+	from gd_esquema.Maestra m
 	join overhead.turnos t on (m.Turno_Descripcion = t.turno_descripcion)
-	--where Factura_Nro is not null -> queremos tmb los viajes que aun no fueron facturados
 	group by Chofer_Dni, Auto_Patente, t.id_turno, Viaje_Cant_Kilometros, Viaje_Fecha, Factura_Nro, Cliente_Dni
 
 go
 
+
 -------------------------------------------------------------------------------------
 --INICIACION RENDICIONES--
 -------------------------------------------------------------------------------------
-
-go
 create procedure overhead.sp_Rendiciones
 as
-	insert into overhead.rendiciones
-	select Rendicion_Nro, Chofer_Dni, t.id_turno, Rendicion_Fecha, sum(Rendicion_Importe) as total
-	from gd_esquema.Maestra m
-	join overhead. turnos t on (t.turno_descripcion = m.Turno_Descripcion) -- > cambiamos left join por join solo, ya que por regla de negocio no deberia haber una rendicion sin turno
-	where Rendicion_Nro is not null
-	group by Rendicion_Nro, Chofer_Dni, t.id_turno, Rendicion_Fecha
+	SET IDENTITY_INSERT overhead.rendiciones ON
+		insert into overhead.rendiciones(id_rendicion, id_chofer, id_turno, rendicion_fecha, rendicion_importe)
+		select Rendicion_Nro, Chofer_Dni, t.id_turno, Rendicion_Fecha, sum(Rendicion_Importe) as total
+		from gd_esquema.Maestra m
+		join overhead. turnos t on (t.turno_descripcion = m.Turno_Descripcion)
+		where Rendicion_Nro is not null
+		group by Rendicion_Nro, Chofer_Dni, t.id_turno, Rendicion_Fecha
+	SET IDENTITY_INSERT overhead.rendiciones OFF
 go
 
----------------------------------------------------------------------------------------------------------
---Ejecución de stores procedures
----------------------------------------------------------------------------------------------------------
+  /**********************************************************/
+ /* EJECUCIÓN DE STORES PROCEDURES PARA MIGRACIÓN DE DATOS */
+/**********************************************************/
 execute overhead.sp_Roles;
 execute overhead.sp_Funcionalidades;
 execute overhead.sp_FuncionalidadesAsignadas;
@@ -770,14 +700,112 @@ execute overhead.sp_Autos;
 execute overhead.sp_AutosPorTurnos;
 execute overhead.sp_Facturaciones;
 execute overhead.sp_Viajes;
-execute overhead.sp_Rendiciones
+execute overhead.sp_Rendiciones;
 
 
+  /*******************************************************/
+ /*     CREACION DE VISTAS PARA LAS ESTADISTICAS        */
+/*******************************************************/
+-- choferes con mayor recaudacion
+go
+create view overhead.choferes_con_mayor_recaudacion as
+	select top 5 chofer_nombre, chofer_apellido, chofer_dni, SUM(t.turno_precio_base + t.turno_valor_km * v.viaje_cant_km) recaudacion,
+	DATEPART(quarter, v.viaje_fecha_inicio) trimestre, DATEPART(YEAR, v.viaje_fecha_inicio) anio 
+	from overhead.choferes c
+	join overhead.viajes v on v.id_chofer = c.chofer_dni
+	join overhead.turnos t on t.id_turno = v.id_turno
+	where c.chofer_estado = 'Activo'
+	group by chofer_nombre, chofer_apellido, chofer_dni, DATEPART(quarter, v.viaje_fecha_inicio), DATEPART(YEAR, v.viaje_fecha_inicio)
+	order by recaudacion desc;
+go
+
+-- choferes con mayor viaje realizado
+go
+create view overhead.choferes_con_viaje_mas_largo as
+	select top 5 chofer_nombre, chofer_apellido, chofer_dni, v.viaje_cant_km, DATEPART(quarter, v.viaje_fecha_inicio) trimestre, DATEPART(YEAR, v.viaje_fecha_inicio ) anio 
+	from overhead.choferes c
+	join overhead.viajes v on v.id_chofer = c.chofer_dni
+	where c.chofer_estado = 'Activo'
+	group by chofer_nombre, chofer_apellido, chofer_dni, v.viaje_cant_km, DATEPART(quarter, v.viaje_fecha_inicio), DATEPART(YEAR, v.viaje_fecha_inicio)
+	order by v.viaje_cant_km desc;
+go
 
 
+-- cliente que uso mas veces un mismo automovil
+go
+create view overhead.clientes_con_mayor_uso_de_un_mismo_automovil as
+	select top 5 c.cliente_nombre, c.cliente_apellido, c.cliente_dni, v.id_automovil, count(*) cantidad_de_viajes_con_mismo_auto,
+	DATEPART(quarter, v.viaje_fecha_inicio) trimestre, DATEPART(YEAR, v.viaje_fecha_inicio) anio 
+	from overhead.clientes c
+	join overhead.viajes v on v.id_cliente = c.cliente_dni
+	where c.cliente_estado = 'Activo'
+	group by c.cliente_nombre, c.cliente_apellido, c.cliente_dni, v.id_automovil, DATEPART(quarter, v.viaje_fecha_inicio), DATEPART(YEAR, v.viaje_fecha_inicio)
+	order by cantidad_de_viajes_con_mismo_auto desc;
+go
 
 
+-- clientes con mayor consumo
+go
+create view overhead.clientes_con_mayor_consumo as
+	select top 5 c.cliente_nombre, c.cliente_apellido, c.cliente_dni, SUM(t.turno_precio_base + t.turno_valor_km * v.viaje_cant_km) consumo,
+	DATEPART(quarter, v.viaje_fecha_inicio) trimestre, DATEPART(YEAR, v.viaje_fecha_inicio) anio 
+	from overhead.clientes c
+	join overhead.viajes v on c.cliente_dni = v.id_cliente
+	join overhead.turnos t on t.id_turno = v.id_turno
+	where c.cliente_estado = 'Activo'
+	group by c.cliente_nombre, c.cliente_apellido, c.cliente_dni, DATEPART(quarter, v.viaje_fecha_inicio), DATEPART(YEAR, v.viaje_fecha_inicio)
+	order by consumo desc;
+go
 
 
+  /*******************************************************/
+ /*                 CREACION DE TRIGGERS                */
+/*******************************************************/
 
+---------------------------------------------------------------------------------------------------------
+--Trigger para actualizar Roles Inactivos
+---------------------------------------------------------------------------------------------------------
+go
+CREATE TRIGGER overhead.ActualizarRolesInactivos
+ON overhead.roles 
+AFTER UPDATE, DELETE
+AS
+BEGIN
+	DECLARE @IDROL int
+	DECLARE @NUEVOESTADO varchar(10)
+	
+	IF EXISTS (SELECT 1 FROM inserted) 	
+			SELECT @IDROL = id_rol, @NUEVOESTADO = rol_estado FROM inserted
+	ELSE
+			BEGIN
+				SELECT @IDROL = id_rol FROM deleted
+				SET @NUEVOESTADO = 'Inactivo'
+				DELETE FROM overhead.funcionalidades_asignadas WHERE id_rol = @IDROL
+			END
+	
+	IF (@NUEVOESTADO IS NOT NULL) AND (@NUEVOESTADO = 'Inactivo')
+	DELETE FROM overhead.roles_asignados WHERE id_rol = @IDROL
 
+	
+END
+go
+
+---------------------------------------------------------------------------------------------------------
+--Trigger para actualizar Funcionalidades Eliminadas
+---------------------------------------------------------------------------------------------------------
+go
+CREATE TRIGGER overhead.ActualizarFuncionalidadesEliminadas
+ON overhead.funcionalidades
+AFTER DELETE
+AS
+BEGIN
+	DECLARE @IDFUNCIONALIDAD int
+	
+	IF EXISTS (SELECT 1 FROM deleted) 	
+		BEGIN
+				SELECT @IDFUNCIONALIDAD = id_funcionalidad FROM deleted
+				DELETE FROM overhead.funcionalidades_asignadas WHERE id_funcionalidad = @IDFUNCIONALIDAD
+		END
+	
+END
+go

@@ -25,11 +25,11 @@ namespace UberFrba.Bienvenida
             /*if (String.IsNullOrEmpty(CMBrolDeAcceso.Text)) { 
                 MessageBox.Show("SELECCIONE UN ROL DE ACCESO", "ATENCION!"); }
             else {*/
-                FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
-                formularioBienvenida.Show();
+            FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
+            formularioBienvenida.Show();
 
-                //Hide actual form (not closing cause it turns the app off)
-                this.Hide();
+            //Hide actual form (not closing cause it turns the app off)
+            this.Hide();
             //}
         }
 
@@ -39,7 +39,8 @@ namespace UberFrba.Bienvenida
             formularioNuevoUsuario.Show();
         }
 
-        private void HabilitarLogueo() {
+        private void HabilitarLogueo()
+        {
             BTNingresar.Visible = true;
             CMBrolDeAcceso.Visible = true;
             LBLrol.Visible = true;
@@ -57,7 +58,7 @@ namespace UberFrba.Bienvenida
             parametrosBusquedaUsuario.Add("username", this.TXTusername.Text);
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
             if (usuariosEncontrados.Count() > 0) { usuario = usuariosEncontrados.First(); };
-                                                          // colocar funcion HASH para transformar password
+            // colocar funcion HASH para transformar password
             if ((usuariosEncontrados.Count() > 0) && (usuario.Password == RepositorioUsuario.Instance.Encrypt(this.TXTpassword.Text)))
             {
                 this.RellenarComboRoles(usuario);
@@ -73,28 +74,28 @@ namespace UberFrba.Bienvenida
         private void RellenarComboRoles(Usuario ingresante)
         {
             List<String> rolesAsignados = ingresante.RolesAsignados();
-            rolesAsignados.ForEach( rol => CMBrolDeAcceso.Items.Add(rol));
+            rolesAsignados.ForEach(rol => CMBrolDeAcceso.Items.Add(rol));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* this.LBLerrorLogueo.Visible = false;
+            /* this.LBLerrorLogueo.Visible = false;
             
-            if (this.ValidarLogueo())
-            {*/
-                this.HabilitarLogueo();
-           /* }
-            else
-            {
-                this.MostrarErrorLogueo();
-            }*/
+             if (this.ValidarLogueo())
+             {*/
+            this.HabilitarLogueo();
+            /* }
+             else
+             {
+                 this.MostrarErrorLogueo();
+             }*/
 
 
         }
 
         private void BTNadmin_Click(object sender, EventArgs e)
         {
-            
+
             FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
             formularioBienvenida.ActivarAdministrador();
             formularioBienvenida.Show();

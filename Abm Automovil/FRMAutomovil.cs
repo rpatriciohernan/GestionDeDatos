@@ -20,7 +20,7 @@ namespace UberFrba.Abm_Automovil
         private List<Chofer> choferes;
         String patente;
         Int16 idmarca;
-        Int16 idmodelo;
+        String idmodelo;
         Int16 idturno;
         String estado;
         Int64 idChofer;
@@ -90,13 +90,12 @@ namespace UberFrba.Abm_Automovil
 
             Int64 idChofer = choferes.Find(chofer => chofer.Nombre == CMBChofer.Text).Dni;
 
-
             return new Automovil(TXTpatente.Text, idMarca,
-                Convert.ToInt16(TXTmodelo.Text), idTurno,
+                Convert.ToString(TXTmodelo.Text), idTurno,
                 idChofer, CMBestado.Text);
         }
-      //  Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value),Convert.ToInt16(row.Cells[2].Value
-        public void obtenerDatos( String patente, Int16 idmarca, Int16 idmodelo, Int16 idturno, Int64 idChofer, String estado) {
+   
+        public void obtenerDatos( String patente, Int16 idmarca, String idmodelo, Int16 idturno , Int64 idChofer, String estado) {
             this.patente = patente;
             this.idmarca = idmarca;
             this.idmodelo = idmodelo;
@@ -139,6 +138,10 @@ namespace UberFrba.Abm_Automovil
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void BTNasignacionDeTurnos_Click(object sender, EventArgs e)
+        {
         }
     }
 }

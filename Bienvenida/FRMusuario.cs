@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +32,8 @@ namespace UberFrba.Bienvenida
             formularioRoles.Show();
         }
 
-        public void recibirDatosUsuario(String username, String password, Int64 dni, Int16 loginFallidos, String estado) {
+        public void recibirDatosUsuario(String username, String password, Int64 dni, Int16 loginFallidos, String estado)
+        {
             this.username = username;
             this.TXTuserName.Enabled = false;
             this.password = password;
@@ -55,7 +56,8 @@ namespace UberFrba.Bienvenida
                 CMBestado.Text = estado;
                 TXTloginFallidos.Text = Convert.ToString(loginFallidos);
             }
-            else {
+            else
+            {
                 button1.Enabled = false;
                 CMBestado.Text = "Activo";
             }

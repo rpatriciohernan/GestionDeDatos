@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -93,7 +93,7 @@ namespace UberFrba.Bienvenida
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    Usuario unUsuario = new Usuario(Convert.ToString(row.Cells[2].Value), Convert.ToInt16(row.Cells[4].Value), Convert.ToInt64(row.Cells[0].Value), "Inactivo" );
+                    Usuario unUsuario = new Usuario(Convert.ToString(row.Cells[2].Value), Convert.ToInt16(row.Cells[4].Value), Convert.ToInt64(row.Cells[0].Value), "Inactivo");
                     unUsuario.modificate();
                     this.busquedaDeValores();
                 }

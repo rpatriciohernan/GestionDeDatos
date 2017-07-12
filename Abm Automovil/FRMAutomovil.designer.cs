@@ -225,7 +225,7 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Red;
-            this.label14.Location = new System.Drawing.Point(303, 162);
+            this.label14.Location = new System.Drawing.Point(302, 160);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(14, 18);
             this.label14.TabIndex = 26;
@@ -247,7 +247,7 @@
             // BTNeliminar
             // 
             this.BTNeliminar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BTNeliminar.Location = new System.Drawing.Point(297, 223);
+            this.BTNeliminar.Location = new System.Drawing.Point(296, 221);
             this.BTNeliminar.Name = "BTNeliminar";
             this.BTNeliminar.Size = new System.Drawing.Size(269, 23);
             this.BTNeliminar.TabIndex = 30;
@@ -257,7 +257,7 @@
             // BTNguardar
             // 
             this.BTNguardar.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.BTNguardar.Location = new System.Drawing.Point(14, 223);
+            this.BTNguardar.Location = new System.Drawing.Point(13, 221);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(270, 23);
             this.BTNguardar.TabIndex = 27;
@@ -272,10 +272,7 @@
             "Inactivo"});
             this.CMBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBestado.FormattingEnabled = true;
-            this.CMBestado.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.CMBestado.Location = new System.Drawing.Point(14, 181);
+            this.CMBestado.Location = new System.Drawing.Point(13, 179);
             this.CMBestado.Name = "CMBestado";
             this.CMBestado.Size = new System.Drawing.Size(174, 21);
             this.CMBestado.TabIndex = 32;
@@ -285,7 +282,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Location = new System.Drawing.Point(13, 162);
+            this.label5.Location = new System.Drawing.Point(12, 160);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 16);
@@ -297,7 +294,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Location = new System.Drawing.Point(198, 162);
+            this.label7.Location = new System.Drawing.Point(197, 160);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 16);
@@ -308,7 +305,7 @@
             // 
             this.CMBChofer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CMBChofer.FormattingEnabled = true;
-            this.CMBChofer.Location = new System.Drawing.Point(199, 181);
+            this.CMBChofer.Location = new System.Drawing.Point(198, 179);
             this.CMBChofer.Name = "CMBChofer";
             this.CMBChofer.Size = new System.Drawing.Size(364, 21);
             this.CMBChofer.TabIndex = 34;
@@ -319,7 +316,7 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(62, 160);
+            this.label10.Location = new System.Drawing.Point(61, 158);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(14, 18);
             this.label10.TabIndex = 37;
@@ -329,7 +326,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(581, 261);
+            this.ClientSize = new System.Drawing.Size(581, 255);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.CMBChofer);
