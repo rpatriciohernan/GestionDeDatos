@@ -78,7 +78,7 @@ namespace UberFrba.Bienvenida
 
         public void Modificar(Usuario usuario)
         {
-            SqlDataReader dr = queryManager("UPDATE overhead.usuarios SET usu_password =" + "'" + usuario.Password.ToString() + "'" + ", " + "usu_login_fallidos =" + "'" + usuario.LoginFallidos.ToString() + "'" + ", " + "usu_dni =" + "'" + usuario.Dni.ToString() + "'" + ", " + "usu_estado =" + "'" + usuario.Estado.ToString() + "'" + " WHERE username =" + "'" + Convert.ToString(usuario.Username) + "'");
+            SqlDataReader dr = queryManager("UPDATE overhead.usuarios SET usu_password =" + "'" + usuario.Password + "'" + ", " + "usu_login_fallidos =" + "'" + usuario.LoginFallidos.ToString() + "'" + ", " + "usu_dni =" + "'" + usuario.Dni.ToString() + "'" + ", " + "usu_estado =" + "'" + usuario.Estado.ToString() + "'" + " WHERE username =" + "'" + Convert.ToString(usuario.Username) + "'");
             dr.Close();
         }
     }

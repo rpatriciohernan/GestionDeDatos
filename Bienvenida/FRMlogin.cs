@@ -22,15 +22,15 @@ namespace UberFrba.Bienvenida
 
         private void BTNingresar_Click(object sender, EventArgs e)
         {
-            /*if (String.IsNullOrEmpty(CMBrolDeAcceso.Text)) { 
+            if (String.IsNullOrEmpty(CMBrolDeAcceso.Text)) { 
                 MessageBox.Show("SELECCIONE UN ROL DE ACCESO", "ATENCION!"); }
-            else {*/
+            else {
             FRMBienvenida formularioBienvenida = new FRMBienvenida(this.TXTusername.Text.ToString(), this.CMBrolDeAcceso.Text.ToString());
             formularioBienvenida.Show();
 
             //Hide actual form (not closing cause it turns the app off)
             this.Hide();
-            //}
+            }
         }
 
         private void BTNnuevoUsuario_Click_1(object sender, EventArgs e)
@@ -59,7 +59,8 @@ namespace UberFrba.Bienvenida
             List<Usuario> usuariosEncontrados = Usuario.buscar(parametrosBusquedaUsuario);
             if (usuariosEncontrados.Count() > 0) { usuario = usuariosEncontrados.First(); };
             // colocar funcion HASH para transformar password
-            if ((usuariosEncontrados.Count() > 0) && (usuario.Password == RepositorioUsuario.Instance.Encrypt(this.TXTpassword.Text)))
+            String vecX = RepositorioUsuario.Instance.Encrypt(this.TXTpassword.Text);
+            if ((usuariosEncontrados.Count() > 0) && (usuario.Password == vecX))
             {
                 this.RellenarComboRoles(usuario);
                 return true;
@@ -79,16 +80,16 @@ namespace UberFrba.Bienvenida
 
         private void button1_Click(object sender, EventArgs e)
         {
-            /* this.LBLerrorLogueo.Visible = false;
+             this.LBLerrorLogueo.Visible = false;
             
              if (this.ValidarLogueo())
-             {*/
+             {
             this.HabilitarLogueo();
-            /* }
+             }
              else
              {
                  this.MostrarErrorLogueo();
-             }*/
+             }
 
 
         }
