@@ -13,7 +13,7 @@ namespace UberFrba.Bienvenida
 {
     class RepositorioUsuario : Repositorio<Usuario>
     {
-         #region declaracion singleton
+        #region declaracion singleton
         private static RepositorioUsuario instance;
 
         private RepositorioUsuario() { }
@@ -67,7 +67,9 @@ namespace UberFrba.Bienvenida
             if (usuarios.Count > 0)
             {
                 MessageBox.Show("Ya Existe un usuarios con el mismo UserName por favor ingrese uno diferente");
-            } else {
+            }
+            else
+            {
                 SqlDataReader dr = queryManager("Insert into overhead.usuarios " + "values(" + usuario.GetValues() + ")");
                 dr.Close();
                 MessageBox.Show("El usuario se ha registrado correctamente");

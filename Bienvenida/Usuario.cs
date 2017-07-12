@@ -21,9 +21,10 @@ namespace UberFrba.Bienvenida
         private List<CampoYValor> camposObligatorios;
         private static RepositorioUsuario repositorioUsuario = RepositorioUsuario.Instance;
         #endregion
-        
+
         #region constructores
-        public Usuario(String username, String password, Int64 dni, String estado) {
+        public Usuario(String username, String password, Int64 dni, String estado)
+        {
 
             this.camposObligatorios = new List<CampoYValor>();
             this.username = username;
@@ -94,12 +95,13 @@ namespace UberFrba.Bienvenida
         }
 
         public void eliminate()
-        {   
+        {
             this.estado = "Inactivo";
             repositorioUsuario.Modificar(this);
         }
 
-        private String recuperarPassword(){
+        private String recuperarPassword()
+        {
             Dictionary<String, String> parametrosDeBusqueda = new Dictionary<string, string>();
             parametrosDeBusqueda.Add("username", this.username);
             return buscar(parametrosDeBusqueda).First().Password;
@@ -124,19 +126,20 @@ namespace UberFrba.Bienvenida
             Int16 idrolactivo = this.rolesAsignados.Find(rolasignado => rolasignado.Nombre == rolactivo).Id;
 
             //busca id de funcionalidades asignadas al rol en tabla intermedia
-           Dictionary<String,String> parametrosBusquedaFuncionalidadAsignadaAlRol = new Dictionary<string,string>();
-           parametrosBusquedaFuncionalidadAsignadaAlRol.Add("id_rol", idrolactivo.ToString());
+            Dictionary<String, String> parametrosBusquedaFuncionalidadAsignadaAlRol = new Dictionary<string, string>();
+            parametrosBusquedaFuncionalidadAsignadaAlRol.Add("id_rol", idrolactivo.ToString());
 
-           List<FuncionalidadAsignada> funcionalidadesAsignadasEncontradas = FuncionalidadAsignada.buscar(parametrosBusquedaFuncionalidadAsignadaAlRol);
-           //crea una lista de id de las funcionalidades asignadas encontradas
-           List<Int16> IdFuncionalidades = new List<Int16>();
-           funcionalidadesAsignadasEncontradas.ForEach(funcionalidadAsignadaEncontrada => IdFuncionalidades.Add(funcionalidadAsignadaEncontrada.IdFuncionalidad));
-           //por cada id de funcionalidad asignada encontrada, la envia para que sea cargada
+            List<FuncionalidadAsignada> funcionalidadesAsignadasEncontradas = FuncionalidadAsignada.buscar(parametrosBusquedaFuncionalidadAsignadaAlRol);
+            //crea una lista de id de las funcionalidades asignadas encontradas
+            List<Int16> IdFuncionalidades = new List<Int16>();
+            funcionalidadesAsignadasEncontradas.ForEach(funcionalidadAsignadaEncontrada => IdFuncionalidades.Add(funcionalidadAsignadaEncontrada.IdFuncionalidad));
+            //por cada id de funcionalidad asignada encontrada, la envia para que sea cargada
             IdFuncionalidades.ForEach(idfuncionalidad => this.CargarFuncionalidadEncontrada(idfuncionalidad));
 
         }
 
-        private void CargarFuncionalidadEncontrada(Int16 idFuncionalidad) {
+        private void CargarFuncionalidadEncontrada(Int16 idFuncionalidad)
+        {
             //busca funcionalidad segun id y luego la asigna a la lista de funcionalildades asignadas
             Dictionary<String, String> parametrosBusquedaFuncionalidad = new Dictionary<string, string>();
             parametrosBusquedaFuncionalidad.Add("id_funcionalidad", idFuncionalidad.ToString());
@@ -159,7 +162,7 @@ namespace UberFrba.Bienvenida
             Dictionary<String, String> parametrosBusquedaRolesAsignados = new Dictionary<String, String>();
             parametrosBusquedaRolesAsignados.Add("username", this.username);
             List<RolAsignado> rolesAsignadosEncontrados = RolAsignado.buscar(parametrosBusquedaRolesAsignados);
-            
+
             //con los roles encontrados, cargo la entidad de rol en la tabla Rol
             rolesAsignadosEncontrados.ForEach(rolAsignado => this.CargarRolDeUsuario(rolAsignado.IdRol));
 
@@ -176,7 +179,8 @@ namespace UberFrba.Bienvenida
             }
         }
 
-        public void IncrementarLoguinfallido() {
+        public void IncrementarLoguinfallido()
+        {
             loginFallidos++;
             if (loginFallidos >= 3) { this.estado = "Inactivo"; };
             this.modificate();
