@@ -35,7 +35,7 @@ namespace UberFrba.Abm_Automovil
         #region builder del objeto automovil
         public override Automovil BuilderEntityFromDataRow(DataRow dr)
         {
-            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToString(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt64(dr[3]), dr[4].ToString());
+            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToString(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt64(dr[4]), dr[5].ToString());
             return automovil;
         }
         #endregion
@@ -54,7 +54,7 @@ namespace UberFrba.Abm_Automovil
             {
                 MessageBox.Show("Ya Existe un automovil con esta patente");
             } else {
-                SqlDataReader dr = queryManager("Insert into overhead.automoviles " + "values(" + automovil.GetValues() + ")");
+                SqlDataReader dr = queryManager("Insert into overhead.automoviles " + "values(" + automovil.GetValues() + " , NULL , NULL )");
                 dr.Close();
                 MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

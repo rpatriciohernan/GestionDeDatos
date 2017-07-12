@@ -27,17 +27,19 @@ namespace UberFrba.Abm_Automovil
             get { return idMarca; }
         }
         
-        
+
+        public String IdModelo
+        {
+            get { return idModelo; }
+        }
+
         public Int16 IdTurno
         {
             get { return idTurno; }
         }
         
-        public String IdModelo
-        {
-            get { return idModelo; }
-        }
-        
+
+
         public Int64 ChoferDni
         {
             get { return choferDni; }
