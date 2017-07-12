@@ -17,7 +17,7 @@ namespace UberFrba.Registro_Viajes
         private Double cantidadKilometros;
         private DateTime inicio;
         private DateTime fin;
-        private Int64 idFactura; //vamos a hacer las facturas calculables, asi que setteamos este id una vez que se haya creado la factura
+        private String idFactura; //vamos a hacer las facturas calculables, asi que setteamos este id una vez que se haya creado la factura
         private Int64 idCliente;
 
         private double monto;
@@ -29,7 +29,7 @@ namespace UberFrba.Registro_Viajes
         {
             get { return id; }
         }
-        public void setIdFactura(Int16 idFactura)
+        public void setIdFactura(String idFactura)
         {
             this.idFactura = idFactura;
         }
@@ -57,7 +57,7 @@ namespace UberFrba.Registro_Viajes
         {
             get { return fin; }
         }
-        public Int64 IdFactura
+        public String IdFactura
         {
             get { return idFactura; }
         }
@@ -72,7 +72,7 @@ namespace UberFrba.Registro_Viajes
         #endregion
 
         #region constructores
-        public Viaje(Int64 id, Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, Int64 idFactura)
+        public Viaje(Int64 id, Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, String idFactura)
         {
             this.id = id;
             this.idChofer = idChofer;
@@ -85,7 +85,7 @@ namespace UberFrba.Registro_Viajes
             this.idCliente = idCliente;
         }
 
-        public Viaje(Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, Int64 idFactura)
+        public Viaje(Int64 idChofer, String idAutomovil, Int64 idTurno, Double cantidadKilometros, DateTime inicio, DateTime fin, Int64 idCliente, String idFactura)
         {
             this.idChofer = idChofer;
             this.idAutomovil = idAutomovil;

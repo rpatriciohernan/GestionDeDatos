@@ -63,7 +63,7 @@ namespace UberFrba.Registro_Viajes
             Int64 idTurno = getIdTurno();
             Double cantidadKilometros = Convert.ToDouble(txtKilometros.Text);
 
-            return new Viaje(idChofer, txtAutomovil.Text, idTurno, cantidadKilometros, Convert.ToDateTime(dteFechaInicio.Text), Convert.ToDateTime(dtpFechaFin.Text), idCliente, -1); //como no tenemos idFactura, le seteamos -1
+            return new Viaje(idChofer, txtAutomovil.Text, idTurno, cantidadKilometros, Convert.ToDateTime(dteFechaInicio.Text), Convert.ToDateTime(dtpFechaFin.Text), idCliente, "-1"); //como no tenemos idFactura, le seteamos -1
         }
 
         private void FRMregistroViaje_Load(object sender, EventArgs e)

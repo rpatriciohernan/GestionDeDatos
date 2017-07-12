@@ -104,7 +104,7 @@ namespace UberFrba.Facturacion
            Facturacion facturacionStored = repositorioFacturacion.Guardar(this);
            this.viajes.ForEach(viaje =>
                {
-               viaje.setIdFactura(facturacionStored.Id);
+               viaje.setIdFactura(facturacionStored.Id.ToString());
                viaje.modificate();
                });
         }

@@ -33,7 +33,7 @@ namespace UberFrba.Rendicion_Viajes
         #region builder del objeto 
         public override Rendicion BuilderEntityFromDataRow(DataRow dr)
         {
-            Rendicion rendicion = new Rendicion(Convert.ToInt16(dr[0]), Convert.ToInt16(dr[1]), Convert.ToInt16(dr[2]), Convert.ToDateTime(dr[3]), Convert.ToInt16(dr[4]));
+            Rendicion rendicion = new Rendicion(Convert.ToInt16(dr[0]), Convert.ToInt64(dr[1]), Convert.ToInt16(dr[2]), Convert.ToDateTime(dr[3]), Convert.ToInt16(dr[4]));
             return rendicion;
         }
         #endregion

@@ -34,7 +34,7 @@ namespace UberFrba.Registro_Viajes
         #region builder del objeto viaje
         public override Viaje BuilderEntityFromDataRow(DataRow dr)
         {
-            Viaje viaje = new Viaje(Convert.ToInt64(dr[0]), Convert.ToInt64(dr[1]), dr[2].ToString(), Convert.ToInt64(dr[3]), Convert.ToDouble(dr[4]), Convert.ToDateTime(dr[5]), Convert.ToDateTime(dr[6]), Convert.ToInt64(dr[7]), Convert.ToInt64(dr[8]));
+            Viaje viaje = new Viaje(Convert.ToInt64(dr[0]), Convert.ToInt64(dr[1]), dr[2].ToString(), Convert.ToInt64(dr[3]), Convert.ToDouble(dr[4]), Convert.ToDateTime(dr[5]), Convert.ToDateTime(dr[6]), Convert.ToInt64(dr[7]), Convert.ToString(dr[8]));
             return viaje;
         }
         #endregion
