@@ -101,7 +101,6 @@ namespace UberFrba.Abm_Turno
                 MessageBox.Show("La franja horaria seleccionada se superpone con la de otro turno, por favor elija otra");
             } else {
                 repositorioTurno.guardar(this);
-                MessageBox.Show("El turno se guardo correctamente");
             }
         }
 

@@ -47,14 +47,6 @@ namespace UberFrba.Abm_Turno
             MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information); //MessageBox.Show("Solo se permiten numeros", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
 
-     /*   public List<Turno> buscar(Dictionary<String, String> parametrosDeBusqueda, String operador = "and")
-        {
-            String query = "Select * from " + tableName() + " where turno_descripcion like " + "'" + "%" + parametrosDeBusqueda["turno_descripcion"] + "%" + "'" ;
-            Console.WriteLine("leete el queryResult de turnossss: " + query);
-            return SearchManager(query, tableName(), 0, 6);
-        }*/
-        
-
         public List<Turno> buscarTurnosSuperpuestos(Turno turno) {
             String query = "Select * from " + tableName() + " where turno_hora_inicio < " + "'" + turno.HoraFin + "'" + " and " + "turno_hora_fin > " + "'" + turno.HoraInicio + "'" + " and turno_estado = 'Activo'";
             return SearchManager(query, tableName(), 0, 6);
