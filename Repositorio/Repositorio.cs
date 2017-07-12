@@ -71,7 +71,7 @@ namespace UberFrba.Abm_Cliente
                     String fechaRendicion = parametrosDeBusqueda[key];
                     queryCondition += "viaje_fecha_inicio <= " + "'" + fechaRendicion + "'" + " and viaje_fecha_fin >= " + "'" + fechaRendicion + "'" + " " + operador + " ";
                 }
-                else if (key.Contains("marca") || key.Contains("estado") || key.Contains("dni")) //estos son solo los datos que se buscan por exacto. Si no es ninguno de estos, entonces buscamos por like ;)
+                else if (key.Contains("marca") || key.Contains("estado") || key.Contains("dni") || key.Contains("telefono")) //estos son solo los datos que se buscan por exacto. Si no es ninguno de estos, entonces buscamos por like ;)
                 {
                     String value = parametrosDeBusqueda[key];
                     queryCondition += key + " = " + "'" + value + "'" + " " + operador + " "; //se podria hacer un mapa por cada repo para abstraerte del nombre de la tabla, pero mucha paja

@@ -66,7 +66,6 @@ namespace UberFrba.Registro_Viajes
                     "id_cliente =" + "'" + viaje.IdCliente + "'"
                     + " WHERE id_viaje =" + Convert.ToString(viaje.Id));
             dr.Close();
-            MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

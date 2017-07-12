@@ -116,10 +116,10 @@ namespace UberFrba.Abm_Turno
                 formularioPrecargado = true;
                 this.TXTdescripcion.Text = descripcion;
                 this.CMBestado.Text = estado;
-                this.DTEhoraInicio.Text = horaInicio.ToString();
-                this.DTEhoraFin.Text = horaFin.ToString();
-                this.TXTvalorKilometro.Text = valorKilometro.ToString();
-                this.TXTprecioBase.Text = precioBase.ToString();       
+                this.DTEhoraInicio.Text = Convert.ToDateTime("2015-02-02 00:00:00.000").AddHours(horaInicio).ToString(); //new DateTime().AddHours(horaInicio).ToString();
+                this.DTEhoraFin.Text = Convert.ToDateTime("2015-02-02 00:00:00.000").AddHours(horaFin).ToString();
+                this.TXTvalorKilometro.Text = valorKilometro.ToString().Replace(',', '.');
+                this.TXTprecioBase.Text = precioBase.ToString().Replace(',', '.');
             
             }
 

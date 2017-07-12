@@ -18,6 +18,7 @@ namespace UberFrba.Abm_Turno
         private double horaFin; 
         private double valorKilometro;
         private double precioBase;
+
         private static RepositorioTurno repositorioTurno = RepositorioTurno.Instance;
 
         #endregion
@@ -100,7 +101,6 @@ namespace UberFrba.Abm_Turno
                 MessageBox.Show("La franja horaria seleccionada se superpone con la de otro turno, por favor elija otra");
             } else {
                 repositorioTurno.guardar(this);
-                MessageBox.Show("El turno se guardo correctamente");
             }
         }
 
@@ -126,8 +126,8 @@ namespace UberFrba.Abm_Turno
         public String GetValues()
         {
             return "'" + this.descripcion + "'" + ',' + "'" + Convert.ToString(this.horaInicio) + "'" + ',' + "'" +
-                Convert.ToString(this.horaFin) + "'" + ',' + this.valorKilometro + ',' + 
-                Convert.ToString(this.precioBase) + ',' + "'" + this.estado + "'";
+                Convert.ToString(this.horaFin) + "'" + ',' + this.valorKilometro.ToString().Replace(',','.') + ',' + 
+                Convert.ToString(this.precioBase).Replace(',','.') + ',' + "'" + this.estado + "'";
         }
     }
 }
