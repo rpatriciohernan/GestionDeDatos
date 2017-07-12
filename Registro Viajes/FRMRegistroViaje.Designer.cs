@@ -55,7 +55,7 @@
             this.BTNguardar.Location = new System.Drawing.Point(12, 217);
             this.BTNguardar.Name = "BTNguardar";
             this.BTNguardar.Size = new System.Drawing.Size(174, 23);
-            this.BTNguardar.TabIndex = 34;
+            this.BTNguardar.TabIndex = 8;
             this.BTNguardar.Text = "GUARDAR";
             this.BTNguardar.UseVisualStyleBackColor = true;
             this.BTNguardar.Click += new System.EventHandler(this.BTNguardar_Click);
@@ -78,7 +78,7 @@
             this.dteFechaInicio.Location = new System.Drawing.Point(14, 125);
             this.dteFechaInicio.Name = "dteFechaInicio";
             this.dteFechaInicio.Size = new System.Drawing.Size(193, 20);
-            this.dteFechaInicio.TabIndex = 27;
+            this.dteFechaInicio.TabIndex = 4;
             // 
             // label14
             // 
@@ -118,13 +118,11 @@
             // 
             // txtAutomovil
             // 
-            this.txtAutomovil.Enabled = false;
             this.txtAutomovil.Location = new System.Drawing.Point(214, 78);
             this.txtAutomovil.Margin = new System.Windows.Forms.Padding(4);
             this.txtAutomovil.Name = "txtAutomovil";
             this.txtAutomovil.Size = new System.Drawing.Size(99, 20);
             this.txtAutomovil.TabIndex = 2;
-            this.txtAutomovil.Text = "UFA767";
             this.txtAutomovil.TextChanged += new System.EventHandler(this.txtAutomovil_TextChanged);
             // 
             // txtKilometros
@@ -133,7 +131,7 @@
             this.txtKilometros.Margin = new System.Windows.Forms.Padding(4);
             this.txtKilometros.Name = "txtKilometros";
             this.txtKilometros.Size = new System.Drawing.Size(187, 20);
-            this.txtKilometros.TabIndex = 3;
+            this.txtKilometros.TabIndex = 7;
             // 
             // label2
             // 
@@ -179,7 +177,7 @@
             this.label1.Location = new System.Drawing.Point(0, 2);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(261, 45);
+            this.label1.Size = new System.Drawing.Size(260, 45);
             this.label1.TabIndex = 32;
             this.label1.Text = "Registro de Viaje";
             // 
@@ -190,7 +188,8 @@
             this.cmbChofer.Location = new System.Drawing.Point(12, 78);
             this.cmbChofer.Name = "cmbChofer";
             this.cmbChofer.Size = new System.Drawing.Size(195, 21);
-            this.cmbChofer.TabIndex = 35;
+            this.cmbChofer.TabIndex = 1;
+            this.cmbChofer.SelectedIndexChanged += new System.EventHandler(this.cmbChofer_SelectedIndexChanged);
             // 
             // cmbTurno
             // 
@@ -199,7 +198,7 @@
             this.cmbTurno.Location = new System.Drawing.Point(320, 77);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(87, 21);
-            this.cmbTurno.TabIndex = 36;
+            this.cmbTurno.TabIndex = 3;
             // 
             // dtpFechaFin
             // 
@@ -207,7 +206,7 @@
             this.dtpFechaFin.Location = new System.Drawing.Point(216, 125);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(191, 20);
-            this.dtpFechaFin.TabIndex = 37;
+            this.dtpFechaFin.TabIndex = 5;
             this.dtpFechaFin.ValueChanged += new System.EventHandler(this.dtpFechaFin_ValueChanged);
             // 
             // label5
@@ -229,7 +228,7 @@
             this.cmbCliente.Location = new System.Drawing.Point(12, 176);
             this.cmbCliente.Name = "cmbCliente";
             this.cmbCliente.Size = new System.Drawing.Size(195, 21);
-            this.cmbCliente.TabIndex = 41;
+            this.cmbCliente.TabIndex = 6;
             // 
             // label6
             // 

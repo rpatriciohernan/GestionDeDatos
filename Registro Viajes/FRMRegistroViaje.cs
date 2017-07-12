@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UberFrba.Abm_Automovil;
 using UberFrba.Abm_Chofer;
 using UberFrba.Abm_Cliente;
 using UberFrba.Abm_Turno;
@@ -114,6 +115,18 @@ namespace UberFrba.Registro_Viajes
         private void txtAutomovil_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void cmbChofer_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Dictionary<String, String> searchSpecificCar = new Dictionary<string, string>();
+            Int64 idChoferSeleccionado = getIdChoferSeleccionado();
+
+            searchSpecificCar.Add("id_chofer", idChoferSeleccionado.ToString());
+
+            String patenteAutomovil = Automovil.buscar(searchSpecificCar).First().Patente;
+
+            txtAutomovil.Text = patenteAutomovil;
         }
     }
 }
