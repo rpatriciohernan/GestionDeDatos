@@ -65,8 +65,8 @@ namespace UberFrba.Abm_Turno
                 + "turno_estado =" + "'" + turno.Estado + "'" + ", "
                 + "turno_hora_inicio =" + "'" + turno.HoraInicio + "'" + ", "
                 + "turno_hora_fin =" + "'" + turno.HoraFin + "'" + ", "
-                + "turno_valor_km =" + "'" + turno.ValorKilometro + "'" + ", "
-                + "turno_precio_base =" + "'" + turno.PrecioBase + "'" + " "
+                + "turno_valor_km =" + "'" + turno.ValorKilometro.ToString().Replace(',','.') + "'" + ", "
+                + "turno_precio_base =" + "'" + turno.PrecioBase.ToString().Replace(',', '.') + "'" + " "
                 + " WHERE id_turno = " + Convert.ToString(turno.IdTurno));
             dr.Close();
             MessageBox.Show("OPERACION REALIZADA CON EXITO", "Infomacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
