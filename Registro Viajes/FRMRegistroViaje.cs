@@ -71,6 +71,9 @@ namespace UberFrba.Registro_Viajes
             dteFechaInicio.CustomFormat = "dd/MM/yyyy HH:mm:ss";
             dtpFechaFin.CustomFormat = "dd/MM/yyyy HH:mm:ss";
 
+            dteFechaInicio.Value = Utils.appDate;
+            dtpFechaFin.Value = Utils.appDate;
+
             Dictionary<String, String> searchAllClientes = new Dictionary<string, string>();
             Dictionary<String, String> searchAllChoferes = new Dictionary<string, string>();
             Dictionary<String, String> searchAllTurnos = new Dictionary<string, string>();

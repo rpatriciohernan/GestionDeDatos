@@ -89,6 +89,9 @@ namespace UberFrba.Facturacion
 
         private void FRMfacturacion_Load(object sender, EventArgs e)
         {
+            DTEinicio.Value = Utils.appDate;
+            DTEfin.Value = Utils.appDate;
+
             Dictionary<String, String> searchAllClientes = new Dictionary<string, string>();
             searchAllClientes.Add("cliente_estado", "Activo");
             clientes = Cliente.buscar(searchAllClientes);

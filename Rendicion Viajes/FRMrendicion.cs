@@ -27,6 +27,8 @@ namespace UberFrba.Rendicion_Viajes
 
         private void FRMrendicion_Load(object sender, EventArgs e)
         {
+            DTEfecha.Value = Utils.appDate;
+
             Dictionary<String, String> searchAllChoferes = new Dictionary<string, string>();
             Dictionary<String, String> searchAllTurnos = new Dictionary<string, string>();
 

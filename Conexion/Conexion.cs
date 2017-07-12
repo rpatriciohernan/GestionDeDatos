@@ -39,8 +39,9 @@ namespace UberFrba.Abm_Cliente
         public static void startConexion()
         {
             try
-            {
-                cn = new SqlConnection("Data Source=localhost" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
+            {   
+                //cn = new SqlConnection("Data Source=localhost" + @"\" + "SQLSERVER2012;Initial Catalog=GD1C2017;User ID=gd;Password=gd2017");
+                cn = new SqlConnection(Utils.connectionString);
                 cn.Open();
 
                 String asd = "asdads";
