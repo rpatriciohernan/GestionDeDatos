@@ -46,11 +46,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abm Automovil\Automovil.cs" />
+    <Compile Include="Abm Automovil\AutoPorTurno.cs" />
     <Compile Include="Abm Automovil\FRMAutomovil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Abm Automovil\FRMAutomovil.designer.cs">
       <DependentUpon>FRMAutomovil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Abm Automovil\FRMautoPorTurno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Abm Automovil\FRMautoPorTurno.Designer.cs">
+      <DependentUpon>FRMautoPorTurno.cs</DependentUpon>
     </Compile>
     <Compile Include="Abm Automovil\FRMbuscarVehiculo.cs">
       <SubType>Form</SubType>
@@ -72,6 +79,7 @@
     </Compile>
     <Compile Include="Abm Automovil\Marca.cs" />
     <Compile Include="Abm Automovil\RepositorioAutomovil.cs" />
+    <Compile Include="Abm Automovil\RepositorioAutoPorTurno.cs" />
     <Compile Include="Abm Automovil\RepositorioMarca.cs" />
     <Compile Include="Abm Chofer\Chofer.cs" />
     <Compile Include="Abm Chofer\FRMBuscarChofer.cs">
@@ -257,6 +265,9 @@
     </Compile>
     <EmbeddedResource Include="Abm Automovil\FRMAutomovil.resx">
       <DependentUpon>FRMAutomovil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Abm Automovil\FRMautoPorTurno.resx">
+      <DependentUpon>FRMautoPorTurno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Abm Automovil\FRMbuscarVehiculo.resx">
       <DependentUpon>FRMbuscarVehiculo.cs</DependentUpon>

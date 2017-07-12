@@ -10,7 +10,7 @@ namespace UberFrba.Abm_Automovil
     {
         String patente;
         Int16 idMarca;
-        Int16 idModelo;
+        String idModelo;
         Int16 idTurno;
         Int64 choferDni;
         String estado;
@@ -26,15 +26,18 @@ namespace UberFrba.Abm_Automovil
         {
             get { return idMarca; }
         }
-        public Int16 IdModelo
-        {
-            get { return idModelo; }
-        }
-
+        
+        
         public Int16 IdTurno
         {
             get { return idTurno; }
         }
+        
+        public String IdModelo
+        {
+            get { return idModelo; }
+        }
+        
         public Int64 ChoferDni
         {
             get { return choferDni; }
@@ -47,11 +50,12 @@ namespace UberFrba.Abm_Automovil
         #endregion
 
         #region constructor
-        public Automovil(String patente, Int16 idMarca, Int16 idModelo, Int16 idTurno, Int64 choferDni, String estado) {
+        public Automovil(String patente, Int16 idMarca, String idModelo, Int16 idTurno, Int64 choferDni, String estado)
+        {
             this.patente = patente;
             this.idMarca = idMarca;
-            this.idModelo = idModelo;
             this.idTurno = idTurno;
+            this.idModelo = idModelo;
             this.choferDni = choferDni;
             this.estado = estado;
         }
@@ -83,8 +87,7 @@ namespace UberFrba.Abm_Automovil
         #region values
         public String GetValues() { 
             return "'" + this.patente + "'" + ',' + "'" + this.idMarca + "'" + ',' + "'" + this.idModelo + "'" + ',' +
-                "'" + this.idTurno + "'" + ',' + "'" + this.choferDni + "'" + ',' + "'" + this.estado + "'";
-        }
+                "'" + this.idTurno + "'" + ',' + "'" + this.choferDni + "'" + ',' + "'" + this.estado + "'";        }
         #endregion
 
     }

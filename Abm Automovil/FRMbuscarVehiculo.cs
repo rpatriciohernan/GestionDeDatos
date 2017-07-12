@@ -106,13 +106,13 @@ namespace UberFrba.Abm_Automovil
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                     FRMAutomovil formularioAuto = new FRMAutomovil();
-                    formularioAuto.obtenerDatos(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value), Convert.ToInt16(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value));
+                    formularioAuto.obtenerDatos(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value), Convert.ToString(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), Convert.ToString(row.Cells[5].Value));
                     formularioAuto.Show();
                 }
                 if (e.ColumnIndex == dataGridView1.Columns["Eliminar"].Index)
                 {
                     DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                    Automovil unAutomovil = new Automovil(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value),Convert.ToInt16(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), "Inactivo");
+                    Automovil unAutomovil = new Automovil(Convert.ToString(row.Cells[0].Value), Convert.ToInt16(row.Cells[1].Value), Convert.ToString(row.Cells[2].Value), Convert.ToInt16(row.Cells[3].Value), Convert.ToInt64(row.Cells[4].Value), "Inactivo");
                     unAutomovil.modificate();
                     this.busquedaDeValores();
                 }
@@ -136,6 +136,10 @@ namespace UberFrba.Abm_Automovil
             // turnos.ForEach(turno => CMBturno.Items.Add(turno.Descripcion));
 
             choferes.ForEach(chofer => CMBChofer.Items.Add(chofer.Nombre));
+
+
+            //asociacion de datagrid con el evento de clic en boton
+            dataGridView1.CellClick += dataGridView1_CellClick;
 
         }
 

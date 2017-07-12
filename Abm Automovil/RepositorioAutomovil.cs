@@ -35,7 +35,7 @@ namespace UberFrba.Abm_Automovil
         #region builder del objeto automovil
         public override Automovil BuilderEntityFromDataRow(DataRow dr)
         {
-            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToInt16(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt64(dr[4]), dr[5].ToString());
+            Automovil automovil = new Automovil(dr[0].ToString(), Convert.ToInt16(dr[1]), Convert.ToString(dr[2]), Convert.ToInt16(dr[3]), Convert.ToInt64(dr[3]), dr[4].ToString());
             return automovil;
         }
         #endregion
@@ -64,9 +64,9 @@ namespace UberFrba.Abm_Automovil
             SqlDataReader dr = queryManager("UPDATE " + tableName() + " SET id_marca =" + "'" + Convert.ToString(automovil.IdMarca)+ "'" + ", "
                 + "id_chofer =" + "'" + Convert.ToString(automovil.ChoferDni)+ "'" + ", "
                 + "auto_modelo =" + "'" + Convert.ToString(automovil.IdModelo) + "'" + ", "
-                + "auto_estado =" + "'" + automovil.Estado + "'" + ", "
-                + "id_turno =" + "'" + Convert.ToString(automovil.IdTurno) + "'" + " "
-                + " WHERE auto_patente =" + Convert.ToString(automovil.Patente));
+                + "id_turno =" + "'" + Convert.ToString(automovil.IdTurno) + "'" + ", "
+                + "auto_estado =" + "'" + automovil.Estado + "'"
+                + " WHERE auto_patente =" + "'" + Convert.ToString(automovil.Patente) + "'");
                 dr.Close();
                 MessageBox.Show("OPERACION REALIZADA CON EXITO","Infomacion",MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
